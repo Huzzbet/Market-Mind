@@ -20,7 +20,11 @@ export async function onRequestGet({ request }) {
       const previous = Number.isFinite(meta.previousClose) ? meta.previousClose : closes[0];
       const change = Number.isFinite(price) && Number.isFinite(previous) ? price - previous : null;
       const pct = Number.isFinite(change) && previous ? (change / previous) * 100 : null;
-      return { symbol, price, change, pct, currency: meta.currency || null, exchange: meta.exchangeName || null, ok: true };
+      const timestamps = r?.timestamp || [];
+      const intraday = closes.length > 1 && Number.isFinite(closes[0]) ? ((price - closes[0]) / closes[0]) * 100 : null;
+      const high = Number.isFinite(meta.regularMarketDayHigh) ? meta.regularMarketDayHigh : null;
+      const low = Number.isFinite(meta.regularMarketDayLow) ? meta.regularMarketDayLow : null;
+      return { symbol, price, change, pct, intradayPct: intraday, high, low, observations: closes.length, lastTimestamp: timestamps.at(-1) || null, currency: meta.currency || null, exchange: meta.exchangeName || null, ok: true };
     } catch (error) {
       return { symbol, ok: false, error: String(error) };
     }

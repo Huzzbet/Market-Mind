@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Market Mind</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;background:#07111f;color:#f5f7fb}
+.app{min-height:100vh;max-width:720px;margin:auto;display:flex;flex-direction:column}
+header{padding:18px 18px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1b2a3d}
+.logo{font-size:24px;font-weight:800;letter-spacing:-.5px}.logo span{opacity:.55}
+.status{font-size:12px;color:#8fa3bb}
+.feed{height:calc(100vh - 122px);overflow-y:auto;scroll-snap-type:y mandatory}
+.card{min-height:100%;padding:28px 22px 36px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center}
+.tag{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:#73b5ff;font-weight:800;margin-bottom:14px}
+h1{font-size:clamp(34px,8vw,58px);line-height:.98;letter-spacing:-2px;margin:0 0 18px}
+.summary{font-size:18px;line-height:1.5;color:#c5d0dd;max-width:620px}
+.metric{margin:26px 0;padding:18px;border:1px solid #26384e;border-radius:16px;background:#0d1a2b}
+.metric strong{font-size:32px;display:block}.metric small{color:#8fa3bb}
+.source{margin-top:auto;padding-top:28px;font-size:12px;color:#73869e}
+nav{height:64px;border-top:1px solid #1b2a3d;display:flex;align-items:center;justify-content:space-around;color:#8fa3bb;font-size:12px}
+nav b{color:#fff}.hint{text-align:center;font-size:11px;color:#61758d;margin-top:4px}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="logo">Market<span>Mind</span></div><div class="status" id="status">MVP • demo data</div></header>
+<main class="feed" id="feed"></main>
+<div class="hint">Swipe up for the next idea</div>
+<nav><b>Feed</b><span>Markets</span><span>Watchlist</span><span>Profile</span></nav>
+</div>
+<script>
+const cards=[
+ {tag:"Macro",title:"Why bond yields matter",summary:"When government bond yields rise, the discount rate used to value future cash flows rises too. That can pressure long-duration assets such as growth equities.",metric:"10Y",value:"Yield-sensitive",source:"Market Mind • Educational"},
+ {tag:"Equities",title:"A stock can rise while the market falls",summary:"Relative performance matters. A company can outperform its index even when its share price declines, which is why portfolio analysis should separate absolute and relative returns.",metric:"Think in",value:"Relative returns",source:"Market Mind • Educational"},
+ {tag:"Commodities",title:"Oil moves more than petrol",summary:"A jump in crude can affect inflation expectations, transport costs, company margins and central-bank policy expectations—not just the price at the pump.",metric:"Oil",value:"Macro signal",source:"Market Mind • Educational"},
+ {tag:"Portfolio",title:"Diversification is about drivers",summary:"Owning ten investments does not necessarily mean you are diversified. If they all depend on the same economic driver, the portfolio can still behave like one trade.",metric:"Key idea",value:"Different drivers",source:"Market Mind • Educational"}
+];
+const feed=document.getElementById("feed");
+feed.innerHTML=cards.map(c=>`<article class="card"><div class="tag">${c.tag}</div><h1>${c.title}</h1><p class="summary">${c.summary}</p><div class="metric"><small>${c.metric}</small><strong>${c.value}</strong></div><div class="source">${c.source}</div></article>`).join("");
+</script>
+</body>
+</html>

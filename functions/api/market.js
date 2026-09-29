@@ -1,6 +1,6 @@
 export async function onRequestGet({ request }) {
   const url = new URL(request.url);
-  const symbols = (url.searchParams.get("symbols") || "^AXJO,^GSPC,^VIX,CL=F,GC=F,AUDUSD=X")
+  const symbols = (url.searchParams.get("symbols") || "^AXJO,^GSPC,^VIX,CL=F,GC=F,AUDUSD=X,^TNX")
     .split(",").map(s => s.trim()).filter(Boolean).slice(0, 12);
 
   const results = await Promise.all(symbols.map(async symbol => {

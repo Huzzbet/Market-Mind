@@ -31,34 +31,55 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
 <nav><div class="navitem active"><b>◉</b>Feed</div><div class="navitem"><b>⌁</b>Markets</div><div class="navitem"><b>☆</b>Watchlist</div><div class="navitem"><b>≡</b>More</div></nav>
 </div>
 <script>
-const cards=[
-{tag:"MACRO / RATES",time:"2 MIN AGO",title:"Why bond yields matter",dek:"A move in government yields can reprice almost every asset class. The important question is not simply where yields are — it is what changed to make them move.",data:[["10Y UST","Yield"],["RBA","Policy"],["ASSET CLASS","Rates"]],changes:["Macro","Signal","Cross-asset"],insight:"Higher discount rates generally matter most for assets whose value depends heavily on cash flows far into the future.",source:"Market Mind Research • Educational"},
-{tag:"EQUITIES / RELATIVE",time:"6 MIN AGO",title:"A stock can rise while the market falls",dek:"Absolute return and relative performance answer different questions. Professional investors watch both.",data:[["ASX 200","Benchmark"],["BETA","Risk"],["ALPHA","Relative"]],changes:["Index","Exposure","Return"],insight:"If an investment falls 2% while its benchmark falls 6%, it has outperformed on a relative basis — even though the investor lost money.",source:"Market Mind Research • Educational"},
-{tag:"COMMODITIES / ENERGY",time:"11 MIN AGO",title:"Oil is a macro signal",dek:"A sharp move in crude can travel through inflation, transport costs, company margins and central-bank expectations.",data:[["BRENT","Energy"],["INFLATION","Second-order"],["MARGINS","Company"]],changes:["Input","Prices","Earnings"],insight:"The useful question is not just 'is oil rising?' but 'which businesses gain pricing power and which absorb the higher input cost?'.",source:"Market Mind Research • Educational"},
-{tag:"PORTFOLIO / RISK",time:"18 MIN AGO",title:"Ten stocks don't guarantee diversification",dek:"A portfolio can contain many securities and still be exposed to one dominant economic driver.",data:[["EQUITIES","Exposure"],["RATES","Driver"],["FX","Driver"]],changes:["Risk","Factor","Correlation"],insight:"Look through the names and identify the underlying drivers: rates, growth, inflation, commodities, currency and liquidity.",source:"Market Mind Research • Educational"}
-];
 const feed=document.getElementById("feed");
-feed.innerHTML=cards.map((c,i)=>`<article class="card"><div class="topline"><div class="tag">${c.tag}</div><div class="timestamp">${c.time}</div></div><h1>${c.title}</h1><p class="dek">${c.dek}</p><div class="data">${c.data.map((d,j)=>`<div class="box"><div class="label">${d[0]}</div><div class="value">${d[1]} <span class="change ${j===0?"up":""}">${c.changes[j]}</span></div></div>`).join("")}</div><div class="insight"><small>The Mind</small><p>${c.insight}</p></div><div class="actions"><button class="action" aria-label="Save" onclick="this.textContent=this.textContent==='☆'?'★':'☆'">☆</button><button class="action" aria-label="Share" onclick="navigator.share?navigator.share({title:'Market Mind',text:'${c.title}'}):null">↗</button><button class="action" aria-label="More">•••</button></div><div class="source"><span>${c.source}</span><span>${i+1} / ${cards.length}</span></div></article>`).join("");
-async function loadMarketData(){
-  try{
-    const r=await fetch("/api/market?symbols=%5EAXJO,%5EGSPC,%5EVIX");
-    if(!r.ok) throw new Error("market api");
-    const j=await r.json();
-    const map=Object.fromEntries(j.data.map(x=>[x.symbol,x]));
-    const render=(id,key)=>{
-      const x=map[key]; const el=document.getElementById(id);
-      if(!x||!x.ok||!Number.isFinite(x.pct)){el.textContent="—";return;}
-      el.textContent=(x.pct>=0?"+":"")+x.pct.toFixed(2)+"%";
-      el.className=x.pct>=0?"up":"down";
-    };
-    render("asx","^AXJO"); render("spx","^GSPC"); render("vix","^VIX");
-    document.getElementById("status")?.remove();
-  }catch(e){ console.warn("Market data unavailable; demo cards remain active.",e); }
+const marketNames={"^AXJO":["ASX 200","Australian equities"],"^GSPC":["S&P 500","US equities"],"^VIX":["VIX","US volatility"],"CL=F":["WTI Crude","Oil"],"GC=F":["Gold","Precious metals"],"AUDUSD=X":["AUD/USD","Australian dollar"]};
+const fallbackCards=[
+{tag:"MACRO / RATES",time:"DEMO",title:"Why bond yields matter",dek:"A move in government yields can reprice almost every asset class. The important question is not simply where yields are — it is what changed to make them move.",data:[["10Y UST","Yield"],["RBA","Policy"],["ASSET CLASS","Rates"]],insight:"Higher discount rates generally matter most for assets whose value depends heavily on cash flows far into the future."},
+{tag:"PORTFOLIO / RISK",time:"DEMO",title:"Ten stocks don't guarantee diversification",dek:"A portfolio can contain many securities and still be exposed to one dominant economic driver.",data:[["EQUITIES","Exposure"],["RATES","Driver"],["FX","Driver"]],insight:"Look through the names and identify the underlying drivers: rates, growth, inflation, commodities, currency and liquidity."}
+];
+function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function pct(v){return Number.isFinite(v)?(v>=0?"+":"")+v.toFixed(2)+"%":"—";}
+function price(v){return Number.isFinite(v)?v.toLocaleString(undefined,{maximumFractionDigits:2}):"—";}
+function direction(v){return v>=0?"up":"down";}
+function marketCard(x,index){
+ const meta=marketNames[x.symbol]||[x.symbol,x.symbol],name=meta[0],asset=meta[1],dir=x.pct>=0?"higher":"lower";
+ let title,dek,mind;
+ if(x.symbol==="^VIX"){title="Volatility is "+dir;dek="The VIX is "+price(x.price)+", "+pct(x.pct)+" on the session. It tracks expected US equity volatility and is useful as a risk-sentiment gauge.";mind=x.pct>=0?"A rising volatility gauge can signal increasing demand for protection or uncertainty; the move is most useful when confirmed by equity and rates markets.":"A falling volatility gauge can indicate calmer near-term expectations, but low volatility does not remove underlying portfolio risk.";}
+ else if(x.symbol==="CL=F"){title="Oil is "+dir;dek="WTI crude is "+price(x.price)+", "+pct(x.pct)+" today. Energy prices can feed into inflation, transport costs and company margins.";mind=x.pct>=0?"Higher oil prices can matter beyond energy producers because fuel and input costs flow into inflation expectations and margins.":"Lower oil can ease input-cost pressure, although the impact differs across producers, consumers and energy-intensive businesses.";}
+ else if(x.symbol==="GC=F"){title="Gold is "+dir;dek="Gold is "+price(x.price)+", "+pct(x.pct)+" today. The metal is often watched alongside real yields, the US dollar and risk sentiment.";mind="The useful signal is the combination: gold, real yields and the US dollar can help distinguish a rates story from a broader risk or currency move.";}
+ else if(x.symbol==="AUDUSD=X"){title="The Australian dollar is "+dir;dek="AUD/USD is "+price(x.price)+", "+pct(x.pct)+" today. The currency links Australian assets to global growth, commodities and US dollar conditions.";mind="For Australian portfolios, currency can change the return experienced on unhedged international assets even when the underlying asset price is unchanged.";}
+ else {title=name+" is "+dir;dek=name+" is "+price(x.price)+", "+pct(x.pct)+" on the session. The move provides a live read on "+asset.toLowerCase()+" conditions.";mind=x.pct>=0?"The key question is whether the move is broad-based or concentrated. Compare it with volatility, rates, commodities and news before treating it as a regime signal.":"A falling market needs context: identify whether the move is driven by rates, growth expectations, sector rotation or a specific headline.";}
+ return {tag:"LIVE / "+asset.toUpperCase(),time:"LIVE",title:title,dek:dek,data:[[name,price(x.price)],["SESSION",pct(x.pct)],["EXCHANGE",x.exchange||"Market"]],insight:mind,source:"Market Mind • Live market data",rank:Math.abs(x.pct||0)};
 }
-loadMarketData();
-setInterval(loadMarketData,30000);
-const bar=document.getElementById("progress");
-feed.addEventListener("scroll",()=>{const max=feed.scrollHeight-feed.clientHeight;bar.style.height=Math.max(8,Math.min(100,(feed.scrollTop/max)*75+25))+"%"});
+function newsCard(item){return {tag:"NEWS / MARKET INTELLIGENCE",time:"NEWS",title:item.title,dek:(item.source||"Market source")+" • "+(item.pubDate?new Date(item.pubDate).toLocaleString([], {hour:"2-digit",minute:"2-digit",day:"2-digit",month:"short"}):"Latest"),data:[["SOURCE",item.source||"News"],["TYPE","Market news"],["STATUS","Latest"]],insight:"Read the headline in context: identify which asset, sector, rate or currency is directly exposed and whether the market has already reacted.",source:item.link?"Original article ↗":"Market Mind • News feed",link:item.link,rank:0};}
+function renderCards(cards){
+ feed.innerHTML=cards.map(function(c,i){return '<article class="card"><div class="topline"><div class="tag">'+esc(c.tag)+'</div><div class="timestamp">'+esc(c.time)+'</div></div><h1>'+esc(c.title)+'</h1><p class="dek">'+esc(c.dek)+'</p><div class="data">'+c.data.map(function(d){return '<div class="box"><div class="label">'+esc(d[0])+'</div><div class="value">'+esc(d[1])+'</div></div>';}).join("")+'</div><div class="insight"><small>The Mind</small><p>'+esc(c.insight)+'</p></div><div class="actions"><button class="action save" aria-label="Save">☆</button><button class="action share" aria-label="Share">↗</button>'+(c.link?'<button class="action open" aria-label="Open source">↗</button>':'<button class="action" aria-label="More">•••</button>')+'</div><div class="source"><span>'+esc(c.source)+'</span><span>'+(i+1)+' / '+cards.length+'</span></div></article>';}).join("");
+ feed.querySelectorAll(".save").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();b.textContent=b.textContent==="☆"?"★":"☆";});});
+ feed.querySelectorAll(".share").forEach(function(b,i){b.addEventListener("click",function(e){e.stopPropagation();var c=cards[i];if(navigator.share)navigator.share({title:c.title,text:c.dek,url:c.link||location.href});});});
+ feed.querySelectorAll(".open").forEach(function(b,i){b.addEventListener("click",function(e){e.stopPropagation();if(cards[i].link)window.open(cards[i].link,"_blank","noopener,noreferrer");});});
+ feed.scrollTop=0;
+}
+function setHealth(text,ok){
+ var el=document.getElementById("status");
+ if(!el){el=document.createElement("div");el.id="status";el.style.cssText="position:absolute;top:70px;left:18px;z-index:6;font-size:9px;letter-spacing:.7px;text-transform:uppercase;padding:5px 8px;border:1px solid var(--line);background:#081018;color:var(--muted)";document.querySelector(".app").appendChild(el);}
+ el.textContent=(ok?"● LIVE ":"○ ")+text;el.style.color=ok?"var(--up)":"var(--down)";
+}
+async function loadLiveFeed(){
+ try{
+  var responses=await Promise.all([fetch("/api/market?symbols=%5EAXJO,%5EGSPC,%5EVIX,CL=F,GC=F,AUDUSD=X"),fetch("/api/news?q=ASX%20Australia%20markets%20OR%20US%20stocks%20OR%20RBA%20OR%20oil")]);
+  if(!responses[0].ok)throw new Error("market endpoint "+responses[0].status);
+  var market=await responses[0].json(),live=(market.data||[]).filter(function(x){return x.ok&&Number.isFinite(x.pct);}).map(marketCard);
+  var news=[];
+  if(responses[1].ok){var j=await responses[1].json();news=(j.items||[]).slice(0,3).map(newsCard);}
+  live.sort(function(a,b){return b.rank-a.rank;});
+  var cards=live.slice(0,4).concat(news);
+  renderCards(cards.length?cards:fallbackCards);
+  setHealth("LIVE • "+live.length+" markets • "+news.length+" headlines",true);
+ }catch(err){console.warn("Live feed unavailable",err);renderCards(fallbackCards);setHealth("Demo mode • API unavailable",false);}
+}
+loadLiveFeed();
+setInterval(loadLiveFeed,60000);
+feed.addEventListener("scroll",function(){var max=feed.scrollHeight-feed.clientHeight;document.getElementById("progress").style.height=Math.max(8,Math.min(100,(feed.scrollTop/max)*75+25))+"%";});
 </script>
 </body>
 </html>

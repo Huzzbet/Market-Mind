@@ -68,7 +68,7 @@ async function loadLiveFeed(){
  try{
   var responses=await Promise.all([fetch("/api/market?symbols=%5EAXJO,%5EGSPC,%5EVIX,CL=F,GC=F,AUDUSD=X"),fetch("/api/news?q=ASX%20Australia%20markets%20OR%20US%20stocks%20OR%20RBA%20OR%20oil")]);
   if(!responses[0].ok)throw new Error("market endpoint "+responses[0].status);
-  var market=await responses[0].json(),live=(market.data||[]).filter(function(x){return x.ok&&Number.isFinite(x.pct);}).map(marketCard);
+  var market=await responses[0].json(); var map=Object.fromEntries((market.data||[]).map(function(x){return [x.symbol,x];})); ["^AXJO","^GSPC","^VIX"].forEach(function(sym,i){var el=document.getElementById(["asx","spx","vix"][i]),x=map[sym];if(el){el.textContent=x&&x.ok?pct(x.pct):"—";el.className=x&&x.ok?direction(x.pct):"";}}); var live=(market.data||[]).filter(function(x){return x.ok&&Number.isFinite(x.pct);}).map(marketCard);
   var news=[];
   if(responses[1].ok){var j=await responses[1].json();news=(j.items||[]).slice(0,3).map(newsCard);}
   live.sort(function(a,b){return b.rank-a.rank;});

@@ -1,7 +1,7 @@
 export async function onRequestGet({ request }) {
   const url = new URL(request.url);
-  const symbols = (url.searchParams.get("symbols") || "^AXJO,^GSPC,^VIX,CL=F,GC=F,AUDUSD=X,^TNX")
-    .split(",").map(s => s.trim()).filter(Boolean).slice(0, 12);
+  const symbols = (url.searchParams.get("symbols") || "^AXJO,^GSPC,^VIX,CL=F,GC=F,AUDUSD=X,^TNX,BHP.AX,CBA.AX,RIO.AX,FMG.AX,WES.AX,CSL.AX,NAB.AX,WBC.AX,ANZ.AX,MQG.AX,TLS.AX,GMG.AX")
+    .split(",").map(s => s.trim()).filter(Boolean).slice(0, 30);
 
   const results = await Promise.all(symbols.map(async symbol => {
     try {

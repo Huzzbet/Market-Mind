@@ -32,7 +32,7 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
 </div>
 <script>
 const feed=document.getElementById("feed");
-const marketNames={"^AXJO":["ASX 200","Australian equities"],"^GSPC":["S&P 500","US equities"],"^VIX":["VIX","US volatility"],"CL=F":["WTI Crude","Oil"],"GC=F":["Gold","Precious metals"],"AUDUSD=X":["AUD/USD","Australian dollar"]};
+const marketNames={"^AXJO":["ASX 200","Australian equities"],"^GSPC":["S&P 500","US equities"],"^VIX":["VIX","US volatility"],"CL=F":["WTI Crude","Oil"],"GC=F":["Gold","Precious metals"],"AUDUSD=X":["AUD/USD","Australian dollar"],"^TNX":["US 10Y","Rates"]};
 const fallbackCards=[
 {tag:"MACRO / RATES",time:"DEMO",title:"Why bond yields matter",dek:"A move in government yields can reprice almost every asset class. The important question is not simply where yields are — it is what changed to make them move.",data:[["10Y UST","Yield"],["RBA","Policy"],["ASSET CLASS","Rates"]],insight:"Higher discount rates generally matter most for assets whose value depends heavily on cash flows far into the future."},
 {tag:"PORTFOLIO / RISK",time:"DEMO",title:"Ten stocks don't guarantee diversification",dek:"A portfolio can contain many securities and still be exposed to one dominant economic driver.",data:[["EQUITIES","Exposure"],["RATES","Driver"],["FX","Driver"]],insight:"Look through the names and identify the underlying drivers: rates, growth, inflation, commodities, currency and liquidity."}
@@ -45,8 +45,21 @@ function scoreMarket(x,all){
  var move=Math.abs(x.pct||0),score=Math.min(60,move*12);
  if(x.symbol==="^VIX") score+=Math.min(20,move*8);
  if(["^AXJO","^GSPC"].indexOf(x.symbol)>=0 && all.some(function(y){return y.symbol==="^VIX"&&y.ok&&y.pct>1;})) score+=10;
- if(["CL=F","GC=F","AUDUSD=X"].indexOf(x.symbol)>=0) score+=5;
+ if(["CL=F","GC=F","AUDUSD=X","^TNX"].indexOf(x.symbol)>=0) score+=5;
  return Math.min(100,Math.round(score));
+}
+function crossAssetSignals(all){
+ var get=function(s){return all.find(function(x){return x.symbol===s&&x.ok&&Number.isFinite(x.pct);});};
+ var oil=get("CL=F"),aud=get("AUDUSD=X"),eq=get("^GSPC"),vix=get("^VIX"),rates=get("^TNX"),gold=get("GC=F");
+ var signals=[];
+ if(oil&&aud&&oil.pct>0.8&&aud.pct< -0.4) signals.push({score:88,title:"Oil higher while the Australian dollar falls",body:"Energy is moving higher while AUD/USD is moving lower. That combination can point to a broader risk or macro repricing rather than a simple commodity move."});
+ if(eq&&vix&&eq.pct< -0.7&&vix.pct>2) signals.push({score:94,title:"Equities lower as volatility rises",body:"US equities are falling while the VIX is rising. The combination is a stronger risk signal than either move viewed alone."});
+ if(rates&&eq&&rates.pct>0.8&&eq.pct< -0.5) signals.push({score:86,title:"Yields higher as equities weaken",body:"Treasury yields are moving higher while equities are falling. Rates may be an important part of the market repricing, although the cause requires news context."});
+ if(gold&&rates&&gold.pct>0.8&&rates.pct>0.8) signals.push({score:72,title:"Gold and yields are rising together",body:"Gold and Treasury yields are both moving higher. That is worth watching because the usual relationship can be complicated by inflation, currency and safe-haven flows."});
+ return signals.sort(function(a,b){return b.score-a.score;});
+}
+function crossAssetCard(signal){
+ return {tag:"CROSS-ASSET / SIGNAL",time:"SIGNAL • "+signal.score+"/100",title:signal.title,dek:signal.body,data:[["IMPORTANCE",signal.score+"/100"],["SIGNAL","Cross-asset"],["STATUS","Detected"]],insight:"Market Mind detected multiple related moves occurring together. Treat this as a signal for investigation, not a standalone explanation.",source:"Market Mind • Derived signal",rank:signal.score};
 }
 function marketCard(x,index,all){
  const meta=marketNames[x.symbol]||[x.symbol,x.symbol],name=meta[0],asset=meta[1],dir=x.pct>=0?"higher":"lower";
@@ -74,16 +87,16 @@ function setHealth(text,ok){
 }
 async function loadLiveFeed(){
  try{
-  var responses=await Promise.all([fetch("/api/market?symbols=%5EAXJO,%5EGSPC,%5EVIX,CL=F,GC=F,AUDUSD=X"),fetch("/api/news?q=ASX%20Australia%20markets%20OR%20US%20stocks%20OR%20RBA%20OR%20oil")]);
+  var responses=await Promise.all([fetch("/api/market?symbols=%5EAXJO,%5EGSPC,%5EVIX,CL=F,GC=F,AUDUSD=X,%5ETNX"),fetch("/api/news?q=ASX%20Australia%20markets%20OR%20US%20stocks%20OR%20RBA%20OR%20oil")]);
   if(!responses[0].ok)throw new Error("market endpoint "+responses[0].status);
-  var market=await responses[0].json(); var map=Object.fromEntries((market.data||[]).map(function(x){return [x.symbol,x];})); ["^AXJO","^GSPC","^VIX"].forEach(function(sym,i){var el=document.getElementById(["asx","spx","vix"][i]),x=map[sym];if(el){el.textContent=x&&x.ok?pct(x.pct):"—";el.className=x&&x.ok?direction(x.pct):"";}}); var raw=(market.data||[]).filter(function(x){return x.ok&&Number.isFinite(x.pct);}); var live=raw.map(function(x,i){return marketCard(x,i,raw);});
+  var market=await responses[0].json(); var map=Object.fromEntries((market.data||[]).map(function(x){return [x.symbol,x];})); ["^AXJO","^GSPC","^VIX"].forEach(function(sym,i){var el=document.getElementById(["asx","spx","vix"][i]),x=map[sym];if(el){el.textContent=x&&x.ok?pct(x.pct):"—";el.className=x&&x.ok?direction(x.pct):"";}}); var raw=(market.data||[]).filter(function(x){return x.ok&&Number.isFinite(x.pct);}); var live=raw.map(function(x,i){return marketCard(x,i,raw);}); var signals=crossAssetSignals(raw); var signalCards=signals.map(crossAssetCard);
   var news=[];
   if(responses[1].ok){var j=await responses[1].json();news=(j.items||[]).slice(0,3).map(newsCard);}
   live.sort(function(a,b){return b.rank-a.rank;});
-  var cards=live.slice(0,4).concat(news);
+  var cards=signalCards.concat(live.slice(0,4)).concat(news);
   if(cards.length) cards[0].tag="TOP SIGNAL / "+cards[0].tag.replace("LIVE / ","");
   renderCards(cards.length?cards:fallbackCards);
-  setHealth("LIVE • "+live.length+" markets • "+news.length+" headlines",true);
+  setHealth("LIVE • "+live.length+" markets • "+signals.length+" signals • "+news.length+" headlines",true);
  }catch(err){console.warn("Live feed unavailable",err);renderCards(fallbackCards);setHealth("Demo mode • API unavailable",false);}
 }
 loadLiveFeed();

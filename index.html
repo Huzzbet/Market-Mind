@@ -41,7 +41,14 @@ function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){retur
 function pct(v){return Number.isFinite(v)?(v>=0?"+":"")+v.toFixed(2)+"%":"—";}
 function price(v){return Number.isFinite(v)?v.toLocaleString(undefined,{maximumFractionDigits:2}):"—";}
 function direction(v){return v>=0?"up":"down";}
-function marketCard(x,index){
+function scoreMarket(x,all){
+ var move=Math.abs(x.pct||0),score=Math.min(60,move*12);
+ if(x.symbol==="^VIX") score+=Math.min(20,move*8);
+ if(["^AXJO","^GSPC"].indexOf(x.symbol)>=0 && all.some(function(y){return y.symbol==="^VIX"&&y.ok&&y.pct>1;})) score+=10;
+ if(["CL=F","GC=F","AUDUSD=X"].indexOf(x.symbol)>=0) score+=5;
+ return Math.min(100,Math.round(score));
+}
+function marketCard(x,index,all){
  const meta=marketNames[x.symbol]||[x.symbol,x.symbol],name=meta[0],asset=meta[1],dir=x.pct>=0?"higher":"lower";
  let title,dek,mind;
  if(x.symbol==="^VIX"){title="Volatility is "+dir;dek="The VIX is "+price(x.price)+", "+pct(x.pct)+" on the session. It tracks expected US equity volatility and is useful as a risk-sentiment gauge.";mind=x.pct>=0?"A rising volatility gauge can signal increasing demand for protection or uncertainty; the move is most useful when confirmed by equity and rates markets.":"A falling volatility gauge can indicate calmer near-term expectations, but low volatility does not remove underlying portfolio risk.";}
@@ -49,7 +56,8 @@ function marketCard(x,index){
  else if(x.symbol==="GC=F"){title="Gold is "+dir;dek="Gold is "+price(x.price)+", "+pct(x.pct)+" today. The metal is often watched alongside real yields, the US dollar and risk sentiment.";mind="The useful signal is the combination: gold, real yields and the US dollar can help distinguish a rates story from a broader risk or currency move.";}
  else if(x.symbol==="AUDUSD=X"){title="The Australian dollar is "+dir;dek="AUD/USD is "+price(x.price)+", "+pct(x.pct)+" today. The currency links Australian assets to global growth, commodities and US dollar conditions.";mind="For Australian portfolios, currency can change the return experienced on unhedged international assets even when the underlying asset price is unchanged.";}
  else {title=name+" is "+dir;dek=name+" is "+price(x.price)+", "+pct(x.pct)+" on the session. The move provides a live read on "+asset.toLowerCase()+" conditions.";mind=x.pct>=0?"The key question is whether the move is broad-based or concentrated. Compare it with volatility, rates, commodities and news before treating it as a regime signal.":"A falling market needs context: identify whether the move is driven by rates, growth expectations, sector rotation or a specific headline.";}
- return {tag:"LIVE / "+asset.toUpperCase(),time:"LIVE",title:title,dek:dek,data:[[name,price(x.price)],["SESSION",pct(x.pct)],["EXCHANGE",x.exchange||"Market"]],insight:mind,source:"Market Mind • Live market data",rank:Math.abs(x.pct||0)};
+ var score=scoreMarket(x,all);
+return {tag:"LIVE / "+asset.toUpperCase(),time:"LIVE • "+score+"/100",title:title,dek:dek,data:[[name,price(x.price)],["SESSION",pct(x.pct)],["IMPORTANCE",score+"/100"]],insight:mind,source:"Market Mind • Live market data",rank:score};
 }
 function newsCard(item){return {tag:"NEWS / MARKET INTELLIGENCE",time:"NEWS",title:item.title,dek:(item.source||"Market source")+" • "+(item.pubDate?new Date(item.pubDate).toLocaleString([], {hour:"2-digit",minute:"2-digit",day:"2-digit",month:"short"}):"Latest"),data:[["SOURCE",item.source||"News"],["TYPE","Market news"],["STATUS","Latest"]],insight:"Read the headline in context: identify which asset, sector, rate or currency is directly exposed and whether the market has already reacted.",source:item.link?"Original article ↗":"Market Mind • News feed",link:item.link,rank:0};}
 function renderCards(cards){
@@ -68,11 +76,12 @@ async function loadLiveFeed(){
  try{
   var responses=await Promise.all([fetch("/api/market?symbols=%5EAXJO,%5EGSPC,%5EVIX,CL=F,GC=F,AUDUSD=X"),fetch("/api/news?q=ASX%20Australia%20markets%20OR%20US%20stocks%20OR%20RBA%20OR%20oil")]);
   if(!responses[0].ok)throw new Error("market endpoint "+responses[0].status);
-  var market=await responses[0].json(); var map=Object.fromEntries((market.data||[]).map(function(x){return [x.symbol,x];})); ["^AXJO","^GSPC","^VIX"].forEach(function(sym,i){var el=document.getElementById(["asx","spx","vix"][i]),x=map[sym];if(el){el.textContent=x&&x.ok?pct(x.pct):"—";el.className=x&&x.ok?direction(x.pct):"";}}); var live=(market.data||[]).filter(function(x){return x.ok&&Number.isFinite(x.pct);}).map(marketCard);
+  var market=await responses[0].json(); var map=Object.fromEntries((market.data||[]).map(function(x){return [x.symbol,x];})); ["^AXJO","^GSPC","^VIX"].forEach(function(sym,i){var el=document.getElementById(["asx","spx","vix"][i]),x=map[sym];if(el){el.textContent=x&&x.ok?pct(x.pct):"—";el.className=x&&x.ok?direction(x.pct):"";}}); var raw=(market.data||[]).filter(function(x){return x.ok&&Number.isFinite(x.pct);}); var live=raw.map(function(x,i){return marketCard(x,i,raw);});
   var news=[];
   if(responses[1].ok){var j=await responses[1].json();news=(j.items||[]).slice(0,3).map(newsCard);}
   live.sort(function(a,b){return b.rank-a.rank;});
   var cards=live.slice(0,4).concat(news);
+  if(cards.length) cards[0].tag="TOP SIGNAL / "+cards[0].tag.replace("LIVE / ","");
   renderCards(cards.length?cards:fallbackCards);
   setHealth("LIVE • "+live.length+" markets • "+news.length+" headlines",true);
  }catch(err){console.warn("Live feed unavailable",err);renderCards(fallbackCards);setHealth("Demo mode • API unavailable",false);}

@@ -25,7 +25,7 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
 </head>
 <body>
 <div class="app">
-<header><div class="brand"><div class="mark">M</div><div class="logo">Market<span>Mind</span></div></div><div class="marketbar"><div class="ticker">ASX 200 <b>—</b></div><div class="ticker">S&P 500 <b>—</b></div><div class="ticker">VIX <b>—</b></div></div></header>
+<header><div class="brand"><div class="mark">M</div><div class="logo">Market<span>Mind</span></div></div><div class="marketbar"><div class="ticker">ASX 200 <b id="asx">—</b></div><div class="ticker">S&P 500 <b id="spx">—</b></div><div class="ticker">VIX <b id="vix">—</b></div></div></header>
 <main class="feed" id="feed"></main>
 <div class="progress"><i id="progress"></i></div>
 <nav><div class="navitem active"><b>◉</b>Feed</div><div class="navitem"><b>⌁</b>Markets</div><div class="navitem"><b>☆</b>Watchlist</div><div class="navitem"><b>≡</b>More</div></nav>
@@ -39,6 +39,24 @@ const cards=[
 ];
 const feed=document.getElementById("feed");
 feed.innerHTML=cards.map((c,i)=>`<article class="card"><div class="topline"><div class="tag">${c.tag}</div><div class="timestamp">${c.time}</div></div><h1>${c.title}</h1><p class="dek">${c.dek}</p><div class="data">${c.data.map((d,j)=>`<div class="box"><div class="label">${d[0]}</div><div class="value">${d[1]} <span class="change ${j===0?"up":""}">${c.changes[j]}</span></div></div>`).join("")}</div><div class="insight"><small>The Mind</small><p>${c.insight}</p></div><div class="actions"><button class="action" aria-label="Save" onclick="this.textContent=this.textContent==='☆'?'★':'☆'">☆</button><button class="action" aria-label="Share" onclick="navigator.share?navigator.share({title:'Market Mind',text:'${c.title}'}):null">↗</button><button class="action" aria-label="More">•••</button></div><div class="source"><span>${c.source}</span><span>${i+1} / ${cards.length}</span></div></article>`).join("");
+async function loadMarketData(){
+  try{
+    const r=await fetch("/api/market?symbols=%5EAXJO,%5EGSPC,%5EVIX");
+    if(!r.ok) throw new Error("market api");
+    const j=await r.json();
+    const map=Object.fromEntries(j.data.map(x=>[x.symbol,x]));
+    const render=(id,key)=>{
+      const x=map[key]; const el=document.getElementById(id);
+      if(!x||!x.ok||!Number.isFinite(x.pct)){el.textContent="—";return;}
+      el.textContent=(x.pct>=0?"+":"")+x.pct.toFixed(2)+"%";
+      el.className=x.pct>=0?"up":"down";
+    };
+    render("asx","^AXJO"); render("spx","^GSPC"); render("vix","^VIX");
+    document.getElementById("status")?.remove();
+  }catch(e){ console.warn("Market data unavailable; demo cards remain active.",e); }
+}
+loadMarketData();
+setInterval(loadMarketData,30000);
 const bar=document.getElementById("progress");
 feed.addEventListener("scroll",()=>{const max=feed.scrollHeight-feed.clientHeight;bar.style.height=Math.max(8,Math.min(100,(feed.scrollTop/max)*75+25))+"%"});
 </script>

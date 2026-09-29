@@ -2,42 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Market Mind</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Market Mind — Market Intelligence</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;background:#07111f;color:#f5f7fb}
-.app{min-height:100vh;max-width:720px;margin:auto;display:flex;flex-direction:column}
-header{padding:18px 18px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1b2a3d}
-.logo{font-size:24px;font-weight:800;letter-spacing:-.5px}.logo span{opacity:.55}
-.status{font-size:12px;color:#8fa3bb}
-.feed{height:calc(100vh - 122px);overflow-y:auto;scroll-snap-type:y mandatory}
-.card{min-height:100%;padding:28px 22px 36px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center}
-.tag{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:#73b5ff;font-weight:800;margin-bottom:14px}
-h1{font-size:clamp(34px,8vw,58px);line-height:.98;letter-spacing:-2px;margin:0 0 18px}
-.summary{font-size:18px;line-height:1.5;color:#c5d0dd;max-width:620px}
-.metric{margin:26px 0;padding:18px;border:1px solid #26384e;border-radius:16px;background:#0d1a2b}
-.metric strong{font-size:32px;display:block}.metric small{color:#8fa3bb}
-.source{margin-top:auto;padding-top:28px;font-size:12px;color:#73869e}
-nav{height:64px;border-top:1px solid #1b2a3d;display:flex;align-items:center;justify-content:space-around;color:#8fa3bb;font-size:12px}
-nav b{color:#fff}.hint{text-align:center;font-size:11px;color:#61758d;margin-top:4px}
+:root{--bg:#05080d;--panel:#0a0f16;--line:#1b2531;--muted:#7f8b99;--text:#f3f6f8;--accent:#ffb000;--up:#26d07c;--down:#ff5b67}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{overflow:hidden}.app{height:100%;display:flex;flex-direction:column;background:radial-gradient(circle at 50% 10%,#111923 0,#05080d 48%)}
+header{height:64px;flex:0 0 64px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 18px;z-index:3;background:rgba(5,8,13,.92);backdrop-filter:blur(16px)}
+.brand{display:flex;align-items:center;gap:10px}.mark{width:29px;height:29px;border:2px solid var(--accent);display:grid;place-items:center;font-size:12px;font-weight:900;color:var(--accent);transform:skew(-8deg)}.logo{font-size:20px;font-weight:850;letter-spacing:-.7px}.logo span{color:var(--muted);font-weight:500}
+.marketbar{display:flex;gap:14px;align-items:center;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}.ticker b{color:var(--text);font-size:11px}.up{color:var(--up)!important}.down{color:var(--down)!important}
+.feed{flex:1;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}.card{position:relative;min-height:100%;scroll-snap-align:start;padding:28px 22px 42px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.card:after{content:"";position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(transparent,rgba(0,0,0,.55));pointer-events:none}
+.topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;position:relative;z-index:1}.tag{font-size:10px;font-weight:850;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase}.timestamp{font-size:10px;color:var(--muted)}
+h1{font-size:clamp(36px,8vw,68px);line-height:.94;letter-spacing:-3px;max-width:850px;margin:0 0 20px;position:relative;z-index:1}.dek{font-size:17px;line-height:1.48;color:#b7c0ca;max-width:690px;margin:0;position:relative;z-index:1}
+.data{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:28px 0;max-width:620px;position:relative;z-index:1}.box{background:rgba(10,15,22,.88);border:1px solid var(--line);padding:13px 14px}.label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}.value{font-size:21px;font-weight:750;margin-top:4px}.change{font-size:11px;margin-left:5px}
+.insight{border-left:2px solid var(--accent);padding:10px 0 10px 14px;max-width:680px;position:relative;z-index:1}.insight small{display:block;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px}.insight p{margin:0;font-size:14px;line-height:1.45;color:#d5dbe2}
+.source{position:absolute;bottom:18px;left:22px;right:22px;display:flex;justify-content:space-between;font-size:9px;color:#667382;z-index:2}.actions{position:absolute;right:14px;bottom:55px;display:flex;flex-direction:column;gap:10px;z-index:3}.action{width:39px;height:39px;border:1px solid #293542;background:rgba(8,12,18,.8);color:#b8c2cc;border-radius:50%;display:grid;place-items:center;font-size:15px}.action:hover{border-color:var(--accent);color:var(--accent)}
+.progress{position:absolute;right:7px;top:82px;bottom:82px;width:2px;background:#18212c;z-index:4}.progress i{display:block;width:100%;background:var(--accent);height:25%}
+nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center;background:rgba(5,8,13,.96);z-index:5}.navitem{text-align:center;color:#647181;font-size:9px;text-transform:uppercase;letter-spacing:.8px}.navitem b{display:block;color:#f3f6f8;font-size:16px;margin-bottom:2px}.navitem.active{color:var(--accent)}
+@media(min-width:800px){.app{max-width:1000px;margin:auto;border-left:1px solid #111923;border-right:1px solid #111923}.card{padding-left:58px;padding-right:58px}.source{left:58px;right:58px}}
 </style>
 </head>
 <body>
 <div class="app">
-<header><div class="logo">Market<span>Mind</span></div><div class="status" id="status">MVP • demo data</div></header>
+<header><div class="brand"><div class="mark">M</div><div class="logo">Market<span>Mind</span></div></div><div class="marketbar"><div class="ticker">ASX 200 <b>—</b></div><div class="ticker">S&P 500 <b>—</b></div><div class="ticker">VIX <b>—</b></div></div></header>
 <main class="feed" id="feed"></main>
-<div class="hint">Swipe up for the next idea</div>
-<nav><b>Feed</b><span>Markets</span><span>Watchlist</span><span>Profile</span></nav>
+<div class="progress"><i id="progress"></i></div>
+<nav><div class="navitem active"><b>◉</b>Feed</div><div class="navitem"><b>⌁</b>Markets</div><div class="navitem"><b>☆</b>Watchlist</div><div class="navitem"><b>≡</b>More</div></nav>
 </div>
 <script>
 const cards=[
- {tag:"Macro",title:"Why bond yields matter",summary:"When government bond yields rise, the discount rate used to value future cash flows rises too. That can pressure long-duration assets such as growth equities.",metric:"10Y",value:"Yield-sensitive",source:"Market Mind • Educational"},
- {tag:"Equities",title:"A stock can rise while the market falls",summary:"Relative performance matters. A company can outperform its index even when its share price declines, which is why portfolio analysis should separate absolute and relative returns.",metric:"Think in",value:"Relative returns",source:"Market Mind • Educational"},
- {tag:"Commodities",title:"Oil moves more than petrol",summary:"A jump in crude can affect inflation expectations, transport costs, company margins and central-bank policy expectations—not just the price at the pump.",metric:"Oil",value:"Macro signal",source:"Market Mind • Educational"},
- {tag:"Portfolio",title:"Diversification is about drivers",summary:"Owning ten investments does not necessarily mean you are diversified. If they all depend on the same economic driver, the portfolio can still behave like one trade.",metric:"Key idea",value:"Different drivers",source:"Market Mind • Educational"}
+{tag:"MACRO / RATES",time:"2 MIN AGO",title:"Why bond yields matter",dek:"A move in government yields can reprice almost every asset class. The important question is not simply where yields are — it is what changed to make them move.",data:[["10Y UST","Yield"],["RBA","Policy"],["ASSET CLASS","Rates"]],changes:["Macro","Signal","Cross-asset"],insight:"Higher discount rates generally matter most for assets whose value depends heavily on cash flows far into the future.",source:"Market Mind Research • Educational"},
+{tag:"EQUITIES / RELATIVE",time:"6 MIN AGO",title:"A stock can rise while the market falls",dek:"Absolute return and relative performance answer different questions. Professional investors watch both.",data:[["ASX 200","Benchmark"],["BETA","Risk"],["ALPHA","Relative"]],changes:["Index","Exposure","Return"],insight:"If an investment falls 2% while its benchmark falls 6%, it has outperformed on a relative basis — even though the investor lost money.",source:"Market Mind Research • Educational"},
+{tag:"COMMODITIES / ENERGY",time:"11 MIN AGO",title:"Oil is a macro signal",dek:"A sharp move in crude can travel through inflation, transport costs, company margins and central-bank expectations.",data:[["BRENT","Energy"],["INFLATION","Second-order"],["MARGINS","Company"]],changes:["Input","Prices","Earnings"],insight:"The useful question is not just 'is oil rising?' but 'which businesses gain pricing power and which absorb the higher input cost?'.",source:"Market Mind Research • Educational"},
+{tag:"PORTFOLIO / RISK",time:"18 MIN AGO",title:"Ten stocks don't guarantee diversification",dek:"A portfolio can contain many securities and still be exposed to one dominant economic driver.",data:[["EQUITIES","Exposure"],["RATES","Driver"],["FX","Driver"]],changes:["Risk","Factor","Correlation"],insight:"Look through the names and identify the underlying drivers: rates, growth, inflation, commodities, currency and liquidity.",source:"Market Mind Research • Educational"}
 ];
 const feed=document.getElementById("feed");
-feed.innerHTML=cards.map(c=>`<article class="card"><div class="tag">${c.tag}</div><h1>${c.title}</h1><p class="summary">${c.summary}</p><div class="metric"><small>${c.metric}</small><strong>${c.value}</strong></div><div class="source">${c.source}</div></article>`).join("");
+feed.innerHTML=cards.map((c,i)=>`<article class="card"><div class="topline"><div class="tag">${c.tag}</div><div class="timestamp">${c.time}</div></div><h1>${c.title}</h1><p class="dek">${c.dek}</p><div class="data">${c.data.map((d,j)=>`<div class="box"><div class="label">${d[0]}</div><div class="value">${d[1]} <span class="change ${j===0?"up":""}">${c.changes[j]}</span></div></div>`).join("")}</div><div class="insight"><small>The Mind</small><p>${c.insight}</p></div><div class="actions"><button class="action" aria-label="Save" onclick="this.textContent=this.textContent==='☆'?'★':'☆'">☆</button><button class="action" aria-label="Share" onclick="navigator.share?navigator.share({title:'Market Mind',text:'${c.title}'}):null">↗</button><button class="action" aria-label="More">•••</button></div><div class="source"><span>${c.source}</span><span>${i+1} / ${cards.length}</span></div></article>`).join("");
+const bar=document.getElementById("progress");
+feed.addEventListener("scroll",()=>{const max=feed.scrollHeight-feed.clientHeight;bar.style.height=Math.max(8,Math.min(100,(feed.scrollTop/max)*75+25))+"%"});
 </script>
 </body>
 </html>

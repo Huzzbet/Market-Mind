@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Market Mind Intelligence Card",
+  "type":"object",
+  "required":["tag","title","confirmed","expectation","implication","watch"],
+  "properties":{
+    "tag":{"type":"string"},
+    "title":{"type":"string"},
+    "confirmed":{"type":"string"},
+    "expectation":{"type":"string"},
+    "implication":{"type":"string"},
+    "watch":{"type":"string"},
+    "score":{"type":"number","minimum":0,"maximum":100}
+  }
+}

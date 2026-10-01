@@ -105,16 +105,16 @@ function setHealth(text,ok){
 }
 async function loadLiveFeed(){
  try{
-  var responses=await Promise.all([fetch("/api/market"),fetch("/api/news?q=ASX%20Australia%20markets%20OR%20US%20stocks%20OR%20RBA%20OR%20oil")]);
+  var responses=await Promise.all([fetch("/api/market"),fetch("/api/news?q=ASX%20Australia%20markets%20OR%20US%20stocks%20OR%20RBA%20OR%20oil"),fetch("/api/mind")]);
   if(!responses[0].ok)throw new Error("market endpoint "+responses[0].status);
   var market=await responses[0].json(); var map=Object.fromEntries((market.data||[]).map(function(x){return [x.symbol,x];})); ["^AXJO","^GSPC","^VIX"].forEach(function(sym,i){var el=document.getElementById(["asx","spx","vix"][i]),x=map[sym];if(el){el.textContent=x&&x.ok?pct(x.pct):"—";el.className=x&&x.ok?direction(x.pct):"";}}); var raw=(market.data||[]).filter(function(x){return x.ok&&Number.isFinite(x.pct);}); var macro=raw.filter(function(x){return !x.symbol.endsWith(".AX");}); var stocks=raw.filter(function(x){return x.symbol.endsWith(".AX");}); var live=macro.map(function(x,i){return marketCard(x,i,macro);}); var stockRows=stocks.map(function(x){return stockCard(x,stocks);}); var signals=crossAssetSignals(macro); var stockSignalCards=stockSignals(stocks).map(crossAssetCard); var signalCards=signals.map(crossAssetCard).concat(stockSignalCards);
   var news=[];
   if(responses[1].ok){var j=await responses[1].json();news=(j.items||[]).slice(0,3).map(newsCard);}
   live.sort(function(a,b){return b.rank-a.rank;});
-  stockRows.sort(function(a,b){return b.rank-a.rank;}); var cards=signalCards.concat(live.slice(0,3)).concat(stockRows.slice(0,4)).concat(news);
+  stockRows.sort(function(a,b){return b.rank-a.rank;}); var serverSignals=[]; if(responses[2].ok){var mind=await responses[2].json();serverSignals=(mind.signals||[]).map(function(s){return {tag:"THE MIND / "+String(s.type||"signal").toUpperCase(),time:"SIGNAL • "+s.score+"/100",title:s.title,dek:s.framework?.confirmed||s.explanation,data:[["IMPORTANCE",s.score+"/100"],["STATUS","Detected"],["TYPE",s.type||"Signal"]],insight:(s.framework?.implication||s.explanation)+" Watch: "+(s.framework?.watch||"Review current news for confirmation."),source:"Market Mind • Intelligence layer",rank:s.score};});} var cards=serverSignals.concat(signalCards).concat(live.slice(0,3)).concat(stockRows.slice(0,4)).concat(news);
   if(cards.length) cards[0].tag="TOP SIGNAL / "+cards[0].tag.replace("LIVE / ","");
   renderCards(cards.length?cards:fallbackCards);
-  setHealth("LIVE • "+live.length+" markets • "+signals.length+" signals • "+news.length+" headlines",true);
+  setHealth("LIVE • "+live.length+" markets • "+(serverSignals.length+signals.length)+" signals • "+news.length+" headlines",true);
  }catch(err){console.warn("Live feed unavailable",err);renderCards(fallbackCards);setHealth("Demo mode • API unavailable",false);}
 }
 loadLiveFeed();

@@ -1,6 +1,111 @@
 {
   "version": "1.1.0",
   "updatedAt": "2026-10-07T07:48:31+11:00",
-  "tickers": {"asx200": {"value": "8,735.7", "direction": "up"}, "sp500": {"value": "7,818.93", "direction": "up"}},
-  "cards": []
+  "tickers": {
+    "asx200": {"value": "8,735.7", "direction": "up"},
+    "sp500": {"value": "7,818.93", "direction": "up"}
+  },
+  "cards": [
+    {
+      "tag": "ASX 200",
+      "time": "7 OCT",
+      "title": "ASX 200 closes higher as miners and property lead",
+      "dek": "The ASX 200 added 0.6% on Tuesday to finish at 8,735.7, led by materials and real estate.",
+      "data": [["ASX 200","+0.6%"],["Close","8,735.7"],["Leaders","Materials / Property"]],
+      "insight": "The local rally is being driven by sectors tied to commodities and capital costs, making rates and bond yields key for the next move.",
+      "source": "News.com.au",
+      "link": "https://www.news.com.au/finance/markets/australian-markets/asx200-gains-49-points-amid-mining-property-surge-dollar-reaches-23month-high/news-story/860ac38ad4a6179b5d5c3f3ef48cfa89",
+      "rank": 100
+    },
+    {
+      "tag": "US MARKETS",
+      "time": "7 OCT",
+      "title": "S&P 500 and Nasdaq hit fresh records",
+      "dek": "Wall Street extended its rally on Tuesday, with the S&P 500 and Nasdaq reaching record closing highs as yields eased.",
+      "data": [["S&P 500","7,818.93"],["Move","+0.6%"],["Nasdaq","+0.4%"]],
+      "insight": "Equities are absorbing high bond yields because earnings and AI expectations remain powerful enough to offset some valuation pressure.",
+      "source": "AP",
+      "link": "https://apnews.com/article/267ca73e15e09f7e8deb5f6076405f48",
+      "rank": 99
+    },
+    {
+      "tag": "RATES",
+      "time": "7 OCT",
+      "title": "RBA cash rate now sits at 4.60%",
+      "dek": "The RBA raised the cash rate by 25 basis points on 29 September as inflation risks remained elevated.",
+      "data": [["Cash rate","4.60%"],["Last move","+25bp"],["Next decision","3 Nov"]],
+      "insight": "Australia's higher-for-longer rate setting is a major cross-market driver for banks, households, property and equity valuations.",
+      "source": "Reserve Bank of Australia",
+      "link": "https://www.rba.gov.au/cash-rate-target-overview.html",
+      "rank": 98
+    },
+    {
+      "tag": "AI STOCKS",
+      "time": "7 OCT",
+      "title": "Marvell jumps on huge AI revenue target",
+      "dek": "Marvell surged after targeting US$70bn–US$90bn of revenue by fiscal 2031, driven heavily by custom AI chips and networking.",
+      "data": [["MRVL","+5.8%"],["2031 revenue","US$70–90bn"],["2026 revenue","US$8.2bn"]],
+      "insight": "The scale of the target shows how aggressively investors are pricing the build-out of AI infrastructure and hyperscale computing.",
+      "source": "Barron's",
+      "link": "https://www.barrons.com/articles/marvell-stock-technology-ai-chips-ba886070",
+      "rank": 97,
+      "signal": "AI infrastructure"
+    },
+    {
+      "tag": "US ENERGY",
+      "time": "7 OCT",
+      "title": "Google signs 20-year nuclear deal with Constellation",
+      "dek": "Alphabet agreed to buy 890MW of nuclear power from Constellation, sending the utility sharply higher.",
+      "data": [["CEG","~+15%"],["Power","890MW"],["Term","20 years"]],
+      "insight": "AI data centres need enormous amounts of reliable electricity, turning nuclear and grid capacity into an increasingly important investment theme.",
+      "source": "MarketWatch",
+      "link": "https://www.marketwatch.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-record-high-third-quarter-earnings-season/card/google-s-nuclear-power-deal-with-constellation-gives-s-p-500-a-jolt-to-record-high-NySimOYGpiCfrCDuVoMi",
+      "rank": 96,
+      "signal": "AI power demand"
+    },
+    {
+      "tag": "COMMODITIES",
+      "time": "7 OCT",
+      "title": "Oil retreats as supply fears ease",
+      "dek": "Brent crude moderated around the US$100 level after increased Middle East exports and a G7 emergency reserve release eased supply concerns.",
+      "data": [["Brent","~US$100"],["Driver","Supply relief"],["Inflation","Lower pressure"]],
+      "insight": "A sustained oil pullback would help ease inflation pressure and could reduce the need for further monetary tightening.",
+      "source": "Reuters",
+      "link": "https://www.reuters.com/business/wall-st-futures-rise-yields-oil-dip-2026-10-06/",
+      "rank": 95
+    },
+    {
+      "tag": "BONDS",
+      "time": "7 OCT",
+      "title": "US Treasury yields remain the key equity risk",
+      "dek": "The US 10-year yield eased to about 5.27% after recently reaching its highest level in decades, keeping bond-market stress in focus.",
+      "data": [["US 10Y","5.27%"],["Recent peak","5.35%"],["Risk","Valuations"]],
+      "insight": "Record equities and elevated yields can coexist, but another sustained rise in yields would put pressure on long-duration growth stocks.",
+      "source": "Reuters",
+      "link": "https://www.reuters.com/business/us-treasury-yields-are-screaming-good-value-says-pimco-senior-advisor-2026-10-06/",
+      "rank": 94
+    },
+    {
+      "tag": "GOLD",
+      "time": "7 OCT",
+      "title": "Gold rises as yields and dollar ease",
+      "dek": "Gold gained about 0.7% on Tuesday as lower Treasury yields and a softer US dollar supported demand for the precious metal.",
+      "data": [["Gold","US$4,168/oz"],["Move","+0.7%"],["Silver","+0.8%"]],
+      "insight": "Gold is benefiting from demand for diversification while investors remain uneasy about bond markets, fiscal risks and global geopolitics.",
+      "source": "Reuters",
+      "link": "https://www.reuters.com/world/india/gold-inches-lower-firmer-dollar-higher-yields-weigh-2026-10-06/",
+      "rank": 92
+    },
+    {
+      "tag": "ASX LISTINGS",
+      "time": "7 OCT",
+      "title": "Glencore set for Australian trading debut next week",
+      "dek": "Glencore expects to begin trading on the ASX under ticker GLC on 14 October through CHESS Depositary Interests.",
+      "data": [["Ticker","GLC"],["Start","14 Oct"],["Structure","CDI"]],
+      "insight": "The listing gives Australian investors direct access to a global mining major and adds another large resource name to the local market.",
+      "source": "Reuters",
+      "link": "https://www.reuters.com/business/retail-consumer/glencore-expects-start-asx-trading-october-14-2026-09-24/",
+      "rank": 88
+    }
+  ]
 }

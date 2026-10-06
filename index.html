@@ -14,8 +14,7 @@ header{height:64px;flex:0 0 64px;border-bottom:1px solid var(--line);display:fle
 .feed{flex:1;overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth}.card{position:relative;min-height:100%;scroll-snap-align:start;padding:28px 22px 42px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
 .card:after{content:"";position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(transparent,rgba(0,0,0,.55));pointer-events:none}
 .topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;position:relative;z-index:1}.tag{font-size:10px;font-weight:850;letter-spacing:1.5px;color:var(--accent);text-transform:uppercase}.timestamp{font-size:10px;color:var(--muted)}
-h1{font-size:clamp(36px,8vw,68px);line-height:.94;letter-spacing:-3px;max-width:850px;margin:0 0 20px;position:relative;z-index:1}.dek{font-size:17px;line-height:1.48;color:#b7c0ca;max-width:690px;margin:0;position:relative;z-index:1}
-@media(max-width:600px){header{height:64px;flex:0 0 64px;padding:0 18px}.brand{gap:10px;flex:0 0 auto;min-width:0}.mark{width:29px;height:29px;font-size:12px;flex:0 0 29px}.logo{font-size:20px;letter-spacing:-.7px;white-space:nowrap}.marketbar{flex:1;min-width:0;gap:14px;justify-content:flex-end;margin-left:8px}.marketbar .ticker{font-size:10px;letter-spacing:.8px;line-height:1;white-space:nowrap}.marketbar .ticker b{display:inline;font-size:11px;line-height:1;margin-top:0}.card{padding-left:22px;padding-right:64px}h1{font-size:clamp(34px,8vw,52px);letter-spacing:-2.4px}.dek{font-size:16px}.data{margin-top:24px}.insight{max-width:none;padding-right:4px}.mind-reveal.d3{padding-right:0}.actions{right:8px;width:42px}.action{width:39px;height:39px}.source{left:22px;right:22px;padding-right:50px}.ticker{white-space:nowrap}}
+h1{font-size:clamp(36px,8vw,68px);line-height:.94;letter-spacing:-3px;max-width:850px;margin:0 0 20px;position:relative;z-index:1}.dek{font-size:17px;line-height:1.48;color:#b7c0ca;max-width:690px;margin:0;position:relative;z-index:1}.mind-reveal.d3{padding-right:58px}.insight{max-width:calc(680px - 58px)}@media(max-width:600px){header{height:64px;flex:0 0 64px;padding:0 18px}.brand{gap:10px;flex:0 0 auto;min-width:0}.mark{width:29px;height:29px;font-size:12px;flex:0 0 29px}.logo{font-size:20px;letter-spacing:-.7px;white-space:nowrap}.marketbar{flex:1;min-width:0;gap:14px;justify-content:flex-end;margin-left:8px}.marketbar .ticker{font-size:10px;letter-spacing:.8px;line-height:1;white-space:nowrap}.marketbar .ticker b{display:inline;font-size:11px;line-height:1;margin-top:0}.card{padding-left:22px;padding-right:64px}h1{font-size:clamp(34px,8vw,52px);letter-spacing:-2.4px}.dek{font-size:16px}.data{margin-top:24px}.insight{max-width:none;padding-right:4px}.mind-reveal.d3{padding-right:0}.actions{right:8px;width:42px}.action{width:39px;height:39px}.source{left:22px;right:22px;padding-right:50px}.ticker{white-space:nowrap}}
 .data{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:28px 0;max-width:620px;position:relative;z-index:1}.box{background:rgba(10,15,22,.88);border:1px solid var(--line);padding:13px 14px}.label{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}.value{font-size:21px;font-weight:750;margin-top:4px}.change{font-size:11px;margin-left:5px}
 .insight{border-left:2px solid var(--accent);padding:10px 0 10px 14px;max-width:680px;position:relative;z-index:1}.insight small{display:block;color:var(--accent);font-size:9px;font-weight:850;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px}.insight p{margin:0;font-size:14px;line-height:1.45;color:#d5dbe2}
 .source{position:absolute;bottom:18px;left:22px;right:22px;display:flex;justify-content:space-between;font-size:9px;color:#667382;z-index:2}.actions{position:absolute;right:14px;bottom:55px;display:flex;flex-direction:column;gap:10px;z-index:3}.action{width:39px;height:39px;border:1px solid #293542;background:rgba(8,12,18,.8);color:#b8c2cc;border-radius:50%;display:grid;place-items:center;font-size:15px}.action:hover{border-color:var(--accent);color:var(--accent)}
@@ -23,8 +22,7 @@ h1{font-size:clamp(36px,8vw,68px);line-height:.94;letter-spacing:-3px;max-width:
 nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center;background:rgba(5,8,13,.96);z-index:5}.navitem{text-align:center;color:#647181;font-size:9px;text-transform:uppercase;letter-spacing:.8px}.navitem b{display:block;color:#f3f6f8;font-size:16px;margin-bottom:2px}.navitem.active{color:var(--accent)}
 @media(min-width:800px){.app{max-width:1000px;margin:auto;border-left:1px solid #111923;border-right:1px solid #111923}.card{padding-left:58px;padding-right:58px}.source{left:58px;right:58px}}
 </style>
-<style id="mind-motion">.mind-chart{height:92px;margin:22px 0 4px;max-width:680px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,176,0,.035),rgba(0,0,0,.08))}.mind-chart svg{width:100%;height:100%;display:block}.mind-line{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900;animation:drawLine 1.35s ease-out forwards}.mind-grid{stroke:#18212c;stroke-width:1}.mind-dot{fill:var(--accent);animation:pulseDot 1.6s ease-in-out infinite}.signal-pill{display:inline-flex;gap:7px;align-items:center;margin-top:12px;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#aeb8c3}.signal-pill i{width:6px;height:6px;border-radius:50%;background:var(--up);box-shadow:0 0 12px var(--up);animation:livePulse 1.5s infinite}.mind-reveal{opacity:0;transform:translateY(10px);animation:reveal .55s ease-out forwards}.mind-reveal.d1{animation-delay:.15s}.mind-reveal.d2{animation-delay:.3s}.mind-reveal.d3{animation-delay:.45s}@keyframes drawLine{to{stroke-dashoffset:0}}@keyframes reveal{to{opacity:1;transform:none}}@keyframes pulseDot{0%,100%{r:3}50%{r:5}}@keyframes livePulse{50%{opacity:.35;transform:scale(.75}}</style>
-</head>
+<style id="mind-motion">.mind-chart{height:92px;margin:22px 0 4px;max-width:680px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,176,0,.035),rgba(0,0,0,.08))}.mind-chart svg{width:100%;height:100%;display:block}.mind-line{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900;animation:drawLine 1.35s ease-out forwards}.mind-grid{stroke:#18212c;stroke-width:1}.mind-dot{fill:var(--accent);animation:pulseDot 1.6s ease-in-out infinite}.signal-pill{display:inline-flex;gap:7px;align-items:center;margin-top:12px;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#aeb8c3}.signal-pill i{width:6px;height:6px;border-radius:50%;background:var(--up);box-shadow:0 0 12px var(--up);animation:livePulse 1.5s infinite}.mind-reveal{opacity:0;transform:translateY(10px);animation:reveal .55s ease-out forwards}.mind-reveal.d1{animation-delay:.15s}.mind-reveal.d2{animation-delay:.3s}.mind-reveal.d3{animation-delay:.45s}@keyframes drawLine{to{stroke-dashoffset:0}}@keyframes reveal{to{opacity:1;transform:none}}@keyframes pulseDot{0%,100%{r:3}50%{r:5}}@keyframes livePulse{50%{opacity:.35;transform:scale(.75)}}</style></head>
 <body>
 <div class="app">
 <header><div class="brand"><div class="mark">M</div><div class="logo">Market<span>Mind</span></div></div><div class="marketbar"><div class="ticker">ASX 200 <b id="asx">—</b></div><div class="ticker">S&amp;P 500 <b id="spx">—</b></div></div></header>
@@ -35,25 +33,119 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
 <script>
 const feed=document.getElementById("feed");
 const marketNames={"^AXJO":["ASX 200","Australian equities"],"^GSPC":["S&P 500","US equities"],"^VIX":["VIX","US volatility"],"CL=F":["WTI Crude","Oil"],"GC=F":["Gold","Precious metals"],"AUDUSD=X":["AUD/USD","Australian dollar"],"^TNX":["US 10Y","Rates"],"BHP.AX":["BHP","Materials"],"CBA.AX":["CBA","Financials"],"RIO.AX":["Rio Tinto","Materials"],"FMG.AX":["Fortescue","Materials"],"WES.AX":["Wesfarmers","Consumer"],"CSL.AX":["CSL","Healthcare"],"NAB.AX":["NAB","Financials"],"WBC.AX":["Westpac","Financials"],"ANZ.AX":["ANZ","Financials"],"MQG.AX":["Macquarie","Financials"],"TLS.AX":["Telstra","Telecom"],"GMG.AX":["Goodman Group","Property"]};
-const fallbackCards=[{tag:"MARKET MIND",time:"DEMO",title:"Live intelligence unavailable",dek:"Market Mind is using its built-in fallback cards while the live intelligence layer reconnects.",data:[["STATUS","Fallback"],["SOURCE","Market Mind"],["MODE","Safe"]],insight:"The live feed will resume automatically when the server-side market intelligence endpoint is available."}];
+const fallbackCards=[
+{tag:"MACRO / RATES",time:"DEMO",title:"Why bond yields matter",dek:"A move in government yields can reprice almost every asset class. The important question is not simply where yields are — it is what changed to make them move.",data:[["10Y UST","Yield"],["RBA","Policy"],["ASSET CLASS","Rates"]],insight:"Higher discount rates generally matter most for assets whose value depends heavily on cash flows far into the future."},
+{tag:"PORTFOLIO / RISK",time:"DEMO",title:"Ten stocks don't guarantee diversification",dek:"A portfolio can contain many securities and still be exposed to one dominant economic driver.",data:[["EQUITIES","Exposure"],["RATES","Driver"],["FX","Driver"]],insight:"Look through the names and identify the underlying drivers: rates, growth, inflation, commodities, currency and liquidity."}
+];
 function esc(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
 function pct(v){return Number.isFinite(v)?(v>=0?"+":"")+v.toFixed(2)+"%":"—";}
 function price(v){return Number.isFinite(v)?v.toLocaleString(undefined,{maximumFractionDigits:2}):"—";}
-function scoreMarket(x){return Math.min(88,Math.round(45+Math.abs(x.pct||0)*15));}
-function crossAssetCard(s){return {tag:"CROSS-ASSET / SIGNAL",time:"SIGNAL • "+s.score+"/100",title:s.title,dek:s.explanation||s.body||"Related market moves detected.",data:[["IMPORTANCE",s.score+"/100"],["SIGNAL","Cross-asset"],["STATUS","Detected"]],insight:s.watch||"Market Mind detected multiple related moves together. Treat this as a signal for investigation, not a standalone explanation.",source:"Market Mind • Derived signal",rank:s.score};}
-function signalCard(s){return {tag:(s.type||"SIGNAL").replace("-"," / ").toUpperCase()+" / SIGNAL",time:"SIGNAL • "+(s.score||0)+"/100",title:s.title,dek:s.explanation||s.body||"Live market relationship detected.",data:[["IMPORTANCE",(s.score||0)+"/100"],["TYPE",s.type||"Signal"],["STATUS","Detected"]],insight:s.watch||s.framework?.implication||"Treat the signal as a prompt for investigation and confirm the underlying catalyst in current news.",source:"Market Mind • Intelligence layer",rank:s.score||0};}
+function direction(v){return v>=0?"up":"down";}
+function scoreMarket(x,all){
+ var move=Math.abs(x.pct||0),score=Math.min(60,move*12);
+ if(x.symbol==="^VIX") score+=Math.min(20,move*8);
+ if(["^AXJO","^GSPC"].indexOf(x.symbol)>=0 && all.some(function(y){return y.symbol==="^VIX"&&y.ok&&y.pct>1;})) score+=10;
+ if(["CL=F","GC=F","AUDUSD=X","^TNX"].indexOf(x.symbol)>=0) score+=5;
+ return Math.min(100,Math.round(score));
+}
+function stockSignals(all){
+ var get=function(s){return all.find(function(x){return x.symbol===s&&x.ok&&Number.isFinite(x.pct);});};
+ var groups={Materials:["BHP.AX","RIO.AX","FMG.AX"],Financials:["CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX"]};
+ var out=[];
+ Object.keys(groups).forEach(function(group){
+  var rows=groups[group].map(get).filter(Boolean);
+  if(rows.length<2)return;
+  var avg=rows.reduce(function(a,x){return a+x.pct;},0)/rows.length;
+  var breadth=rows.filter(function(x){return x.pct>0;}).length/rows.length;
+  if(Math.abs(avg)>=0.7 && (breadth===1 || breadth===0)) out.push({score:Math.min(90,Math.round(60+Math.abs(avg)*15)),title:group+" sector move is concentrated",body:group+" stocks are moving together, but the breadth is narrow. That can indicate a stock-specific driver rather than a broad sector move."});
+  if(Math.abs(avg)>=1.2 && breadth>0 && breadth<1) out.push({score:Math.min(82,Math.round(55+Math.abs(avg)*12)),title:group+" stocks are diverging",body:"The "+group.toLowerCase()+" group is showing mixed performance. Divergence can help separate company-specific news from a sector-wide move."});
+ });
+ return out.sort(function(a,b){return b.score-a.score;});
+}
+function stockCard(x,all){
+ var meta=marketNames[x.symbol]||[x.symbol,"Equity"],move=x.pct||0,score=Math.min(88,Math.round(45+Math.abs(move)*15));
+ return {tag:"STOCK / "+meta[1].toUpperCase(),time:"STOCK • "+score+"/100",title:meta[0]+" is "+(move>=0?"higher":"lower"),dek:meta[0]+" is "+price(x.price)+", "+pct(move)+" on the session. Market Mind is tracking it against its peer group and the broader market.",data:[[meta[0],price(x.price)],["SESSION",pct(move)],["IMPORTANCE",score+"/100"]],insight:"The next question is whether this move is company-specific or part of a wider sector rotation. Peer breadth provides useful context.",source:"Market Mind • Market data",rank:score,symbol:x.symbol};
+}
+function crossAssetSignals(all){
+ var get=function(s){return all.find(function(x){return x.symbol===s&&x.ok&&Number.isFinite(x.pct);});};
+ var oil=get("CL=F"),aud=get("AUDUSD=X"),eq=get("^GSPC"),vix=get("^VIX"),rates=get("^TNX"),gold=get("GC=F");
+ var signals=[];
+ if(oil&&aud&&oil.pct>0.8&&aud.pct< -0.4) signals.push({score:88,title:"Oil higher while the Australian dollar falls",body:"Energy is moving higher while AUD/USD is moving lower. That combination can point to a broader risk or macro repricing rather than a simple commodity move."});
+ if(eq&&vix&&eq.pct< -0.7&&vix.pct>2) signals.push({score:94,title:"Equities lower as volatility rises",body:"US equities are falling while the VIX is rising. The combination is a stronger risk signal than either move viewed alone."});
+ if(rates&&eq&&rates.pct>0.8&&eq.pct< -0.5) signals.push({score:86,title:"Yields higher as equities weaken",body:"Treasury yields are moving higher while equities are falling. Rates may be an important part of the market repricing, although the cause requires news context."});
+ if(gold&&rates&&gold.pct>0.8&&rates.pct>0.8) signals.push({score:72,title:"Gold and yields are rising together",body:"Gold and Treasury yields are both moving higher. That is worth watching because the usual relationship can be complicated by inflation, currency and safe-haven flows."});
+ return signals.sort(function(a,b){return b.score-a.score;});
+}
+function crossAssetCard(signal){
+ return {tag:"CROSS-ASSET / SIGNAL",time:"SIGNAL • "+signal.score+"/100",title:signal.title,dek:signal.body,data:[["IMPORTANCE",signal.score+"/100"],["SIGNAL","Cross-asset"],["STATUS","Detected"]],insight:"Market Mind detected multiple related moves occurring together. Treat this as a signal for investigation, not a standalone explanation.",source:"Market Mind • Derived signal",rank:signal.score};
+}
+function marketCard(x,index,all){
+ const meta=marketNames[x.symbol]||[x.symbol,x.symbol],name=meta[0],asset=meta[1],dir=x.pct>=0?"higher":"lower";
+ let title,dek,mind;
+ if(x.symbol==="^VIX"){title="Volatility is "+dir;dek="The VIX is "+price(x.price)+", "+pct(x.pct)+" on the session. It tracks expected US equity volatility and is useful as a risk-sentiment gauge.";mind=x.pct>=0?"A rising volatility gauge can signal increasing demand for protection or uncertainty; the move is most useful when confirmed by equity and rates markets.":"A falling volatility gauge can indicate calmer near-term expectations, but low volatility does not remove underlying portfolio risk.";}
+ else if(x.symbol==="CL=F"){title="Oil is "+dir;dek="WTI crude is "+price(x.price)+", "+pct(x.pct)+" today. Energy prices can feed into inflation, transport costs and company margins.";mind=x.pct>=0?"Higher oil prices can matter beyond energy producers because fuel and input costs flow into inflation expectations and margins.":"Lower oil can ease input-cost pressure, although the impact differs across producers, consumers and energy-intensive businesses.";}
+ else if(x.symbol==="GC=F"){title="Gold is "+dir;dek="Gold is "+price(x.price)+", "+pct(x.pct)+" today. The metal is often watched alongside real yields, the US dollar and risk sentiment.";mind="The useful signal is the combination: gold, real yields and the US dollar can help distinguish a rates story from a broader risk or currency move.";}
+ else if(x.symbol==="AUDUSD=X"){title="The Australian dollar is "+dir;dek="AUD/USD is "+price(x.price)+", "+pct(x.pct)+" today. The currency links Australian assets to global growth, commodities and US dollar conditions.";mind="For Australian portfolios, currency can change the return experienced on unhedged international assets even when the underlying asset price is unchanged.";}
+ else {title=name+" is "+dir;dek=name+" is "+price(x.price)+", "+pct(x.pct)+" on the session. The move provides a live read on "+asset.toLowerCase()+" conditions.";mind=x.pct>=0?"The key question is whether the move is broad-based or concentrated. Compare it with volatility, rates, commodities and news before treating it as a regime signal.":"A falling market needs context: identify whether the move is driven by rates, growth expectations, sector rotation or a specific headline.";}
+ var score=scoreMarket(x,all);
+return {tag:"LIVE / "+asset.toUpperCase(),time:"LIVE • "+score+"/100",title:title,dek:dek,data:[[name,price(x.price)],["SESSION",pct(x.pct)],["IMPORTANCE",score+"/100"]],insight:mind,source:"Market Mind • Live market data",rank:score,chart:true,signal:x.pct>=0?"UP":"DOWN"};
+}
 function newsCard(item){return {tag:"NEWS / MARKET INTELLIGENCE",time:"NEWS",title:item.title,dek:(item.source||"Market source")+" • "+(item.pubDate?new Date(item.pubDate).toLocaleString([], {hour:"2-digit",minute:"2-digit",day:"2-digit",month:"short"}):"Latest"),data:[["SOURCE",item.source||"News"],["TYPE","Market news"],["STATUS","Latest"]],insight:"Read the headline in context: identify which asset, sector, rate or currency is directly exposed and whether the market has already reacted.",source:item.link?"Original article ↗":"Market Mind • News feed",link:item.link,rank:0};}
 function miniChart(seed,direction){var pts=[],n=13;for(var i=0;i<n;i++){var y=45+Math.sin((i+seed)/2.2)*9+(i/(n-1))*(direction==="UP"?18:-18);pts.push([i,y]);}var d=pts.map(function(p,i){var x=18+i*(100/(n-1)),y=86-p[1];return(i?"L":"M")+x.toFixed(1)+","+y.toFixed(1);}).join(" ");var lx=93,ly=86-pts[n-1][1];return '<svg viewBox="0 0 100 86" preserveAspectRatio="none"><path class="mind-grid" d="M0 21H100M0 43H100M0 65H100"/><path class="mind-line" d="'+d+'"/><circle class="mind-dot" cx="'+lx+'" cy="'+ly+'" r="3"/></svg>';}
-function renderCards(cards){feed.innerHTML=cards.map(function(c,i){return '<article class="card"><div class="topline"><div class="tag">'+esc(c.tag)+'</div><div class="timestamp">'+esc(c.time)+'</div></div><h1>'+esc(c.title)+'</h1><p class="dek">'+esc(c.dek)+'</p><div class="data">'+(c.data||[]).slice(0,4).map(function(d){return '<div class="box"><div class="label">'+esc(d[0])+'</div><div class="value">'+esc(d[1])+'</div></div>';}).join("")+'</div><div class="mind-reveal d1 signal-pill"><i></i>LIVE MARKET SIGNAL</div>'+(c.chart?'<div class="mind-chart mind-reveal d2">'+miniChart(c.rank||50,c.signal)+'</div>':'')+'<div class="insight mind-reveal d3"><small>The Mind</small><p>'+esc(c.insight)+'</p></div><div class="actions"><button class="action save" aria-label="Save">☆</button><button class="action share" aria-label="Share">↗</button>'+(c.link?'<button class="action open" aria-label="Open source">↗</button>':'<button class="action" aria-label="More">•••</button>')+'</div><div class="source"><span>'+esc(c.source||"Market Mind")+'</span><span>'+(i+1)+' / '+cards.length+'</span></div></article>';}).join("");
-feed.querySelectorAll(".save").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();b.textContent=b.textContent==="☆"?"★":"☆";});});
-feed.querySelectorAll(".share").forEach(function(b,i){b.addEventListener("click",function(e){e.stopPropagation();var c=cards[i];if(navigator.share)navigator.share({title:c.title,text:c.dek,url:c.link||location.href});});});
-feed.querySelectorAll(".open").forEach(function(b,i){b.addEventListener("click",function(e){e.stopPropagation();if(cards[i].link)window.open(cards[i].link,"_blank","noopener,noreferrer");});});
-feed.scrollTop=0;}
-function setHealth(text,ok){var el=document.getElementById("status");if(!el){el=document.createElement("div");el.id="status";el.style.cssText="position:absolute;top:70px;left:18px;z-index:6;font-size:9px;letter-spacing:.7px;text-transform:uppercase;padding:5px 8px;border:1px solid var(--line);background:#081018;color:var(--muted)";document.querySelector(".app").appendChild(el);}el.textContent=(ok?"● LIVE ":"○ ")+text;el.style.color=ok?"var(--up)":"var(--down)";}
-function setTicker(id,item){var el=document.getElementById(id);if(!el||!item)return;el.textContent=item.value||"—";el.className=item.direction==="down"?"down":item.direction==="up"?"up":"";}
+function renderCards(cards){
+ feed.innerHTML=cards.map(function(c,i){return '<article class="card"><div class="topline"><div class="tag">'+esc(c.tag)+'</div><div class="timestamp">'+esc(c.time)+'</div></div><h1>'+esc(c.title)+'</h1><p class="dek">'+esc(c.dek)+'</p><div class="data">'+c.data.map(function(d){return '<div class="box"><div class="label">'+esc(d[0])+'</div><div class="value">'+esc(d[1])+'</div></div>';}).join("")+'</div><div class="mind-reveal d1 signal-pill"><i></i>LIVE MARKET SIGNAL</div>'+(c.chart?'<div class="mind-chart mind-reveal d2">'+miniChart(c.rank||50,c.signal)+'</div>':'')+'<div class="insight mind-reveal d3"><small>The Mind</small><p>'+esc(c.insight)+'</p></div><div class="actions"><button class="action save" aria-label="Save">☆</button><button class="action share" aria-label="Share">↗</button>'+(c.link?'<button class="action open" aria-label="Open source">↗</button>':'<button class="action" aria-label="More">•••</button>')+'</div><div class="source"><span>'+esc(c.source)+'</span><span>'+(i+1)+' / '+cards.length+'</span></div></article>';}).join("");
+ feed.querySelectorAll(".save").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();b.textContent=b.textContent==="☆"?"★":"☆";});});
+ feed.querySelectorAll(".share").forEach(function(b,i){b.addEventListener("click",function(e){e.stopPropagation();var c=cards[i];if(navigator.share)navigator.share({title:c.title,text:c.dek,url:c.link||location.href});});});
+ feed.querySelectorAll(".open").forEach(function(b,i){b.addEventListener("click",function(e){e.stopPropagation();if(cards[i].link)window.open(cards[i].link,"_blank","noopener,noreferrer");});});
+ feed.scrollTop=0;
+}
+function setHealth(text,ok){
+ var el=document.getElementById("status");
+ if(!el){el=document.createElement("div");el.id="status";el.style.cssText="position:absolute;top:70px;left:18px;z-index:6;font-size:9px;letter-spacing:.7px;text-transform:uppercase;padding:5px 8px;border:1px solid var(--line);background:#081018;color:var(--muted)";document.querySelector(".app").appendChild(el);}
+ el.textContent=(ok?"● LIVE ":"○ ")+text;el.style.color=ok?"var(--up)":"var(--down)";
+}
 async function loadLiveFeed(){
  try{
-  const [marketRes,mindRes,newsRes]=await Promise.allSettled([fetch("__RESTORE__
+  var feedUrls=[
+    "/data/feed.json?ts="+Date.now(),
+    "/Market-Mind/data/feed.json?ts="+Date.now(),
+    "https://raw.githubusercontent.com/Huzzbet/Market-Mind/main/data/feed.json?ts="+Date.now()
+  ];
+  var response=null,lastError=null;
+  for(var u of feedUrls){
+   try{
+    var r=await fetch(u,{cache:"no-store"});
+    if(r.ok){response=r;break;}
+    lastError=new Error("feed "+r.status+" @ "+u);
+   }catch(e){lastError=e;}
+  }
+  if(!response) throw (lastError||new Error("feed unavailable"));
+  var payload=await response.json();
+  var cards=(payload.cards||[]).map(function(c){return {
+    tag:c.tag||"MARKET NEWS",
+    time:c.time||"LATEST",
+    title:c.title||"",
+    dek:c.dek||"",
+    data:c.data||[["SOURCE",c.source||"Market Mind"],["TYPE",c.type||"Market news"],["STATUS","Latest"]],
+    insight:c.insight||"Read the original source for the full story and context.",
+    source:c.source||"Market Mind",
+    link:c.link||null,
+    rank:c.rank||0,
+    chart:!!c.chart,
+    signal:c.signal||"UP"
+  };});
+  var asx=payload.tickers?.asx200, spx=payload.tickers?.sp500, vix=payload.tickers?.vix;
+  var setTicker=function(id,item){var el=document.getElementById(id);if(!el||!item)return;el.textContent=item.value||"—";el.className=item.direction==="down"?"down":item.direction==="up"?"up":"";};
+  setTicker("asx",asx);setTicker("spx",spx);setTicker("vix",vix);
+  renderCards(cards.length?cards:fallbackCards);
+  setHealth("NEWS FEED • "+cards.length+" stories • Updated "+(payload.updatedAt||"latest"),true);
+ }catch(err){console.warn("Market Mind feed unavailable",err);renderCards(fallbackCards);setHealth("Feed unavailable • Demo mode",false);}
+}
+renderCards(fallbackCards);
+setHealth("Starting market feed…",false);
+loadLiveFeed();
+setInterval(loadLiveFeed,60000);
+feed.addEventListener("scroll",function(){var max=feed.scrollHeight-feed.clientHeight;document.getElementById("progress").style.height=Math.max(8,Math.min(100,(feed.scrollTop/max)*75+25))+"%";});
 </script>
 </body>
 </html>

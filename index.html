@@ -53,23 +53,7 @@ function setHealth(text,ok){var el=document.getElementById("status");if(!el){el=
 function setTicker(id,item){var el=document.getElementById(id);if(!el||!item)return;el.textContent=item.value||"—";el.className=item.direction==="down"?"down":item.direction==="up"?"up":"";}
 async function loadLiveFeed(){
  try{
-  const [marketRes,mindRes,newsRes]=await Promise.allSettled([fetch("/api/market?ts="+Date.now(),{cache:"no-store"}),fetch("/api/mind?ts="+Date.now(),{cache:"no-store"}),fetch("/api/news?q=ASX%20Australia%20markets%20OR%20US%20stocks%20OR%20RBA%20OR%20oil&ts="+Date.now(),{cache:"no-store"})]);
-  const market=marketRes.status==="fulfilled"&&marketRes.value.ok?await marketRes.value.json():{data:[]};
-  const mind=mindRes.status==="fulfilled"&&mindRes.value.ok?await mindRes.value.json():{signals:[]};
-  const news=newsRes.status==="fulfilled"&&newsRes.value.ok?await newsRes.value.json():{items:[]};
-  const marketData=(market.data||[]).filter(x=>x.ok&&Number.isFinite(x.pct));
-  setTicker("asx",marketData.find(x=>x.symbol==="^AXJO")?{value:price(marketData.find(x=>x.symbol==="^AXJO").price)+" "+pct(marketData.find(x=>x.symbol==="^AXJO").pct),direction:marketData.find(x=>x.symbol==="^AXJO").pct>=0?"up":"down"}:null);
-  setTicker("spx",marketData.find(x=>x.symbol==="^GSPC")?{value:price(marketData.find(x=>x.symbol==="^GSPC").price)+" "+pct(marketData.find(x=>x.symbol==="^GSPC").pct),direction:marketData.find(x=>x.symbol==="^GSPC").pct>=0?"up":"down"}:null);
-  const signalCards=(mind.signals||[]).map(signalCard);
-  const newsCards=(news.items||[]).slice(0,4).map(newsCard);
-  const liveCards=signalCards.concat(newsCards);
-  if(liveCards.length){renderCards(liveCards);setHealth("INTELLIGENCE • "+(mind.signalCount||signalCards.length)+" signals • Updated "+(mind.updatedAt||"now"),true);}
-  else if((marketData||[]).length){renderCards(marketData.slice(0,8).sort(function(a,b){return scoreMarket(b)-scoreMarket(a);}).map(function(x){var meta=marketNames[x.symbol]||[x.symbol,"Market"];return {tag:"LIVE / "+meta[1].toUpperCase(),time:"LIVE • "+scoreMarket(x)+"/100",title:meta[0]+" is "+(x.pct>=0?"higher":"lower"),dek:meta[0]+" is "+price(x.price)+", "+pct(x.pct)+" on the session.",data:[[meta[0],price(x.price)],["SESSION",pct(x.pct)],["IMPORTANCE",scoreMarket(x)+"/100"]],insight:"The useful question is whether this move is broad-based or driven by one specific catalyst. Compare related assets and current news.",source:"Market Mind • Live market data",rank:scoreMarket(x),chart:true,signal:x.pct>=0?"UP":"DOWN"};}));setHealth("LIVE MARKET DATA • Updated "+(market.updatedAt||"now"),true);}
-  else {renderCards(fallbackCards);setHealth("Live feed unavailable",false);}
- }catch(err){console.warn("Market Mind live feed unavailable",err);renderCards(fallbackCards);setHealth("Live feed unavailable",false);}
-}
-renderCards(fallbackCards);setHealth("Starting live intelligence…",false);loadLiveFeed();setInterval(loadLiveFeed,60000);
-feed.addEventListener("scroll",function(){var max=feed.scrollHeight-feed.clientHeight;document.getElementById("progress").style.height=Math.max(8,Math.min(100,(feed.scrollTop/max)*75+25))+"%";});
+  const [marketRes,mindRes,newsRes]=await Promise.allSettled([fetch("__RESTORE__
 </script>
 </body>
 </html>

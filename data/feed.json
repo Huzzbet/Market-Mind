@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-10-06T11:16:19.208Z",
+  "tickers": {
+    "asx200": {
+      "value": "—",
+      "direction": "flat"
+    },
+    "sp500": {
+      "value": "—",
+      "direction": "flat"
+    },
+    "vix": {
+      "value": "—",
+      "direction": "flat"
+    }
+  },
+  "cards": [
+    {
+      "tag": "MARKET NEWS",
+      "time": "DEMO",
+      "title": "Market Mind is ready for the news feed",
+      "dek": "The app is now designed to run as a simple GitHub Pages experience with story cards supplied by the Market Mind research workflow.",
+      "data": [
+        [
+          "FORMAT",
+          "TikTok-style"
+        ],
+        [
+          "FOCUS",
+          "Market news"
+        ],
+        [
+          "SOURCE",
+          "Market Mind"
+        ]
+      ],
+      "insight": "Each story will explain what happened, why it matters and which stocks or sectors may be affected.",
+      "source": "Market Mind",
+      "rank": 100
+    },
+    {
+      "tag": "ASX / US MARKETS",
+      "time": "DEMO",
+      "title": "One swipe. One market story.",
+      "dek": "Market Mind will focus on the stories investors actually want to understand — ASX, US markets, company announcements, sectors, macro and major market moves.",
+      "data": [
+        [
+          "ASX",
+          "News"
+        ],
+        [
+          "US",
+          "News"
+        ],
+        [
+          "STOCKS",
+          "News"
+        ]
+      ],
+      "insight": "The goal is not to replace a financial news terminal. It is to make market intelligence fast, visual and easy to understand.",
+      "source": "Market Mind",
+      "rank": 90
+    }
+  ]
+}

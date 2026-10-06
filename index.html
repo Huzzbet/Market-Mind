@@ -106,8 +106,20 @@ function setHealth(text,ok){
 }
 async function loadLiveFeed(){
  try{
-  var response=await fetch("/data/feed.json?ts="+Date.now(),{cache:"no-store"});
-  if(!response.ok) throw new Error("feed "+response.status);
+  var feedUrls=[
+    "/data/feed.json?ts="+Date.now(),
+    "/Market-Mind/data/feed.json?ts="+Date.now(),
+    "https://raw.githubusercontent.com/Huzzbet/Market-Mind/main/data/feed.json?ts="+Date.now()
+  ];
+  var response=null,lastError=null;
+  for(var u of feedUrls){
+   try{
+    var r=await fetch(u,{cache:"no-store"});
+    if(r.ok){response=r;break;}
+    lastError=new Error("feed "+r.status+" @ "+u);
+   }catch(e){lastError=e;}
+  }
+  if(!response) throw (lastError||new Error("feed unavailable"));
   var payload=await response.json();
   var cards=(payload.cards||[]).map(function(c){return {
     tag:c.tag||"MARKET NEWS",

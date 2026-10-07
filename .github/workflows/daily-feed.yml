@@ -25,22 +25,7 @@ jobs:
         run: python scripts/update_feed.py
 
       - name: Validate feed
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          p = Path("data/feed.json")
-          data = json.loads(p.read_text())
-          cards = data.get("cards", [])
-          if not isinstance(cards, list) or len(cards) < 5:
-              raise SystemExit("Refusing to publish: feed has fewer than 5 cards")
-          if not data.get("updatedAt"):
-              raise SystemExit("Refusing to publish: missing updatedAt")
-          for i, card in enumerate(cards):
-              for key in ("tag", "title", "dek", "data", "insight", "source"):
-                  if not card.get(key):
-                      raise SystemExit(f"Refusing to publish: card {i} missing {key}")
-          print(f"Validated {len(cards)} cards")
+        run: python -c 'import json; d=json.load(open("data/feed.json")); c=d.get("cards",[]); assert isinstance(c,list) and len(c)>=5, "feed has fewer than 5 cards"; assert d.get("updatedAt"), "missing updatedAt"; assert all(all(x.get(k) for k in ("tag","title","dek","data","insight","source")) for x in c), "card missing required field"; print("Validated %d cards" % len(c))'
 
       - name: Commit feed
         run: |

@@ -1,6 +1,10 @@
 name: Market Mind Daily Feed
 
 on:
+  push:
+    paths:
+      - "scripts/update_feed.py"
+      - ".github/workflows/daily-feed.yml"
   schedule:
     # 8:00am Melbourne/Sydney during AEDT (7:00am during AEST)
     - cron: "0 21 * * *"

@@ -64,7 +64,9 @@ def catalyst_text(headline):
 def catalyst_score(label,item):
     title=item.get("title","").lower()
     source=item.get("source","").lower()
-    score=0
+    names={"BHP":["bhp"],"CBA":["cba","commonwealth bank"],"NVDA":["nvidia","nvda"],"MSFT":["microsoft","msft"]}
+    if not any(n in title for n in names.get(label,[])): return -100
+    score=20
     strong={"results":10,"earnings":10,"guidance":10,"profit":9,"revenue":8,"dividend":8,"upgrade":9,"downgrade":9,"price target":9,"target":6,"contract":8,"deal":8,"acquisition":9,"merger":9,"buyback":8,"outlook":8,"forecast":7,"production":7,"shipments":6,"order":7,"partnership":7,"regulatory":8,"approval":7,"project":6,"site visit":5,"cash flow":6,"margin":7}
     for word,weight in strong.items():
         if word in title: score+=weight
@@ -171,7 +173,7 @@ def main():
         if len(cards)>=9: break
     if len(cards)<10: raise SystemExit("Refusing to publish: fewer than 10 cards")
     def t(x): return {"value":x["value"],"direction":"up" if x["pct"]>=0 else "down","change":pct(x["pct"])}
-    feed={"version":"1.3.2","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}
+    feed={"version":"1.3.3","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}
     feed["tickers"]={"asx200":t({"value":fmt(a["price"],1),"pct":a["pct"]}),"sp500":t({"value":fmt(sp["price"],2),"pct":sp["pct"]}),"vix":t({"value":fmt(vx["price"],2),"pct":vx["pct"]}),"oil":t({"value":"US$"+fmt(oil["price"],2),"pct":oil["pct"]}),"gold":t({"value":"US$"+fmt(gold["price"],2),"pct":gold["pct"]}),"us10":t({"value":fmt(rate["price"],2)+"%","pct":rate["pct"]}),"aud":t({"value":fmt(aud["price"],4),"pct":aud["pct"]})}
     FEED.write_text(json.dumps(feed,indent=2,ensure_ascii=False)+"\n"); print("Wrote",len(cards),"cards at",feed["updatedAt"])
 if __name__=="__main__": main()

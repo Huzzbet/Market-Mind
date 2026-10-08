@@ -48,6 +48,17 @@ def consensus(slug):
 
 def fmt(v,n=2): return format(v,",."+str(n)+"f")
 def pct(v): return ("+" if v>=0 else "")+format(v,".2f")+"%"
+def stock_title(label,headline):
+    titles={
+      "BHP":"BHP · Mining outlook in focus",
+      "CBA":"CBA · Income story in focus",
+      "NVDA":"Nvidia · AI earnings power in focus",
+      "MSFT":"Microsoft · AI valuation in focus"
+    }
+    return titles.get(label, label+" · Latest catalyst")
+def catalyst_text(headline):
+    text=re.sub(r"\s+-\s+(The Motley Fool|Simply Wall St.*|Yahoo Finance|Reuters|AFR|SMH.*)$","",headline,flags=re.I).strip()
+    return text if len(text)<=88 else text[:85].rstrip()+"…"
 def news(q,limit=3):
     u="https://news.google.com/rss/search?"+urllib.parse.urlencode({"q":q+" when:1d","hl":"en-AU","gl":"AU","ceid":"AU:en"})
     root=ET.fromstring(get(u)); out=[]
@@ -109,10 +120,10 @@ def main():
         cards.append({
           "tag":"STOCK INTELLIGENCE / "+("AUSTRALIA" if label in ("BHP","CBA") else "US"),
           "time":d,
-          "title":x["title"],
+          "title":stock_title(label,x["title"]),
           "dek":x["source"]+" • "+fmt(st["price"],2)+" • "+pct(st["pct"])+" today.",
-          "data":[["PRICE",fmt(st["price"],2)],["CONSENSUS",rating],["TARGET",target_txt]],
-          "insight":"Market Mind: "+view+". Consensus target implies "+upside_txt+" versus the current price. The news catalyst should be judged against both the price reaction and the broader analyst view.",
+          "data":[["PRICE",fmt(st["price"],2)],["CONSENSUS",rating],["TARGET · "+str(con.get("analysts") or "—")+" ANALYSTS",target_txt]],
+          "insight":"Market Mind: "+view+". Consensus target implies "+upside_txt+" versus the current price. Catalyst: "+catalyst_text(x["title"])+".",
           "source":x["source"],
           "link":x["link"],
           "rank":70,
@@ -129,7 +140,7 @@ def main():
         if len(cards)>=9: break
     if len(cards)<10: raise SystemExit("Refusing to publish: fewer than 10 cards")
     def t(x): return {"value":x["value"],"direction":"up" if x["pct"]>=0 else "down","change":pct(x["pct"])}
-    feed={"version":"1.3.0","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}
+    feed={"version":"1.3.1","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}
     feed["tickers"]={"asx200":t({"value":fmt(a["price"],1),"pct":a["pct"]}),"sp500":t({"value":fmt(sp["price"],2),"pct":sp["pct"]}),"vix":t({"value":fmt(vx["price"],2),"pct":vx["pct"]}),"oil":t({"value":"US$"+fmt(oil["price"],2),"pct":oil["pct"]}),"gold":t({"value":"US$"+fmt(gold["price"],2),"pct":gold["pct"]}),"us10":t({"value":fmt(rate["price"],2)+"%","pct":rate["pct"]}),"aud":t({"value":fmt(aud["price"],4),"pct":aud["pct"]})}
     FEED.write_text(json.dumps(feed,indent=2,ensure_ascii=False)+"\n"); print("Wrote",len(cards),"cards at",feed["updatedAt"])
 if __name__=="__main__": main()

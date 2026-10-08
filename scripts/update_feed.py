@@ -24,6 +24,16 @@ def history(symbol, range_="3y", interval="1mo"):
     for ts,c in zip(stamps,closes):
         if c is not None: out.append([datetime.fromtimestamp(ts,timezone.utc).strftime("%Y-%m"),round(float(c),2)])
     return out
+
+def consensus(slug):
+    try:
+        html=get("https://stockanalysis.com/"+slug+"/forecast/").decode("utf-8","ignore")
+        m=re.search(r'consensus rating of "([^"]+)"',html,re.I)
+        p=re.search(r'average price target is \$([0-9.,]+)',html,re.I)
+        n=re.search(r'According to ([0-9]+) analysts',html,re.I)
+        return {"rating":m.group(1) if m else None,"target":float(p.group(1).replace(",","")) if p else None,"analysts":int(n.group(1)) if n else None,"source":"Stock Analysis"}
+    except Exception as e:
+        print("Warning: consensus",slug,e); return {}
 def fmt(v,n=2): return format(v,",."+str(n)+"f")
 def pct(v): return ("+" if v>=0 else "")+format(v,".2f")+"%"
 def news(q,limit=3):
@@ -58,6 +68,12 @@ def main():
     ]
 
     stock_news=[]
+    stock_cfg={
+      "BHP":{"symbol":"BHP.AX","slug":"quote/asx/BHP"},
+      "CBA":{"symbol":"CBA.AX","slug":"quote/asx/CBA"},
+      "NVDA":{"symbol":"NVDA","slug":"stocks/nvda"},
+      "MSFT":{"symbol":"MSFT","slug":"stocks/msft"}
+    }
     for label,queries in {"BHP":["BHP stock Australia news","BHP results mining"],"CBA":["CBA Commonwealth Bank Australia shares news","CBA results"],"NVDA":["Nvidia NVDA shares news","Nvidia earnings AI"],"MSFT":["Microsoft MSFT shares news","Microsoft earnings AI"]}.items():
         for q in queries:
             stock_news += [(label,x) for x in news(q,limit=2)]
@@ -68,7 +84,28 @@ def main():
         if not st: continue
         used_stock.add(label)
         hist=st.get("history",[])
-        cards.append({"tag":"STOCK INTELLIGENCE / "+("AUSTRALIA" if label in ("BHP","CBA") else "US"),"time":d,"title":x["title"],"dek":x["source"]+" • "+fmt(st["price"],2)+" • "+pct(st["pct"])+" today.","data":[["PRICE",fmt(st["price"],2)],["TODAY",pct(st["pct"])],["VIEW","Market Mind"]],"insight":"News catalyst: "+x["title"]+". Market Mind view: "+("HOLD — monitor whether the move is confirmed by the broader sector." if abs(st["pct"])>=2 else "WATCH — the news is relevant, but the price reaction is still developing."),"source":x["source"],"link":x["link"],"rank":70,"stock":{"ticker":st["symbol"],"history":hist,"threeYearReturn":round(((hist[-1][1]/hist[0][1])-1)*100,1) if len(hist)>1 and hist[0][1] else None}})
+        cfg=stock_cfg[label]
+        con=consensus(cfg["slug"])
+        upside=((con["target"]/st["price"])-1)*100 if con.get("target") else None
+        rating=(con.get("rating") or "Unavailable").upper()
+        if "SELL" in rating and upside is not None and upside < 0: view="SELL"
+        elif "BUY" in rating and upside is not None and upside > 10 and abs(st["pct"]) < 4: view="BUY"
+        elif abs(st["pct"]) >= 4: view="HOLD"
+        else: view="WATCH"
+        target_txt=fmt(con["target"],2) if con.get("target") else "—"
+        upside_txt=(("+" if upside>=0 else "")+format(upside,".1f")+"%") if upside is not None else "—"
+        cards.append({
+          "tag":"STOCK INTELLIGENCE / "+("AUSTRALIA" if label in ("BHP","CBA") else "US"),
+          "time":d,
+          "title":x["title"],
+          "dek":x["source"]+" • "+fmt(st["price"],2)+" • "+pct(st["pct"])+" today.",
+          "data":[["PRICE",fmt(st["price"],2)],["CONSENSUS",rating],["TARGET",target_txt]],
+          "insight":"Market Mind: "+view+". Consensus target implies "+upside_txt+" versus the current price. The news catalyst should be judged against both the price reaction and the broader analyst view.",
+          "source":x["source"],
+          "link":x["link"],
+          "rank":70,
+          "stock":{"ticker":st["symbol"],"history":hist,"threeYearReturn":round(((hist[-1][1]/hist[0][1])-1)*100,1) if len(hist)>1 and hist[0][1] else None,"consensus":rating,"target":con.get("target"),"upside":upside,"view":view,"analysts":con.get("analysts")}
+        })
         if len(used_stock)>=4: break
     seen=set()
     for q in ("ASX Australian share market","US stocks S&P 500 Nasdaq","markets bonds oil gold"):

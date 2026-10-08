@@ -1,6 +1,6 @@
 {
   "version": "1.4.0",
-  "updatedAt": "2026-10-08T11:35:04+00:00",
+  "updatedAt": "2026-10-08T11:35:23+00:00",
   "tickers": {
     "asx200": {
       "value": "8,660.9",
@@ -18,14 +18,14 @@
       "change": "+5.77%"
     },
     "oil": {
-      "value": "US$92.66",
+      "value": "US$92.64",
       "direction": "up",
-      "change": "+4.96%"
+      "change": "+4.94%"
     },
     "gold": {
-      "value": "US$4,145.50",
+      "value": "US$4,147.60",
       "direction": "up",
-      "change": "+0.12%"
+      "change": "+0.17%"
     },
     "us10": {
       "value": "5.28%",
@@ -112,15 +112,15 @@
       "tag": "COMMODITIES",
       "time": "8 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$92.66, +4.96% on the latest session.",
+      "dek": "WTI crude is about US$92.64, +4.94% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$92.66"
+          "US$92.64"
         ],
         [
           "Session",
-          "+4.96%"
+          "+4.94%"
         ],
         [
           "Theme",
@@ -135,15 +135,15 @@
       "tag": "GOLD",
       "time": "8 OCT",
       "title": "Gold is higher",
-      "dek": "Gold is about US$4,145.50, +0.12% on the latest session.",
+      "dek": "Gold is about US$4,147.60, +0.17% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,145.50"
+          "US$4,147.60"
         ],
         [
           "Session",
-          "+0.12%"
+          "+0.17%"
         ],
         [
           "AUD/USD",
@@ -936,30 +936,6 @@
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
       "time": "8 OCT",
-      "title": "Analyst Watch: What Is the Consensus on National Australia Bank (ASX:NAB) After 1H26? - Kalkine",
-      "dek": "Kalkine • Latest market coverage.",
-      "data": [
-        [
-          "SOURCE",
-          "Kalkine"
-        ],
-        [
-          "TYPE",
-          "Market news"
-        ],
-        [
-          "STATUS",
-          "Latest"
-        ]
-      ],
-      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
-      "source": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNYVBfQ21NeU1EWnk1UnRzUGpOMzNKT0RyWUxQUm03Y1UyV2MwRmlUQW9kSloxOHEzS1hTcVFBdktGQlJtay1zajNNV3o0dzFNemNvQ3pPSm02aTl0eDFNZVphVUZZTjE0YXlVTU5aMXd3bmxPWHpsZFdON1B6RTltYWgtRlJzQ2FaWHlfZVdSZmQwaGNEOW5TdzB2T3JhMkdwWlVmMGZlM3dWOGR0SE9yMkhhLXBkVzN1a1BLQUZieXJCS3RKSHNj?oc=5",
-      "rank": 88
-    },
-    {
-      "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "8 OCT",
       "title": "Nation's second-largest ASX float in doubt as investors get cold feet - ABC News & Headlines – Australian Broadcasting Corporation",
       "dek": "ABC News & Headlines – Australian Broadcasting Corporation • Latest market coverage.",
       "data": [
@@ -979,6 +955,30 @@
       "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
       "source": "ABC News & Headlines – Australian Broadcasting Corporation",
       "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSWVWczdxVTJpYXF0alc5bXI1TDVlWndYVjFYNE5kSWxqUnROc3kzWEdJNzZvMTExVUpBMWxSUmswTUJudS16eXg1c0lsV052TFdwd1BGT0plWjQtZDNaNFNFWEtZNGh3WUVSSDY2VFZxOFJWQ1RUT2hqT0ZTREFOaG5UaEZsQlozSHlfenU5R1U5WnpXOGtHRGFqdGJRZw?oc=5",
+      "rank": 88
+    },
+    {
+      "tag": "NEWS / MARKET INTELLIGENCE",
+      "time": "8 OCT",
+      "title": "ASX finishes lower as oil jumps again on renewed Iran tensions - SMH.com.au",
+      "dek": "SMH.com.au • Latest market coverage.",
+      "data": [
+        [
+          "SOURCE",
+          "SMH.com.au"
+        ],
+        [
+          "TYPE",
+          "Market news"
+        ],
+        [
+          "STATUS",
+          "Latest"
+        ]
+      ],
+      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
+      "source": "SMH.com.au",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQNTF0SzVCSkJGSmZ3TnVFdGM0bmZ4OHlmeVdJWWVvVTZWTGhWLUo1RHJkdFJrODdFejl3b0V3dDRRdUFpTnFFUjNOSm5zY3p5Rk1ENHIyVGt1R1BScVUxMUwwdXAtMlR4NDBmX002MTdfMGF2X1E0ZHlTZXVqdUVzSi11Vjl3eXNzSzZuNnhYMUtHOXBWdWwtSFNQZGtQZi0wT1BzX2hRa3d4ZVEyZTFweV9qTWlhdUM2WVJsUkZabVBjcm93MklkQk1nUDA?oc=5",
       "rank": 88
     }
   ]

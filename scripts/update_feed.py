@@ -35,8 +35,8 @@ def consensus(slug):
     try:
         html=get("https://stockanalysis.com/"+slug+"/forecast/").decode("utf-8","ignore")
         m=re.search(r'consensus rating of "([^"]+)"',html,re.I)
-        p=re.search(r'average price target (?:is|of)\s*\$([0-9.,]+)',html,re.I)
-        if not p: p=re.search(r'Price Target[^$]{0,120}\$([0-9.,]+)',html,re.I)
+        p=re.search(r'average price target (?:is|of)\s*\$([0-9.,]+)\b',html,re.I)
+        if not p: p=re.search(r'Price Target[^$]{0,120}\$([0-9.,]+)\b',html,re.I)
         n=re.search(r'According to ([0-9]+) analysts',html,re.I)
         out={"rating":m.group(1) if m else None,"target":float(p.group(1).replace(",","")) if p else None,"analysts":int(n.group(1)) if n else None,"source":"Stock Analysis"}
         fb=fallbacks.get(slug,{})

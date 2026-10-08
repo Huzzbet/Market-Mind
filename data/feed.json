@@ -1,6 +1,6 @@
 {
-  "version": "1.3.3",
-  "updatedAt": "2026-10-08T10:31:13+00:00",
+  "version": "1.4.0",
+  "updatedAt": "2026-10-08T11:35:04+00:00",
   "tickers": {
     "asx200": {
       "value": "8,660.9",
@@ -13,19 +13,19 @@
       "change": "-0.22%"
     },
     "vix": {
-      "value": "15.72",
+      "value": "15.95",
       "direction": "up",
-      "change": "+4.24%"
+      "change": "+5.77%"
     },
     "oil": {
-      "value": "US$92.04",
+      "value": "US$92.66",
       "direction": "up",
-      "change": "+4.26%"
+      "change": "+4.96%"
     },
     "gold": {
-      "value": "US$4,145.20",
+      "value": "US$4,145.50",
       "direction": "up",
-      "change": "+0.11%"
+      "change": "+0.12%"
     },
     "us10": {
       "value": "5.28%",
@@ -33,9 +33,9 @@
       "change": "+0.15%"
     },
     "aud": {
-      "value": "0.6951",
+      "value": "0.6938",
       "direction": "down",
-      "change": "-0.44%"
+      "change": "-0.62%"
     }
   },
   "cards": [
@@ -78,7 +78,7 @@
         ],
         [
           "VIX",
-          "15.72"
+          "15.95"
         ]
       ],
       "insight": "Equity direction is more informative when read alongside volatility and Treasury yields. A rising index with contained volatility is a different signal from a rally driven by falling risk.",
@@ -112,15 +112,15 @@
       "tag": "COMMODITIES",
       "time": "8 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$92.04, +4.26% on the latest session.",
+      "dek": "WTI crude is about US$92.66, +4.96% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$92.04"
+          "US$92.66"
         ],
         [
           "Session",
-          "+4.26%"
+          "+4.96%"
         ],
         [
           "Theme",
@@ -135,19 +135,19 @@
       "tag": "GOLD",
       "time": "8 OCT",
       "title": "Gold is higher",
-      "dek": "Gold is about US$4,145.20, +0.11% on the latest session.",
+      "dek": "Gold is about US$4,145.50, +0.12% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,145.20"
+          "US$4,145.50"
         ],
         [
           "Session",
-          "+0.11%"
+          "+0.12%"
         ],
         [
           "AUD/USD",
-          "0.6951"
+          "0.6938"
         ]
       ],
       "insight": "Gold is most useful as a signal when viewed with Treasury yields and the US dollar. The combination can help distinguish inflation, currency and safe-haven demand.",
@@ -158,15 +158,15 @@
       "tag": "CURRENCY",
       "time": "8 OCT",
       "title": "Australian dollar is lower",
-      "dek": "AUD/USD is around 0.6951, -0.44% on the latest session.",
+      "dek": "AUD/USD is around 0.6938, -0.62% on the latest session.",
       "data": [
         [
           "AUD/USD",
-          "0.6951"
+          "0.6938"
         ],
         [
           "Session",
-          "-0.44%"
+          "-0.62%"
         ],
         [
           "Theme",
@@ -547,7 +547,7 @@
       "tag": "STOCK INTELLIGENCE / US",
       "time": "8 OCT",
       "title": "Nvidia · AI earnings power in focus",
-      "dek": "TradingView • 237.47 • -0.74% today.",
+      "dek": "BigGo Finance • 237.47 • -0.74% today.",
       "data": [
         [
           "PRICE",
@@ -562,9 +562,9 @@
           "328.72"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +38.4% versus the current price. Catalyst: SA analyst upgrades/downgrades: NVDA, UNH, CLSK, CAT - TradingView.",
-      "source": "TradingView",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORDF0S2cwRUlOYVVhUVMwSXlsbmRPOHZMZnRBV09nMUtETHBnR1ZTaXpnZFRRN3BBYkl1Q2NOdjZmV1NZZ2ZnVzlZclV5cFExWTcya0J6c21wTXFRQ3RzQVBXeDRYa0RBSzlsSUJheENpTmsyNmRLT0xrQ1NvX1VBRlV3RFItcHJDVENVOVlYX0ZUVWNuOXZoVC1CZnZvb0g2WG10ZmNTSWI4clU0NkNfbQ?oc=5",
+      "insight": "Market Mind: BUY. Consensus target implies +38.4% versus the current price. Catalyst: Nvidia and Micron Set to Dominate S&P 500 Earnings as AI Spending Boom Drives 29.5% P….",
+      "source": "BigGo Finance",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBySnUyWHBJOThueVYyY0lTYmI1MHF1UDVmczRQdXFaMlFZNnVZc2lYeUlTVmhqejAyOXBiR01kZkZhWGNuTWpMNG5qeHlHcXlka2pjXzZ5QjA5d1FxakRfRDR6WDlFR09ZU1lXclFrMDhmeXNxMGc?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -960,12 +960,12 @@
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
       "time": "8 OCT",
-      "title": "ASX finishes lower as oil jumps again on renewed Iran tensions - SMH.com.au",
-      "dek": "SMH.com.au • Latest market coverage.",
+      "title": "Nation's second-largest ASX float in doubt as investors get cold feet - ABC News & Headlines – Australian Broadcasting Corporation",
+      "dek": "ABC News & Headlines – Australian Broadcasting Corporation • Latest market coverage.",
       "data": [
         [
           "SOURCE",
-          "SMH.com.au"
+          "ABC News & Headlines – Australian Broadcasting Corporation"
         ],
         [
           "TYPE",
@@ -977,8 +977,8 @@
         ]
       ],
       "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
-      "source": "SMH.com.au",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQNTF0SzVCSkJGSmZ3TnVFdGM0bmZ4OHlmeVdJWWVvVTZWTGhWLUo1RHJkdFJrODdFejl3b0V3dDRRdUFpTnFFUjNOSm5zY3p5Rk1ENHIyVGt1R1BScVUxMUwwdXAtMlR4NDBmX002MTdfMGF2X1E0ZHlTZXVqdUVzSi11Vjl3eXNzSzZuNnhYMUtHOXBWdWwtSFNQZGtQZi0wT1BzX2hRa3d4ZVEyZTFweV9qTWlhdUM2WVJsUkZabVBjcm93MklkQk1nUDA?oc=5",
+      "source": "ABC News & Headlines – Australian Broadcasting Corporation",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSWVWczdxVTJpYXF0alc5bXI1TDVlWndYVjFYNE5kSWxqUnROc3kzWEdJNzZvMTExVUpBMWxSUmswTUJudS16eXg1c0lsV052TFdwd1BGT0plWjQtZDNaNFNFWEtZNGh3WUVSSDY2VFZxOFJWQ1RUT2hqT0ZTREFOaG5UaEZsQlozSHlfenU5R1U5WnpXOGtHRGFqdGJRZw?oc=5",
       "rank": 88
     }
   ]

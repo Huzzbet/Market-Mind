@@ -1,11 +1,11 @@
 {
-  "version": "1.3.1",
-  "updatedAt": "2026-10-08T02:57:10+00:00",
+  "version": "1.3.2",
+  "updatedAt": "2026-10-08T10:30:34+00:00",
   "tickers": {
     "asx200": {
-      "value": "8,679.5",
+      "value": "8,660.9",
       "direction": "down",
-      "change": "-0.55%"
+      "change": "-0.77%"
     },
     "sp500": {
       "value": "7,801.77",
@@ -13,19 +13,19 @@
       "change": "-0.22%"
     },
     "vix": {
-      "value": "15.08",
+      "value": "15.72",
       "direction": "up",
-      "change": "+0.47%"
+      "change": "+4.24%"
     },
     "oil": {
-      "value": "US$89.78",
+      "value": "US$92.01",
       "direction": "up",
-      "change": "+1.70%"
+      "change": "+4.23%"
     },
     "gold": {
-      "value": "US$4,164.50",
+      "value": "US$4,144.20",
       "direction": "up",
-      "change": "+0.57%"
+      "change": "+0.08%"
     },
     "us10": {
       "value": "5.28%",
@@ -33,9 +33,9 @@
       "change": "+0.15%"
     },
     "aud": {
-      "value": "0.6965",
+      "value": "0.6953",
       "direction": "down",
-      "change": "-0.24%"
+      "change": "-0.41%"
     }
   },
   "cards": [
@@ -43,15 +43,15 @@
       "tag": "ASX 200",
       "time": "8 OCT",
       "title": "ASX 200 is lower",
-      "dek": "The ASX 200 is 8,679.5, -0.55% on the latest session.",
+      "dek": "The ASX 200 is 8,660.9, -0.77% on the latest session.",
       "data": [
         [
           "ASX 200",
-          "8,679.5"
+          "8,660.9"
         ],
         [
           "Session",
-          "-0.55%"
+          "-0.77%"
         ],
         [
           "Context",
@@ -78,7 +78,7 @@
         ],
         [
           "VIX",
-          "15.08"
+          "15.72"
         ]
       ],
       "insight": "Equity direction is more informative when read alongside volatility and Treasury yields. A rising index with contained volatility is a different signal from a rally driven by falling risk.",
@@ -112,15 +112,15 @@
       "tag": "COMMODITIES",
       "time": "8 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$89.78, +1.70% on the latest session.",
+      "dek": "WTI crude is about US$92.01, +4.23% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$89.78"
+          "US$92.01"
         ],
         [
           "Session",
-          "+1.70%"
+          "+4.23%"
         ],
         [
           "Theme",
@@ -135,19 +135,19 @@
       "tag": "GOLD",
       "time": "8 OCT",
       "title": "Gold is higher",
-      "dek": "Gold is about US$4,164.50, +0.57% on the latest session.",
+      "dek": "Gold is about US$4,144.20, +0.08% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,164.50"
+          "US$4,144.20"
         ],
         [
           "Session",
-          "+0.57%"
+          "+0.08%"
         ],
         [
           "AUD/USD",
-          "0.6965"
+          "0.6953"
         ]
       ],
       "insight": "Gold is most useful as a signal when viewed with Treasury yields and the US dollar. The combination can help distinguish inflation, currency and safe-haven demand.",
@@ -158,15 +158,15 @@
       "tag": "CURRENCY",
       "time": "8 OCT",
       "title": "Australian dollar is lower",
-      "dek": "AUD/USD is around 0.6965, -0.24% on the latest session.",
+      "dek": "AUD/USD is around 0.6953, -0.41% on the latest session.",
       "data": [
         [
           "AUD/USD",
-          "0.6965"
+          "0.6953"
         ],
         [
           "Session",
-          "-0.24%"
+          "-0.41%"
         ],
         [
           "Theme",
@@ -181,11 +181,11 @@
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "8 OCT",
       "title": "BHP · Mining outlook in focus",
-      "dek": "The Motley Fool Australia • 61.30 • -1.84% today.",
+      "dek": "Kalkine • 61.19 • +0.00% today.",
       "data": [
         [
           "PRICE",
-          "61.30"
+          "61.19"
         ],
         [
           "CONSENSUS",
@@ -196,9 +196,9 @@
           "60.77"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -0.9% versus the current price. Catalyst: Is BHP the best ASX mining share to buy for the next 5 years? - The Motley Fool Austr….",
-      "source": "The Motley Fool Australia",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQcTBTMnhsMTgzb0VtcDJqQnZCdmlQLWNsSWs4QnhqVnZlZUtVa0FmRGNfWjJVbmlwRE1KU2JuRkV1SzJYeWJpMHBDT0lkcjJHR21xVEZLY0ZJdDBYVjVWaHBNa0I2d0RiaGJURWRaUEl2ZFRRQ09mcTBqX2tKVUtnV1htQ1pWX3RsWU1ocmdjVzRyYVhvY3pZUEtrRGU?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies -0.7% versus the current price. Catalyst: Why Are Investors Watching Tasmea Limited (ASX:TEA) After Its FY26 Result and Upgrade….",
+      "source": "Kalkine",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNbG9tSUlOSWdlUzhSbllRS3lTRmNKcmdCQTNzUUVOaUFhV3ZxekgxTmN6dFdmVVRtSlAySnBiSm9WLW1ENDIzTDdyNW1tMUc0ZHFHZlJmVVczUmNaYjVkamRybl9wME1yeDJTazhlR1JaVmZkNWM2UmRTYzE2M1ZqOVJ0cG9aeURoTUU4aGxkdzNmZVo3YmxWeV81bVhCTE5HSXU1NE8wMHNkbmVWYUJEOTZkRmhxTDktS2UxeDlOVlRUM2I3QjJJV3VMNHJEREtjYm40?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "BHP.AX",
@@ -349,13 +349,13 @@
           ],
           [
             "2026-10",
-            61.29
+            61.19
           ]
         ],
-        "threeYearReturn": 32.4,
+        "threeYearReturn": 32.2,
         "consensus": "HOLD",
         "target": 60.77,
-        "upside": -0.864599092425633,
+        "upside": -0.6863844355859405,
         "view": "WATCH",
         "analysts": 17
       }
@@ -364,11 +364,11 @@
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "8 OCT",
       "title": "CBA · Income story in focus",
-      "dek": "The Motley Fool Australia • 148.81 • -1.04% today.",
+      "dek": "Yahoo Finance Australia • 148.12 • +0.00% today.",
       "data": [
         [
           "PRICE",
-          "148.81"
+          "148.12"
         ],
         [
           "CONSENSUS",
@@ -379,9 +379,9 @@
           "125.64"
         ]
       ],
-      "insight": "Market Mind: SELL. Consensus target implies -15.6% versus the current price. Catalyst: If I invest $8,000 in CBA shares, what passive income could I earn in FY27 and FY28?….",
-      "source": "The Motley Fool Australia",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQVXFkaWRuWFA5dHlaZXF1UTVuNjlpd3Z5Y3BoVU1HaFJ3S1VTejlTR29rTzRxdFVsMGJ0SG1LNENfS1I1dk9vR0lkZHplb2RGMHh3cVJGOUVnS3B2UlRHcFljN092eU9TT291RVQtZXd1eXlOdGsyUzlhUE56UDhWcVpxdjZpemdWY2hjMVFETS1SaktnMU1ob1d0TnpzUl9GS1JrbjJYTVk3dzVBRko2dHp5MElLcjQ?oc=5",
+      "insight": "Market Mind: SELL. Consensus target implies -15.2% versus the current price. Catalyst: Richardson Electronics Reports Strong First Quarter Results; Declares Quarterly Cash….",
+      "source": "Yahoo Finance Australia",
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNZEw3OTVXbHRTWGh3d0x5UWJ1VEF5UkdPTllwQ0hLQ2gxUXFaQm5nLWV3ZlBZTUg1M2dvaHE1dFUxZU1WSDRSU3FNQXh0akw2SzdJVkk3UkR0RG1YVEtCaTdUVFIyT1VzNHl4b1REXzlfNElwMnpqV0dSMW5WQ0JXdFlQVmZpdlhydTRhZGtBbS1UaXRtYWJv?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "CBA.AX",
@@ -532,13 +532,13 @@
           ],
           [
             "2026-10",
-            148.81
+            148.12
           ]
         ],
-        "threeYearReturn": 42.2,
+        "threeYearReturn": 41.5,
         "consensus": "STRONG SELL",
         "target": 125.64,
-        "upside": -15.570188790219285,
+        "upside": -15.176880811670356,
         "view": "SELL",
         "analysts": 14
       }
@@ -547,7 +547,7 @@
       "tag": "STOCK INTELLIGENCE / US",
       "time": "8 OCT",
       "title": "Nvidia · AI earnings power in focus",
-      "dek": "The Motley Fool • 237.47 • -0.74% today.",
+      "dek": "TradingView • 237.47 • -0.74% today.",
       "data": [
         [
           "PRICE",
@@ -562,9 +562,9 @@
           "328.72"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +38.4% versus the current price. Catalyst: Nvidia Earned About Twice as Much as Apple Last Quarter. Its Stock Is Worth Only Abou….",
-      "source": "The Motley Fool",
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNbExHTUpudDJ6QXBXNHdQdXlZTktLMi12QjlkbksyQ192clZvSEZtNzVfcDJHMnZPOV9KRUo3RUVoZF8zdnF5ZGtzb1V6M2tpSTVDV1FQVlRJa2dOblJ6RlpYQmNHcTBwYW1JdGRiVVJ5REdWdnViaUdQTjVZcFlXZEFna1dFTzVPbl9ONmNGSzRpMTg1SFQ4U3VMVWJrRFNIN2U4OWk4TlU3aVBKTEJRbVJ0MV9CNDNKYTVDeWhKYVg2VDhzeUJGOGhRTWY4TkI2bHc?oc=5",
+      "insight": "Market Mind: BUY. Consensus target implies +38.4% versus the current price. Catalyst: SA analyst upgrades/downgrades: NVDA, UNH, CLSK, CAT - TradingView.",
+      "source": "TradingView",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORDF0S2cwRUlOYVVhUVMwSXlsbmRPOHZMZnRBV09nMUtETHBnR1ZTaXpnZFRRN3BBYkl1Q2NOdjZmV1NZZ2ZnVzlZclV5cFExWTcya0J6c21wTXFRQ3RzQVBXeDRYa0RBSzlsSUJheENpTmsyNmRLT0xrQ1NvX1VBRlV3RFItcHJDVENVOVlYX0ZUVWNuOXZoVC1CZnZvb0g2WG10ZmNTSWI4clU0NkNfbQ?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -730,7 +730,7 @@
       "tag": "STOCK INTELLIGENCE / US",
       "time": "8 OCT",
       "title": "Microsoft · AI valuation in focus",
-      "dek": "Simply Wall Street • 529.76 • +0.09% today.",
+      "dek": "BigGo Finance • 529.76 • +0.09% today.",
       "data": [
         [
           "PRICE",
@@ -745,9 +745,9 @@
           "587.63"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +10.9% versus the current price. Catalyst: Microsoft (MSFT) And The AI Platform Narrative On Valuation.",
-      "source": "Simply Wall Street",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOOUg3eDZtQndWMGxDdmNlUTZGYnlXRjdGUHdnVHZ4dE1YWDBPMXZuMFdETldQTWFONEtRNDhjbFFwSzBjZzRESlVvMHR2Mnh3MzJ6VHJ6WWlzNzBDWEZQeWlFYUNIeEhTZ2dnMnhDc1FaN05GZG1ZaWk1V0MzcGNUUjlYYThyckhkLUhSeUE5Qzc4cXFwMXQ0QjFWWlVXRTB2a2k2RVIzXzMwMzdZUk01emcxYjVvcEwtb3NNUHEwUDNlR2xvVnplatIByAFBVV95cUxOOUg3eDZtQndWMGxDdmNlUTZGYnlXRjdGUHdnVHZ4dE1YWDBPMXZuMFdETldQTWFONEtRNDhjbFFwSzBjZzRESlVvMHR2Mnh3MzJ6VHJ6WWlzNzBDWEZQeWlFYUNIeEhTZ2dnMnhDc1FaN05GZG1ZaWk1V0MzcGNUUjlYYThyckhkLUhSeUE5Qzc4cXFwMXQ0QjFWWlVXRTB2a2k2RVIzXzMwMzdZUk01emcxYjVvcEwtb3NNUHEwUDNlR2xvVnplag?oc=5",
+      "insight": "Market Mind: BUY. Consensus target implies +10.9% versus the current price. Catalyst: AI capex surges 116% year-over-year as S&P 500 Q3 earnings poised to rise 27% to reco….",
+      "source": "BigGo Finance",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFByWFczMGQwd2lQLU44ZHgzemJvQ0pSLVdmRjFyOWlabkYzX3pNLUV1RHowa2VqcnBILVJfbENvUUhqNWRJR000Q3ZOcVpSc2FTbkxyU29rSklfdjFGVlJWNVFHSzNIYmZwS2x0cUtQSjk2a21LRFE?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",
@@ -912,7 +912,31 @@
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
       "time": "8 OCT",
-      "title": "Miners plunge, sending the ASX lower after Wall Street retreats - SMH.com.au",
+      "title": "ASX heads for worst month since US-Iran war - News.com.au",
+      "dek": "News.com.au • Latest market coverage.",
+      "data": [
+        [
+          "SOURCE",
+          "News.com.au"
+        ],
+        [
+          "TYPE",
+          "Market news"
+        ],
+        [
+          "STATUS",
+          "Latest"
+        ]
+      ],
+      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
+      "source": "News.com.au",
+      "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPX1Fkb29WZ3lyN3drNFJRNnlldzVSd2dGYjkxVnZlaEdNR3F4SEdyR2lyR2RIVFU3WG5tdjhWa3FKZTJRTnIzV3E1RnB1SVFIWXJPM2Rvcm5ZMFAwNVFKUUpXQ2YtSTEyM2IxajdnSl9TU1pDdkJaMVpGZjZiUU1kcF96XzU5YWZlTGRXV2Rocl9vbEt0THNmOG5tU1hWZDhIY2dmZnFLMzVRQmI0cmd1V3UxUm1fMG1WOHlxYzZXUDB3OHkzUkhzbFN4VUptZmtHSlhqaTRxVkZtdEwtLTF6UkhoU25xRWNreUZscFFCbHNDalZoUm41c0dIN3lqV3V1NHVWRVIyeXdaRWRTLVlnY1E5QdIBmAJBVV95cUxPVHJ2cXhTM21Bc2V3c3Z1Y1Q5RnppRmJ2RUhMYmpQYVB4WnVkZHRzaDhEc09DUllCbFFYVm84QzZjWWx1OXMzV3FINTFVQ29xZmdKNFJwUTFEeDBXMk50OHFhQy0zZ2s5T3F1S0J5QmtrWER0SGhlUTJQa2pSVWJEeEl0Yk9wTkplUUlVOE54TmxiVjkxLVh6aks0RWJTSWNpekxXSDk2M1pBdE90SnZGaTBYX2NXa2JORDdrelhXZjNmalVRSjZQbUZvaTVKZjRfY0FwdHRKUFpvYlQ1NmEzNVNTY2trME9UdkFCa2lOWWliRDh1ek8xT29rSS10Z092blJ3V2NMcWhKeGkzT0VEcU9icmJnQVRi?oc=5",
+      "rank": 88
+    },
+    {
+      "tag": "NEWS / MARKET INTELLIGENCE",
+      "time": "8 OCT",
+      "title": "ASX finishes lower as oil jumps again on renewed Iran tensions - SMH.com.au",
       "dek": "SMH.com.au • Latest market coverage.",
       "data": [
         [
@@ -936,12 +960,12 @@
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
       "time": "8 OCT",
-      "title": "Bombshell blow to Jacenko’s high-flying husband - News.com.au",
-      "dek": "News.com.au • Latest market coverage.",
+      "title": "Nation's second-largest ASX float in doubt as investors get cold feet - ABC News & Headlines – Australian Broadcasting Corporation",
+      "dek": "ABC News & Headlines – Australian Broadcasting Corporation • Latest market coverage.",
       "data": [
         [
           "SOURCE",
-          "News.com.au"
+          "ABC News & Headlines – Australian Broadcasting Corporation"
         ],
         [
           "TYPE",
@@ -953,32 +977,8 @@
         ]
       ],
       "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
-      "source": "News.com.au",
-      "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQQWprVVFPYXM2cGZCcE9pZUFSQ0Mta05YN2lvc2hNSEhiSE1XY2VsVWlUMXBUeXlvWjlmc3ZqNllNQUE4OG4tSFBXOGU5X0Z5UEFvd0xiWlBLd1dVQk9OVHdJZGd2VlpMZmdfV2w4SlFpYm5MVE1uMTVhdFRhMjNaZV96MEFROTNBdTZKVjFURjA1eDhaekFTN2p0NGVYMG1Eb0NSZ1ZZZkc4ZFhFbElEemFLWkdOS21lMW9OZFRwdzNPazZzS0JBOG1oZmh4OXFCN3A2VFpSRGJIY2ctakJVLWo0UVBLSnhIUEFtNXgwaHV2VFpPOXV6d2hHQnlTNVRuUXB0OERDM1VjMmFI0gGSAkFVX3lxTE9ZaE00SVAtUUc2RjNuT2xHTXJYZ3kxV0c4ZWZaTlZsdzR1ZEVqVDRuMnUxTEpRSXNadGtHc2JrZ19FdHR0eUI2bE9PVkhLSGtRck4zQUlITEk2cFpLTnNtaXFYZDVzREMwa3F0NEJ3UWd5bWxsaGVQM3E4QUJpN1pWN2lfZWVkUnZUbVFfa3ZCc3JpbG9yUVJMdFRvZURPQlNFcng0Mk5ZRWJNa21ybklpeG5rc1pRWkZZeDBWZTBjZ1dKeVdEUnVmcHd4SWhOSzJGcFRDMDJQYkhHT0FPSDlHTko1U09kQmx3dTdxeDFqZ0hRZmw0VFJCbjBWUWRpZVlKV3E5ZGxFTE13OUg1dlhoR3c?oc=5",
-      "rank": 88
-    },
-    {
-      "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "8 OCT",
-      "title": "ASX Preview: Australian Shares to Fall as US Fed Minutes Signal More Rate Hikes, Oil Prices Ease; Fortescue Reports Lower September Quarter Iron Ore Shipments - Moomoo",
-      "dek": "Moomoo • Latest market coverage.",
-      "data": [
-        [
-          "SOURCE",
-          "Moomoo"
-        ],
-        [
-          "TYPE",
-          "Market news"
-        ],
-        [
-          "STATUS",
-          "Latest"
-        ]
-      ],
-      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
-      "source": "Moomoo",
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPMlRGUDFGaE9qa1hxMWRkbGtkcUk5ZzlmVThHMEtta3NqbEJWLUw3dkJJaURiRHd0NHZKMjZyaERlaUxBeWJBR1RqUnlEdFNPSjdyUFRJTjZ0bUFjaXNlRldlc2o4RURyQ3VJZWl1c18yTThkaXBIWWVDb1lJd29sblM0a3FnODUyVGxqSjJtTlZNd1BOWHJwVUxtaWliRTJt?oc=5",
+      "source": "ABC News & Headlines – Australian Broadcasting Corporation",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSWVWczdxVTJpYXF0alc5bXI1TDVlWndYVjFYNE5kSWxqUnROc3kzWEdJNzZvMTExVUpBMWxSUmswTUJudS16eXg1c0lsV052TFdwd1BGT0plWjQtZDNaNFNFWEtZNGh3WUVSSDY2VFZxOFJWQ1RUT2hqT0ZTREFOaG5UaEZsQlozSHlfenU5R1U5WnpXOGtHRGFqdGJRZw?oc=5",
       "rank": 88
     }
   ]

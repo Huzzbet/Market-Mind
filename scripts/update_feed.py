@@ -174,7 +174,7 @@ def main():
         if len(cards)>=9: break
     if len(cards)<10: raise SystemExit("Refusing to publish: fewer than 10 cards")
     def t(x): return {"value":x["value"],"direction":"up" if x["pct"]>=0 else "down","change":pct(x["pct"])}
-    feed={"version":"1.4.0","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}
+    feed={"version":"1.3.3","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}
     feed["tickers"]={"asx200":t({"value":fmt(a["price"],1),"pct":a["pct"]}),"sp500":t({"value":fmt(sp["price"],2),"pct":sp["pct"]}),"vix":t({"value":fmt(vx["price"],2),"pct":vx["pct"]}),"oil":t({"value":"US$"+fmt(oil["price"],2),"pct":oil["pct"]}),"gold":t({"value":"US$"+fmt(gold["price"],2),"pct":gold["pct"]}),"us10":t({"value":fmt(rate["price"],2)+"%","pct":rate["pct"]}),"aud":t({"value":fmt(aud["price"],4),"pct":aud["pct"]})}
     FEED.write_text(json.dumps(feed,indent=2,ensure_ascii=False)+"\n"); print("Wrote",len(cards),"cards at",feed["updatedAt"])
 if __name__=="__main__": main()

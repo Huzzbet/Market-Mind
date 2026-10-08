@@ -58,14 +58,31 @@ def stock_title(label,headline):
     return titles.get(label, label+" · Latest catalyst")
 def catalyst_text(headline):
     text=re.sub(r"\s+-\s+(The Motley Fool|Simply Wall St.*|Yahoo Finance|Reuters|AFR|SMH.*)$","",headline,flags=re.I).strip()
+    text=re.sub(r"^(BREAKING|EXCLUSIVE|UPDATE)[:\-]\s*","",text,flags=re.I)
     return text if len(text)<=88 else text[:85].rstrip()+"…"
+
+def catalyst_score(label,item):
+    title=item.get("title","").lower()
+    source=item.get("source","").lower()
+    score=0
+    strong={"results":10,"earnings":10,"guidance":10,"profit":9,"revenue":8,"dividend":8,"upgrade":9,"downgrade":9,"price target":9,"target":6,"contract":8,"deal":8,"acquisition":9,"merger":9,"buyback":8,"outlook":8,"forecast":7,"production":7,"shipments":6,"order":7,"partnership":7,"regulatory":8,"approval":7,"project":6,"site visit":5,"cash flow":6,"margin":7}
+    for word,weight in strong.items():
+        if word in title: score+=weight
+    weak={"best stock":-9,"should i buy":-9,"how much":-8,"passive income":-7,"is it a buy":-7,"top stocks":-7,"could":-3}
+    for word,weight in weak.items():
+        if word in title: score+=weight
+    if any(x in source for x in ("reuters","afr","market index","marketscreener","fnarena","investsmart")): score+=5
+    if "motley fool" in source or "simply wall st" in source: score-=2
+    if label in ("BHP","CBA") and any(x in title for x in ("broker","ubs","macquarie","bofa","jpmorgan","morgan stanley","jefferies","rbc","deutsche bank")): score+=5
+    if len(title)>115: score-=1
+    return score
 def news(q,limit=3):
     u="https://news.google.com/rss/search?"+urllib.parse.urlencode({"q":q+" when:1d","hl":"en-AU","gl":"AU","ceid":"AU:en"})
     root=ET.fromstring(get(u)); out=[]
     for it in root.findall("./channel/item")[:limit]:
         title=(it.findtext("title") or "").strip(); link=(it.findtext("link") or "").strip(); se=it.find("source")
         source=(se.text if se is not None else "Market news") or "Market news"
-        if title and link: out.append({"title":re.sub(r"\\s+"," ",title),"link":link,"source":source.strip()})
+        if title and link: out.append({"title":re.sub(r"\s+"," ",title),"link":link,"source":source.strip()})
     return out
 def main():
     now=datetime.now(timezone.utc).astimezone(); syms={"asx200":"^AXJO","sp500":"^GSPC","vix":"^VIX","oil":"CL=F","gold":"GC=F","us10":"^TNX","aud":"AUDUSD=X"}; m={}
@@ -90,19 +107,34 @@ def main():
       {"tag":"CURRENCY","time":d,"title":"Australian dollar is "+("higher" if aud["pct"]>=0 else "lower"),"dek":"AUD/USD is around %s, %s on the latest session."%(fmt(aud["price"],4),pct(aud["pct"])),"data":[["AUD/USD",fmt(aud["price"],4)],["Session",pct(aud["pct"])],["Theme","Global risk / commodities"]],"insight":"For Australian portfolios, currency moves can materially change the return on unhedged international assets even when the underlying asset price is unchanged.","source":"Yahoo Finance","rank":90},
     ]
 
-    stock_news=[]
     stock_cfg={
       "BHP":{"symbol":"BHP.AX","slug":"quote/asx/BHP"},
       "CBA":{"symbol":"CBA.AX","slug":"quote/asx/CBA"},
       "NVDA":{"symbol":"NVDA","slug":"stocks/nvda"},
       "MSFT":{"symbol":"MSFT","slug":"stocks/msft"}
     }
-    for label,queries in {"BHP":["BHP stock Australia news","BHP results mining"],"CBA":["CBA Commonwealth Bank Australia shares news","CBA results"],"NVDA":["Nvidia NVDA shares news","Nvidia earnings AI"],"MSFT":["Microsoft MSFT shares news","Microsoft earnings AI"]}.items():
-        for q in queries:
-            stock_news += [(label,x) for x in news(q,limit=2)]
+    stock_queries={
+      "BHP":["BHP broker upgrade downgrade","BHP dividend results guidance","BHP copper iron ore news"],
+      "CBA":["CBA broker upgrade downgrade","CBA results dividend outlook","Commonwealth Bank CBA news"],
+      "NVDA":["Nvidia NVDA earnings guidance","Nvidia broker upgrade downgrade","Nvidia AI partnership buyback news"],
+      "MSFT":["Microsoft MSFT earnings guidance","Microsoft broker upgrade downgrade","Microsoft AI cloud contract news"]
+    }
     used_stock=set()
-    for label,x in stock_news:
-        if label in used_stock: continue
+    for label,queries in stock_queries.items():
+        candidates=[]
+        seen_titles=set()
+        for q in queries:
+            for item in news(q,limit=4):
+                key=item["title"].lower()
+                if key in seen_titles: continue
+                seen_titles.add(key)
+                item["catalystScore"]=catalyst_score(label,item)
+                candidates.append(item)
+        candidates.sort(key=lambda x:x.get("catalystScore",0),reverse=True)
+        x=candidates[0] if candidates else None
+        st=stocks.get(label)
+        if not st or not x: continue
+        used_stock.add(label)
         st=stocks.get(label)
         if not st: continue
         used_stock.add(label)
@@ -129,7 +161,6 @@ def main():
           "rank":70,
           "stock":{"ticker":st["symbol"],"history":hist,"threeYearReturn":round(((hist[-1][1]/hist[0][1])-1)*100,1) if len(hist)>1 and hist[0][1] else None,"consensus":rating,"target":con.get("target"),"upside":upside,"view":view,"analysts":con.get("analysts")}
         })
-        if len(used_stock)>=4: break
     seen=set()
     for q in ("ASX Australian share market","US stocks S&P 500 Nasdaq","markets bonds oil gold"):
         for x in news(q):
@@ -140,7 +171,7 @@ def main():
         if len(cards)>=9: break
     if len(cards)<10: raise SystemExit("Refusing to publish: fewer than 10 cards")
     def t(x): return {"value":x["value"],"direction":"up" if x["pct"]>=0 else "down","change":pct(x["pct"])}
-    feed={"version":"1.3.1","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}
+    feed={"version":"1.3.2","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}
     feed["tickers"]={"asx200":t({"value":fmt(a["price"],1),"pct":a["pct"]}),"sp500":t({"value":fmt(sp["price"],2),"pct":sp["pct"]}),"vix":t({"value":fmt(vx["price"],2),"pct":vx["pct"]}),"oil":t({"value":"US$"+fmt(oil["price"],2),"pct":oil["pct"]}),"gold":t({"value":"US$"+fmt(gold["price"],2),"pct":gold["pct"]}),"us10":t({"value":fmt(rate["price"],2)+"%","pct":rate["pct"]}),"aud":t({"value":fmt(aud["price"],4),"pct":aud["pct"]})}
     FEED.write_text(json.dumps(feed,indent=2,ensure_ascii=False)+"\n"); print("Wrote",len(cards),"cards at",feed["updatedAt"])
 if __name__=="__main__": main()

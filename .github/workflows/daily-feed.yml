@@ -38,4 +38,5 @@ jobs:
           git add data/feed.json
           git diff --cached --quiet && echo "No feed changes to commit" && exit 0
           git commit -m "Refresh Market Mind daily feed"
+          git pull --rebase origin main
           git push

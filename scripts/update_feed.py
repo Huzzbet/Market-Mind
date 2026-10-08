@@ -91,6 +91,7 @@ def main():
     for k,s in syms.items():
         try: m[k]=dict(zip(("price","pct"),yahoo(s)))
         except Exception as e: print("Warning:",s,e)
+    # Dynamic candidate pool
     stocks={}
     for k,sym in {"BHP":"BHP.AX","CBA":"CBA.AX","NVDA":"NVDA","MSFT":"MSFT"}.items():
         try:

@@ -13,6 +13,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: market-mind-feed
+  cancel-in-progress: true
+
 jobs:
   update-feed:
     runs-on: ubuntu-latest

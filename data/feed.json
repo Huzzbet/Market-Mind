@@ -1,57 +1,57 @@
 {
   "version": "1.3.3",
-  "updatedAt": "2026-10-08T11:35:55+00:00",
+  "updatedAt": "2026-10-09T00:45:18+00:00",
   "tickers": {
     "asx200": {
-      "value": "8,660.9",
+      "value": "8,694.0",
       "direction": "down",
-      "change": "-0.77%"
+      "change": "-0.39%"
     },
     "sp500": {
-      "value": "7,801.77",
+      "value": "7,765.36",
       "direction": "down",
-      "change": "-0.22%"
+      "change": "-0.47%"
     },
     "vix": {
-      "value": "15.95",
+      "value": "15.41",
       "direction": "up",
-      "change": "+5.77%"
+      "change": "+2.19%"
     },
     "oil": {
-      "value": "US$92.65",
+      "value": "US$90.99",
       "direction": "up",
-      "change": "+4.95%"
+      "change": "+3.07%"
     },
     "gold": {
-      "value": "US$4,147.60",
+      "value": "US$4,173.70",
       "direction": "up",
-      "change": "+0.17%"
+      "change": "+0.80%"
     },
     "us10": {
-      "value": "5.28%",
-      "direction": "up",
-      "change": "+0.15%"
+      "value": "5.23%",
+      "direction": "down",
+      "change": "-0.87%"
     },
     "aud": {
-      "value": "0.6938",
-      "direction": "down",
-      "change": "-0.62%"
+      "value": "0.6967",
+      "direction": "up",
+      "change": "+0.04%"
     }
   },
   "cards": [
     {
       "tag": "ASX 200",
-      "time": "8 OCT",
+      "time": "9 OCT",
       "title": "ASX 200 is lower",
-      "dek": "The ASX 200 is 8,660.9, -0.77% on the latest session.",
+      "dek": "The ASX 200 is 8,694.0, -0.39% on the latest session.",
       "data": [
         [
           "ASX 200",
-          "8,660.9"
+          "8,694.0"
         ],
         [
           "Session",
-          "-0.77%"
+          "-0.39%"
         ],
         [
           "Context",
@@ -64,21 +64,21 @@
     },
     {
       "tag": "US MARKETS",
-      "time": "8 OCT",
+      "time": "9 OCT",
       "title": "US equities are lower",
-      "dek": "The S&P 500 is 7,801.77, -0.22% on the latest session.",
+      "dek": "The S&P 500 is 7,765.36, -0.47% on the latest session.",
       "data": [
         [
           "S&P 500",
-          "7,801.77"
+          "7,765.36"
         ],
         [
           "Session",
-          "-0.22%"
+          "-0.47%"
         ],
         [
           "VIX",
-          "15.95"
+          "15.41"
         ]
       ],
       "insight": "Equity direction is more informative when read alongside volatility and Treasury yields. A rising index with contained volatility is a different signal from a rally driven by falling risk.",
@@ -87,17 +87,17 @@
     },
     {
       "tag": "RATES",
-      "time": "8 OCT",
-      "title": "US 10Y yield is rising",
-      "dek": "The US 10-year Treasury yield is about 5.28%, +0.15% on the latest session.",
+      "time": "9 OCT",
+      "title": "US 10Y yield is falling",
+      "dek": "The US 10-year Treasury yield is about 5.23%, -0.87% on the latest session.",
       "data": [
         [
           "US 10Y",
-          "5.28%"
+          "5.23%"
         ],
         [
           "Session",
-          "+0.15%"
+          "-0.87%"
         ],
         [
           "Risk",
@@ -110,17 +110,17 @@
     },
     {
       "tag": "COMMODITIES",
-      "time": "8 OCT",
+      "time": "9 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$92.65, +4.95% on the latest session.",
+      "dek": "WTI crude is about US$90.99, +3.07% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$92.65"
+          "US$90.99"
         ],
         [
           "Session",
-          "+4.95%"
+          "+3.07%"
         ],
         [
           "Theme",
@@ -133,21 +133,21 @@
     },
     {
       "tag": "GOLD",
-      "time": "8 OCT",
+      "time": "9 OCT",
       "title": "Gold is higher",
-      "dek": "Gold is about US$4,147.60, +0.17% on the latest session.",
+      "dek": "Gold is about US$4,173.70, +0.80% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,147.60"
+          "US$4,173.70"
         ],
         [
           "Session",
-          "+0.17%"
+          "+0.80%"
         ],
         [
           "AUD/USD",
-          "0.6938"
+          "0.6967"
         ]
       ],
       "insight": "Gold is most useful as a signal when viewed with Treasury yields and the US dollar. The combination can help distinguish inflation, currency and safe-haven demand.",
@@ -156,17 +156,17 @@
     },
     {
       "tag": "CURRENCY",
-      "time": "8 OCT",
-      "title": "Australian dollar is lower",
-      "dek": "AUD/USD is around 0.6938, -0.62% on the latest session.",
+      "time": "9 OCT",
+      "title": "Australian dollar is higher",
+      "dek": "AUD/USD is around 0.6967, +0.04% on the latest session.",
       "data": [
         [
           "AUD/USD",
-          "0.6938"
+          "0.6967"
         ],
         [
           "Session",
-          "-0.62%"
+          "+0.04%"
         ],
         [
           "Theme",
@@ -179,13 +179,13 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "8 OCT",
+      "time": "9 OCT",
       "title": "BHP · Mining outlook in focus",
-      "dek": "Kalkine • 61.19 • +0.00% today.",
+      "dek": "Kalkine • 60.55 • -1.05% today.",
       "data": [
         [
           "PRICE",
-          "61.19"
+          "60.55"
         ],
         [
           "CONSENSUS",
@@ -193,10 +193,10 @@
         ],
         [
           "TARGET · 17 ANALYSTS",
-          "59.27"
+          "59.23"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -3.1% versus the current price. Catalyst: BHP Group (ASX:BHP): Copper Leads FY26 Earnings as Portfolio Priorities Shift - Kalkine.",
+      "insight": "Market Mind: WATCH. Consensus target implies -2.2% versus the current price. Catalyst: BHP Group (ASX:BHP): Copper Leads FY26 Earnings as Portfolio Priorities Shift - Kalkine.",
       "source": "Kalkine",
       "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNZWhYUllpOEkwNWVxTHFMYTFQUS1oZFhUOEx4VkpQUEk5b1gzamxDOVMyWnFRM1pLRVFSLUlBQ0ZISlllTXY1MWRlMG5ZMEhMMktZbWo3ejU3Z2JSWDd6SHIza3RZS3N0dk8wTFUzM3RORTBQQUJHV01kWWdGZVdOQ0hBRlFKNHp3b2VDaWlqZ2lfWEUwQ0dtRFpqZ1MtOE1ibU1SMlpDV1NEYjRS?oc=5",
       "rank": 70,
@@ -345,30 +345,30 @@
           ],
           [
             "2026-09",
-            62.45
+            61.19
           ],
           [
             "2026-10",
-            61.19
+            60.55
           ]
         ],
-        "threeYearReturn": 32.2,
+        "threeYearReturn": 30.8,
         "consensus": "HOLD",
-        "target": 59.27,
-        "upside": -3.137765435201234,
+        "target": 59.23,
+        "upside": -2.1800152827295527,
         "view": "WATCH",
         "analysts": 17
       }
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "8 OCT",
+      "time": "9 OCT",
       "title": "CBA · Income story in focus",
-      "dek": "AD HOC NEWS • 148.12 • +0.00% today.",
+      "dek": "AFR • 150.03 • +1.29% today.",
       "data": [
         [
           "PRICE",
-          "148.12"
+          "150.03"
         ],
         [
           "CONSENSUS",
@@ -379,9 +379,9 @@
           "125.64"
         ]
       ],
-      "insight": "Market Mind: SELL. Consensus target implies -15.2% versus the current price. Catalyst: Citi targets Commonwealth Bank of Australia stock at AUD 141.00 - AD HOC NEWS.",
-      "source": "AD HOC NEWS",
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxORzQ4bkdXVkFHQnhFRUk5WEF1MVVpTXAyTzl5eWQzaFBnTzBJMVUzTHlSamJaVTIwWndpS0RkaERJT2M4SW9uU2RuMWd6aVBqVjBfWXBkUWhvem4tQkM3elVBT2tHbmQ0dy1VeHQxUWZURFhlNF9SdlNKOTE5dHNkaGljUFN6XzhyNkctYzVtOXo5UmtnUzNnS2tRS1hZdWZGRUN5UjNGbWhOT0ZUUHBtQ3dna1ZlaE8yTzcwZ2wxOWlkeVBJ?oc=5",
+      "insight": "Market Mind: SELL. Consensus target implies -16.3% versus the current price. Catalyst: The CBA directors with barely any skin in the game.",
+      "source": "AFR",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQQ0J2UXNjdUQwenhUbG05bER2NUl5NjM3U1IxcGotMTNQWnFRd1IybjltalR3RkEtLXlHakRVUXE3aV9GWjVNTTN1THNPeVJCZW5xNm5VMGUwcVhNM0ZDVXJScDB4dExaNTBOWjNqa2JGd2lmZk5pejgwckU4UVNEYjV1WFlHSHp0NER2aEFiTEplQmFRT2o1SGdFZ2t6OG8?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "CBA.AX",
@@ -528,26 +528,26 @@
           ],
           [
             "2026-09",
-            150.37
+            148.12
           ],
           [
             "2026-10",
-            148.12
+            150.03
           ]
         ],
-        "threeYearReturn": 41.5,
+        "threeYearReturn": 43.3,
         "consensus": "STRONG SELL",
         "target": 125.64,
-        "upside": -15.176880811670356,
+        "upside": -16.256747968901884,
         "view": "SELL",
         "analysts": 14
       }
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
-      "time": "8 OCT",
+      "time": "9 OCT",
       "title": "Nvidia · AI earnings power in focus",
-      "dek": "BigGo Finance • 237.47 • -0.74% today.",
+      "dek": "TradingView • 237.47 • -0.74% today.",
       "data": [
         [
           "PRICE",
@@ -562,9 +562,9 @@
           "328.72"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +38.4% versus the current price. Catalyst: Nvidia and Micron Set to Dominate S&P 500 Earnings as AI Spending Boom Drives 29.5% P….",
-      "source": "BigGo Finance",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBySnUyWHBJOThueVYyY0lTYmI1MHF1UDVmczRQdXFaMlFZNnVZc2lYeUlTVmhqejAyOXBiR01kZkZhWGNuTWpMNG5qeHlHcXlka2pjXzZ5QjA5d1FxakRfRDR6WDlFR09ZU1lXclFrMDhmeXNxMGc?oc=5",
+      "insight": "Market Mind: BUY. Consensus target implies +38.4% versus the current price. Catalyst: Nvidia Stocks Fall as Upscale Opens Networks to Rival Chips - TradingView.",
+      "source": "TradingView",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWnBHUXFnbWRrb1RYWGxoTnVhaGgxZVBPZENoWXR2Zy1SNm9BUm5EYU01MTVlMFhlNFRpbEJYdEx0NzNHZ2dKTGZPb0xBY2ZSY016dFRndDZqZlYwdzFVRldZbk1vLTdoWHNtbGZQczE3TmZLR3ozS055NmUwb1VRM1JDU1d0d05jajdDeXZMYWNyUVZEUC1HYmM3VVpHQnFaajRiUTZaRzlJSExidVZOZjhmclZ3QVo2Wjkw?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -715,10 +715,10 @@
           ],
           [
             "2026-10",
-            237.47
+            230.48
           ]
         ],
-        "threeYearReturn": 407.7,
+        "threeYearReturn": 392.8,
         "consensus": "STRONG BUY",
         "target": 328.72,
         "upside": 38.425905718714226,
@@ -728,9 +728,9 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
-      "time": "8 OCT",
+      "time": "9 OCT",
       "title": "Microsoft · AI valuation in focus",
-      "dek": "marketscreener.com • 529.76 • +0.09% today.",
+      "dek": "CryptoRank • 529.76 • +0.09% today.",
       "data": [
         [
           "PRICE",
@@ -745,9 +745,9 @@
           "587.63"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +10.9% versus the current price. Catalyst: Microsoft wants AI to run on your laptop, not in the cloud - marketscreener.com.",
-      "source": "marketscreener.com",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNY3lqdExfRXhHU2JVaTJfVzdrWjduaWZ3WkFUVi00QlhKTDdOQ1ZFcnVRMWxZM2xidXV3em91R0xESFdMaElKSlhBTXFIbUtEdV8zb05TZU1hcWYyUkxzckwtZ3h6cGZweGllcmhTSVB0dnYyRThSRmFrb2s4SEVPMWxod04xLV9aQmpLQ2N4TlE3QjdVM04xWjlsNng3Y3poZkwyYjA5MkROZ3dDc1V3?oc=5",
+      "insight": "Market Mind: BUY. Consensus target implies +10.9% versus the current price. Catalyst: Should You Buy Microsoft Stock (MSFT) in October? 3 Things Investors Need to Know - C….",
+      "source": "CryptoRank",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcDBBRzM3VzRjZ1Z1U05kaDNvM0RWVUx3WEJpQ3B2ck5NT3JnbTdUNnkzVHU4bThiSkFmUnF4c3F0Yi1HQzFBUnk1YmFFdC1qRkYtbWJwLXlBNjMwNDViQVE5S0JnSC0xQW1ydllQTGhlQy1GMGIxQzhXb1pyOTdFYzhOTkZiWnlfQjJLYW02NnpLTEx3RVNKNjZrbUhUb0l1X0xSbnh2ZzQydkctVlBnZHpIUHpFUGc?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",
@@ -898,10 +898,10 @@
           ],
           [
             "2026-10",
-            529.76
+            522.61
           ]
         ],
-        "threeYearReturn": 39.8,
+        "threeYearReturn": 37.9,
         "consensus": "STRONG BUY",
         "target": 587.63,
         "upside": 10.923812512759824,
@@ -911,7 +911,55 @@
     },
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "8 OCT",
+      "time": "9 OCT",
+      "title": "5 things to watch on the ASX 200 on Friday 9 October 2026 - The Motley Fool Australia",
+      "dek": "The Motley Fool Australia • Latest market coverage.",
+      "data": [
+        [
+          "SOURCE",
+          "The Motley Fool Australia"
+        ],
+        [
+          "TYPE",
+          "Market news"
+        ],
+        [
+          "STATUS",
+          "Latest"
+        ]
+      ],
+      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
+      "source": "The Motley Fool Australia",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWmZuRWZzVVY5bDRYTWlJSUlMNTd3dEFuSWFKdTE5aHV0b0F2UzVyYVlsaVVrMEl4TFZfMnhkN09BaG9fTUZIYVExYnpMeGdvMktqMlJpb0RHYkluNFFjWWg3TGtIQ0tBS09oRldWbjFJcDZ4RUpKUV96WEhoVWVtOEdvd0hTZVhZbjZuOW42X0pONlQ3YWhadG5B?oc=5",
+      "rank": 88
+    },
+    {
+      "tag": "NEWS / MARKET INTELLIGENCE",
+      "time": "9 OCT",
+      "title": "Banks boost ASX, Wall Street slides after OpenAI warning - SMH.com.au",
+      "dek": "SMH.com.au • Latest market coverage.",
+      "data": [
+        [
+          "SOURCE",
+          "SMH.com.au"
+        ],
+        [
+          "TYPE",
+          "Market news"
+        ],
+        [
+          "STATUS",
+          "Latest"
+        ]
+      ],
+      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
+      "source": "SMH.com.au",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOcW5fVVhyaWd3SGdFUE1jV0t4T2t6TXF6SWZDN084LV9LTXNxc3d5R0U3N3JuSm1ocWZHYzktYzBQRWJaVnA1LU5jSk85SldtMFhnbFVzaXo0b0ZXcEZEWXBCOHhkbVpnTVY2QVBpcDhpS28xV1JnUTN0dDJMTHZJM3V3ZmRUZkxKekFYbENxOG4tWkR4QlhXYW11SmlMWGZvVE03dkx3RW9pQkxsSTNOX1VUWlB6SmRU?oc=5",
+      "rank": 88
+    },
+    {
+      "tag": "NEWS / MARKET INTELLIGENCE",
+      "time": "9 OCT",
       "title": "ASX heads for worst month since US-Iran war - News.com.au",
       "dek": "News.com.au • Latest market coverage.",
       "data": [
@@ -931,54 +979,6 @@
       "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
       "source": "News.com.au",
       "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPX1Fkb29WZ3lyN3drNFJRNnlldzVSd2dGYjkxVnZlaEdNR3F4SEdyR2lyR2RIVFU3WG5tdjhWa3FKZTJRTnIzV3E1RnB1SVFIWXJPM2Rvcm5ZMFAwNVFKUUpXQ2YtSTEyM2IxajdnSl9TU1pDdkJaMVpGZjZiUU1kcF96XzU5YWZlTGRXV2Rocl9vbEt0THNmOG5tU1hWZDhIY2dmZnFLMzVRQmI0cmd1V3UxUm1fMG1WOHlxYzZXUDB3OHkzUkhzbFN4VUptZmtHSlhqaTRxVkZtdEwtLTF6UkhoU25xRWNreUZscFFCbHNDalZoUm41c0dIN3lqV3V1NHVWRVIyeXdaRWRTLVlnY1E5QdIBmAJBVV95cUxPVHJ2cXhTM21Bc2V3c3Z1Y1Q5RnppRmJ2RUhMYmpQYVB4WnVkZHRzaDhEc09DUllCbFFYVm84QzZjWWx1OXMzV3FINTFVQ29xZmdKNFJwUTFEeDBXMk50OHFhQy0zZ2s5T3F1S0J5QmtrWER0SGhlUTJQa2pSVWJEeEl0Yk9wTkplUUlVOE54TmxiVjkxLVh6aks0RWJTSWNpekxXSDk2M1pBdE90SnZGaTBYX2NXa2JORDdrelhXZjNmalVRSjZQbUZvaTVKZjRfY0FwdHRKUFpvYlQ1NmEzNVNTY2trME9UdkFCa2lOWWliRDh1ek8xT29rSS10Z092blJ3V2NMcWhKeGkzT0VEcU9icmJnQVRi?oc=5",
-      "rank": 88
-    },
-    {
-      "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "8 OCT",
-      "title": "Analyst Watch: What Is the Consensus on National Australia Bank (ASX:NAB) After 1H26? - Kalkine",
-      "dek": "Kalkine • Latest market coverage.",
-      "data": [
-        [
-          "SOURCE",
-          "Kalkine"
-        ],
-        [
-          "TYPE",
-          "Market news"
-        ],
-        [
-          "STATUS",
-          "Latest"
-        ]
-      ],
-      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
-      "source": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNYVBfQ21NeU1EWnk1UnRzUGpOMzNKT0RyWUxQUm03Y1UyV2MwRmlUQW9kSloxOHEzS1hTcVFBdktGQlJtay1zajNNV3o0dzFNemNvQ3pPSm02aTl0eDFNZVphVUZZTjE0YXlVTU5aMXd3bmxPWHpsZFdON1B6RTltYWgtRlJzQ2FaWHlfZVdSZmQwaGNEOW5TdzB2T3JhMkdwWlVmMGZlM3dWOGR0SE9yMkhhLXBkVzN1a1BLQUZieXJCS3RKSHNj?oc=5",
-      "rank": 88
-    },
-    {
-      "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "8 OCT",
-      "title": "Nation's second-largest ASX float in doubt as investors get cold feet - ABC News & Headlines – Australian Broadcasting Corporation",
-      "dek": "ABC News & Headlines – Australian Broadcasting Corporation • Latest market coverage.",
-      "data": [
-        [
-          "SOURCE",
-          "ABC News & Headlines – Australian Broadcasting Corporation"
-        ],
-        [
-          "TYPE",
-          "Market news"
-        ],
-        [
-          "STATUS",
-          "Latest"
-        ]
-      ],
-      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
-      "source": "ABC News & Headlines – Australian Broadcasting Corporation",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSWVWczdxVTJpYXF0alc5bXI1TDVlWndYVjFYNE5kSWxqUnROc3kzWEdJNzZvMTExVUpBMWxSUmswTUJudS16eXg1c0lsV052TFdwd1BGT0plWjQtZDNaNFNFWEtZNGh3WUVSSDY2VFZxOFJWQ1RUT2hqT0ZTREFOaG5UaEZsQlozSHlfenU5R1U5WnpXOGtHRGFqdGJRZw?oc=5",
       "rank": 88
     }
   ]

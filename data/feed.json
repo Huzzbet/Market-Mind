@@ -1,6 +1,6 @@
 {
   "version": "1.3.3",
-  "updatedAt": "2026-10-10T21:02:17+00:00",
+  "updatedAt": "2026-10-10T21:02:53+00:00",
   "tickers": {
     "asx200": {
       "value": "8,716.6",
@@ -483,7 +483,7 @@
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "10 OCT",
       "title": "BHP · Mining outlook in focus",
-      "dek": "Yahoo! Finance Canada • 60.94 • +0.00% today.",
+      "dek": "Medianet News Hub • 60.94 • +0.00% today.",
       "data": [
         [
           "PRICE",
@@ -498,9 +498,9 @@
           "59.00"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -3.2% versus the current price. Catalyst: BHP Group Limited (BHP) Stock Forecasts - Yahoo! Finance Canada.",
-      "source": "Yahoo! Finance Canada",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSmZOSmdoVEhid1lmRE1hV1VTWHJiX0psb2VEX2lrMGFFY1R0YjB5ZnQ1RTZXNUdweHpNc3hjOXJrdllNdlJ1T3N5cGY2SS1XTlJ6YnY1NEF1X3Y2cC1KbW0wNWNrLVp0dWgtcllJbVBIU00tTFFxbmFYWDlGeklmbVJNamRxQlFPeElUOVhpWmc?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies -3.2% versus the current price. Catalyst: MEU funds class action against BHP over public holiday breaches - Medianet News Hub.",
+      "source": "Medianet News Hub",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaEdydDhCWXJXZkhmbjJScGw3RWlCTi0tS2hHaFdOM2ZzWm10d09IM1Z4cGFtVkUtZlhobVJTRkk2UEVjb2h2eG9EX3VHV29HWl9KNER6YkxoMjZjOU1idU9INHBuWV8wdDdEU3BLUUU3WDI1bTNxQV9ZMDJyYTBjOGZTYXNKV25oUEduZ0dZSUdjMExNWklFay1ldUZ6MF9pYUVBZEVDek45dXJVaDNERA?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "BHP.AX",
@@ -1230,7 +1230,7 @@
           "Latest"
         ]
       ],
-      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
+      "insight": "Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone.",
       "source": "The Motley Fool Australia",
       "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQUXo3V2VFbmNYNlpzaWpzR3VpU1liNHczNWxlRUdFS0hiYWNMYVRkaXJYZXdSUW85MFQ4ODhwYWxuYk15Mi1yZGR3VVFHUEg2VVFXM0pDUlV1REhySFdySklyeVlzWmhCZTZablpkTWJldWNGS3pic0xFVlRuWVFuekl3aElKTVB2Rkp0VWR2NElsQy1HWlBfbmtjRERNaWhDVXF6NkJ4UXBZRVhjRnNR?oc=5",
       "rank": 88
@@ -1238,12 +1238,12 @@
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
       "time": "10 OCT",
-      "title": "REA Group (ASX:REA) Shares Moved, What Is Driving Attention Now? - Yahoo! Finance Canada",
-      "dek": "Yahoo! Finance Canada • Latest market coverage.",
+      "title": "Commonwealth Bank of Australia (CBA.AX) stock price, news, quote and history - Yahoo Finance Australia",
+      "dek": "Yahoo Finance Australia • Latest market coverage.",
       "data": [
         [
           "SOURCE",
-          "Yahoo! Finance Canada"
+          "Yahoo Finance Australia"
         ],
         [
           "TYPE",
@@ -1254,9 +1254,9 @@
           "Latest"
         ]
       ],
-      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
-      "source": "Yahoo! Finance Canada",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBsMEdoQnRxNWJtSXJnSjVYRmN5ckgxdlJVZWRIdDBnbldkeFpQTnlqTUpRUndKVUFTVm45U0JYUWp4NEVmWWhuWjU5WEpGNE15SmRJaFpkUjR4d0p1SWZEbXdWYlc0VUpXZmdsejU4TndaempvR0pFZVNlNF91UQ?oc=5",
+      "insight": "For banks, the important transmission channels are net interest margins, loan growth, funding costs and credit quality. Watch management guidance and arrears data to judge whether the development affects earnings or risk.",
+      "source": "Yahoo Finance Australia",
+      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1Bb0NDZVYyQlg0RmRzbjV0UlFSLWRzRHNsRUdIcDBtQU9IVHo4TE5wRzVoVEZCczNKN2tnd19XRnV6M3p4TmVOUGNQTDJGNnlHeEZkNA?oc=5",
       "rank": 88
     },
     {
@@ -1278,7 +1278,7 @@
           "Latest"
         ]
       ],
-      "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
+      "insight": "Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone.",
       "source": "Simply Wall Street",
       "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOeGljLVUyOXhLZEV1QnBBeUtMSHZBVEF1NXJGbHUwM1BxQ1M1ZzFqRGNVdGZjZFc5c3o1ODljb1Rfb29oM0FSNEVqVk9WVWtWZGE1MzE2a1ZyOWp6NmFJS1IwcXNTRDhtOG40ZGdCYVNxVkNOWTZsa1dQUDVRQzViZDJ0UTRKTGxybDRWeDZTakVwd1lKWjlKQVp1Zjc2SE1sNDlabDJWZGlSekdrTFhuMjBZeVY3Mm5WcHN6SmM3Q3FRX2dCVVliNkJIbmxScExjMk1XX0NKVkFxQ2tsZ2hEeS1FeXBvR1JrSXpVTNIB8gFBVV95cUxQU3BPdm1EZkxTMjdZT0Z1YkJNRWV5cmozRk1KbGkxTXFOUFdKYkY4Z2YyMmZRQU9oSmVzM2VyXzFXQ2dkY0E4bS1qVkZfdGE5eFg4Nk9wdmN2TjJIYnExbkRic2RmbmdSbTlUc2UyMXJYLU5nU1dYTDhfTjE2YWMteFhQSHlwdkxpYVdVa1ZNZHI5U0JPMVk1Tm9hSEFGRmxfSDNOUVhuYXgzWllBeF9TVmxJYm5ndHMwVW4yc2x4OXZHaUpEX2tHR19MU2ctT053ZU5kX21pN0xCemJOYklqa3l6cTlVT1J1NEdyOHVoMlJwdw?oc=5",
       "rank": 88

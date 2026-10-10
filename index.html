@@ -125,7 +125,9 @@ function renderCards(cards){
  feed.querySelectorAll(".asx-year-slot").forEach(function(slot,i){if(cards[i]&&((cards[i].tag||"").toUpperCase().indexOf("ASX")>=0||(cards[i].title||"").toUpperCase().indexOf("ASX 200")>=0))slot.innerHTML=asxYearChart();});
  feed.querySelectorAll(".stock-slot").forEach(function(slot,i){if(cards[i]&&cards[i].stock)slot.innerHTML=stockChart(cards[i]);});
  feed.querySelectorAll(".story-visual-slot").forEach(function(slot,i){if(cards[i]&&((cards[i].tag||"").toUpperCase().indexOf("ASX")<0))slot.innerHTML=storyVisual(cards[i]);});
- feed.scrollTop=0;
+ // Preserve the reader's current position when the feed refreshes.
+ // New content should not force the user back to the first story.
+
 }
 function setHealth(text,ok){
  var el=document.getElementById("status");

@@ -104,8 +104,55 @@ def news(q,limit=3):
         source=(se.text if se is not None else "Market news") or "Market news"
         if title and link: out.append({"title":re.sub(r"\s+"," ",title),"link":link,"source":source.strip()})
     return out
+def next_macro_watch(now):
+    # Verified upcoming releases for the week commencing 12 October 2026.
+    day = now.astimezone().date()
+    if day <= datetime(2026, 10, 16).date():
+        return ("RBA September meeting minutes: Tuesday 13 October, 11:30 am AEDT; then US September CPI: Wednesday 14 October, 8:30 am ET. CPI is the key test for whether elevated yields persist.",
+                "https://www.rba.gov.au/schedules-events/calendar/")
+    return ("Next key checks: the next scheduled inflation and labour-market releases, plus central-bank guidance. Confirm exact dates against the official calendars before trading on the event.",
+            "https://www.newyorkfed.org/research/calendars/i-oct26.html")
+
+def daily_narrative(a, sp, vx, oil, gold, rate, aud, nasdaq, now):
+    nq = nasdaq or {"price": None, "pct": None}
+    if nq["pct"] is not None and rate["pct"] >= 0.25 and nq["pct"] <= -0.5:
+        link = ("US 10-year yields rose " + pct(rate["pct"]) + " while the Nasdaq fell " + pct(nq["pct"]) +
+                ". That combination is consistent with higher discount rates weighing on long-duration growth valuations, although one session cannot establish causation.")
+    elif nq["pct"] is not None and rate["pct"] < 0 and nq["pct"] > 0:
+        link = ("US 10-year yields fell " + pct(rate["pct"]) + " while the Nasdaq rose " + pct(nq["pct"]) +
+                ". Lower yields can support growth-stock valuations, but check whether earnings expectations and market breadth confirm the move.")
+    elif nq["pct"] is not None:
+        link = ("The S&P 500 moved " + pct(sp["pct"]) + ", the Nasdaq " + pct(nq["pct"]) +
+                ", and the US 10-year yield " + pct(rate["pct"]) + ". Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable.")
+    else:
+        link = ("The S&P 500 moved " + pct(sp["pct"]) + ", the VIX " + pct(vx["pct"]) +
+                ", and the US 10-year yield " + pct(rate["pct"]) + ". Without a verified Nasdaq close, avoid claiming a specific technology-stock/yield relationship.")
+    if oil["pct"] > 1 and rate["pct"] > 0:
+        oil_note = " Oil also rose " + pct(oil["pct"]) + "; if sustained, higher energy costs can complicate the inflation outlook and keep yields under pressure."
+    elif oil["pct"] < -1:
+        oil_note = " Oil fell " + pct(oil["pct"]) + ", which may ease some near-term inflation pressure if the move persists."
+    else:
+        oil_note = " Oil moved " + pct(oil["pct"]) + "; a single session is not enough to infer a change in the inflation trend."
+    watch, watch_url = next_macro_watch(now)
+    return {
+        "tag": "DAILY CROSS-ASSET NARRATIVE",
+        "time": now.strftime("%-d %b").upper(),
+        "title": "Rates, equities and inflation: the signals to connect",
+        "dek": "A daily read-through across equity direction, bond yields, volatility and energy prices—not a standalone buy or sell signal.",
+        "data": [["S&P 500", pct(sp["pct"])], ["US 10Y YIELD", fmt(rate["price"], 2) + "%"],
+                 ["NASDAQ", pct(nq["pct"]) if nq["pct"] is not None else "Unavailable"]],
+        "insight": link + oil_note + " Next release to watch: " + watch,
+        "source": "Market Mind • Yahoo Finance • official calendars",
+        "link": watch_url,
+        "rank": 101
+    }
+
 def main():
     now=datetime.now(timezone.utc).astimezone(); syms={"asx200":"^AXJO","sp500":"^GSPC","vix":"^VIX","oil":"CL=F","gold":"GC=F","us10":"^TNX","aud":"AUDUSD=X"}; m={}
+    nasdaq=None
+    try:
+        np,nchg=yahoo("^IXIC"); nasdaq={"price":np,"pct":nchg}
+    except Exception as e: print("Warning: Nasdaq daily move unavailable",e)
     for k,s in syms.items():
         try: m[k]=dict(zip(("price","pct"),yahoo(s)))
         except Exception as e: print("Warning:",s,e)
@@ -197,6 +244,7 @@ def main():
             seen.add(key); cards.append({"tag":"NEWS / MARKET INTELLIGENCE","time":d,"title":x["title"],"dek":x["source"]+" • Latest market coverage.","data":[["SOURCE",x["source"]],["TYPE","Market news"],["STATUS","Latest"]],"insight":news_insight(x),"source":x["source"],"link":x["link"],"rank":88})
             if len(cards)>=13: break
         if len(cards)>=9: break
+    cards.insert(0, daily_narrative(a, sp, vx, oil, gold, rate, aud, nasdaq, now))
     if len(cards)<10: raise SystemExit("Refusing to publish: fewer than 10 cards")
     def t(x): return {"value":x["value"],"direction":"up" if x["pct"]>=0 else "down","change":pct(x["pct"])}
     feed={"version":"1.3.3","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}

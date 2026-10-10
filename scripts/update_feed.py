@@ -105,13 +105,162 @@ def news(q,limit=3):
         if title and link: out.append({"title":re.sub(r"\s+"," ",title),"link":link,"source":source.strip()})
     return out
 def next_macro_watch(now):
-    # Verified upcoming releases for the week commencing 12 October 2026.
-    day = now.astimezone().date()
-    if day <= datetime(2026, 10, 16).date():
-        return ("RBA September meeting minutes: Tuesday 13 October, 11:30 am AEDT; then US September CPI: Wednesday 14 October, 8:30 am ET. CPI is the key test for whether elevated yields persist.",
-                "https://www.rba.gov.au/schedules-events/calendar/")
-    return ("Next key checks: the next scheduled inflation and labour-market releases, plus central-bank guidance. Confirm exact dates against the official calendars before trading on the event.",
-            "https://www.newyorkfed.org/research/calendars/i-oct26.html")
+    """Pull upcoming catalysts from official Australian and US release calendars.
+
+    Calendar requests are best-effort: if a provider changes its page layout or
+    is temporarily unavailable, the feed still publishes with a clearly labelled
+    official-calendar fallback rather than stale hard-coded dates.
+    """
+    from html.parser import HTMLParser
+    from calendar import month_abbr
+
+    class TextParser(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.parts = []
+        def handle_data(self, data):
+            if data.strip():
+                self.parts.append(data.strip())
+
+    class CellParser(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.cells = []
+            self.active = False
+            self.buf = []
+        def handle_starttag(self, tag, attrs):
+            if tag.lower() == "td":
+                self.active = True
+                self.buf = []
+        def handle_endtag(self, tag):
+            if tag.lower() == "td" and self.active:
+                self.cells.append(" ".join(self.buf))
+                self.active = False
+        def handle_data(self, data):
+            if self.active and data.strip():
+                self.buf.append(data.strip())
+
+    today = now.date()
+    events = []
+
+    def add_event(date_text, label, url, time_text=""):
+        try:
+            date = datetime.strptime(date_text, "%d %B %Y").date()
+        except ValueError:
+            return
+        if date >= today:
+            when = date.strftime("%a %-d %b")
+            if time_text:
+                when += " " + time_text
+            events.append((date, label, when, url))
+
+    # New York Fed calendar: the month-specific official calendar exposes each
+    # release in its own table cell. Check this month and the next two months.
+    month_start = today.replace(day=1)
+    for offset in range(3):
+        month_index = month_start.month - 1 + offset
+        year = month_start.year + month_index // 12
+        month = month_index % 12 + 1
+        url = "https://www.newyorkfed.org/research/calendars/i-%s%02d.html" % (month_abbr[month].lower(), year % 100)
+        try:
+            parser = CellParser()
+            parser.feed(get(url).decode("utf-8", "ignore"))
+            for cell in parser.cells:
+                m = re.match(r"^\s*(\d{1,2})\s+(.*)$", cell, re.S)
+                if not m:
+                    continue
+                day = int(m.group(1))
+                body = re.sub(r"\s+", " ", m.group(2)).strip()
+                if not body:
+                    continue
+                date_text = "%02d %s %04d" % (day, month_abbr[month], year)
+                # Keep the most market-sensitive scheduled release labels.
+                labels = (
+                    (("Consumer Price Index", "CPI"), "US CPI"),
+                    (("Employment Situation", "Nonfarm Payroll", "Employment Report"), "US jobs report"),
+                    (("Advance Retail Sales", "Retail Sales"), "US retail sales"),
+                    (("Producer Price Index", "PPI"), "US PPI inflation"),
+                    (("Personal Income and the PCE Deflator", "PCE Deflator"), "US PCE inflation"),
+                    (("Gross Domestic Product",), "US GDP"),
+                    (("ISM Manufacturing",), "US ISM manufacturing survey"),
+                    (("ISM Non-Manufacturing", "ISM Services"), "US ISM services survey"),
+                )
+                for phrases, label in labels:
+                    found = next((p for p in phrases if p.lower() in body.lower()), None)
+                    if found:
+                        tm = re.search(r"\((\d{1,2}:\d{2})\)", body)
+                        time_text = (tm.group(1) + " ET") if tm else ""
+                        # strptime accepts abbreviated month names through %b.
+                        try:
+                            date = datetime.strptime(date_text, "%d %b %Y").date()
+                        except ValueError:
+                            continue
+                        if date >= today:
+                            when = date.strftime("%a %-d %b") + ((" " + time_text) if time_text else "")
+                            events.append((date, label, when, url))
+                        break
+        except Exception as e:
+            print("Warning: US release calendar unavailable", url, e)
+
+    # RBA calendar: find upcoming monetary-policy minutes and decision statements.
+    rba_url = "https://www.rba.gov.au/schedules-events/calendar.html?topics=monetary-policy-board"
+    try:
+        parser = TextParser()
+        parser.feed(get(rba_url).decode("utf-8", "ignore"))
+        rba_text = " ".join(parser.parts)
+        for pattern, label in (
+            (r"Minutes of the [A-Za-z]+ \d{4} Monetary Policy Board Meeting", "RBA monetary-policy minutes"),
+            (r"Monetary Policy Decision Statement", "RBA monetary-policy decision"),
+        ):
+            for match in re.finditer(pattern, rba_text, re.I):
+                tail = rba_text[match.end():match.end() + 240]
+                dm = re.search(r"(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})", tail)
+                if dm:
+                    date_text = "%s %s %s" % (dm.group(1), dm.group(2), dm.group(3))
+                    tm = re.search(r"(\d{1,2}\.\d{2}\s*(?:am|pm)\s*A[ES]T)", tail, re.I)
+                    add_event(date_text, label, rba_url, tm.group(1) if tm else "")
+                    break
+    except Exception as e:
+        print("Warning: RBA calendar unavailable", e)
+
+    # ABS future releases: the date precedes the release heading on its calendar.
+    abs_url = "https://www.abs.gov.au/release-calendar/future-releases"
+    try:
+        parser = TextParser()
+        parser.feed(get(abs_url).decode("utf-8", "ignore"))
+        abs_text = " ".join(parser.parts)
+        date_re = re.compile(r"(?:Monday|Tuesday|Wednesday|Thursday|Friday),?\s+(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})\s+(\d{1,2}:\d{2}\s*(?:am|pm)\s*AEDT)", re.I)
+        for match in date_re.finditer(abs_text):
+            tail = abs_text[match.end():match.end() + 260]
+            label = None
+            if re.search(r"Labour Force, Australia", tail, re.I):
+                label = "Australian Labour Force"
+            elif re.search(r"Consumer Price Index, Australia", tail, re.I):
+                label = "Australian CPI"
+            elif re.search(r"Wage Price Index, Australia", tail, re.I):
+                label = "Australian wages"
+            if label:
+                date_text = "%s %s %s" % (match.group(1), match.group(2), match.group(3))
+                add_event(date_text, label, abs_url, match.group(4))
+    except Exception as e:
+        print("Warning: ABS release calendar unavailable", e)
+
+    # Deduplicate identical event/date pairs, then surface the next few catalysts.
+    unique = {}
+    for event in sorted(events, key=lambda item: (item[0], item[1])):
+        unique[(event[0], event[1])] = event
+    upcoming = sorted(unique.values(), key=lambda item: (item[0], item[1]))[:3]
+    if upcoming:
+        descriptions = [label + ": " + when for _, label, when, _ in upcoming]
+        urls = []
+        for _, _, _, url in upcoming:
+            if url not in urls:
+                urls.append(url)
+        return ("; ".join(descriptions) + ". Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
+                urls[0])
+
+    return ("Upcoming catalyst dates could not be verified from the live calendars. Check the official RBA, ABS and New York Fed release calendars before trading around an event.",
+            "https://www.rba.gov.au/schedules-events/calendar.html?topics=monetary-policy-board")
 
 def daily_narrative(a, sp, vx, oil, gold, rate, aud, nasdaq, now):
     nq = nasdaq or {"price": None, "pct": None}

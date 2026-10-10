@@ -122,7 +122,7 @@ function stockChart(c){
 }
 function storyVisual(c){
  var tag=(c.tag||"").toUpperCase(), t=(c.title||"").toLowerCase();
- if(tag.indexOf("US MARKETS")>=0) return '<div class="story-visual market-record"><div><span>S&amp;P 500</span><b>7,818.93</b></div><div class="record-line"><i></i><em>RECORD CLOSE</em></div><div><span>NASDAQ</span><b class="up">+0.4%</b></div></div>';
+ if(tag.indexOf("US MARKETS")>=0) return "";
  if(tag==="RATES") return '<div class="story-visual rate-visual"><div class="rate-top"><span>RBA CASH RATE</span><b>4.60%</b></div><div class="rate-track"><i style="width:82%"></i></div><div class="rate-foot"><span>4.35%</span><span>+25bp</span><span>4.60%</span></div></div>';
  if(tag==="AI STOCKS") return '<div class="story-visual target-visual"><div class="target-head"><span>MRVL REVENUE PATH</span><b>US$8.2B → US$70–90B</b></div><div class="target-bars"><i style="width:12%"></i><i style="width:86%"></i></div><div class="target-labels"><span>2026</span><span>FY2031 TARGET</span></div></div>';
  if(tag==="US ENERGY") return '<div class="story-visual energy-visual"><div class="energy-node">AI DATA CENTRES</div><div class="energy-arrow">→</div><div class="energy-node">890MW NUCLEAR</div><div class="energy-arrow">→</div><div class="energy-node">20 YEARS</div></div>';

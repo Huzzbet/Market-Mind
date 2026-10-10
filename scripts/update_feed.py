@@ -61,6 +61,24 @@ def catalyst_text(headline):
     text=re.sub(r"^(BREAKING|EXCLUSIVE|UPDATE)[:\-]\s*","",text,flags=re.I)
     return text if len(text)<=88 else text[:85].rstrip()+"…"
 
+def news_insight(item):
+    title=item.get("title","").lower()
+    if any(w in title for w in ("ipo","listing","market debut","shares plunge","stock market listing")):
+        return "The key test is the gap between the story investors are buying and the price being paid. Watch liquidity, valuation assumptions and any updated company disclosures; early trading alone does not establish fair value."
+    if any(w in title for w in ("earnings","results","revenue","profit","guidance","forecast","outlook")):
+        return "For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion."
+    if any(w in title for w in ("oil","crude","energy","opec","gas prices")):
+        return "Energy news can flow through to fuel costs, inflation expectations and company margins. Watch whether the reported development changes expected supply or demand, then compare oil's reaction with bond yields and energy shares."
+    if any(w in title for w in ("rates","yield","inflation","reserve bank","federal reserve","central bank")):
+        return "The market impact depends on how this changes the expected path of interest rates, not just the headline. Watch government bond yields and rate expectations for confirmation, and consider the knock-on effect on currency and equity valuations."
+    if any(w in title for w in ("artificial intelligence"," ai ","nvidia","microsoft","semiconductor","data centre","datacenter","cloud")):
+        return "For AI-related businesses, distinguish demand headlines from realised revenue and returns on investment. Watch customer spending, order conversion, margins and capital expenditure; strong thematic interest alone does not determine whether a valuation is attractive."
+    if any(w in title for w in ("bank","lending","mortgage","credit","bad debt","loan")):
+        return "For banks, the important transmission channels are net interest margins, loan growth, funding costs and credit quality. Watch management guidance and arrears data to judge whether the development affects earnings or risk."
+    if any(w in title for w in ("property","real estate","reit","office","housing")):
+        return "Property is sensitive to financing costs, occupancy and the income outlook. Watch bond yields alongside rental growth, vacancies and refinancing needs; the impact differs materially between property sectors."
+    return "Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone."
+
 def catalyst_score(label,item):
     title=item.get("title","").lower()
     source=item.get("source","").lower()
@@ -176,7 +194,7 @@ def main():
         for x in news(q):
             key=re.sub(r"[^a-z0-9]+","",x["title"].lower())
             if key in seen: continue
-            seen.add(key); cards.append({"tag":"NEWS / MARKET INTELLIGENCE","time":d,"title":x["title"],"dek":x["source"]+" • Latest market coverage.","data":[["SOURCE",x["source"]],["TYPE","Market news"],["STATUS","Latest"]],"insight":"Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.","source":x["source"],"link":x["link"],"rank":88})
+            seen.add(key); cards.append({"tag":"NEWS / MARKET INTELLIGENCE","time":d,"title":x["title"],"dek":x["source"]+" • Latest market coverage.","data":[["SOURCE",x["source"]],["TYPE","Market news"],["STATUS","Latest"]],"insight":news_insight(x),"source":x["source"],"link":x["link"],"rank":88})
             if len(cards)>=13: break
         if len(cards)>=9: break
     if len(cards)<10: raise SystemExit("Refusing to publish: fewer than 10 cards")

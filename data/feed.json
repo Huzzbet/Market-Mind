@@ -1,11 +1,11 @@
 {
   "version": "1.3.3",
-  "updatedAt": "2026-10-10T00:22:18+00:00",
+  "updatedAt": "2026-10-10T21:02:17+00:00",
   "tickers": {
     "asx200": {
       "value": "8,716.6",
       "direction": "up",
-      "change": "+0.64%"
+      "change": "+0.00%"
     },
     "sp500": {
       "value": "7,811.54",
@@ -18,14 +18,14 @@
       "change": "-3.70%"
     },
     "oil": {
-      "value": "US$91.66",
+      "value": "US$91.85",
       "direction": "up",
-      "change": "+0.19%"
+      "change": "+0.39%"
     },
     "gold": {
-      "value": "US$4,220.30",
+      "value": "US$4,216.30",
       "direction": "up",
-      "change": "+1.52%"
+      "change": "+1.43%"
     },
     "us10": {
       "value": "5.24%",
@@ -43,7 +43,7 @@
       "tag": "ASX 200",
       "time": "10 OCT",
       "title": "ASX 200 is higher",
-      "dek": "The ASX 200 is 8,716.6, +0.64% on the latest session.",
+      "dek": "The ASX 200 is 8,716.6, +0.00% on the latest session.",
       "data": [
         [
           "ASX 200",
@@ -51,14 +51,14 @@
         ],
         [
           "Session",
-          "+0.64%"
+          "+0.00%"
         ],
         [
           "Context",
           "Australian equities"
         ]
       ],
-      "insight": "The key question is whether the move is broad-based or concentrated. Compare materials, banks, property and the Australian dollar before treating it as a wider regime signal.",
+      "insight": "The ASX 200 rose +0.00% while the Australian dollar moved +0.41%. Compare sector breadth next: a headline index can be driven by a small number of large companies, so check banks, materials and property before calling it a broad rally.",
       "source": "Yahoo Finance",
       "rank": 100
     },
@@ -81,9 +81,311 @@
           "14.84"
         ]
       ],
-      "insight": "Equity direction is more informative when read alongside volatility and Treasury yields. A rising index with contained volatility is a different signal from a rally driven by falling risk.",
+      "insight": "The S&P 500 rose +0.59%, while the VIX fell -3.70%. A rising index with falling volatility is consistent with calmer near-term risk pricing, but does not prove the rally is broad-based.",
       "source": "Yahoo Finance",
-      "rank": 99
+      "rank": 99,
+      "marketHistory": {
+        "sp500": [
+          [
+            "2023-11",
+            4567.8
+          ],
+          [
+            "2023-12",
+            4769.83
+          ],
+          [
+            "2024-01",
+            4845.65
+          ],
+          [
+            "2024-02",
+            5096.27
+          ],
+          [
+            "2024-03",
+            5254.35
+          ],
+          [
+            "2024-04",
+            5035.69
+          ],
+          [
+            "2024-05",
+            5277.51
+          ],
+          [
+            "2024-06",
+            5460.48
+          ],
+          [
+            "2024-07",
+            5522.3
+          ],
+          [
+            "2024-08",
+            5648.4
+          ],
+          [
+            "2024-09",
+            5762.48
+          ],
+          [
+            "2024-10",
+            5705.45
+          ],
+          [
+            "2024-11",
+            6032.38
+          ],
+          [
+            "2024-12",
+            5881.63
+          ],
+          [
+            "2025-01",
+            6040.53
+          ],
+          [
+            "2025-02",
+            5954.5
+          ],
+          [
+            "2025-03",
+            5611.85
+          ],
+          [
+            "2025-04",
+            5569.06
+          ],
+          [
+            "2025-05",
+            5911.69
+          ],
+          [
+            "2025-06",
+            6204.95
+          ],
+          [
+            "2025-07",
+            6339.39
+          ],
+          [
+            "2025-08",
+            6460.26
+          ],
+          [
+            "2025-09",
+            6688.46
+          ],
+          [
+            "2025-10",
+            6840.2
+          ],
+          [
+            "2025-11",
+            6849.09
+          ],
+          [
+            "2025-12",
+            6845.5
+          ],
+          [
+            "2026-01",
+            6939.03
+          ],
+          [
+            "2026-02",
+            6878.88
+          ],
+          [
+            "2026-03",
+            6528.52
+          ],
+          [
+            "2026-04",
+            7209.01
+          ],
+          [
+            "2026-05",
+            7580.06
+          ],
+          [
+            "2026-06",
+            7499.36
+          ],
+          [
+            "2026-07",
+            7489.72
+          ],
+          [
+            "2026-08",
+            7686.14
+          ],
+          [
+            "2026-09",
+            7651.54
+          ],
+          [
+            "2026-10",
+            7811.54
+          ],
+          [
+            "2026-10",
+            7811.54
+          ]
+        ],
+        "nasdaq": [
+          [
+            "2023-11",
+            14226.22
+          ],
+          [
+            "2023-12",
+            15011.35
+          ],
+          [
+            "2024-01",
+            15164.01
+          ],
+          [
+            "2024-02",
+            16091.92
+          ],
+          [
+            "2024-03",
+            16379.46
+          ],
+          [
+            "2024-04",
+            15657.82
+          ],
+          [
+            "2024-05",
+            16735.02
+          ],
+          [
+            "2024-06",
+            17732.6
+          ],
+          [
+            "2024-07",
+            17599.4
+          ],
+          [
+            "2024-08",
+            17713.62
+          ],
+          [
+            "2024-09",
+            18189.17
+          ],
+          [
+            "2024-10",
+            18095.15
+          ],
+          [
+            "2024-11",
+            19218.17
+          ],
+          [
+            "2024-12",
+            19310.79
+          ],
+          [
+            "2025-01",
+            19627.44
+          ],
+          [
+            "2025-02",
+            18847.28
+          ],
+          [
+            "2025-03",
+            17299.29
+          ],
+          [
+            "2025-04",
+            17446.34
+          ],
+          [
+            "2025-05",
+            19113.77
+          ],
+          [
+            "2025-06",
+            20369.73
+          ],
+          [
+            "2025-07",
+            21122.45
+          ],
+          [
+            "2025-08",
+            21455.55
+          ],
+          [
+            "2025-09",
+            22660.01
+          ],
+          [
+            "2025-10",
+            23724.96
+          ],
+          [
+            "2025-11",
+            23365.69
+          ],
+          [
+            "2025-12",
+            23241.99
+          ],
+          [
+            "2026-01",
+            23461.82
+          ],
+          [
+            "2026-02",
+            22668.21
+          ],
+          [
+            "2026-03",
+            21590.63
+          ],
+          [
+            "2026-04",
+            24892.31
+          ],
+          [
+            "2026-05",
+            26972.62
+          ],
+          [
+            "2026-06",
+            26213.72
+          ],
+          [
+            "2026-07",
+            25373.85
+          ],
+          [
+            "2026-08",
+            26370.89
+          ],
+          [
+            "2026-09",
+            26861.06
+          ],
+          [
+            "2026-10",
+            27366.17
+          ],
+          [
+            "2026-10",
+            27366.17
+          ]
+        ]
+      }
     },
     {
       "tag": "RATES",
@@ -104,7 +406,7 @@
           "Equity valuations"
         ]
       ],
-      "insight": "Rates remain one of the most important cross-asset variables because changes in discount rates can quickly alter equity valuations, currencies and property expectations.",
+      "insight": "The US 10-year yield is 5.24%, with the latest move +0.25%. Higher yields can pressure long-duration equity valuations and property financing costs, all else equal. Watch whether the move coincides with stronger growth data, firmer inflation expectations or changing rate-cut pricing.",
       "source": "Yahoo Finance",
       "rank": 98
     },
@@ -112,22 +414,22 @@
       "tag": "COMMODITIES",
       "time": "10 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$91.66, +0.19% on the latest session.",
+      "dek": "WTI crude is about US$91.85, +0.39% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$91.66"
+          "US$91.85"
         ],
         [
           "Session",
-          "+0.19%"
+          "+0.39%"
         ],
         [
           "Theme",
           "Inflation / growth"
         ]
       ],
-      "insight": "Oil matters beyond energy stocks. A sustained move can feed into inflation expectations, transport costs, margins and central-bank policy.",
+      "insight": "WTI moved +0.39% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
       "source": "Yahoo Finance",
       "rank": 96
     },
@@ -135,22 +437,22 @@
       "tag": "GOLD",
       "time": "10 OCT",
       "title": "Gold is higher",
-      "dek": "Gold is about US$4,220.30, +1.52% on the latest session.",
+      "dek": "Gold is about US$4,216.30, +1.43% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,220.30"
+          "US$4,216.30"
         ],
         [
           "Session",
-          "+1.52%"
+          "+1.43%"
         ],
         [
           "AUD/USD",
           "0.6988"
         ]
       ],
-      "insight": "Gold is most useful as a signal when viewed with Treasury yields and the US dollar. The combination can help distinguish inflation, currency and safe-haven demand.",
+      "insight": "Gold moved +1.43% while the US 10-year yield moved +0.25% and AUD/USD moved +0.41%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
       "source": "Yahoo Finance",
       "rank": 94
     },
@@ -173,7 +475,7 @@
           "Global risk / commodities"
         ]
       ],
-      "insight": "For Australian portfolios, currency moves can materially change the return on unhedged international assets even when the underlying asset price is unchanged.",
+      "insight": "AUD/USD moved +0.41% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
       "source": "Yahoo Finance",
       "rank": 90
     },
@@ -181,7 +483,7 @@
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "10 OCT",
       "title": "BHP · Mining outlook in focus",
-      "dek": "Kalkine • 60.94 • +0.00% today.",
+      "dek": "Yahoo! Finance Canada • 60.94 • +0.00% today.",
       "data": [
         [
           "PRICE",
@@ -193,12 +495,12 @@
         ],
         [
           "TARGET · 17 ANALYSTS",
-          "59.03"
+          "59.00"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -3.1% versus the current price. Catalyst: How Did Copper and the Jansen Potash Project Shape BHP’s (ASX:BHP) FY26 Results? - Ka….",
-      "source": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNWkhSNGZFQlJhNVI3WlJJNDY5Z0hDc2JLeWhyYzJUUFdwcEVyZGhlaFRjczAwUFJXNndqckVkXy1IV0dHQmNTTExvY2hFa2pTdlh0SkRLM3EtLWRHUndCTmhORkwyTTlCb205VmZfbWRLN1RmNndCV2UtLVRfaTFUXzZrSUJ3Yjd1eF9scmVLcTltVTRXY1ZtaVlKX3dHOHF6SEdxWTdDVFhuUmdldVZON3JtbmdyT0NPTmJxVw?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies -3.2% versus the current price. Catalyst: BHP Group Limited (BHP) Stock Forecasts - Yahoo! Finance Canada.",
+      "source": "Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSmZOSmdoVEhid1lmRE1hV1VTWHJiX0psb2VEX2lrMGFFY1R0YjB5ZnQ1RTZXNUdweHpNc3hjOXJrdllNdlJ1T3N5cGY2SS1XTlJ6YnY1NEF1X3Y2cC1KbW0wNWNrLVp0dWgtcllJbVBIU00tTFFxbmFYWDlGeklmbVJNamRxQlFPeElUOVhpWmc?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "BHP.AX",
@@ -354,8 +656,8 @@
         ],
         "threeYearReturn": 31.6,
         "consensus": "HOLD",
-        "target": 59.03,
-        "upside": -3.134228207665013,
+        "target": 59.0,
+        "upside": -3.1834569583641503,
         "view": "WATCH",
         "analysts": 17
       }
@@ -547,24 +849,24 @@
       "tag": "STOCK INTELLIGENCE / US",
       "time": "10 OCT",
       "title": "Nvidia · AI earnings power in focus",
-      "dek": "AD HOC NEWS • 230.48 • -2.94% today.",
+      "dek": "KuCoin • 229.28 • -0.52% today.",
       "data": [
         [
           "PRICE",
-          "230.48"
+          "229.28"
         ],
         [
           "CONSENSUS",
           "STRONG BUY"
         ],
         [
-          "TARGET · 61 ANALYSTS",
+          "TARGET · 62 ANALYSTS",
           "328.72"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +42.6% versus the current price. Catalyst: Nvidia Reclaims Ground as Buyback Hits $235 Billion and Analysts Stay Bullish - AD HO….",
-      "source": "AD HOC NEWS",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVXNiQll0Vlc3dW9DSWdlOUhwd1NUWHNHaFV4aHRJV0Z1cWcza2hDYWRGMTFzbnJGWU9VMWF6YkQyaXk2Z2xwN3h0ODRYalFzMEZ3Qy11Mzd0TGU4QW9TN2hVM3p1OHhGc3ozbEdwNlc5czdNU3RZOEFYb2NJb0JvN3FSbDVMSVJsNGROUE5HTTRQSkRkY092Z05TOGJQb3BmWVY2X3RmSmpzenMxS0xUVkYzaWFMeU50T0pudE5ncEtKNFpnSGxvNm04cjR6SE5nR3BjRnNBTQ?oc=5",
+      "insight": "Market Mind: BUY. Consensus target implies +43.4% versus the current price. Catalyst: NVIDIA Adjusts Free Cash Flow Metric Amid $235 Billion Share Buyback Plan - KuCoin.",
+      "source": "KuCoin",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOV9zN1RScGhpRVRJb0dDOWs2M0g0TnBQUWY4M25VSThCMG1LbU1WZk1MNzVvSmtteDNmMDRZWmdycUdYR2xmWUZIcmpZYm9SUzk3MGpPOUZFRmhfNXgxeGdXaGxYaDJzMlk0VDB0Z3k5dmxuNDBQZnVyMjJrYmRDX3ZsczdQbWdqUlZqTnJYYXlWVTU4Y1hGRVlUVmFpXzZGVmcyWVNhNnB6Zw?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -711,7 +1013,7 @@
           ],
           [
             "2026-10",
-            230.48
+            229.28
           ],
           [
             "2026-10",
@@ -721,20 +1023,20 @@
         "threeYearReturn": 390.2,
         "consensus": "STRONG BUY",
         "target": 328.72,
-        "upside": 42.6240915018911,
+        "upside": 43.370552054312995,
         "view": "BUY",
-        "analysts": 61
+        "analysts": 62
       }
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
       "time": "10 OCT",
       "title": "Microsoft · AI valuation in focus",
-      "dek": "Yahoo Finance • 522.61 • -1.35% today.",
+      "dek": "TradingView • 535.07 • +2.38% today.",
       "data": [
         [
           "PRICE",
-          "522.61"
+          "535.07"
         ],
         [
           "CONSENSUS",
@@ -745,9 +1047,9 @@
           "587.63"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +12.4% versus the current price. Catalyst: Delta cuts outlook, Microsoft fights H-1B restrictions, Bezos eyes Blue Origin IPO.",
-      "source": "Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPbWFSY2xEMU0zd2FXNU91STBZdjJoNE9JTkRNRkQzYkJ5RE9HLUlkaklpeVdmcVA4TTR2RGlaaTJ5UzJXSDJTMDlULS0xVndMYnQ1ZEMwVHpJRzB2WWNOazk0XzNibC1VbFJDNnBUYTBQdDl6cHpUS2RRaDdLS3FaRFBlTEVZQnZmNkFKRmhXRUpQNUdYYXp5U011NWtuV0lkUktQRnJncFRNSndacUFjYTRwbWFkLXR0ZXFYRjlJM0NIWFJuS3c?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies +9.8% versus the current price. Catalyst: S&P 500, Nasdaq 100, Dow End Week Higher With Traders Eyeing Earnings Season — MSFT,….",
+      "source": "TradingView",
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPSHBkYWtSRkpHTlpHXzZ2TXp5aU4yZzQwdWxfZ1RHaENkTkc1RjU2NzFVdHgwRmVKd3NFaWtJeVc1UWlHMHZLYldIa201UlVPWm84RTh1VVdNSmxodEZsaUF4RE1vVFZ0dVlBcV9aODNvQlRwTVBIMWVmXzA1Tk5mNWV4aW9wVG5iYnFkYzV5RjQydS1OZ0hVcEdtN1JaMzNuM1BzUUEwLVluRzhvZHJKUVc4eDhRQ3Y4UkZ2cEg3ZDRaaE5IejF3c285ZGNBbXlzTUQtR3VVMzMwSUJpdGtsQmM5eWxvSWtJUTAwMDBhSV9ndUVIZ0hN?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",
@@ -894,7 +1196,7 @@
           ],
           [
             "2026-10",
-            522.61
+            535.07
           ],
           [
             "2026-10",
@@ -904,20 +1206,20 @@
         "threeYearReturn": 41.2,
         "consensus": "STRONG BUY",
         "target": 587.63,
-        "upside": 12.441403048335985,
-        "view": "BUY",
+        "upside": 9.82301230798257,
+        "view": "WATCH",
         "analysts": 56
       }
     },
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
       "time": "10 OCT",
-      "title": "From boom to bust in five days: how Firmus’s much-hyped Australian stock market listing imploded | Jonathan Barrett - The Guardian",
-      "dek": "The Guardian • Latest market coverage.",
+      "title": "ASX 200 defensive sectors outperform amid volatile trading - The Motley Fool Australia",
+      "dek": "The Motley Fool Australia • Latest market coverage.",
       "data": [
         [
           "SOURCE",
-          "The Guardian"
+          "The Motley Fool Australia"
         ],
         [
           "TYPE",
@@ -929,19 +1231,19 @@
         ]
       ],
       "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
-      "source": "The Guardian",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPLTZyNFhYaFpDaDItYTJYOFItcy0wTlpMZlZVN3hralZsS1RDX1Z4YWZEOFVhbS02aEo1VnFrNUtzR1NGZWpRTkZqNG03azNVUHo2Umw5YW1mdTg2czlXaVl6ZDdHczZlNGt2bi1SNXE2UzEwdF82ckx6c3FwcDVRVmdkY0hmSWhycUNnNDRTdV9Gd3dXQm1pYVo0RXpFTUM2ZnBWd01ZRkJ0dw?oc=5",
+      "source": "The Motley Fool Australia",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQUXo3V2VFbmNYNlpzaWpzR3VpU1liNHczNWxlRUdFS0hiYWNMYVRkaXJYZXdSUW85MFQ4ODhwYWxuYk15Mi1yZGR3VVFHUEg2VVFXM0pDUlV1REhySFdySklyeVlzWmhCZTZablpkTWJldWNGS3pic0xFVlRuWVFuekl3aElKTVB2Rkp0VWR2NElsQy1HWlBfbmtjRERNaWhDVXF6NkJ4UXBZRVhjRnNR?oc=5",
       "rank": 88
     },
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
       "time": "10 OCT",
-      "title": "Firmus valued itself 'way too high' and paid the price - ABC News & Headlines – Australian Broadcasting Corporation",
-      "dek": "ABC News & Headlines – Australian Broadcasting Corporation • Latest market coverage.",
+      "title": "REA Group (ASX:REA) Shares Moved, What Is Driving Attention Now? - Yahoo! Finance Canada",
+      "dek": "Yahoo! Finance Canada • Latest market coverage.",
       "data": [
         [
           "SOURCE",
-          "ABC News & Headlines – Australian Broadcasting Corporation"
+          "Yahoo! Finance Canada"
         ],
         [
           "TYPE",
@@ -953,19 +1255,19 @@
         ]
       ],
       "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
-      "source": "ABC News & Headlines – Australian Broadcasting Corporation",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNWTBvWjQ0NVJDdEc2clpseTAtNXVURFZPRjlFY1lQeXg5dnVfalVHSWlvM0RKS1FHT3pNcmJqU2xpS29KclRjWDVTeFNObWdPVW5zSXVVcF90QmtERUpDUG5zVUk1QXpzTDlhR2ZobjluQWdvQlQxbWEzek1WekRxOHhiUENhekp2cmR6VDFUNWdwR1Rnd3JkSldvdzk2Z3JMXzh6YQ?oc=5",
+      "source": "Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBsMEdoQnRxNWJtSXJnSjVYRmN5ckgxdlJVZWRIdDBnbldkeFpQTnlqTUpRUndKVUFTVm45U0JYUWp4NEVmWWhuWjU5WEpGNE15SmRJaFpkUjR4d0p1SWZEbXdWYlc0VUpXZmdsejU4TndaempvR0pFZVNlNF91UQ?oc=5",
       "rank": 88
     },
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
       "time": "10 OCT",
-      "title": "Macquarie Group Limited (MQG.AX) stock price, news, quote and history - Yahoo Finance Australia",
-      "dek": "Yahoo Finance Australia • Latest market coverage.",
+      "title": "Treasury Wine Estates (ASX:TWE) Is Back In The Spotlight, But What Is Driving It? - Simply Wall Street",
+      "dek": "Simply Wall Street • Latest market coverage.",
       "data": [
         [
           "SOURCE",
-          "Yahoo Finance Australia"
+          "Simply Wall Street"
         ],
         [
           "TYPE",
@@ -977,8 +1279,8 @@
         ]
       ],
       "insight": "Read the headline in context: identify the directly exposed asset, sector, rate or currency and whether the market has already reacted.",
-      "source": "Yahoo Finance Australia",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1WNFFHNUJiOEZLd21TTXcxU0ZoUTV3cWhwaXdKbHl6akl2NFJnOWVHVnBycXJMQzEzTi1wZkVtUU1HY2h5VFRwZE5Fbks4eEhQdVhVQw?oc=5",
+      "source": "Simply Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOeGljLVUyOXhLZEV1QnBBeUtMSHZBVEF1NXJGbHUwM1BxQ1M1ZzFqRGNVdGZjZFc5c3o1ODljb1Rfb29oM0FSNEVqVk9WVWtWZGE1MzE2a1ZyOWp6NmFJS1IwcXNTRDhtOG40ZGdCYVNxVkNOWTZsa1dQUDVRQzViZDJ0UTRKTGxybDRWeDZTakVwd1lKWjlKQVp1Zjc2SE1sNDlabDJWZGlSekdrTFhuMjBZeVY3Mm5WcHN6SmM3Q3FRX2dCVVliNkJIbmxScExjMk1XX0NKVkFxQ2tsZ2hEeS1FeXBvR1JrSXpVTNIB8gFBVV95cUxQU3BPdm1EZkxTMjdZT0Z1YkJNRWV5cmozRk1KbGkxTXFOUFdKYkY4Z2YyMmZRQU9oSmVzM2VyXzFXQ2dkY0E4bS1qVkZfdGE5eFg4Nk9wdmN2TjJIYnExbkRic2RmbmdSbTlUc2UyMXJYLU5nU1dYTDhfTjE2YWMteFhQSHlwdkxpYVdVa1ZNZHI5U0JPMVk1Tm9hSEFGRmxfSDNOUVhuYXgzWllBeF9TVmxJYm5ndHMwVW4yc2x4OXZHaUpEX2tHR19MU2ctT053ZU5kX21pN0xCemJOYklqa3l6cTlVT1J1NEdyOHVoMlJwdw?oc=5",
       "rank": 88
     }
   ]

@@ -1,6 +1,6 @@
 {
   "version": "1.3.3",
-  "updatedAt": "2026-10-10T21:02:53+00:00",
+  "updatedAt": "2026-10-10T21:06:47+00:00",
   "tickers": {
     "asx200": {
       "value": "8,716.6",
@@ -39,6 +39,30 @@
     }
   },
   "cards": [
+    {
+      "tag": "DAILY CROSS-ASSET NARRATIVE",
+      "time": "10 OCT",
+      "title": "Rates, equities and inflation: the signals to connect",
+      "dek": "A daily read-through across equity direction, bond yields, volatility and energy prices—not a standalone buy or sell signal.",
+      "data": [
+        [
+          "S&P 500",
+          "+0.59%"
+        ],
+        [
+          "US 10Y YIELD",
+          "5.24%"
+        ],
+        [
+          "NASDAQ",
+          "+0.64%"
+        ]
+      ],
+      "insight": "The S&P 500 moved +0.59%, the Nasdaq +0.64%, and the US 10-year yield +0.25%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil moved +0.39%; a single session is not enough to infer a change in the inflation trend. Next release to watch: RBA September meeting minutes: Tuesday 13 October, 11:30 am AEDT; then US September CPI: Wednesday 14 October, 8:30 am ET. CPI is the key test for whether elevated yields persist.",
+      "source": "Market Mind • Yahoo Finance • official calendars",
+      "link": "https://www.rba.gov.au/schedules-events/calendar/",
+      "rank": 101
+    },
     {
       "tag": "ASX 200",
       "time": "10 OCT",
@@ -1238,12 +1262,12 @@
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
       "time": "10 OCT",
-      "title": "Commonwealth Bank of Australia (CBA.AX) stock price, news, quote and history - Yahoo Finance Australia",
-      "dek": "Yahoo Finance Australia • Latest market coverage.",
+      "title": "REA Group (ASX:REA) Shares Moved, What Is Driving Attention Now? - Yahoo! Finance Canada",
+      "dek": "Yahoo! Finance Canada • Latest market coverage.",
       "data": [
         [
           "SOURCE",
-          "Yahoo Finance Australia"
+          "Yahoo! Finance Canada"
         ],
         [
           "TYPE",
@@ -1254,9 +1278,9 @@
           "Latest"
         ]
       ],
-      "insight": "For banks, the important transmission channels are net interest margins, loan growth, funding costs and credit quality. Watch management guidance and arrears data to judge whether the development affects earnings or risk.",
-      "source": "Yahoo Finance Australia",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1Bb0NDZVYyQlg0RmRzbjV0UlFSLWRzRHNsRUdIcDBtQU9IVHo4TE5wRzVoVEZCczNKN2tnd19XRnV6M3p4TmVOUGNQTDJGNnlHeEZkNA?oc=5",
+      "insight": "Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone.",
+      "source": "Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBsMEdoQnRxNWJtSXJnSjVYRmN5ckgxdlJVZWRIdDBnbldkeFpQTnlqTUpRUndKVUFTVm45U0JYUWp4NEVmWWhuWjU5WEpGNE15SmRJaFpkUjR4d0p1SWZEbXdWYlc0VUpXZmdsejU4TndaempvR0pFZVNlNF91UQ?oc=5",
       "rank": 88
     },
     {

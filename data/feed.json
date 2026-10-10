@@ -1,6 +1,6 @@
 {
   "version": "1.3.3",
-  "updatedAt": "2026-10-10T21:21:10+00:00",
+  "updatedAt": "2026-10-10T23:56:26+00:00",
   "tickers": {
     "asx200": {
       "value": "8,716.6",
@@ -507,7 +507,7 @@
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "10 OCT",
       "title": "BHP · Mining outlook in focus",
-      "dek": "Medianet News Hub • 60.94 • +0.00% today.",
+      "dek": "Yahoo! Finance Canada • 60.94 • +0.00% today.",
       "data": [
         [
           "PRICE",
@@ -522,9 +522,9 @@
           "59.00"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -3.2% versus the current price. Catalyst: MEU funds class action against BHP over public holiday breaches - Medianet News Hub.",
-      "source": "Medianet News Hub",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaEdydDhCWXJXZkhmbjJScGw3RWlCTi0tS2hHaFdOM2ZzWm10d09IM1Z4cGFtVkUtZlhobVJTRkk2UEVjb2h2eG9EX3VHV29HWl9KNER6YkxoMjZjOU1idU9INHBuWV8wdDdEU3BLUUU3WDI1bTNxQV9ZMDJyYTBjOGZTYXNKV25oUEduZ0dZSUdjMExNWklFay1ldUZ6MF9pYUVBZEVDek45dXJVaDNERA?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies -3.2% versus the current price. Catalyst: BHP Group Limited (BHP) Stock Forecasts - Yahoo! Finance Canada.",
+      "source": "Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSmZOSmdoVEhid1lmRE1hV1VTWHJiX0psb2VEX2lrMGFFY1R0YjB5ZnQ1RTZXNUdweHpNc3hjOXJrdllNdlJ1T3N5cGY2SS1XTlJ6YnY1NEF1X3Y2cC1KbW0wNWNrLVp0dWgtcllJbVBIU00tTFFxbmFYWDlGeklmbVJNamRxQlFPeElUOVhpWmc?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "BHP.AX",
@@ -1056,7 +1056,7 @@
       "tag": "STOCK INTELLIGENCE / US",
       "time": "10 OCT",
       "title": "Microsoft · AI valuation in focus",
-      "dek": "TradingView • 535.07 • +2.38% today.",
+      "dek": "Dealroom • 535.07 • +2.38% today.",
       "data": [
         [
           "PRICE",
@@ -1071,9 +1071,9 @@
           "587.63"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies +9.8% versus the current price. Catalyst: S&P 500, Nasdaq 100, Dow End Week Higher With Traders Eyeing Earnings Season — MSFT,….",
-      "source": "TradingView",
-      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPSHBkYWtSRkpHTlpHXzZ2TXp5aU4yZzQwdWxfZ1RHaENkTkc1RjU2NzFVdHgwRmVKd3NFaWtJeVc1UWlHMHZLYldIa201UlVPWm84RTh1VVdNSmxodEZsaUF4RE1vVFZ0dVlBcV9aODNvQlRwTVBIMWVmXzA1Tk5mNWV4aW9wVG5iYnFkYzV5RjQydS1OZ0hVcEdtN1JaMzNuM1BzUUEwLVluRzhvZHJKUVc4eDhRQ3Y4UkZ2cEg3ZDRaaE5IejF3c285ZGNBbXlzTUQtR3VVMzMwSUJpdGtsQmM5eWxvSWtJUTAwMDBhSV9ndUVIZ0hN?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies +9.8% versus the current price. Catalyst: Mistral raises €3B as Europe's AI champion courts China, Microsoft and Samsung - Deal….",
+      "source": "Dealroom",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVnBwa3pVRlJrazdxNmg1aHdRVU16ckRpcHF3S1FweHpVaG93cUxrTm93SHhnTDQ1LWpqa3V2VG9EdFo2WmdLcFNVMExvVmN4U0dRQjAxWlI5cUFOdzNnZ3hDQlZGdFZVZXJCdmtQZmJaWHlmMVZqaWtlSlhGampWVnI4UjNIZEpkbkdnTjRWUDk3Slo4YmE2aktzZ1NlWkxfT2dKNHgyaTRKeE5TbFJr?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",

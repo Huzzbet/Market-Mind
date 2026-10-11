@@ -93,14 +93,15 @@ return {tag:"LIVE / "+asset.toUpperCase(),time:"LIVE • "+score+"/100",title:ti
 function newsCard(item){return {tag:"NEWS / MARKET INTELLIGENCE",time:"NEWS",title:item.title,dek:(item.source||"Market source")+" • "+(item.pubDate?new Date(item.pubDate).toLocaleString([], {hour:"2-digit",minute:"2-digit",day:"2-digit",month:"short"}):"Latest"),data:[["SOURCE",item.source||"News"],["TYPE","Market news"],["STATUS","Latest"]],insight:"Read the headline in context: identify which asset, sector, rate or currency is directly exposed and whether the market has already reacted.",source:item.link?"Original article ↗":"Market Mind • News feed",link:item.link,rank:0};}
 function miniChart(seed,direction){var pts=[],n=13;for(var i=0;i<n;i++){var y=45+Math.sin((i+seed)/2.2)*9+(i/(n-1))*(direction==="UP"?18:-18);pts.push([i,y]);}var d=pts.map(function(p,i){var x=18+i*(100/(n-1)),y=86-p[1];return(i?"L":"M")+x.toFixed(1)+","+y.toFixed(1);}).join(" ");var lx=93,ly=86-pts[n-1][1];return '<svg viewBox="0 0 100 86" preserveAspectRatio="none"><path class="mind-grid" d="M0 21H100M0 43H100M0 65H100"/><path class="mind-line" d="'+d+'"/><circle class="mind-dot" cx="'+lx+'" cy="'+ly+'" r="3"/></svg>';}
 
-const asxYear=[6780.7,7590.8,7664.1,8092.3,8160.0,8532.3,8126.2,8742.8,8881.9,8714.3,8665.8,8778.7,8735.7];
-const asxMonths=["Oct 23","Dec 23","Apr 24","Jul 24","Oct 24","Jan 25","Apr 25","Jul 25","Oct 25","Dec 25","Apr 26","Jun 26","Oct 26"];
-function asxYearChart(){
- var min=Math.min.apply(null,asxYear),max=Math.max.apply(null,asxYear),pad=(max-min)*.16,y0=min-pad,y1=max+pad,w=680,h=142,left=8,right=8,top=10,bottom=28;
- var pts=asxYear.map(function(v,i){var x=left+i*((w-left-right)/(asxYear.length-1)),y=top+(y1-v)/(y1-y0)*(h-top-bottom);return [x,y];});
+function asxYearChart(rows){
+ if(!Array.isArray(rows)||rows.length<2)return "";
+ var all=rows.filter(function(r){return Array.isArray(r)&&r.length>1&&Number.isFinite(Number(r[1]));});
+ if(all.length<2)return "";
+ var shown=all.slice(-13),values=shown.map(function(r){return Number(r[1]);}),min=Math.min.apply(null,values),max=Math.max.apply(null,values),pad=(max-min)*.16||1,y0=min-pad,y1=max+pad,w=680,h=142,left=8,right=8,top=10,bottom=28;
+ var pts=values.map(function(v,i){var x=left+i*((w-left-right)/(values.length-1)),y=top+(y1-v)/(y1-y0)*(h-top-bottom);return [x,y];});
  var d=pts.map(function(p,i){if(i===0)return "M"+p[0].toFixed(1)+","+p[1].toFixed(1);var prev=pts[i-1],midX=((prev[0]+p[0])/2).toFixed(1),midY=((prev[1]+p[1])/2).toFixed(1);return "Q"+midX+","+midY+" "+p[0].toFixed(1)+","+p[1].toFixed(1);}).join(" ");
- var last=pts[pts.length-1];
- return '<div class="year-context"><div class="year-head"><span class="year-label">ASX 200 • 3 YEARS</span><span class="year-label">LEADERS · MATERIALS / PROPERTY</span><span class="year-return">+28.8% 3Y</span></div><svg class="year-chart" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none"><path class="year-grid" d="M8 34H672M8 68H672M8 102H672"/><path class="year-line" d="'+d+'"/><circle class="year-dot" cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="3.5"/><text class="year-now" x="'+(last[0]-8).toFixed(1)+'" y="'+Math.max(12,last[1]-9).toFixed(1)+'" text-anchor="end">8,735.7</text>'+asxMonths.map(function(m,i){var p=pts[i];return '<text class="year-month" x="'+p[0].toFixed(1)+'" y="98" text-anchor="middle">'+m+'</text>';}).join("")+'</svg></div>';
+ var last=pts[pts.length-1],first=Number(all[0][1]),end=Number(all[all.length-1][1]),ret=first?((end/first)-1)*100:0;
+ return '<div class="year-context"><div class="year-head"><span class="year-label">ASX 200 · 3 YEARS</span><span class="year-label">MONTHLY CLOSES</span><span class="year-return">'+(ret>=0?"+":"")+ret.toFixed(1)+'% 3Y</span></div><svg class="year-chart" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none"><path class="year-grid" d="M8 34H672M8 68H672M8 102H672"/><path class="year-line" d="'+d+'"/><circle class="year-dot" cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="3.5"/><text class="year-now" x="'+(last[0]-8).toFixed(1)+'" y="'+Math.max(12,last[1]-9).toFixed(1)+'" text-anchor="end">'+esc(Number(all[all.length-1][1]).toLocaleString("en-AU",{maximumFractionDigits:1}))+'</text>'+shown.map(function(r,i){var p=pts[i],month=String(r[0]||"").slice(5,7),year=String(r[0]||"").slice(2,4);return '<text class="year-month" x="'+p[0].toFixed(1)+'" y="98" text-anchor="middle">'+esc(month+"/"+year)+'</text>';}).join("")+'</svg></div>';
 }
 function usMarketChart(data){
  var sp=data&&data.sp500||[],nq=data&&data.nasdaq||[];
@@ -121,26 +122,27 @@ function stockChart(c){
  var vc=(st.view||"WATCH").toUpperCase(),cls=vc==="BUY"?"up":vc==="SELL"?"down":"stock-view"; return '<div class="stock-context"><div class="stock-head"><span class="stock-label">3 YEAR PRICE HISTORY</span><span class="stock-return">'+(st.threeYearReturn>=0?"+":"")+st.threeYearReturn.toFixed(1)+'% 3Y</span></div><svg class="stock-chart" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none"><path class="stock-grid" d="M8 28H672M8 55H672M8 82H672"/><path class="stock-line" d="'+d+'"/><circle class="stock-end" cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="3.5"/><text class="stock-axis" x="8" y="104">'+firstYear+'</text><text class="stock-axis" x="340" y="104" text-anchor="middle">2025</text><text class="stock-axis" x="672" y="104" text-anchor="end">'+lastYear+'</text></svg></div>';
 }
 function storyVisual(c){
- var tag=(c.tag||"").toUpperCase(), t=(c.title||"").toLowerCase();
- if(tag.indexOf("US MARKETS")>=0) return "";
- if(tag==="RATES") return '<div class="story-visual rate-visual"><div class="rate-top"><span>RBA CASH RATE</span><b>4.60%</b></div><div class="rate-track"><i style="width:82%"></i></div><div class="rate-foot"><span>4.35%</span><span>+25bp</span><span>4.60%</span></div></div>';
- if(tag==="AI STOCKS") return '<div class="story-visual target-visual"><div class="target-head"><span>MRVL REVENUE PATH</span><b>US$8.2B → US$70–90B</b></div><div class="target-bars"><i style="width:12%"></i><i style="width:86%"></i></div><div class="target-labels"><span>2026</span><span>FY2031 TARGET</span></div></div>';
- if(tag==="US ENERGY") return '<div class="story-visual energy-visual"><div class="energy-node">AI DATA CENTRES</div><div class="energy-arrow">→</div><div class="energy-node">890MW NUCLEAR</div><div class="energy-arrow">→</div><div class="energy-node">20 YEARS</div></div>';
- if(tag==="COMMODITIES") return '<div class="story-visual commodity-visual"><div class="commodity-main"><span>BRENT</span><b>~US$100</b></div><div class="commodity-path"><i></i><i></i><i></i></div><div class="commodity-note">SUPPLY RELIEF ↓ INFLATION PRESSURE</div></div>';
- if(tag==="BONDS") return '<div class="story-visual yield-visual"><div class="yield-head"><span>US 10Y YIELD</span><b>5.27%</b></div><div class="yield-track"><i></i><b>5.35% PEAK</b></div><div class="yield-note">HIGHER YIELDS → LOWER EQUITY MULTIPLES</div></div>';
- if(tag==="GOLD") return '<div class="story-visual gold-visual"><div><span>GOLD</span><b>US$4,168</b></div><div class="gold-rise">+0.7%</div><div class="gold-drivers"><span>YIELDS ↓</span><span>DOLLAR ↓</span><span>DEMAND ↑</span></div></div>';
- if(tag==="ASX LISTINGS") return '<div class="story-visual listing-visual"><div class="listing-date"><b>14 OCT</b><span>ASX DEBUT</span></div><div class="listing-line"><i></i></div><div class="listing-end"><b>GLC</b><span>CDI</span></div></div>';
+ var tag=(c.tag||"").toUpperCase(), rows=Array.isArray(c.data)?c.data:[], lookup={};
+ rows.forEach(function(row){if(row&&row.length>1)lookup[String(row[0]).toUpperCase()]=String(row[1]);});
+ function val(key,fallback){return lookup[key]||fallback||"—";}
+ function visual(label,value,change,note,cls){
+  return '<div class="story-visual '+cls+'"><div class="rate-top"><span>'+esc(label)+'</span><b>'+esc(value)+'</b></div><div class="rate-track"><i style="width:50%"></i></div><div class="rate-foot"><span>'+esc(change||"Latest reading")+'</span><span>'+esc(note||"Context matters")+'</span></div></div>';
+ }
+ if(tag==="RATES") return visual("US 10Y TREASURY YIELD",val("US 10Y"),val("SESSION"),"Discount rates", "rate-visual");
+ if(tag==="COMMODITIES") return visual("WTI CRUDE",val("WTI"),val("SESSION"),"Inflation / growth", "commodity-visual");
+ if(tag==="GOLD") return visual("GOLD",val("GOLD"),val("SESSION"),"Yields · currency · demand", "gold-visual");
  return "";
 }
 function renderCards(cards){
+ var previousTop=feed.scrollTop;
+ var previousCard=feed.querySelector(".card");
+ var previousIndex=previousCard?Math.max(0,Math.round(previousTop/Math.max(1,previousCard.offsetHeight))):0;
  feed.innerHTML=cards.map(function(c,i){return '<article class="card'+((c.tag||"").toUpperCase().indexOf("ASX")>=0?' asx-card':'')+(c.stock?' stock-card':'')+'"><div class="topline"><div class="tag">'+esc(c.tag)+'</div><div class="timestamp">'+esc(c.time)+'</div></div><h1>'+esc(c.title)+'</h1><p class="dek">'+esc(c.dek)+'</p><div class="data">'+c.data.map(function(d){return '<div class="box"><div class="label">'+esc(d[0])+'</div><div class="value">'+esc(d[1])+'</div></div>';}).join("")+'</div><div class="asx-year-slot"></div><div class="stock-slot"></div><div class="story-visual-slot"></div><div class="us-market-slot"></div><div class="mind-reveal d1 signal-pill"><i></i>LIVE MARKET SIGNAL</div>'+(c.chart?'<div class="mind-chart mind-reveal d2">'+miniChart(c.rank||50,c.signal)+'</div>':'')+'<div class="insight mind-reveal d3"><small>The Mind</small><p>'+esc(c.insight)+'</p></div><div class="source"><span>'+esc(c.source)+'</span><span>'+(i+1)+' / '+cards.length+'</span></div></article>';}).join("");
- feed.querySelectorAll(".asx-year-slot").forEach(function(slot,i){if(cards[i]&&((cards[i].tag||"").toUpperCase().indexOf("ASX")>=0||(cards[i].title||"").toUpperCase().indexOf("ASX 200")>=0))slot.innerHTML=asxYearChart();});
+ feed.querySelectorAll(".asx-year-slot").forEach(function(slot,i){if(cards[i]&&((cards[i].tag||"").toUpperCase().indexOf("ASX")>=0||(cards[i].title||"").toUpperCase().indexOf("ASX 200")>=0))slot.innerHTML=asxYearChart(cards[i].marketHistory&&cards[i].marketHistory.asx200);});
  feed.querySelectorAll(".stock-slot").forEach(function(slot,i){if(cards[i]&&cards[i].stock)slot.innerHTML=stockChart(cards[i]);});
  feed.querySelectorAll(".story-visual-slot").forEach(function(slot,i){if(cards[i]&&((cards[i].tag||"").toUpperCase().indexOf("ASX")<0))slot.innerHTML=storyVisual(cards[i]);});
  feed.querySelectorAll(".us-market-slot").forEach(function(slot,i){if(cards[i]&&cards[i].marketHistory)slot.innerHTML=usMarketChart(cards[i].marketHistory);});
- // Preserve the reader's current position when the feed refreshes.
- // New content should not force the user back to the first story.
-
+ if(cards.length) feed.scrollTop=Math.min(previousIndex* Math.max(1,feed.querySelector(".card").offsetHeight),Math.max(0,feed.scrollHeight-feed.clientHeight));
 }
 function setHealth(text,ok){
  var el=document.getElementById("status");

@@ -1,6 +1,6 @@
 {
   "version": "1.3.3",
-  "updatedAt": "2026-10-10T23:56:26+00:00",
+  "updatedAt": "2026-10-11T10:32:19+00:00",
   "tickers": {
     "asx200": {
       "value": "8,716.6",
@@ -41,7 +41,7 @@
   "cards": [
     {
       "tag": "DAILY CROSS-ASSET NARRATIVE",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "Rates, equities and inflation: the signals to connect",
       "dek": "A daily read-through across equity direction, bond yields, volatility and energy prices—not a standalone buy or sell signal.",
       "data": [
@@ -65,7 +65,7 @@
     },
     {
       "tag": "ASX 200",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "ASX 200 is higher",
       "dek": "The ASX 200 is 8,716.6, +0.00% on the latest session.",
       "data": [
@@ -84,11 +84,163 @@
       ],
       "insight": "The ASX 200 rose +0.00% while the Australian dollar moved +0.41%. Compare sector breadth next: a headline index can be driven by a small number of large companies, so check banks, materials and property before calling it a broad rally.",
       "source": "Yahoo Finance",
-      "rank": 100
+      "rank": 100,
+      "marketHistory": {
+        "asx200": [
+          [
+            "2023-10",
+            7087.3
+          ],
+          [
+            "2023-11",
+            7590.8
+          ],
+          [
+            "2023-12",
+            7680.7
+          ],
+          [
+            "2024-01",
+            7698.7
+          ],
+          [
+            "2024-02",
+            7896.9
+          ],
+          [
+            "2024-03",
+            7664.1
+          ],
+          [
+            "2024-04",
+            7701.7
+          ],
+          [
+            "2024-05",
+            7767.5
+          ],
+          [
+            "2024-06",
+            8092.3
+          ],
+          [
+            "2024-07",
+            8091.9
+          ],
+          [
+            "2024-08",
+            8269.8
+          ],
+          [
+            "2024-09",
+            8160.0
+          ],
+          [
+            "2024-10",
+            8436.2
+          ],
+          [
+            "2024-11",
+            8159.1
+          ],
+          [
+            "2024-12",
+            8532.3
+          ],
+          [
+            "2025-01",
+            8172.4
+          ],
+          [
+            "2025-02",
+            7843.4
+          ],
+          [
+            "2025-03",
+            8126.2
+          ],
+          [
+            "2025-04",
+            8434.7
+          ],
+          [
+            "2025-05",
+            8542.3
+          ],
+          [
+            "2025-06",
+            8742.8
+          ],
+          [
+            "2025-07",
+            8973.1
+          ],
+          [
+            "2025-08",
+            8848.8
+          ],
+          [
+            "2025-09",
+            8881.9
+          ],
+          [
+            "2025-10",
+            8614.1
+          ],
+          [
+            "2025-11",
+            8714.3
+          ],
+          [
+            "2025-12",
+            8869.1
+          ],
+          [
+            "2026-01",
+            9198.6
+          ],
+          [
+            "2026-02",
+            8481.8
+          ],
+          [
+            "2026-03",
+            8665.8
+          ],
+          [
+            "2026-04",
+            8731.7
+          ],
+          [
+            "2026-05",
+            8778.7
+          ],
+          [
+            "2026-06",
+            8976.8
+          ],
+          [
+            "2026-07",
+            9076.0
+          ],
+          [
+            "2026-08",
+            8789.3
+          ],
+          [
+            "2026-09",
+            8716.6
+          ],
+          [
+            "2026-10",
+            8716.6
+          ]
+        ]
+      }
     },
     {
       "tag": "US MARKETS",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "US equities are higher",
       "dek": "The S&P 500 is 7,811.54, +0.59% on the latest session.",
       "data": [
@@ -413,7 +565,7 @@
     },
     {
       "tag": "RATES",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "US 10Y yield is rising",
       "dek": "The US 10-year Treasury yield is about 5.24%, +0.25% on the latest session.",
       "data": [
@@ -436,7 +588,7 @@
     },
     {
       "tag": "COMMODITIES",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "Oil is higher",
       "dek": "WTI crude is about US$91.85, +0.39% on the latest session.",
       "data": [
@@ -459,7 +611,7 @@
     },
     {
       "tag": "GOLD",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "Gold is higher",
       "dek": "Gold is about US$4,216.30, +1.43% on the latest session.",
       "data": [
@@ -482,7 +634,7 @@
     },
     {
       "tag": "CURRENCY",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "Australian dollar is higher",
       "dek": "AUD/USD is around 0.6988, +0.41% on the latest session.",
       "data": [
@@ -505,13 +657,13 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "BHP · Mining outlook in focus",
-      "dek": "Yahoo! Finance Canada • 60.94 • +0.00% today.",
+      "dek": "Medianet News Hub • A$60.94 • +0.00% today.",
       "data": [
         [
           "PRICE",
-          "60.94"
+          "A$60.94"
         ],
         [
           "CONSENSUS",
@@ -519,12 +671,12 @@
         ],
         [
           "TARGET · 17 ANALYSTS",
-          "59.00"
+          "A$59.00"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -3.2% versus the current price. Catalyst: BHP Group Limited (BHP) Stock Forecasts - Yahoo! Finance Canada.",
-      "source": "Yahoo! Finance Canada",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSmZOSmdoVEhid1lmRE1hV1VTWHJiX0psb2VEX2lrMGFFY1R0YjB5ZnQ1RTZXNUdweHpNc3hjOXJrdllNdlJ1T3N5cGY2SS1XTlJ6YnY1NEF1X3Y2cC1KbW0wNWNrLVp0dWgtcllJbVBIU00tTFFxbmFYWDlGeklmbVJNamRxQlFPeElUOVhpWmc?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies -3.2% versus the current price. Catalyst: MEU funds class action against BHP over public holiday breaches - Medianet News Hub.",
+      "source": "Medianet News Hub",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaEdydDhCWXJXZkhmbjJScGw3RWlCTi0tS2hHaFdOM2ZzWm10d09IM1Z4cGFtVkUtZlhobVJTRkk2UEVjb2h2eG9EX3VHV29HWl9KNER6YkxoMjZjOU1idU9INHBuWV8wdDdEU3BLUUU3WDI1bTNxQV9ZMDJyYTBjOGZTYXNKV25oUEduZ0dZSUdjMExNWklFay1ldUZ6MF9pYUVBZEVDek45dXJVaDNERA?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "BHP.AX",
@@ -688,13 +840,13 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "CBA · Income story in focus",
-      "dek": "Yahoo Finance Australia • 149.29 • +0.00% today.",
+      "dek": "The Motley Fool Australia • A$149.29 • +0.00% today.",
       "data": [
         [
           "PRICE",
-          "149.29"
+          "A$149.29"
         ],
         [
           "CONSENSUS",
@@ -702,12 +854,12 @@
         ],
         [
           "TARGET · 14 ANALYSTS",
-          "125.64"
+          "A$125.64"
         ]
       ],
-      "insight": "Market Mind: SELL. Consensus target implies -15.8% versus the current price. Catalyst: Commonwealth Bank of Australia (CBA.AX) stock price, news, quote and history - Yahoo….",
-      "source": "Yahoo Finance Australia",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1Bb0NDZVYyQlg0RmRzbjV0UlFSLWRzRHNsRUdIcDBtQU9IVHo4TE5wRzVoVEZCczNKN2tnd19XRnV6M3p4TmVOUGNQTDJGNnlHeEZkNA?oc=5",
+      "insight": "Market Mind: SELL. Consensus target implies -15.8% versus the current price. Catalyst: CBA vs Coles shares: Which is the better buy at age 50? - The Motley Fool Australia.",
+      "source": "The Motley Fool Australia",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOdXBFZnplUk5TZ1VCTl9Jb3hmMFpUb3I4MWN0N0VIQi1EWXlvdXZLUnNXNHBDd1pHSEd1ZkpMMHpxa2Etd0RCMW5vMkFyV3ljU29fc3M0NmxQeC16QTVtOFo3cXNyMVFFQWJwMmRlbTZvWjBzZ1Z2bjdiZ2FnaVlrSThNcjB6SjNxbDgzQlgwOTdVemM?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "CBA.AX",
@@ -871,13 +1023,13 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "Nvidia · AI earnings power in focus",
-      "dek": "KuCoin • 229.28 • -0.52% today.",
+      "dek": "TradingKey • US$229.28 • -0.52% today.",
       "data": [
         [
           "PRICE",
-          "229.28"
+          "US$229.28"
         ],
         [
           "CONSENSUS",
@@ -885,12 +1037,12 @@
         ],
         [
           "TARGET · 62 ANALYSTS",
-          "328.72"
+          "US$328.72"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +43.4% versus the current price. Catalyst: NVIDIA Adjusts Free Cash Flow Metric Amid $235 Billion Share Buyback Plan - KuCoin.",
-      "source": "KuCoin",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOV9zN1RScGhpRVRJb0dDOWs2M0g0TnBQUWY4M25VSThCMG1LbU1WZk1MNzVvSmtteDNmMDRZWmdycUdYR2xmWUZIcmpZYm9SUzk3MGpPOUZFRmhfNXgxeGdXaGxYaDJzMlk0VDB0Z3k5dmxuNDBQZnVyMjJrYmRDX3ZsczdQbWdqUlZqTnJYYXlWVTU4Y1hGRVlUVmFpXzZGVmcyWVNhNnB6Zw?oc=5",
+      "insight": "Market Mind: BUY. Consensus target implies +43.4% versus the current price. Catalyst: NVIDIA Corp (NVDA) Stock Analysis & Forecast - TradingKey.",
+      "source": "TradingKey",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1zQndMWUdUbVp5ZE91VTBGSDN0WjR2eXFaaVZsbUNPanVZVzh5WHJ3aDFLdlBjWEpneXJkSkVOSXJEWExKdkUzd3ZrZ184SktONFRRb3I1SU5MYXhuMHV1Qmp6dkdrQQ?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -1054,13 +1206,13 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
-      "time": "10 OCT",
+      "time": "11 OCT",
       "title": "Microsoft · AI valuation in focus",
-      "dek": "Dealroom • 535.07 • +2.38% today.",
+      "dek": "TradingKey • US$535.07 • +2.38% today.",
       "data": [
         [
           "PRICE",
-          "535.07"
+          "US$535.07"
         ],
         [
           "CONSENSUS",
@@ -1068,12 +1220,12 @@
         ],
         [
           "TARGET · 56 ANALYSTS",
-          "587.63"
+          "US$587.63"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies +9.8% versus the current price. Catalyst: Mistral raises €3B as Europe's AI champion courts China, Microsoft and Samsung - Deal….",
-      "source": "Dealroom",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVnBwa3pVRlJrazdxNmg1aHdRVU16ckRpcHF3S1FweHpVaG93cUxrTm93SHhnTDQ1LWpqa3V2VG9EdFo2WmdLcFNVMExvVmN4U0dRQjAxWlI5cUFOdzNnZ3hDQlZGdFZVZXJCdmtQZmJaWHlmMVZqaWtlSlhGampWVnI4UjNIZEpkbkdnTjRWUDk3Slo4YmE2aktzZ1NlWkxfT2dKNHgyaTRKeE5TbFJr?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies +9.8% versus the current price. Catalyst: Microsoft (MSFT) Q4 FY2026 Earnings Preview: $87.7B Revenue, Azure 40%, FY2027 Capex….",
+      "source": "TradingKey",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPT2M0bHI1V2FiTVJMUTNtUHpkNFQ2a2RKUUtHSTZ3NnphY1lqLWU1MEJacTZKNW1XNXZMZlUyU24ydzZ1dUlJdUxzV3ZhNUdYamhib1pqTFJycnh3TDZSRUFHdVc2WXpPS2d4Q0xHYXYzMDVnZW1hWXRpUWc2aFpfYm44MkVCUHU2UjNXVVpZbGZ6SE0wUUJZdFVTNzZtX284OXRsd1FLY2FDYzRVbnNfU1I2ZHVHc3FOTmxxdU9hQTVTYzhJREdwM0ZMRlZGS0VP?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",
@@ -1237,13 +1389,37 @@
     },
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "10 OCT",
-      "title": "ASX 200 defensive sectors outperform amid volatile trading - The Motley Fool Australia",
-      "dek": "The Motley Fool Australia • Latest market coverage.",
+      "time": "11 OCT",
+      "title": "ASX to shrug off bond jitters, buoyed by US earnings momentum - AFR",
+      "dek": "AFR • Latest market coverage.",
       "data": [
         [
           "SOURCE",
-          "The Motley Fool Australia"
+          "AFR"
+        ],
+        [
+          "TYPE",
+          "Market news"
+        ],
+        [
+          "STATUS",
+          "Latest"
+        ]
+      ],
+      "insight": "For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion.",
+      "source": "AFR",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSE4xY1c5S0F4RXpka0oyYllDQ2U0ckNqR2QxM21fVnIxTHFLNFR3WXpock1uNEhNWFV0ckVnbUZKelhVZV9HWjZmOVV2TnZWT3VVTEk3SDEtSUNyYk1nN29iSzRPQkhBajJSUlctRXBoQnV1NWxqaWNMLVg1T0V6WXdWZ2Q0QnUwbXllVVFXX1g5d1pnQ0VWS05EblFTRDNWMW1MRzUyUXR2X1RmRzFKVE9qaHpjTWl2Wlkw?oc=5",
+      "rank": 88
+    },
+    {
+      "tag": "NEWS / MARKET INTELLIGENCE",
+      "time": "11 OCT",
+      "title": "What Does the Vanguard Ethically Conscious Australian Shares ETF (ASX:VETH) Hold and How Is Its Latest Distribution Structured? - Kalkine",
+      "dek": "Kalkine • Latest market coverage.",
+      "data": [
+        [
+          "SOURCE",
+          "Kalkine"
         ],
         [
           "TYPE",
@@ -1255,38 +1431,14 @@
         ]
       ],
       "insight": "Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone.",
-      "source": "The Motley Fool Australia",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQUXo3V2VFbmNYNlpzaWpzR3VpU1liNHczNWxlRUdFS0hiYWNMYVRkaXJYZXdSUW85MFQ4ODhwYWxuYk15Mi1yZGR3VVFHUEg2VVFXM0pDUlV1REhySFdySklyeVlzWmhCZTZablpkTWJldWNGS3pic0xFVlRuWVFuekl3aElKTVB2Rkp0VWR2NElsQy1HWlBfbmtjRERNaWhDVXF6NkJ4UXBZRVhjRnNR?oc=5",
+      "source": "Kalkine",
+      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOUUJSNU5WTGpOSlZfQmtENWxuM3kzSVdCX180US1rNm5hQUxiMUxCUnBNWTR5SFFiRzV3U0JOend3b0RrV1V2TGtmSURsUnBrazZFLXhCcGJMWmZCRmJBbzhXcXk3MGZlclZuU0ZDdWxJc3JuUHRqbG1rcDFvWkpvRExOZ0x0T012cmtYbldyQVpaOFVfOWVyazNxUjRBM19NZUhGWVo5dDNrLTlVcFc0X0JWcVFxb1ctaFZWeDN4eUpJdk9rQmJPN1hlYTJqT1Nob1lub3c2TE5aVEx4VHJ5Vm90bXJZOHlULU9ZWlFSalBRX2JNSGRxb25MUks0dDJZbF84?oc=5",
       "rank": 88
     },
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "10 OCT",
-      "title": "Commonwealth Bank of Australia (CBA.AX) stock price, news, quote and history - Yahoo Finance Australia",
-      "dek": "Yahoo Finance Australia • Latest market coverage.",
-      "data": [
-        [
-          "SOURCE",
-          "Yahoo Finance Australia"
-        ],
-        [
-          "TYPE",
-          "Market news"
-        ],
-        [
-          "STATUS",
-          "Latest"
-        ]
-      ],
-      "insight": "For banks, the important transmission channels are net interest margins, loan growth, funding costs and credit quality. Watch management guidance and arrears data to judge whether the development affects earnings or risk.",
-      "source": "Yahoo Finance Australia",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1Bb0NDZVYyQlg0RmRzbjV0UlFSLWRzRHNsRUdIcDBtQU9IVHo4TE5wRzVoVEZCczNKN2tnd19XRnV6M3p4TmVOUGNQTDJGNnlHeEZkNA?oc=5",
-      "rank": 88
-    },
-    {
-      "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "10 OCT",
-      "title": "Treasury Wine Estates (ASX:TWE) Is Back In The Spotlight, But What Is Driving It? - Simply Wall Street",
+      "time": "11 OCT",
+      "title": "Arbitr Group (ASX:AGT) - Stock Analysis - Simply Wall Street",
       "dek": "Simply Wall Street • Latest market coverage.",
       "data": [
         [
@@ -1304,7 +1456,7 @@
       ],
       "insight": "Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone.",
       "source": "Simply Wall Street",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOeGljLVUyOXhLZEV1QnBBeUtMSHZBVEF1NXJGbHUwM1BxQ1M1ZzFqRGNVdGZjZFc5c3o1ODljb1Rfb29oM0FSNEVqVk9WVWtWZGE1MzE2a1ZyOWp6NmFJS1IwcXNTRDhtOG40ZGdCYVNxVkNOWTZsa1dQUDVRQzViZDJ0UTRKTGxybDRWeDZTakVwd1lKWjlKQVp1Zjc2SE1sNDlabDJWZGlSekdrTFhuMjBZeVY3Mm5WcHN6SmM3Q3FRX2dCVVliNkJIbmxScExjMk1XX0NKVkFxQ2tsZ2hEeS1FeXBvR1JrSXpVTNIB8gFBVV95cUxQU3BPdm1EZkxTMjdZT0Z1YkJNRWV5cmozRk1KbGkxTXFOUFdKYkY4Z2YyMmZRQU9oSmVzM2VyXzFXQ2dkY0E4bS1qVkZfdGE5eFg4Nk9wdmN2TjJIYnExbkRic2RmbmdSbTlUc2UyMXJYLU5nU1dYTDhfTjE2YWMteFhQSHlwdkxpYVdVa1ZNZHI5U0JPMVk1Tm9hSEFGRmxfSDNOUVhuYXgzWllBeF9TVmxJYm5ndHMwVW4yc2x4OXZHaUpEX2tHR19MU2ctT053ZU5kX21pN0xCemJOYklqa3l6cTlVT1J1NEdyOHVoMlJwdw?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNWHJuTWFpa1ZJbVl2b1cyNzJvSFFOZWVkQjlsSjVzX1o1RE8yRHNNazNva2dzNEtZb2p6cE1yM3V6RXVvbG9SMFVJbUdWRlZIMm5GOVdfOGd5NG85cWQzeGRiVE9hd1BIcG9ULXMtdTMyQWF0a2Fxeld0VFgzV3VwQ1k5SlpXUQ?oc=5",
       "rank": 88
     }
   ]

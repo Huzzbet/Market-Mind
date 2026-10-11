@@ -144,12 +144,15 @@ function renderCards(cards){
  feed.querySelectorAll(".us-market-slot").forEach(function(slot,i){if(cards[i]&&cards[i].marketHistory)slot.innerHTML=usMarketChart(cards[i].marketHistory);});
  if(cards.length) feed.scrollTop=Math.min(previousIndex* Math.max(1,feed.querySelector(".card").offsetHeight),Math.max(0,feed.scrollHeight-feed.clientHeight));
 }
-function setHealth(text,ok){
+function setHealth(text,ok,updatedAt){
  var el=document.getElementById("status");
  if(!el){el=document.createElement("div");el.id="status";el.style.cssText="position:absolute;top:70px;left:28px;z-index:6;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:4px 7px;border:1px solid var(--line);background:rgba(8,16,24,.82);color:var(--muted);border-radius:2px";document.querySelector(".app").appendChild(el);}
- var clean=text.replace(/Updated\\s+[^•]+$/,"").replace(/Updated\\s+.*$/,"");var updated=new Date();var time=updated.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});el.textContent=(ok?"● LIVE · Updated ":"○ ")+time;el.style.color=ok?"var(--up)":"var(--down)";
+ var sourceDate=updatedAt?new Date(updatedAt):null;
+ var validDate=sourceDate&&Number.isFinite(sourceDate.getTime());
+ var time=(validDate?sourceDate:new Date()).toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
+ el.textContent=(ok?"● LIVE · Data "+time:"○ DEMO MODE");el.style.color=ok?"var(--up)":"var(--down)";
 }
-async function loadLiveFeed(){
+async function loadLiveFeed(manual){
  try{
   var feedUrls=[
     "/data/feed.json?ts="+Date.now(),
@@ -185,8 +188,9 @@ async function loadLiveFeed(){
   var setTicker=function(id,item){var el=document.getElementById(id);if(!el||!item)return;el.textContent=item.value||"—";el.className=item.direction==="down"?"down":item.direction==="up"?"up":"";};
   setTicker("asx",asx);setTicker("spx",spx);setTicker("vix",vix);
   renderCards(cards.length?cards:fallbackCards); updateMarkets(payload.tickers||{});
-  setHealth("NEWS FEED • "+cards.length+" stories • Updated "+(payload.updatedAt||"latest"),true);
- }catch(err){console.warn("Market Mind feed unavailable",err);renderCards(fallbackCards);setHealth("Feed unavailable • Demo mode",false);updateMarkets({});}
+  setHealth("NEWS FEED • "+cards.length+" stories",true,payload.updatedAt);
+  var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="REFRESH";
+ }catch(err){console.warn("Market Mind feed unavailable",err);renderCards(fallbackCards);setHealth("Feed unavailable • Demo mode",false);updateMarkets({});var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="RETRY";}
 }
 renderCards(fallbackCards);
 setHealth("Starting market feed…",false);
@@ -196,7 +200,7 @@ function setWatchlist(a){localStorage.setItem("marketMindWatchlist",JSON.stringi
 function renderWatchlist(t){var rows=document.getElementById("watchlistRows"),grid=document.getElementById("watchAddGrid");if(!rows||!grid)return;var defs=[["asx200","ASX 200","^AXJO"],["sp500","S&P 500","^GSPC"],["vix","VIX","^VIX"],["oil","WTI Crude","CL=F"],["gold","Gold","GC=F"],["us10","US 10Y","^TNX"],["aud","AUD/USD","AUDUSD=X"]],watch=getWatchlist();rows.innerHTML=watch.length?watch.map(function(sym){var d=defs.find(function(x){return x[2]===sym}),x=t[d[0]]||{};return "<div class=\"list-row\" data-remove=\""+sym+"\"><div><b>"+d[1]+"</b><span style=\"display:block\">Tap to remove</span></div><strong class=\""+(x.direction==="down"?"down":x.direction==="up"?"up":"")+"\">"+(x.value||"—")+" "+(x.change||"")+"</strong></div>"}).join(""):"<div class=\"list-row\"><div><b>No saved markets yet</b><span style=\"display:block\">Add one below to start your watchlist.</span></div></div>";grid.innerHTML=defs.map(function(d){var on=watch.indexOf(d[2])>=0;return "<button class=\"watch-add\" data-add=\""+d[2]+"\"><strong>"+(on?"✓ ":"")+d[1]+"</strong><span>"+(on?"Saved":"Add to watchlist")+"</span></button>"}).join("");grid.querySelectorAll("[data-add]").forEach(function(b){b.onclick=function(){var s=b.dataset.add,a=getWatchlist();if(a.indexOf(s)<0)a.push(s);else a=a.filter(function(x){return x!==s});setWatchlist(a);renderWatchlist(t)}});rows.querySelectorAll("[data-remove]").forEach(function(r){r.onclick=function(){setWatchlist(getWatchlist().filter(function(x){return x!==r.dataset.remove}));renderWatchlist(t)}})}
 function updateMarkets(t){var defs=[["asx200","ASX 200","^AXJO"],["sp500","S&P 500","^GSPC"],["vix","VIX","^VIX"],["oil","WTI Crude","CL=F"],["gold","Gold","GC=F"],["us10","US 10Y","^TNX"],["aud","AUD/USD","AUDUSD=X"]];var g=document.getElementById("marketGrid");if(!g)return;renderWatchlist(t);g.innerHTML=defs.map(function(d){var x=t[d[0]]||{};return "<div class=\"market-tile\"><small>"+d[1]+"</small><strong>"+(x.value||"—")+"</strong><span class=\""+(x.direction==="down"?"down":x.direction==="up"?"up":"")+"\">"+(x.change||x.pct||"Live data")+"</span></div>"}).join("");}
 document.querySelectorAll(".navitem").forEach(function(n){n.addEventListener("click",function(){showScreen(n.dataset.screen)})});
-document.getElementById("refreshRow")?.addEventListener("click",function(){var a=document.getElementById("refreshAction");if(a){a.textContent="REFRESHING…";setTimeout(function(){a.textContent="REFRESH"},900)}loadLiveFeed();});
+document.getElementById("refreshRow")?.addEventListener("click",function(){var a=document.getElementById("refreshAction");if(a)a.textContent="REFRESHING…";loadLiveFeed(true);});
 loadLiveFeed();
 setInterval(loadLiveFeed,60000);
 feed.addEventListener("scroll",function(){var max=feed.scrollHeight-feed.clientHeight;document.getElementById("progress").style.height=Math.max(8,Math.min(100,(feed.scrollTop/max)*75+25))+"%";});

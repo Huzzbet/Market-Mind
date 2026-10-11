@@ -84,15 +84,18 @@ def catalyst_score(label,item):
     source=item.get("source","").lower()
     names={"BHP":["bhp"],"CBA":["cba","commonwealth bank"],"NVDA":["nvidia","nvda"],"MSFT":["microsoft","msft"]}
     if not any(n in title for n in names.get(label,[])): return -100
+    generic=("stock price, news, quote and history","stock forecasts","stock forecast","share price, news","stock price today","price, news, quote and history","stock analysis forecast")
+    if any(term in title for term in generic): return -100
     score=20
     strong={"results":10,"earnings":10,"guidance":10,"profit":9,"revenue":8,"dividend":8,"upgrade":9,"downgrade":9,"price target":9,"target":6,"contract":8,"deal":8,"acquisition":9,"merger":9,"buyback":8,"outlook":8,"forecast":7,"production":7,"shipments":6,"order":7,"partnership":7,"regulatory":8,"approval":7,"project":6,"site visit":5,"cash flow":6,"margin":7}
     for word,weight in strong.items():
         if word in title: score+=weight
-    weak={"best stock":-9,"should i buy":-9,"how much":-8,"passive income":-7,"is it a buy":-7,"top stocks":-7,"could":-3}
+    weak={"best stock":-9,"should i buy":-9,"how much":-8,"passive income":-7,"is it a buy":-7,"top stocks":-7,"could":-3,"what you need to know":-5,"stock to buy":-8}
     for word,weight in weak.items():
         if word in title: score+=weight
     if any(x in source for x in ("reuters","afr","market index","marketscreener","fnarena","investsmart")): score+=5
     if "motley fool" in source or "simply wall st" in source: score-=2
+    if "dealroom" in source: score-=5
     if label in ("BHP","CBA") and any(x in title for x in ("broker","ubs","macquarie","bofa","jpmorgan","morgan stanley","jefferies","rbc","deutsche bank")): score+=5
     if len(title)>115: score-=1
     return score
@@ -321,9 +324,14 @@ def main():
             rows=history(symbol)
             if len(rows)>=2: us_history[key]=rows
         except Exception as e: print("Warning: US history",symbol,e)
+    asx_history=[]
+    try:
+        asx_history=history("^AXJO")
+        if len(asx_history)<2: asx_history=[]
+    except Exception as e: print("Warning: ASX history unavailable",e)
     d=now.strftime("%-d %b").upper()
     cards=[
-      {"tag":"ASX 200","time":d,"title":"ASX 200 is "+("higher" if a["pct"]>=0 else "lower"),"dek":"The ASX 200 is %s, %s on the latest session."%(fmt(a["price"],1),pct(a["pct"])),"data":[["ASX 200",fmt(a["price"],1)],["Session",pct(a["pct"])],["Context","Australian equities"]],"insight":("The ASX 200 rose "+pct(a["pct"])+" while the Australian dollar moved "+pct(aud["pct"])+". Compare sector breadth next: a headline index can be driven by a small number of large companies, so check banks, materials and property before calling it a broad rally." if a["pct"]>=0 else "The ASX 200 fell "+pct(a["pct"])+" while the Australian dollar moved "+pct(aud["pct"])+". Check whether banks, materials and property are all weaker or whether the index decline is concentrated. Sector breadth helps distinguish a broad risk-off session from rotation."),"source":"Yahoo Finance","rank":100},
+      {"tag":"ASX 200","time":d,"title":"ASX 200 is "+("higher" if a["pct"]>=0 else "lower"),"dek":"The ASX 200 is %s, %s on the latest session."%(fmt(a["price"],1),pct(a["pct"])),"data":[["ASX 200",fmt(a["price"],1)],["Session",pct(a["pct"])],["Context","Australian equities"]],"insight":("The ASX 200 rose "+pct(a["pct"])+" while the Australian dollar moved "+pct(aud["pct"])+". Compare sector breadth next: a headline index can be driven by a small number of large companies, so check banks, materials and property before calling it a broad rally." if a["pct"]>=0 else "The ASX 200 fell "+pct(a["pct"])+" while the Australian dollar moved "+pct(aud["pct"])+". Check whether banks, materials and property are all weaker or whether the index decline is concentrated. Sector breadth helps distinguish a broad risk-off session from rotation."),"source":"Yahoo Finance","rank":100,"marketHistory":{"asx200":asx_history}},
       {"tag":"US MARKETS","time":d,"title":"US equities are "+("higher" if sp["pct"]>=0 else "lower"),"dek":"The S&P 500 is %s, %s on the latest session."%(fmt(sp["price"],2),pct(sp["pct"])),"data":[["S&P 500",fmt(sp["price"],2)],["Session",pct(sp["pct"])],["VIX",fmt(vx["price"],2)]],"insight":(("The S&P 500 "+("rose " if sp["pct"]>=0 else "fell ")+pct(sp["pct"])+", while the VIX "+("rose " if vx["pct"]>=0 else "fell ")+pct(vx["pct"])+". ")+("A rising index with falling volatility is consistent with calmer near-term risk pricing, but does not prove the rally is broad-based." if sp["pct"]>=0 and vx["pct"]<0 else "The combination is worth watching: check Treasury yields and whether the Nasdaq confirms the move before inferring a change in market direction.")),"source":"Yahoo Finance","rank":99,"marketHistory":us_history},
       {"tag":"RATES","time":d,"title":"US 10Y yield is "+("rising" if rate["pct"]>=0 else "falling"),"dek":"The US 10-year Treasury yield is about %s%%, %s on the latest session."%(fmt(rate["price"],2),pct(rate["pct"])),"data":[["US 10Y",fmt(rate["price"],2)+"%"],["Session",pct(rate["pct"])],["Risk","Equity valuations"]],"insight":("The US 10-year yield is "+fmt(rate["price"],2)+"%, with the latest move "+pct(rate["pct"])+". Higher yields can pressure long-duration equity valuations and property financing costs, all else equal. Watch whether the move coincides with stronger growth data, firmer inflation expectations or changing rate-cut pricing."),"source":"Yahoo Finance","rank":98},
       {"tag":"COMMODITIES","time":d,"title":"Oil is "+("higher" if oil["pct"]>=0 else "lower"),"dek":"WTI crude is about US$%s, %s on the latest session."%(fmt(oil["price"],2),pct(oil["pct"])),"data":[["WTI","US$"+fmt(oil["price"],2)],["Session",pct(oil["pct"])],["Theme","Inflation / growth"]],"insight":("WTI moved "+pct(oil["pct"])+" in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session."),"source":"Yahoo Finance","rank":96},
@@ -355,9 +363,11 @@ def main():
                 item["catalystScore"]=catalyst_score(label,item)
                 candidates.append(item)
         candidates.sort(key=lambda x:x.get("catalystScore",0),reverse=True)
-        x=candidates[0] if candidates else None
+        x=next((item for item in candidates if item.get("catalystScore", -100)>0),None)
+        if x is None:
+            x={"title":"No verified fresh company-specific catalyst found today","source":"Market Mind","link":None}
         st=stocks.get(label)
-        if not st or not x: continue
+        if not st: continue
         used_stock.add(label)
         st=stocks.get(label)
         if not st: continue
@@ -377,8 +387,8 @@ def main():
           "tag":"STOCK INTELLIGENCE / "+("AUSTRALIA" if label in ("BHP","CBA") else "US"),
           "time":d,
           "title":stock_title(label,x["title"]),
-          "dek":x["source"]+" • "+fmt(st["price"],2)+" • "+pct(st["pct"])+" today.",
-          "data":[["PRICE",fmt(st["price"],2)],["CONSENSUS",rating],["TARGET · "+str(con.get("analysts") or "—")+" ANALYSTS",target_txt]],
+          "dek":x["source"]+" • "+("A$" if label in ("BHP","CBA") else "US$")+fmt(st["price"],2)+" • "+pct(st["pct"])+" today.",
+          "data":[["PRICE",("A$" if label in ("BHP","CBA") else "US$")+fmt(st["price"],2)],["CONSENSUS",rating],["TARGET · "+str(con.get("analysts") or "—")+" ANALYSTS",(("A$" if label in ("BHP","CBA") else "US$")+target_txt if target_txt!="—" else "—")]],
           "insight":"Market Mind: "+view+". Consensus target implies "+upside_txt+" versus the current price. Catalyst: "+catalyst_text(x["title"])+".",
           "source":x["source"],
           "link":x["link"],

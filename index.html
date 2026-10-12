@@ -52,6 +52,42 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
 @media(prefers-reduced-motion:reduce){#mm-splash,.mm-splash-orbit,.mm-splash-logo,.mm-splash-wordmark,.mm-splash-kicker,.mm-splash-chart,.mm-splash-chart path,.mm-splash-tagline,.mm-splash-loading,.mm-splash-loading i{animation:none!important;transition:none!important}.mm-splash-chart path{stroke-dashoffset:0}}
 @media(max-width:600px){.mm-splash-chart{height:78px;margin-top:18px}.mm-splash-logo{width:68px;height:68px;font-size:32px;margin-bottom:20px}.mm-splash-kicker{letter-spacing:2.2px}}
 </style>
+
+<style id="terminal-overview-style">
+#overviewScreen{display:block;flex:1;min-height:0;overflow:auto;padding:20px 20px 28px;background:radial-gradient(ellipse at 50% 0%,rgba(25,37,51,.48),transparent 48%)}
+#overviewScreen[hidden]{display:none!important}
+.terminal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:3px 0 18px}
+.terminal-eyebrow{font-size:9px;font-weight:850;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent)}
+.terminal-title{font-size:30px;font-weight:850;letter-spacing:-1.4px;line-height:1.05;margin-top:5px}
+.terminal-date{font-size:10px;color:var(--muted);text-align:right;white-space:nowrap}
+.terminal-status{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);padding:7px 9px;font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:18px}
+.terminal-status i{width:6px;height:6px;border-radius:50%;background:var(--up);box-shadow:0 0 8px rgba(38,208,124,.55)}
+.terminal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.terminal-tile{background:linear-gradient(140deg,rgba(15,22,31,.96),rgba(8,12,18,.96));border:1px solid var(--line);padding:12px 12px 11px;min-width:0}
+.terminal-tile small{display:block;font-size:9px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.terminal-tile strong{display:block;font-size:23px;letter-spacing:-.7px;margin:7px 0 3px;font-weight:800}
+.terminal-tile span{font-size:10px}
+.terminal-section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:22px 0 9px}
+.terminal-section-head b{font-size:10px;letter-spacing:1.3px;text-transform:uppercase}
+.terminal-section-head span{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.terminal-signal{border:1px solid #34404c;background:linear-gradient(145deg,rgba(17,26,36,.97),rgba(7,11,16,.98));padding:15px;position:relative;overflow:hidden}
+.terminal-signal:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+.terminal-signal-tag{font-size:9px;letter-spacing:1.4px;color:var(--accent);font-weight:850;text-transform:uppercase}
+.terminal-signal h2{font-size:22px;line-height:1.12;letter-spacing:-.7px;margin:10px 0 8px}
+.terminal-signal p{font-size:12px;line-height:1.5;color:#b7c0ca;margin:0}
+.terminal-signal-foot{border-top:1px solid var(--line);margin-top:13px;padding-top:10px;display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:9px;color:var(--muted)}
+.terminal-signal-foot button{background:transparent;color:var(--accent);border:0;padding:4px 0;font:inherit;font-weight:800;letter-spacing:.7px;text-transform:uppercase;cursor:pointer}
+.terminal-watch{border-top:1px solid var(--line)}
+.terminal-watch-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.terminal-watch-row b{font-size:12px;display:block}
+.terminal-watch-row small{display:block;font-size:9px;color:var(--muted);margin-top:4px}
+.terminal-watch-row strong{font-size:12px;text-align:right;display:block}
+.terminal-watch-row span{font-size:9px;display:block;text-align:right;margin-top:4px}
+.terminal-footer-note{font-size:9px;color:var(--muted);line-height:1.5;margin-top:15px}
+#overviewScreen .terminal-more{display:block;width:100%;text-align:left;background:transparent;border:1px solid var(--line);padding:12px;margin-top:15px;color:var(--text);font:inherit;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+@media(min-width:800px){#overviewScreen{padding:28px 58px 32px}.terminal-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.terminal-title{font-size:36px}}
+@media(max-width:600px){#overviewScreen{padding:18px 18px 26px}.terminal-title{font-size:28px}.terminal-tile{padding:11px 10px}.terminal-tile strong{font-size:22px}.terminal-signal h2{font-size:20px}}
+</style>
 </head>
 <body>
 
@@ -72,9 +108,26 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
 </div>
 <div class="app">
 <header><div class="brand"><div class="mark">M</div><div class="logo">Market<span>Mind</span></div></div><div class="marketbar"><div class="ticker">ASX 200 <b id="asx">—</b></div><div class="ticker">S&amp;P 500 <b id="spx">—</b></div></div></header>
-<main class="feed" id="feed"></main><section class="screen" id="marketsScreen"><div class="screen-title">Markets</div><div class="screen-sub">Key markets at a glance.</div><div class="section-label">Global markets</div><div class="market-grid" id="marketGrid"></div><div class="section-label">What matters</div><div class="list-row"><b>Rates</b><span>Watch yields & policy</span></div><div class="list-row"><b>Risk</b><span>Equities & volatility</span></div><div class="list-row"><b>Commodities</b><span>Oil & gold</span></div></section><section class="screen" id="watchScreen"><div class="screen-title">Watchlist</div><div class="screen-sub">Markets you want to keep close.</div><div id="watchlistRows"></div><div class="section-label">Add markets</div><div class="market-grid" id="watchAddGrid"></div></section><section class="screen" id="moreScreen"><div class="screen-title">More</div><div class="screen-sub">Market Mind intelligence, kept simple.</div><div class="list-row" id="refreshRow"><div><b>Refresh feed</b><span style="display:block">Pull the latest market intelligence</span></div><span id="refreshAction">REFRESH</span></div><div class="list-row"><div><b>Data sources</b><span style="display:block">Market Mind feed &amp; market data</span></div><span>LIVE</span></div><div class="list-row"><div><b>Watchlist</b><span style="display:block">Saved locally on this device</span></div><span>PRIVATE</span></div><div class="section-label">About</div><div class="list-row"><div><b>Market Mind</b><span style="display:block">Independent market intelligence</span></div><span>v1</span></div></section>
+
+<section class="screen active" id="overviewScreen">
+ <div class="terminal-top"><div><div class="terminal-eyebrow">Market Mind / Terminal</div><div class="terminal-title">Market briefing</div></div><div class="terminal-date" id="terminalDate">GLOBAL MARKETS<br>DAILY VIEW</div></div>
+ <div class="terminal-status"><i></i><span id="overviewStatus">Connecting to market feed</span></div>
+ <div class="terminal-grid" id="terminalGrid">
+  <div class="terminal-tile"><small>ASX 200</small><strong>—</strong><span>Waiting for data</span></div>
+  <div class="terminal-tile"><small>S&amp;P 500</small><strong>—</strong><span>Waiting for data</span></div>
+  <div class="terminal-tile"><small>US 10Y Yield</small><strong>—</strong><span>Waiting for data</span></div>
+  <div class="terminal-tile"><small>WTI Crude</small><strong>—</strong><span>Waiting for data</span></div>
+ </div>
+ <div class="terminal-section-head"><b>Priority signal</b><span>Today's read-through</span></div>
+ <div class="terminal-signal" id="terminalSignal"><div class="terminal-signal-tag">The Mind</div><h2>Connecting the market signals</h2><p>Market Mind is loading the latest market context.</p><div class="terminal-signal-foot"><span>Market intelligence · Not a trade instruction</span><button type="button" id="openBriefing">Open briefing ↗</button></div></div>
+ <div class="terminal-section-head"><b>Cross-asset monitor</b><span>Latest readings</span></div>
+ <div class="terminal-watch" id="terminalWatch"></div>
+ <button class="terminal-more" id="openFullFeed" type="button">Explore full intelligence feed&nbsp; ↗</button>
+ <div class="terminal-footer-note">Market data can be delayed. Derived signals are prompts for investigation, not standalone buy or sell recommendations.</div>
+</section>
+<main class="feed" id="feed" style="display:none"></main><section class="screen" id="marketsScreen"><div class="screen-title">Markets</div><div class="screen-sub">Key markets at a glance.</div><div class="section-label">Global markets</div><div class="market-grid" id="marketGrid"></div><div class="section-label">What matters</div><div class="list-row"><b>Rates</b><span>Watch yields & policy</span></div><div class="list-row"><b>Risk</b><span>Equities & volatility</span></div><div class="list-row"><b>Commodities</b><span>Oil & gold</span></div></section><section class="screen" id="watchScreen"><div class="screen-title">Watchlist</div><div class="screen-sub">Markets you want to keep close.</div><div id="watchlistRows"></div><div class="section-label">Add markets</div><div class="market-grid" id="watchAddGrid"></div></section><section class="screen" id="moreScreen"><div class="screen-title">More</div><div class="screen-sub">Market Mind intelligence, kept simple.</div><div class="list-row" id="refreshRow"><div><b>Refresh feed</b><span style="display:block">Pull the latest market intelligence</span></div><span id="refreshAction">REFRESH</span></div><div class="list-row"><div><b>Data sources</b><span style="display:block">Market Mind feed &amp; market data</span></div><span>LIVE</span></div><div class="list-row"><div><b>Watchlist</b><span style="display:block">Saved locally on this device</span></div><span>PRIVATE</span></div><div class="section-label">About</div><div class="list-row"><div><b>Market Mind</b><span style="display:block">Independent market intelligence</span></div><span>v1</span></div></section>
 <div class="progress"><i id="progress"></i></div>
-<nav><div class="navitem active" data-screen="feed"><b>◉</b>Feed</div><div class="navitem" data-screen="markets"><b>⌁</b>Markets</div><div class="navitem" data-screen="watch"><b>☆</b>Watchlist</div><div class="navitem" data-screen="more"><b>≡</b>More</div></nav>
+<nav><div class="navitem active" data-screen="overview"><b>▦</b>Overview</div><div class="navitem" data-screen="feed"><b>◉</b>Feed</div><div class="navitem" data-screen="markets"><b>⌁</b>Markets</div><div class="navitem" data-screen="watch"><b>☆</b>Watchlist</div><div class="navitem" data-screen="more"><b>≡</b>More</div></nav>
 </div>
 <script>
 const feed=document.getElementById("feed");
@@ -233,10 +286,10 @@ async function loadLiveFeed(manual){
   var asx=payload.tickers?.asx200, spx=payload.tickers?.sp500, vix=payload.tickers?.vix;
   var setTicker=function(id,item){var el=document.getElementById(id);if(!el||!item)return;el.textContent=item.value||"—";el.className=item.direction==="down"?"down":item.direction==="up"?"up":"";};
   setTicker("asx",asx);setTicker("spx",spx);setTicker("vix",vix);
-  renderCards(cards.length?cards:fallbackCards); updateMarkets(payload.tickers||{});
+  renderCards(cards.length?cards:fallbackCards); updateMarkets(payload.tickers||{}); updateOverview(payload.tickers||{},cards,payload.updatedAt);
   setHealth("NEWS FEED • "+cards.length+" stories",true,payload.updatedAt);
   var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="REFRESH";
- }catch(err){console.warn("Market Mind feed unavailable",err);renderCards(fallbackCards);setHealth("Feed unavailable • Demo mode",false);updateMarkets({});var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="RETRY";}
+ }catch(err){console.warn("Market Mind feed unavailable",err);renderCards(fallbackCards);setHealth("Feed unavailable • Demo mode",false);updateMarkets({});updateOverview({},fallbackCards,null);var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="RETRY";}
 }
 function initMarketMindSplash(){
  var splash=document.getElementById("mm-splash");
@@ -256,11 +309,25 @@ function initMarketMindSplash(){
 initMarketMindSplash();
 renderCards(fallbackCards);
 setHealth("Starting market feed…",false);
-function showScreen(name){document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active")});feed.style.display=name==="feed"?"block":"none";document.getElementById(name+"Screen")?.classList.add("active");document.querySelectorAll(".navitem").forEach(function(n){n.classList.toggle("active",n.dataset.screen===name)});document.getElementById("progress").style.height="25%";}
+function updateOverview(t,cards,updatedAt){
+ var defs=[["asx200","ASX 200","^AXJO"],["sp500","S&P 500","^GSPC"],["us10","US 10Y Yield","^TNX"],["oil","WTI Crude","CL=F"],["vix","VIX","^VIX"],["gold","Gold","GC=F"],["aud","AUD/USD","AUDUSD=X"]];
+ var grid=document.getElementById("terminalGrid"),watch=document.getElementById("terminalWatch"),status=document.getElementById("overviewStatus"),date=document.getElementById("terminalDate");
+ function escTerm(v){return esc(v==null?"—":v);}
+ if(grid)grid.innerHTML=defs.slice(0,4).map(function(d){var x=t[d[0]]||{};return '<div class="terminal-tile"><small>'+escTerm(d[1])+'</small><strong>'+escTerm(x.value)+'</strong><span class="'+(x.direction==="down"?"down":x.direction==="up"?"up":"")+'">'+escTerm(x.change||"Latest reading")+'</span></div>';}).join("");
+ if(watch)watch.innerHTML=defs.slice(4).map(function(d){var x=t[d[0]]||{};return '<div class="terminal-watch-row"><div><b>'+escTerm(d[1])+'</b><small>'+escTerm(({vix:"US equity volatility",gold:"Precious metals",aud:"Australian dollar"})[d[0]])+'</small></div><div><strong>'+escTerm(x.value)+'</strong><span class="'+(x.direction==="down"?"down":x.direction==="up"?"up":"")+'">'+escTerm(x.change||"—")+'</span></div></div>';}).join("");
+ var lead=(cards||[]).find(function(c){return c&&c.tag&&String(c.tag).toUpperCase().indexOf("NARRATIVE")>=0;})||(cards||[])[0];
+ var signal=document.getElementById("terminalSignal");
+ if(signal&&lead){signal.innerHTML='<div class="terminal-signal-tag">'+escTerm(lead.tag||"The Mind")+'</div><h2>'+escTerm(lead.title||"Today's market read-through")+'</h2><p>'+escTerm(lead.insight||lead.dek||"Open the feed for more market context.")+'</p><div class="terminal-signal-foot"><span>'+escTerm(lead.source||"Market Mind")+'</span><button type="button" id="openBriefing">Open briefing ↗</button></div>';}
+ if(status)status.textContent=updatedAt?"Data refreshed "+new Date(updatedAt).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"}):"Demo data · Feed unavailable";
+ if(date)date.innerHTML=new Date().toLocaleDateString("en-AU",{day:"2-digit",month:"short"}).toUpperCase()+"<br>GLOBAL MARKETS";
+}
+function showScreen(name){document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active")});feed.style.display=name==="feed"?"block":"none";var target=document.getElementById(name==="overview"?"overviewScreen":name+"Screen");if(target)target.classList.add("active");document.querySelectorAll(".navitem").forEach(function(n){n.classList.toggle("active",n.dataset.screen===name)});document.getElementById("progress").style.height="25%";}
 function getWatchlist(){try{var saved=JSON.parse(localStorage.getItem("marketMindWatchlist")||"[]"),allowed=["^AXJO","^GSPC","^VIX","CL=F","GC=F","^TNX","AUDUSD=X"];return Array.isArray(saved)?saved.filter(function(sym,i){return allowed.indexOf(sym)>=0&&saved.indexOf(sym)===i}):[]}catch(e){return []}}
 function setWatchlist(a){try{localStorage.setItem("marketMindWatchlist",JSON.stringify(a))}catch(e){console.warn("Market Mind could not save watchlist",e)}}
 function renderWatchlist(t){var rows=document.getElementById("watchlistRows"),grid=document.getElementById("watchAddGrid");if(!rows||!grid)return;var defs=[["asx200","ASX 200","^AXJO"],["sp500","S&P 500","^GSPC"],["vix","VIX","^VIX"],["oil","WTI Crude","CL=F"],["gold","Gold","GC=F"],["us10","US 10Y","^TNX"],["aud","AUD/USD","AUDUSD=X"]],watch=getWatchlist();rows.innerHTML=watch.length?watch.map(function(sym){var d=defs.find(function(x){return x[2]===sym}),x=t[d[0]]||{};return "<div class=\"list-row\" data-remove=\""+sym+"\"><div><b>"+d[1]+"</b><span style=\"display:block\">Tap to remove</span></div><strong class=\""+(x.direction==="down"?"down":x.direction==="up"?"up":"")+"\">"+(x.value||"—")+" "+(x.change||"")+"</strong></div>"}).join(""):"<div class=\"list-row\"><div><b>No saved markets yet</b><span style=\"display:block\">Add one below to start your watchlist.</span></div></div>";grid.innerHTML=defs.map(function(d){var on=watch.indexOf(d[2])>=0;return "<button class=\"watch-add\" data-add=\""+d[2]+"\"><strong>"+(on?"✓ ":"")+d[1]+"</strong><span>"+(on?"Saved":"Add to watchlist")+"</span></button>"}).join("");grid.querySelectorAll("[data-add]").forEach(function(b){b.onclick=function(){var s=b.dataset.add,a=getWatchlist();if(a.indexOf(s)<0)a.push(s);else a=a.filter(function(x){return x!==s});setWatchlist(a);renderWatchlist(t)}});rows.querySelectorAll("[data-remove]").forEach(function(r){r.onclick=function(){setWatchlist(getWatchlist().filter(function(x){return x!==r.dataset.remove}));renderWatchlist(t)}})}
 function updateMarkets(t){var defs=[["asx200","ASX 200","^AXJO"],["sp500","S&P 500","^GSPC"],["vix","VIX","^VIX"],["oil","WTI Crude","CL=F"],["gold","Gold","GC=F"],["us10","US 10Y","^TNX"],["aud","AUD/USD","AUDUSD=X"]];var g=document.getElementById("marketGrid");if(!g)return;renderWatchlist(t);g.innerHTML=defs.map(function(d){var x=t[d[0]]||{};return "<div class=\"market-tile\"><small>"+d[1]+"</small><strong>"+(x.value||"—")+"</strong><span class=\""+(x.direction==="down"?"down":x.direction==="up"?"up":"")+"\">"+(x.change||x.pct||"Live data")+"</span></div>"}).join("");}
+document.getElementById("openBriefing")?.addEventListener("click",function(){showScreen("feed")});
+document.getElementById("openFullFeed")?.addEventListener("click",function(){showScreen("feed")});
 document.querySelectorAll(".navitem").forEach(function(n){n.addEventListener("click",function(){showScreen(n.dataset.screen)})});
 document.getElementById("refreshRow")?.addEventListener("click",function(){var a=document.getElementById("refreshAction");if(a)a.textContent="REFRESHING…";loadLiveFeed(true);});
 loadLiveFeed();

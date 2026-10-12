@@ -62,8 +62,8 @@
       "source": "Market Mind • Yahoo Finance • official calendars",
       "link": "https://www.newyorkfed.org/research/calendars/i-oct26.html",
       "rank": 101,
-      "whyItMatters": "Equities, yields and energy prices can tell different stories. The relationship between them is more useful than any one headline move.",
-      "investmentOpportunity": "Research angle: compare equity breadth with real yields and earnings revisions. Avoid calling a risk-on or risk-off regime from one session alone.",
+      "whyItMatters": "Equities, yields and energy prices can tell different stories. Their relationship is more useful than any one headline move.",
+      "investmentOpportunity": "Compare equity breadth with real yields and earnings revisions. Avoid calling a risk-on or risk-off regime from one session alone.",
       "opportunityType": "MONITOR"
     },
     {
@@ -136,7 +136,7 @@
           ],
           [
             "2024-09",
-            8160.0
+            8160
           ],
           [
             "2024-10",
@@ -224,7 +224,7 @@
           ],
           [
             "2026-07",
-            9076.0
+            9076
           ],
           [
             "2026-08",
@@ -241,7 +241,7 @@
         ]
       },
       "whyItMatters": "The index can be driven by a handful of large miners and banks, so the headline return may not reflect the wider market.",
-      "investmentOpportunity": "Research angle: compare banks, materials, property and smaller companies with the index. Look for improving breadth and earnings support before identifying candidates.",
+      "investmentOpportunity": "Compare banks, materials, property and smaller companies with the index. Look for improving breadth and earnings support before identifying candidates.",
       "opportunityType": "RESEARCH"
     },
     {
@@ -569,7 +569,7 @@
         ]
       },
       "whyItMatters": "Index direction alongside volatility helps frame risk appetite, but neither confirms that a move is broad or durable.",
-      "investmentOpportunity": "Research angle: check equal-weight versus cap-weight performance, sector breadth and earnings revisions. A broadening rally is stronger evidence than index gains alone.",
+      "investmentOpportunity": "Check equal-weight versus cap-weight performance, sector breadth and earnings revisions. A broadening rally is stronger evidence than index gains alone.",
       "opportunityType": "MONITOR"
     },
     {
@@ -595,7 +595,7 @@
       "source": "Yahoo Finance",
       "rank": 98,
       "whyItMatters": "Bond yields feed into discount rates, borrowing costs and relative valuations across growth shares, property and bonds.",
-      "investmentOpportunity": "Research angle: compare quality bond yields with equity earnings yields and property balance sheets. Consider duration only after checking inflation and central-bank expectations.",
+      "investmentOpportunity": "Compare quality bond yields with equity earnings yields and property balance sheets. Consider duration only after checking inflation and central-bank expectations.",
       "opportunityType": "COMPARE"
     },
     {
@@ -621,7 +621,7 @@
       "source": "Yahoo Finance",
       "rank": 96,
       "whyItMatters": "Oil can affect inflation, transport costs, consumer spending and margins differently across sectors.",
-      "investmentOpportunity": "Research angle: map beneficiaries and losers across energy producers, airlines, transport and consumer businesses. Confirm whether the move reflects supply, demand or a temporary shock.",
+      "investmentOpportunity": "Map beneficiaries and losers across energy producers, airlines, transport and consumer businesses. Confirm whether the move reflects supply, demand or a temporary shock.",
       "opportunityType": "RESEARCH"
     },
     {
@@ -647,7 +647,7 @@
       "source": "Yahoo Finance",
       "rank": 94,
       "whyItMatters": "Gold responds to real yields, the US dollar and demand for defensive assets; a daily move alone cannot identify the driver.",
-      "investmentOpportunity": "Research angle: compare gold with real yields and AUD/USD. For Australian investors, assess currency exposure and portfolio role before considering an allocation.",
+      "investmentOpportunity": "Compare gold with real yields and AUD/USD. For Australian investors, assess currency exposure and portfolio role before considering an allocation.",
       "opportunityType": "COMPARE"
     },
     {
@@ -673,7 +673,7 @@
       "source": "Yahoo Finance",
       "rank": 90,
       "whyItMatters": "AUD/USD changes the Australian-dollar return on unhedged overseas assets and affects exporters, importers and commodity-linked companies.",
-      "investmentOpportunity": "Research angle: stress-test existing overseas holdings under a stronger and weaker AUD. Compare hedged and unhedged exposure against the portfolio's time horizon.",
+      "investmentOpportunity": "Stress-test existing overseas holdings under a stronger and weaker AUD. Compare hedged and unhedged exposure against the portfolio's time horizon.",
       "opportunityType": "REVIEW"
     },
     {
@@ -859,7 +859,7 @@
         "analysts": 17
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 5.3% below the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Consensus target is 5.3% below the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
@@ -1034,7 +1034,7 @@
           ],
           [
             "2026-10",
-            151.0
+            151
           ]
         ],
         "threeYearReturn": 44.3,
@@ -1045,7 +1045,7 @@
         "analysts": 14
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 16.8% below the quoted price; test the assumptions behind the STRONG SELL consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Consensus target is 16.8% below the quoted price; test the assumptions behind the STRONG SELL consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
@@ -1172,7 +1172,7 @@
           ],
           [
             "2025-11",
-            177.0
+            177
           ],
           [
             "2025-12",
@@ -1231,7 +1231,7 @@
         "analysts": 62
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 43.4% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Consensus target is 43.4% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
@@ -1417,7 +1417,7 @@
         "analysts": 56
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 9.8% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Consensus target is 9.8% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
@@ -1444,7 +1444,7 @@
       "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQcm1IZlNWMU5lTHlIUGtycGxUS01NYVlmMG5Wc05YQ09RWjV0azdydUl3elpRV3d6bmdYcWdNU3ZWaTJlbjQ1WmhYOFllbFVPNE50UllDUWFDMUtUX0xKRTRSX0dYRWVKS09aX0lkVGxjNmNfeC0xa2V2cTdpWWo2aE5aQmRjcmhsemhEaUJqUFFTZ1JCdUk3UnBPa2k4NXJBSFlfYVlDaGhvRnFtVl9lSmdNakI0WXpDTEVR?oc=5",
       "rank": 88,
       "whyItMatters": "A headline matters to investors only if it changes expected cash flows, risk, valuation or market pricing.",
-      "investmentOpportunity": "Research angle: verify the primary source, identify the companies and sectors affected, then watch for a measurable follow-through in guidance, prices or earnings estimates. No trade is implied by the headline alone.",
+      "investmentOpportunity": "Verify the primary source, identify the companies and sectors affected, then watch for measurable follow-through in guidance, prices or earnings estimates. No trade is implied by the headline alone.",
       "opportunityType": "VERIFY"
     },
     {
@@ -1471,7 +1471,7 @@
       "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1jTW52dzZOcTM5Qms0U180cmk2amd4Q01EaXhUOVRyNnNMS0VxcUx0eWpGdVl3WVFFdHZ4NUR0TTh4VjNmUkI0aWFyb0twUQ?oc=5",
       "rank": 88,
       "whyItMatters": "A headline matters to investors only if it changes expected cash flows, risk, valuation or market pricing.",
-      "investmentOpportunity": "Research angle: verify the primary source, identify the companies and sectors affected, then watch for a measurable follow-through in guidance, prices or earnings estimates. No trade is implied by the headline alone.",
+      "investmentOpportunity": "Verify the primary source, identify the companies and sectors affected, then watch for measurable follow-through in guidance, prices or earnings estimates. No trade is implied by the headline alone.",
       "opportunityType": "VERIFY"
     },
     {
@@ -1498,7 +1498,7 @@
       "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPSFloRVRIa0JXbFZmUzNKTnY1YzBpZzRFWnBnOG04eTlrUFRLY2ZtNDhmVGFZVUNfRUl2V3E2OFFkOVhZNmNITUN6MmJEM3Zza3djRVJlSjlzSDY3NXFQX1RHSWktSjNwUHMxTkxnSDJRdVRlc0EyUmthYXVVbENfRnp4Vm9YOFdxTVVqYWI4YWVhVHlyeDU3XzNadjB1dU85V2JQaXlfcXNndkcwcEhXNVQ3c0pEYXhkWW52OUlmTQ?oc=5",
       "rank": 88,
       "whyItMatters": "A headline matters to investors only if it changes expected cash flows, risk, valuation or market pricing.",
-      "investmentOpportunity": "Research angle: verify the primary source, identify the companies and sectors affected, then watch for a measurable follow-through in guidance, prices or earnings estimates. No trade is implied by the headline alone.",
+      "investmentOpportunity": "Verify the primary source, identify the companies and sectors affected, then watch for measurable follow-through in guidance, prices or earnings estimates. No trade is implied by the headline alone.",
       "opportunityType": "VERIFY"
     }
   ]

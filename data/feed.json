@@ -1,11 +1,11 @@
 {
   "version": "1.3.3",
-  "updatedAt": "2026-10-11T10:32:19+00:00",
+  "updatedAt": "2026-10-12T00:02:51+00:00",
   "tickers": {
     "asx200": {
-      "value": "8,716.6",
+      "value": "8,760.9",
       "direction": "up",
-      "change": "+0.00%"
+      "change": "+0.51%"
     },
     "sp500": {
       "value": "7,811.54",
@@ -18,14 +18,14 @@
       "change": "-3.70%"
     },
     "oil": {
-      "value": "US$91.85",
-      "direction": "up",
-      "change": "+0.39%"
+      "value": "US$90.86",
+      "direction": "down",
+      "change": "-1.08%"
     },
     "gold": {
-      "value": "US$4,216.30",
-      "direction": "up",
-      "change": "+1.43%"
+      "value": "US$4,216.10",
+      "direction": "down",
+      "change": "-0.00%"
     },
     "us10": {
       "value": "5.24%",
@@ -33,15 +33,15 @@
       "change": "+0.25%"
     },
     "aud": {
-      "value": "0.6988",
+      "value": "0.6987",
       "direction": "up",
-      "change": "+0.41%"
+      "change": "+0.40%"
     }
   },
   "cards": [
     {
       "tag": "DAILY CROSS-ASSET NARRATIVE",
-      "time": "11 OCT",
+      "time": "12 OCT",
       "title": "Rates, equities and inflation: the signals to connect",
       "dek": "A daily read-through across equity direction, bond yields, volatility and energy prices—not a standalone buy or sell signal.",
       "data": [
@@ -58,31 +58,31 @@
           "+0.64%"
         ]
       ],
-      "insight": "The S&P 500 moved +0.59%, the Nasdaq +0.64%, and the US 10-year yield +0.25%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil moved +0.39%; a single session is not enough to infer a change in the inflation trend. Next release to watch: US CPI: Wed 14 Oct 08:30 ET; Australian Labour Force: Thu 15 Oct 11:30am AEDT; US retail sales: Thu 15 Oct 08:30 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
+      "insight": "The S&P 500 moved +0.59%, the Nasdaq +0.64%, and the US 10-year yield +0.25%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil fell -1.08%, which may ease some near-term inflation pressure if the move persists. Next release to watch: US CPI: Wed 14 Oct 08:30 ET; Australian Labour Force: Thu 15 Oct 11:30am AEDT; US retail sales: Thu 15 Oct 08:30 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
       "source": "Market Mind • Yahoo Finance • official calendars",
       "link": "https://www.newyorkfed.org/research/calendars/i-oct26.html",
       "rank": 101
     },
     {
       "tag": "ASX 200",
-      "time": "11 OCT",
+      "time": "12 OCT",
       "title": "ASX 200 is higher",
-      "dek": "The ASX 200 is 8,716.6, +0.00% on the latest session.",
+      "dek": "The ASX 200 is 8,760.9, +0.51% on the latest session.",
       "data": [
         [
           "ASX 200",
-          "8,716.6"
+          "8,760.9"
         ],
         [
           "Session",
-          "+0.00%"
+          "+0.51%"
         ],
         [
           "Context",
           "Australian equities"
         ]
       ],
-      "insight": "The ASX 200 rose +0.00% while the Australian dollar moved +0.41%. Compare sector breadth next: a headline index can be driven by a small number of large companies, so check banks, materials and property before calling it a broad rally.",
+      "insight": "The ASX 200 rose +0.51% while the Australian dollar moved +0.40%. Compare sector breadth next: a headline index can be driven by a small number of large companies, so check banks, materials and property before calling it a broad rally.",
       "source": "Yahoo Finance",
       "rank": 100,
       "marketHistory": {
@@ -233,14 +233,14 @@
           ],
           [
             "2026-10",
-            8716.6
+            8760.9
           ]
         ]
       }
     },
     {
       "tag": "US MARKETS",
-      "time": "11 OCT",
+      "time": "12 OCT",
       "title": "US equities are higher",
       "dek": "The S&P 500 is 7,811.54, +0.59% on the latest session.",
       "data": [
@@ -565,7 +565,7 @@
     },
     {
       "tag": "RATES",
-      "time": "11 OCT",
+      "time": "12 OCT",
       "title": "US 10Y yield is rising",
       "dek": "The US 10-year Treasury yield is about 5.24%, +0.25% on the latest session.",
       "data": [
@@ -588,82 +588,82 @@
     },
     {
       "tag": "COMMODITIES",
-      "time": "11 OCT",
-      "title": "Oil is higher",
-      "dek": "WTI crude is about US$91.85, +0.39% on the latest session.",
+      "time": "12 OCT",
+      "title": "Oil is lower",
+      "dek": "WTI crude is about US$90.86, -1.08% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$91.85"
+          "US$90.86"
         ],
         [
           "Session",
-          "+0.39%"
+          "-1.08%"
         ],
         [
           "Theme",
           "Inflation / growth"
         ]
       ],
-      "insight": "WTI moved +0.39% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
+      "insight": "WTI moved -1.08% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
       "source": "Yahoo Finance",
       "rank": 96
     },
     {
       "tag": "GOLD",
-      "time": "11 OCT",
-      "title": "Gold is higher",
-      "dek": "Gold is about US$4,216.30, +1.43% on the latest session.",
+      "time": "12 OCT",
+      "title": "Gold is lower",
+      "dek": "Gold is about US$4,216.10, -0.00% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,216.30"
+          "US$4,216.10"
         ],
         [
           "Session",
-          "+1.43%"
+          "-0.00%"
         ],
         [
           "AUD/USD",
-          "0.6988"
+          "0.6987"
         ]
       ],
-      "insight": "Gold moved +1.43% while the US 10-year yield moved +0.25% and AUD/USD moved +0.41%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
+      "insight": "Gold moved -0.00% while the US 10-year yield moved +0.25% and AUD/USD moved +0.40%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
       "source": "Yahoo Finance",
       "rank": 94
     },
     {
       "tag": "CURRENCY",
-      "time": "11 OCT",
+      "time": "12 OCT",
       "title": "Australian dollar is higher",
-      "dek": "AUD/USD is around 0.6988, +0.41% on the latest session.",
+      "dek": "AUD/USD is around 0.6987, +0.40% on the latest session.",
       "data": [
         [
           "AUD/USD",
-          "0.6988"
+          "0.6987"
         ],
         [
           "Session",
-          "+0.41%"
+          "+0.40%"
         ],
         [
           "Theme",
           "Global risk / commodities"
         ]
       ],
-      "insight": "AUD/USD moved +0.41% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
+      "insight": "AUD/USD moved +0.40% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
       "source": "Yahoo Finance",
       "rank": 90
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "11 OCT",
+      "time": "12 OCT",
       "title": "BHP · Mining outlook in focus",
-      "dek": "Medianet News Hub • A$60.94 • +0.00% today.",
+      "dek": "AFR • A$62.43 • +2.45% today.",
       "data": [
         [
           "PRICE",
-          "A$60.94"
+          "A$62.43"
         ],
         [
           "CONSENSUS",
@@ -671,12 +671,12 @@
         ],
         [
           "TARGET · 17 ANALYSTS",
-          "A$59.00"
+          "A$59.05"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -3.2% versus the current price. Catalyst: MEU funds class action against BHP over public holiday breaches - Medianet News Hub.",
-      "source": "Medianet News Hub",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaEdydDhCWXJXZkhmbjJScGw3RWlCTi0tS2hHaFdOM2ZzWm10d09IM1Z4cGFtVkUtZlhobVJTRkk2UEVjb2h2eG9EX3VHV29HWl9KNER6YkxoMjZjOU1idU9INHBuWV8wdDdEU3BLUUU3WDI1bTNxQV9ZMDJyYTBjOGZTYXNKV25oUEduZ0dZSUdjMExNWklFay1ldUZ6MF9pYUVBZEVDek45dXJVaDNERA?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies -5.4% versus the current price. Catalyst: Glencore pins hopes on ASX debut to close BHP valuation gap.",
+      "source": "AFR",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaGNUQ1VWa3I2RVR5eWxNN29TaFR0UFdJcFI3d1pqR2hRRHZNWURsdlpZV2R6b1pRLU5MS21oczhjLWZHaEJfRUZDS2dlcmZ5bkkwM0NBRVpncHNrUXNhYmJoRVJKXzg4SllzQVNjMWNrbUNqRGdrNTRqeHd2cGhkazdrVnhVQWNweThEeFdOWFVfSWxEMFFSTDVpTFlGTHpaazd5LWZrbmtKV2pacEpHTHdn?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "BHP.AX",
@@ -827,26 +827,26 @@
           ],
           [
             "2026-10",
-            60.94
+            62.43
           ]
         ],
-        "threeYearReturn": 31.6,
+        "threeYearReturn": 34.8,
         "consensus": "HOLD",
-        "target": 59.0,
-        "upside": -3.1834569583641503,
+        "target": 59.05,
+        "upside": -5.414064213764814,
         "view": "WATCH",
         "analysts": 17
       }
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "11 OCT",
+      "time": "12 OCT",
       "title": "CBA · Income story in focus",
-      "dek": "The Motley Fool Australia • A$149.29 • +0.00% today.",
+      "dek": "Kalkine Media • A$149.08 • -0.14% today.",
       "data": [
         [
           "PRICE",
-          "A$149.29"
+          "A$149.08"
         ],
         [
           "CONSENSUS",
@@ -857,9 +857,9 @@
           "A$125.64"
         ]
       ],
-      "insight": "Market Mind: SELL. Consensus target implies -15.8% versus the current price. Catalyst: CBA vs Coles shares: Which is the better buy at age 50? - The Motley Fool Australia.",
-      "source": "The Motley Fool Australia",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOdXBFZnplUk5TZ1VCTl9Jb3hmMFpUb3I4MWN0N0VIQi1EWXlvdXZLUnNXNHBDd1pHSEd1ZkpMMHpxa2Etd0RCMW5vMkFyV3ljU29fc3M0NmxQeC16QTVtOFo3cXNyMVFFQWJwMmRlbTZvWjBzZ1Z2bjdiZ2FnaVlrSThNcjB6SjNxbDgzQlgwOTdVemM?oc=5",
+      "insight": "Market Mind: SELL. Consensus target implies -15.7% versus the current price. Catalyst: Why is Commonwealth Bank (ASX:CBA) facing a valuation debate? - Kalkine Media.",
+      "source": "Kalkine Media",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPV2h4MFZPeWQyZzIxam8tWTRibWZaenhyY2RWWmZUT1VBVGpXQjlSZnpGck9vbFc5bVNGWm0wVW1obG9taUotVHhXclY4YURDU2lMSXZ3N1M2V04tYzcxTTI4dUZQN01MRHZpeHZwR0xOR3RybnF5d0tBV09ITTVMZktVSkFCcmwyNmdBY2otdjNNYTY5UHNTZ28wdmVMUXpWR0ZSYQ?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "CBA.AX",
@@ -1010,20 +1010,20 @@
           ],
           [
             "2026-10",
-            149.29
+            149.08
           ]
         ],
-        "threeYearReturn": 42.6,
+        "threeYearReturn": 42.4,
         "consensus": "STRONG SELL",
         "target": 125.64,
-        "upside": -15.841646694165668,
+        "upside": -15.723102725487037,
         "view": "SELL",
         "analysts": 14
       }
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
-      "time": "11 OCT",
+      "time": "12 OCT",
       "title": "Nvidia · AI earnings power in focus",
       "dek": "TradingKey • US$229.28 • -0.52% today.",
       "data": [
@@ -1206,9 +1206,9 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
-      "time": "11 OCT",
+      "time": "12 OCT",
       "title": "Microsoft · AI valuation in focus",
-      "dek": "TradingKey • US$535.07 • +2.38% today.",
+      "dek": "Stocktwits • US$535.07 • +2.38% today.",
       "data": [
         [
           "PRICE",
@@ -1223,9 +1223,9 @@
           "US$587.63"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies +9.8% versus the current price. Catalyst: Microsoft (MSFT) Q4 FY2026 Earnings Preview: $87.7B Revenue, Azure 40%, FY2027 Capex….",
-      "source": "TradingKey",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPT2M0bHI1V2FiTVJMUTNtUHpkNFQ2a2RKUUtHSTZ3NnphY1lqLWU1MEJacTZKNW1XNXZMZlUyU24ydzZ1dUlJdUxzV3ZhNUdYamhib1pqTFJycnh3TDZSRUFHdVc2WXpPS2d4Q0xHYXYzMDVnZW1hWXRpUWc2aFpfYm44MkVCUHU2UjNXVVpZbGZ6SE0wUUJZdFVTNzZtX284OXRsd1FLY2FDYzRVbnNfU1I2ZHVHc3FOTmxxdU9hQTVTYzhJREdwM0ZMRlZGS0VP?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies +9.8% versus the current price. Catalyst: Microsoft Loses Exclusive Access To OpenAI Models In Partnership Reset Ahead Of Q3 Ea….",
+      "source": "Stocktwits",
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQaUtDaU1RM005WlRlRkZ6TG54Zmp5UUptUjJwbXhQY29ORFNRSmgxUGxGUWRiMVVjZElaZXJBQUJjRzdvVnBvU0FlMXoxUk5WUW1YNEt3UXdqLUpBQnVBdThFTVdKdmxadFBmNnU4emVBb3REdlRIV3hZamcxUWxfRFYtbGtTaVVRZnh3MnppUlN5bk9FRHJNcDZfNWphdVZBcTlYN0JBY3dxbmJodE5Qa0dsODV1RDczQmZ2U25tSWtMOU4waUphTnc1blZ3QQ?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",
@@ -1389,37 +1389,13 @@
     },
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "11 OCT",
-      "title": "ASX to shrug off bond jitters, buoyed by US earnings momentum - AFR",
-      "dek": "AFR • Latest market coverage.",
+      "time": "12 OCT",
+      "title": "5 things to watch on the ASX 200 on Monday 12 October 2026 - The Motley Fool Australia",
+      "dek": "The Motley Fool Australia • Latest market coverage.",
       "data": [
         [
           "SOURCE",
-          "AFR"
-        ],
-        [
-          "TYPE",
-          "Market news"
-        ],
-        [
-          "STATUS",
-          "Latest"
-        ]
-      ],
-      "insight": "For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion.",
-      "source": "AFR",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSE4xY1c5S0F4RXpka0oyYllDQ2U0ckNqR2QxM21fVnIxTHFLNFR3WXpock1uNEhNWFV0ckVnbUZKelhVZV9HWjZmOVV2TnZWT3VVTEk3SDEtSUNyYk1nN29iSzRPQkhBajJSUlctRXBoQnV1NWxqaWNMLVg1T0V6WXdWZ2Q0QnUwbXllVVFXX1g5d1pnQ0VWS05EblFTRDNWMW1MRzUyUXR2X1RmRzFKVE9qaHpjTWl2Wlkw?oc=5",
-      "rank": 88
-    },
-    {
-      "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "11 OCT",
-      "title": "What Does the Vanguard Ethically Conscious Australian Shares ETF (ASX:VETH) Hold and How Is Its Latest Distribution Structured? - Kalkine",
-      "dek": "Kalkine • Latest market coverage.",
-      "data": [
-        [
-          "SOURCE",
-          "Kalkine"
+          "The Motley Fool Australia"
         ],
         [
           "TYPE",
@@ -1431,19 +1407,19 @@
         ]
       ],
       "insight": "Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone.",
-      "source": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOUUJSNU5WTGpOSlZfQmtENWxuM3kzSVdCX180US1rNm5hQUxiMUxCUnBNWTR5SFFiRzV3U0JOend3b0RrV1V2TGtmSURsUnBrazZFLXhCcGJMWmZCRmJBbzhXcXk3MGZlclZuU0ZDdWxJc3JuUHRqbG1rcDFvWkpvRExOZ0x0T012cmtYbldyQVpaOFVfOWVyazNxUjRBM19NZUhGWVo5dDNrLTlVcFc0X0JWcVFxb1ctaFZWeDN4eUpJdk9rQmJPN1hlYTJqT1Nob1lub3c2TE5aVEx4VHJ5Vm90bXJZOHlULU9ZWlFSalBRX2JNSGRxb25MUks0dDJZbF84?oc=5",
+      "source": "The Motley Fool Australia",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVVYwb1E5WUlwZ0JtUWRrUTVnRVBhdVNDdGdyR21TUkZkUllPajhzUXFtU2drbW9DaEhUQTVFblF5U3NnNjdHYXlxWXBRVW1vaHk0WFdmbzZ4azVzY09lTVZjbnl6SlVJZlZVTU1mTUc5aHNsNUl5WmdTRTZ4ZW5sRFktTmh5eTl3LV9YMm5NS3FEa2JpYXlCSVlR?oc=5",
       "rank": 88
     },
     {
       "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "11 OCT",
-      "title": "Arbitr Group (ASX:AGT) - Stock Analysis - Simply Wall Street",
-      "dek": "Simply Wall Street • Latest market coverage.",
+      "time": "12 OCT",
+      "title": "ASX Preview: Australian Shares to Rise Despite Treasury Selloff; Cleanaway Waste Management, EQT Infrastructure Extend Exclusivity Period for Proposed Deal - Yahoo Finance Australia",
+      "dek": "Yahoo Finance Australia • Latest market coverage.",
       "data": [
         [
           "SOURCE",
-          "Simply Wall Street"
+          "Yahoo Finance Australia"
         ],
         [
           "TYPE",
@@ -1455,8 +1431,32 @@
         ]
       ],
       "insight": "Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone.",
-      "source": "Simply Wall Street",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNWHJuTWFpa1ZJbVl2b1cyNzJvSFFOZWVkQjlsSjVzX1o1RE8yRHNNazNva2dzNEtZb2p6cE1yM3V6RXVvbG9SMFVJbUdWRlZIMm5GOVdfOGd5NG85cWQzeGRiVE9hd1BIcG9ULXMtdTMyQWF0a2Fxeld0VFgzV3VwQ1k5SlpXUQ?oc=5",
+      "source": "Yahoo Finance Australia",
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbkRnS0VsbDNVUHRLcTJ1blFjd2xMY0RoUHpKVVJSRDhzTXA0ck5aLXVMeE9WcXFQbGZ0TzJHZDlrb0FIanJJQ080TkdqRW5mc1RQZksyZnVNdlAzVktaVGFMUFJ3Z2FaaEM3ZE5rbVVockVkSVM4cXZHWkw0dzhkOGpKOFpYTHVvTkxN?oc=5",
+      "rank": 88
+    },
+    {
+      "tag": "NEWS / MARKET INTELLIGENCE",
+      "time": "12 OCT",
+      "title": "ASX eyes gains after Wall Street rises; Oil market in focus - SMH.com.au",
+      "dek": "SMH.com.au • Latest market coverage.",
+      "data": [
+        [
+          "SOURCE",
+          "SMH.com.au"
+        ],
+        [
+          "TYPE",
+          "Market news"
+        ],
+        [
+          "STATUS",
+          "Latest"
+        ]
+      ],
+      "insight": "Energy news can flow through to fuel costs, inflation expectations and company margins. Watch whether the reported development changes expected supply or demand, then compare oil's reaction with bond yields and energy shares.",
+      "source": "SMH.com.au",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQcm1IZlNWMU5lTHlIUGtycGxUS01NYVlmMG5Wc05YQ09RWjV0azdydUl3elpRV3d6bmdYcWdNU3ZWaTJlbjQ1WmhYOFllbFVPNE50UllDUWFDMUtUX0xKRTRSX0dYRWVKS09aX0lkVGxjNmNfeC0xa2V2cTdpWWo2aE5aQmRjcmhsemhEaUJqUFFTZ1JCdUk3UnBPa2k4NXJBSFlfYVlDaGhvRnFtVl9lSmdNakI0WXpDTEVR?oc=5",
       "rank": 88
     }
   ]

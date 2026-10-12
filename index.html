@@ -121,6 +121,18 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
 .terminal-brief-card .market-lens{border-color:#2a3542}
 @media(max-width:600px){.market-lens{margin:9px 0 3px;padding:8px 0}.market-lens-item{padding-left:7px}.market-lens-item strong{font-size:11px}.market-lens-item em{font-size:7px}.card .insight p.insight-copy{-webkit-line-clamp:4}}
 </style>
+
+<style id="investment-opportunity-style">
+.opportunity-panel{margin-top:12px;padding:12px;border:1px solid #38434f;background:linear-gradient(145deg,rgba(20,29,39,.9),rgba(8,13,19,.92))}
+.opportunity-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.opportunity-heading span{font-size:8px;letter-spacing:1.1px;color:var(--accent);font-weight:850}
+.opportunity-heading b{font-size:8px;letter-spacing:.8px;color:#d5dce3;border:1px solid #394654;padding:4px 6px}
+.opportunity-panel p,.analysis-details p{font-size:11px;line-height:1.45;color:#c0c9d2;margin:0}
+.analysis-details{margin-top:10px;border-top:1px solid var(--line);padding-top:9px}
+.analysis-details summary{font-size:9px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);cursor:pointer}
+.analysis-details p{padding-top:9px}
+.terminal-brief-card .opportunity-panel{border-color:#5b4a24;background:linear-gradient(145deg,rgba(40,31,13,.35),rgba(8,13,19,.92))}
+</style>
 </head>
 <body>
 
@@ -308,7 +320,7 @@ function renderCards(cards){
  var previousTop=feed.scrollTop;
  var previousCard=feed.querySelector(".card");
  var previousIndex=previousCard?Math.max(0,Math.round(previousTop/Math.max(1,previousCard.offsetHeight))):0;
- feed.innerHTML=cards.map(function(c,i){return '<article class="card'+((c.tag||"").toUpperCase().indexOf("ASX")>=0?' asx-card':'')+(c.stock?' stock-card':'')+(((c.tag||"").toUpperCase().indexOf("NARRATIVE")>=0&&i===0)?' terminal-brief-card':'')+'"><div class="topline"><div class="tag">'+esc(c.tag)+'</div><div class="timestamp">'+esc(c.time)+'</div></div><h1>'+esc(c.title)+'</h1><p class="dek">'+esc(c.dek)+'</p><div class="data">'+c.data.map(function(d){return '<div class="box"><div class="label">'+esc(d[0])+'</div><div class="value">'+esc(d[1])+'</div></div>';}).join("")+'</div><div class="asx-year-slot"></div><div class="stock-slot"></div><div class="story-visual-slot"></div><div class="us-market-slot"></div>'+marketLens(c)+'<div class="mind-reveal d1 signal-pill"><i></i>MARKET SIGNAL</div>'+(c.chart?'<div class="mind-chart mind-reveal d2">'+miniChart(c.rank||50,c.signal)+'</div>':'')+'<div class="insight mind-reveal d3"><small>Why it matters</small><p class="insight-copy">'+esc(c.insight)+'</p>'+(String(c.insight||"").length>190?'<button class="insight-toggle" type="button" aria-expanded="false">Read full analysis +</button>':'')+'</div><div class="source">'+(c.link?'<a href="'+esc(c.link)+'" target="_blank" rel="noopener noreferrer">'+esc(c.source)+' ↗</a>':'<span>'+esc(c.source)+'</span>')+'<span>'+(i+1)+' / '+cards.length+'</span></div></article>';}).join("");
+ feed.innerHTML=cards.map(function(c,i){return '<article class="card'+((c.tag||"").toUpperCase().indexOf("ASX")>=0?' asx-card':'')+(c.stock?' stock-card':'')+(((c.tag||"").toUpperCase().indexOf("NARRATIVE")>=0&&i===0)?' terminal-brief-card':'')+'"><div class="topline"><div class="tag">'+esc(c.tag)+'</div><div class="timestamp">'+esc(c.time)+'</div></div><h1>'+esc(c.title)+'</h1><p class="dek">'+esc(c.dek)+'</p><div class="data">'+c.data.map(function(d){return '<div class="box"><div class="label">'+esc(d[0])+'</div><div class="value">'+esc(d[1])+'</div></div>';}).join("")+'</div><div class="asx-year-slot"></div><div class="stock-slot"></div><div class="story-visual-slot"></div><div class="us-market-slot"></div>'+marketLens(c)+'<div class="mind-reveal d1 signal-pill"><i></i>MARKET SIGNAL</div>'+(c.chart?'<div class="mind-chart mind-reveal d2">'+miniChart(c.rank||50,c.signal)+'</div>':'')+'<div class="insight mind-reveal d3"><small>WHY IT MATTERS</small><p class="insight-copy">\'+esc(c.whyItMatters||c.insight)+\'</p><div class="opportunity-panel"><div class="opportunity-heading"><span>INVESTMENT OPPORTUNITY</span><b>\'+esc(c.opportunityType||"RESEARCH")+\'</b></div><p>\'+esc(c.investmentOpportunity||"Research the catalyst, verify the source and assess downside before acting.")+\'</p></div><details class="analysis-details"><summary>Market insight &amp; full analysis</summary><p>\'+esc(c.insight)+\'</p></details></div><div class="source">'+(c.link?'<a href="'+esc(c.link)+'" target="_blank" rel="noopener noreferrer">'+esc(c.source)+' ↗</a>':'<span>'+esc(c.source)+'</span>')+'<span>'+(i+1)+' / '+cards.length+'</span></div></article>';}).join("");
  feed.querySelectorAll(".asx-year-slot").forEach(function(slot,i){if(cards[i]&&((cards[i].tag||"").toUpperCase().indexOf("ASX")>=0||(cards[i].title||"").toUpperCase().indexOf("ASX 200")>=0))slot.innerHTML=asxYearChart(cards[i].marketHistory&&cards[i].marketHistory.asx200);});
  feed.querySelectorAll(".stock-slot").forEach(function(slot,i){if(cards[i]&&cards[i].stock)slot.innerHTML=stockChart(cards[i]);});
  feed.querySelectorAll(".story-visual-slot").forEach(function(slot,i){if(cards[i]&&((cards[i].tag||"").toUpperCase().indexOf("ASX")<0))slot.innerHTML=storyVisual(cards[i]);});
@@ -347,6 +359,9 @@ async function loadLiveFeed(manual){
     dek:c.dek||"",
     data:c.data||[["SOURCE",c.source||"Market Mind"],["TYPE",c.type||"Market news"],["STATUS","Latest"]],
     insight:c.insight||"Read the original source for the full story and context.",
+    whyItMatters:c.whyItMatters||"Assess whether the development changes expected cash flows, valuation or risk.",
+    investmentOpportunity:c.investmentOpportunity||"Research angle: verify the source, test the assumptions and compare downside with potential return before acting.",
+    opportunityType:c.opportunityType||"RESEARCH",
     source:c.source||"Market Mind",
     link:c.link||null,
     rank:c.rank||0,

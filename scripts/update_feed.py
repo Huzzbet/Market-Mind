@@ -299,6 +299,82 @@ def daily_narrative(a, sp, vx, oil, gold, rate, aud, nasdaq, now):
         "rank": 101
     }
 
+
+def investment_lens(card):
+    """Create a cautious, actionable research angle from each card's stated data."""
+    tag=(card.get("tag") or "").upper()
+    title=(card.get("title") or "").lower()
+    rows={str(x[0]).upper():str(x[1]) for x in card.get("data",[]) if isinstance(x,list) and len(x)>1}
+    if "NARRATIVE" in tag:
+        return {
+            "why":"Equities, yields and energy prices can tell different stories. The relationship between them is more useful than any one headline move.",
+            "opportunity":"Research angle: compare equity breadth with real yields and earnings revisions. Avoid calling a risk-on or risk-off regime from one session alone.",
+            "stance":"MONITOR"
+        }
+    if "ASX 200" in tag:
+        return {
+            "why":"The index can be driven by a handful of large miners and banks, so the headline return may not reflect the wider market.",
+            "opportunity":"Research angle: compare banks, materials, property and smaller companies with the index. Look for improving breadth and earnings support before identifying candidates.",
+            "stance":"RESEARCH"
+        }
+    if "US MARKETS" in tag:
+        return {
+            "why":"Index direction alongside volatility helps frame risk appetite, but neither confirms that a move is broad or durable.",
+            "opportunity":"Research angle: check equal-weight versus cap-weight performance, sector breadth and earnings revisions. A broadening rally is stronger evidence than index gains alone.",
+            "stance":"MONITOR"
+        }
+    if "RATES" in tag:
+        return {
+            "why":"Bond yields feed into discount rates, borrowing costs and relative valuations across growth shares, property and bonds.",
+            "opportunity":"Research angle: compare quality bond yields with equity earnings yields and property balance sheets. Consider duration only after checking inflation and central-bank expectations.",
+            "stance":"COMPARE"
+        }
+    if "COMMODITIES" in tag:
+        return {
+            "why":"Oil can affect inflation, transport costs, consumer spending and margins differently across sectors.",
+            "opportunity":"Research angle: map beneficiaries and losers across energy producers, airlines, transport and consumer businesses. Confirm whether the move reflects supply, demand or a temporary shock.",
+            "stance":"RESEARCH"
+        }
+    if "GOLD" in tag:
+        return {
+            "why":"Gold responds to real yields, the US dollar and demand for defensive assets; a daily move alone cannot identify the driver.",
+            "opportunity":"Research angle: compare gold with real yields and AUD/USD. For Australian investors, assess currency exposure and portfolio role before considering an allocation.",
+            "stance":"COMPARE"
+        }
+    if "CURRENCY" in tag:
+        return {
+            "why":"AUD/USD changes the Australian-dollar return on unhedged overseas assets and affects exporters, importers and commodity-linked companies.",
+            "opportunity":"Research angle: stress-test existing overseas holdings under a stronger and weaker AUD. Compare hedged and unhedged exposure against the portfolio's time horizon.",
+            "stance":"REVIEW"
+        }
+    if "STOCK INTELLIGENCE" in tag:
+        target=next((v for k,v in rows.items() if "TARGET" in k),None)
+        rating=rows.get("CONSENSUS","Unavailable")
+        price=rows.get("PRICE","Unavailable")
+        catalyst=card.get("title","the company")
+        stock=card.get("stock") or {}
+        upside=stock.get("upside")
+        if upside is None:
+            upside_text="Consensus target comparison is unavailable"
+        else:
+            upside_text=("Consensus target is "+format(float(upside),".1f")+"% above" if upside>=0 else "Consensus target is "+format(abs(float(upside)),".1f")+"% below")+" the quoted price"
+        return {
+            "why":"Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
+            "opportunity":"Research angle: "+upside_text+"; test the assumptions behind the "+rating+" consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+            "stance":"INVESTIGATE"
+        }
+    if "NEWS" in tag:
+        return {
+            "why":"A headline matters to investors only if it changes expected cash flows, risk, valuation or market pricing.",
+            "opportunity":"Research angle: verify the primary source, identify the companies and sectors affected, then watch for a measurable follow-through in guidance, prices or earnings estimates. No trade is implied by the headline alone.",
+            "stance":"VERIFY"
+        }
+    return {
+        "why":"Market moves need to be connected to cash flows, valuation and risk before they can inform a decision.",
+        "opportunity":"Research angle: identify the affected assets, test the key assumption and compare downside with potential return before acting.",
+        "stance":"RESEARCH"
+    }
+
 def main():
     now=datetime.now(timezone.utc).astimezone(); syms={"asx200":"^AXJO","sp500":"^GSPC","vix":"^VIX","oil":"CL=F","gold":"GC=F","us10":"^TNX","aud":"AUDUSD=X"}; m={}
     nasdaq=None
@@ -404,6 +480,11 @@ def main():
             if len(cards)>=13: break
         if len(cards)>=9: break
     cards.insert(0, daily_narrative(a, sp, vx, oil, gold, rate, aud, nasdaq, now))
+    for card in cards:
+        lens=investment_lens(card)
+        card["whyItMatters"]=lens["why"]
+        card["investmentOpportunity"]=lens["opportunity"]
+        card["opportunityType"]=lens["stance"]
     if len(cards)<10: raise SystemExit("Refusing to publish: fewer than 10 cards")
     def t(x): return {"value":x["value"],"direction":"up" if x["pct"]>=0 else "down","change":pct(x["pct"])}
     feed={"version":"1.3.3","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}

@@ -26,12 +26,7 @@ def history(symbol, range_="3y", interval="1mo"):
     return out
 
 def consensus(slug):
-    fallbacks={
-      "quote/asx/BHP":{"rating":"Hold","target":60.77,"analysts":17},
-      "quote/asx/CBA":{"rating":"Strong Sell","target":125.64,"analysts":14},
-      "stocks/nvda":{"rating":"Strong Buy","target":328.72,"analysts":61},
-      "stocks/msft":{"rating":"Strong Buy","target":587.63,"analysts":56}
-    }
+    # No hard-coded consensus fallbacks: unavailable data must stay visibly unavailable.
     try:
         html=get("https://stockanalysis.com/"+slug+"/forecast/").decode("utf-8","ignore")
         m=re.search(r'consensus rating of "([^"]+)"',html,re.I)
@@ -39,12 +34,10 @@ def consensus(slug):
         if not p: p=re.search(r'Price Target[^$]{0,120}\$([0-9.,]+)\b',html,re.I)
         n=re.search(r'According to ([0-9]+) analysts',html,re.I)
         out={"rating":m.group(1) if m else None,"target":float(p.group(1).replace(",","")) if p else None,"analysts":int(n.group(1)) if n else None,"source":"Stock Analysis"}
-        fb=fallbacks.get(slug,{})
-        return {"rating":out["rating"] or fb.get("rating"),"target":out["target"] or fb.get("target"),"analysts":out["analysts"] or fb.get("analysts"),"source":out["source"] if out["rating"] or out["target"] else "Stock Analysis fallback"}
+        return {"rating":out["rating"],"target":out["target"],"analysts":out["analysts"],"source":"Stock Analysis" if out["rating"] or out["target"] else "Unavailable"}
     except Exception as e:
         print("Warning: consensus",slug,e)
-        fb=fallbacks.get(slug,{})
-        return {"rating":fb.get("rating"),"target":fb.get("target"),"analysts":fb.get("analysts"),"source":"Stock Analysis fallback"}
+        return {"rating":None,"target":None,"analysts":None,"source":"Unavailable"}
 
 def fmt(v,n=2): return format(v,",."+str(n)+"f")
 def pct(v): return ("+" if v>=0 else "")+format(v,".2f")+"%"
@@ -82,7 +75,7 @@ def news_insight(item):
 def catalyst_score(label,item):
     title=item.get("title","").lower()
     source=item.get("source","").lower()
-    names={"BHP":["bhp"],"CBA":["cba","commonwealth bank"],"NVDA":["nvidia","nvda"],"MSFT":["microsoft","msft"]}
+    names={"BHP":["bhp"],"RIO":["rio tinto","rio"],"FMG":["fortescue","fmg"],"CBA":["cba","commonwealth bank"],"NAB":["nab","national australia bank"],"WES":["wesfarmers","bunnings","kmart"],"CSL":["csl"],"GMG":["goodman group","goodman"],"MQG":["macquarie"],"TLS":["telstra"],"NVDA":["nvidia","nvda"],"MSFT":["microsoft","msft"]}
     if not any(n in title for n in names.get(label,[])): return -100
     generic=("stock price, news, quote and history","stock forecasts","stock forecast","share price, news","stock price today","price, news, quote and history","stock analysis forecast")
     if any(term in title for term in generic): return -100

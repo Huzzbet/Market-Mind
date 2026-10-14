@@ -6,8 +6,8 @@ on:
       - "scripts/update_feed.py"
       - ".github/workflows/daily-feed.yml"
   schedule:
-    # 8:00am Melbourne/Sydney during AEDT (7:00am during AEST)
-    - cron: "0 21 * * *"
+    # Refresh the company/news feed every 6 hours (UTC).
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:

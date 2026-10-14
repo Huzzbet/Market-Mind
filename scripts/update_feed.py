@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import json, re, urllib.parse, urllib.request, xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
+from email.utils import parsedate_to_datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 UA="MarketMindBot/1.0 (+https://github.com/Huzzbet/Market-Mind)"
 FEED=Path("data/feed.json")
@@ -42,21 +44,11 @@ def consensus(slug):
 def fmt(v,n=2): return format(v,",."+str(n)+"f")
 def pct(v): return ("+" if v>=0 else "")+format(v,".2f")+"%"
 def stock_title(label,headline):
-    titles={
-      "BHP":"BHP · Mining outlook in focus",
-      "RIO":"Rio Tinto · Iron ore and capital returns",
-      "FMG":"Fortescue · Iron ore and energy transition",
-      "CBA":"CBA · Bank earnings and credit quality",
-      "NAB":"NAB · Lending and credit cycle",
-      "WES":"Wesfarmers · Retail and industrial earnings",
-      "CSL":"CSL · Plasma demand and margins",
-      "GMG":"Goodman Group · Data centres and property",
-      "MQG":"Macquarie Group · Markets and asset management",
-      "TLS":"Telstra · Earnings and capital returns",
-      "NVDA":"Nvidia · AI earnings power in focus",
-      "MSFT":"Microsoft · AI valuation in focus"
-    }
-    return titles.get(label, label+" · Latest catalyst")
+    names={"BHP":"BHP","RIO":"Rio Tinto","FMG":"Fortescue","CBA":"CBA","NAB":"NAB","WES":"Wesfarmers","CSL":"CSL","GMG":"Goodman Group","MQG":"Macquarie Group","TLS":"Telstra","NVDA":"Nvidia","MSFT":"Microsoft"}
+    if headline == "No verified fresh company-specific catalyst found today":
+        return names.get(label,label)+" · No verified fresh catalyst"
+    return names.get(label,label)+" · "+catalyst_text(headline)
+
 def catalyst_text(headline):
     text=re.sub(r"\s+-\s+(The Motley Fool|Simply Wall St.*|Yahoo Finance|Reuters|AFR|SMH.*)$","",headline,flags=re.I).strip()
     text=re.sub(r"^(BREAKING|EXCLUSIVE|UPDATE)[:\-]\s*","",text,flags=re.I)
@@ -103,11 +95,24 @@ def catalyst_score(label,item):
 def news(q,limit=3):
     u="https://news.google.com/rss/search?"+urllib.parse.urlencode({"q":q+" when:1d","hl":"en-AU","gl":"AU","ceid":"AU:en"})
     root=ET.fromstring(get(u)); out=[]
-    for it in root.findall("./channel/item")[:limit]:
-        title=(it.findtext("title") or "").strip(); link=(it.findtext("link") or "").strip(); se=it.find("source")
+    cutoff=datetime.now(timezone.utc)-timedelta(hours=36)
+    for it in root.findall("./channel/item"):
+        title=(it.findtext("title") or "").strip()
+        link=(it.findtext("link") or "").strip()
+        se=it.find("source")
         source=(se.text if se is not None else "Market news") or "Market news"
-        if title and link: out.append({"title":re.sub(r"\s+"," ",title),"link":link,"source":source.strip()})
+        raw_date=(it.findtext("pubDate") or "").strip()
+        try:
+            published=parsedate_to_datetime(raw_date) if raw_date else None
+            if published and published.tzinfo is None: published=published.replace(tzinfo=timezone.utc)
+            if published: published=published.astimezone(timezone.utc)
+        except (TypeError,ValueError,OverflowError): published=None
+        if not published or published<cutoff or published>datetime.now(timezone.utc)+timedelta(minutes=10): continue
+        if title and link:
+            out.append({"title":re.sub(r"\\s+"," ",title),"link":link,"source":source.strip(),"publishedAt":published.isoformat(timespec="seconds")})
+        if len(out)>=limit: break
     return out
+
 def next_macro_watch(now):
     """Pull upcoming catalysts from official Australian and US release calendars.
 
@@ -377,7 +382,7 @@ def investment_lens(card):
     }
 
 def main():
-    now=datetime.now(timezone.utc).astimezone(); syms={"asx200":"^AXJO","sp500":"^GSPC","vix":"^VIX","oil":"CL=F","gold":"GC=F","us10":"^TNX","aud":"AUDUSD=X"}; m={}
+    now=datetime.now(ZoneInfo("Australia/Melbourne")); syms={"asx200":"^AXJO","sp500":"^GSPC","vix":"^VIX","oil":"CL=F","gold":"GC=F","us10":"^TNX","aud":"AUDUSD=X"}; m={}
     nasdaq=None
     try:
         np,nchg=yahoo("^IXIC"); nasdaq={"price":np,"pct":nchg}
@@ -456,9 +461,9 @@ def main():
                 item["catalystScore"]=catalyst_score(label,item)
                 candidates.append(item)
         candidates.sort(key=lambda x:x.get("catalystScore",0),reverse=True)
-        x=next((item for item in candidates if item.get("catalystScore", -100)>0),None)
+        x=next((item for item in candidates if item.get("catalystScore", -100)>0 and item.get("publishedAt")),None)
         if x is None:
-            x={"title":"No verified fresh company-specific catalyst found today","source":"Market Mind","link":None}
+            x={"title":"No verified fresh company-specific catalyst found today","source":"Market Mind","link":None,"publishedAt":None}
         st=stocks.get(label)
         if not st: continue
         used_stock.add(label)
@@ -482,9 +487,10 @@ def main():
           "title":stock_title(label,x["title"]),
           "dek":x["source"]+" • "+("A$" if label not in ("NVDA","MSFT") else "US$")+fmt(st["price"],2)+" • "+pct(st["pct"])+" latest session. Consensus: "+con.get("source","Unavailable")+".",
           "data":[["PRICE",("A$" if label not in ("NVDA","MSFT") else "US$")+fmt(st["price"],2)],["CONSENSUS",rating if con.get("rating") else "UNAVAILABLE"],["TARGET · "+str(con.get("analysts") or "—")+" ANALYSTS",(("A$" if label not in ("NVDA","MSFT") else "US$")+target_txt if target_txt!="—" else "Unavailable")]],
-          "insight":"Market Mind: "+view+". "+("Consensus target implies "+upside_txt+" versus the current price. " if con.get("target") else "Live consensus target unavailable; do not infer upside from missing data. ")+"Catalyst: "+catalyst_text(x["title"])+".",
+          "insight":(("No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move." if not x.get("publishedAt") else "Verified recent headline: "+catalyst_text(x["title"])+". "+news_insight(x)+" Consensus and price history are context, not proof of mispricing."),
           "source":x["source"],
           "link":x["link"],
+          "sourcePublishedAt":x.get("publishedAt"),
           "rank":70,
           "stock":{"ticker":st["symbol"],"history":hist,"threeYearReturn":round(((hist[-1][1]/hist[0][1])-1)*100,1) if len(hist)>1 and hist[0][1] else None,"consensus":rating,"target":con.get("target"),"upside":upside,"view":view,"analysts":con.get("analysts")}
         })
@@ -493,7 +499,7 @@ def main():
         for x in news(q):
             key=re.sub(r"[^a-z0-9]+","",x["title"].lower())
             if key in seen: continue
-            seen.add(key); cards.append({"tag":"NEWS / MARKET INTELLIGENCE","time":d,"title":x["title"],"dek":x["source"]+" • Latest market coverage.","data":[["SOURCE",x["source"]],["TYPE","Market news"],["STATUS","Latest"]],"insight":news_insight(x),"source":x["source"],"link":x["link"],"rank":88})
+            seen.add(key); cards.append({"tag":"NEWS / MARKET INTELLIGENCE","time":d,"title":x["title"],"dek":x["source"]+" • Published "+x["publishedAt"],"data":[["SOURCE",x["source"]],["TYPE","Market news"],["STATUS","Recent · verified timestamp"]],"insight":news_insight(x),"source":x["source"],"link":x["link"],"sourcePublishedAt":x.get("publishedAt"),"rank":88})
             if len(cards)>=13: break
         if len(cards)>=9: break
     cards.insert(0, daily_narrative(a, sp, vx, oil, gold, rate, aud, nasdaq, now))
@@ -504,7 +510,7 @@ def main():
         card["opportunityType"]=lens["stance"]
     if len(cards)<10: raise SystemExit("Refusing to publish: fewer than 10 cards")
     def t(x): return {"value":x["value"],"direction":"up" if x["pct"]>=0 else "down","change":pct(x["pct"])}
-    feed={"version":"1.3.3","updatedAt":now.isoformat(timespec="seconds"),"tickers":{},"cards":cards}
+    feed={"version":"1.4.0","updatedAt":now.isoformat(timespec="seconds"),"timezone":"Australia/Melbourne","tickers":{},"cards":cards}
     feed["tickers"]={"asx200":t({"value":fmt(a["price"],1),"pct":a["pct"]}),"sp500":t({"value":fmt(sp["price"],2),"pct":sp["pct"]}),"vix":t({"value":fmt(vx["price"],2),"pct":vx["pct"]}),"oil":t({"value":"US$"+fmt(oil["price"],2),"pct":oil["pct"]}),"gold":t({"value":"US$"+fmt(gold["price"],2),"pct":gold["pct"]}),"us10":t({"value":fmt(rate["price"],2)+"%","pct":rate["pct"]}),"aud":t({"value":fmt(aud["price"],4),"pct":aud["pct"]})}
     FEED.write_text(json.dumps(feed,indent=2,ensure_ascii=False)+"\n"); print("Wrote",len(cards),"cards at",feed["updatedAt"])
 if __name__=="__main__": main()

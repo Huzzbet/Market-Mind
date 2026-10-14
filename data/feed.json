@@ -1,41 +1,41 @@
 {
   "version": "1.3.3",
-  "updatedAt": "2026-10-14T00:00:18+00:00",
+  "updatedAt": "2026-10-14T20:36:50+00:00",
   "tickers": {
     "asx200": {
-      "value": "8,740.0",
+      "value": "8,727.9",
       "direction": "down",
-      "change": "-0.49%"
+      "change": "-0.64%"
     },
     "sp500": {
-      "value": "7,805.45",
+      "value": "7,718.94",
       "direction": "down",
-      "change": "-0.02%"
+      "change": "-1.11%"
     },
     "vix": {
-      "value": "15.27",
+      "value": "16.87",
       "direction": "up",
-      "change": "+0.39%"
+      "change": "+10.48%"
     },
     "oil": {
-      "value": "US$94.89",
+      "value": "US$95.04",
       "direction": "up",
-      "change": "+1.23%"
+      "change": "+0.96%"
     },
     "gold": {
-      "value": "US$4,179.40",
+      "value": "US$4,122.50",
       "direction": "down",
-      "change": "-0.27%"
+      "change": "-1.31%"
     },
     "us10": {
-      "value": "5.22%",
+      "value": "5.19%",
       "direction": "down",
-      "change": "-0.44%"
+      "change": "-0.52%"
     },
     "aud": {
-      "value": "0.6986",
-      "direction": "up",
-      "change": "+0.43%"
+      "value": "0.6974",
+      "direction": "down",
+      "change": "-0.17%"
     }
   },
   "cards": [
@@ -47,18 +47,18 @@
       "data": [
         [
           "S&P 500",
-          "-0.02%"
+          "-1.11%"
         ],
         [
           "US 10Y YIELD",
-          "5.22%"
+          "5.19%"
         ],
         [
           "NASDAQ",
-          "-0.15%"
+          "-1.88%"
         ]
       ],
-      "insight": "The S&P 500 moved -0.02%, the Nasdaq -0.15%, and the US 10-year yield -0.44%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil moved +1.23%; a single session is not enough to infer a change in the inflation trend. Next release to watch: US CPI: Wed 14 Oct 08:30 ET; Australian Labour Force: Thu 15 Oct 11:30am AEDT; US retail sales: Thu 15 Oct 08:30 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
+      "insight": "The S&P 500 moved -1.11%, the Nasdaq -1.88%, and the US 10-year yield -0.52%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil moved +0.96%; a single session is not enough to infer a change in the inflation trend. Next release to watch: US CPI: Wed 14 Oct 08:30 ET; Australian Labour Force: Thu 15 Oct 11:30am AEDT; US retail sales: Thu 15 Oct 08:30 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
       "source": "Market Mind • Yahoo Finance • official calendars",
       "link": "https://www.newyorkfed.org/research/calendars/i-oct26.html",
       "rank": 101,
@@ -70,22 +70,22 @@
       "tag": "ASX 200",
       "time": "14 OCT",
       "title": "ASX 200 is lower",
-      "dek": "The ASX 200 is 8,740.0, -0.49% on the latest session.",
+      "dek": "The ASX 200 is 8,727.9, -0.64% on the latest session.",
       "data": [
         [
           "ASX 200",
-          "8,740.0"
+          "8,727.9"
         ],
         [
           "Session",
-          "-0.49%"
+          "-0.64%"
         ],
         [
           "Context",
           "Australian equities"
         ]
       ],
-      "insight": "The ASX 200 fell -0.49% while the Australian dollar moved +0.43%. Check whether banks, materials and property are all weaker or whether the index decline is concentrated. Sector breadth helps distinguish a broad risk-off session from rotation.",
+      "insight": "The ASX 200 fell -0.64% while the Australian dollar moved -0.17%. Check whether banks, materials and property are all weaker or whether the index decline is concentrated. Sector breadth helps distinguish a broad risk-off session from rotation.",
       "source": "Yahoo Finance",
       "rank": 100,
       "marketHistory": {
@@ -232,11 +232,11 @@
           ],
           [
             "2026-09",
-            8716.6
+            8783.9
           ],
           [
             "2026-10",
-            8740.0
+            8727.9
           ]
         ]
       },
@@ -248,22 +248,22 @@
       "tag": "US MARKETS",
       "time": "14 OCT",
       "title": "US equities are lower",
-      "dek": "The S&P 500 is 7,805.45, -0.02% on the latest session.",
+      "dek": "The S&P 500 is 7,718.94, -1.11% on the latest session.",
       "data": [
         [
           "S&P 500",
-          "7,805.45"
+          "7,718.94"
         ],
         [
           "Session",
-          "-0.02%"
+          "-1.11%"
         ],
         [
           "VIX",
-          "15.27"
+          "16.87"
         ]
       ],
-      "insight": "The S&P 500 fell -0.02%, while the VIX rose +0.39%. The combination is worth watching: check Treasury yields and whether the Nasdaq confirms the move before inferring a change in market direction.",
+      "insight": "The S&P 500 fell -1.11%, while the VIX rose +10.48%. The combination is worth watching: check Treasury yields and whether the Nasdaq confirms the move before inferring a change in market direction.",
       "source": "Yahoo Finance",
       "rank": 99,
       "marketHistory": {
@@ -410,11 +410,11 @@
           ],
           [
             "2026-10",
-            7811.54
+            7805.45
           ],
           [
             "2026-10",
-            7805.45
+            7718.94
           ]
         ],
         "nasdaq": [
@@ -560,11 +560,11 @@
           ],
           [
             "2026-10",
-            27366.17
+            27204.38
           ],
           [
             "2026-10",
-            27204.38
+            26692.87
           ]
         ]
       },
@@ -576,22 +576,22 @@
       "tag": "RATES",
       "time": "14 OCT",
       "title": "US 10Y yield is falling",
-      "dek": "The US 10-year Treasury yield is about 5.22%, -0.44% on the latest session.",
+      "dek": "The US 10-year Treasury yield is about 5.19%, -0.52% on the latest session.",
       "data": [
         [
           "US 10Y",
-          "5.22%"
+          "5.19%"
         ],
         [
           "Session",
-          "-0.44%"
+          "-0.52%"
         ],
         [
           "Risk",
           "Equity valuations"
         ]
       ],
-      "insight": "The US 10-year yield is 5.22%, with the latest move -0.44%. Higher yields can pressure long-duration equity valuations and property financing costs, all else equal. Watch whether the move coincides with stronger growth data, firmer inflation expectations or changing rate-cut pricing.",
+      "insight": "The US 10-year yield is 5.19%, with the latest move -0.52%. Higher yields can pressure long-duration equity valuations and property financing costs, all else equal. Watch whether the move coincides with stronger growth data, firmer inflation expectations or changing rate-cut pricing.",
       "source": "Yahoo Finance",
       "rank": 98,
       "whyItMatters": "Bond yields feed into discount rates, borrowing costs and relative valuations across growth shares, property and bonds.",
@@ -602,22 +602,22 @@
       "tag": "COMMODITIES",
       "time": "14 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$94.89, +1.23% on the latest session.",
+      "dek": "WTI crude is about US$95.04, +0.96% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$94.89"
+          "US$95.04"
         ],
         [
           "Session",
-          "+1.23%"
+          "+0.96%"
         ],
         [
           "Theme",
           "Inflation / growth"
         ]
       ],
-      "insight": "WTI moved +1.23% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
+      "insight": "WTI moved +0.96% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
       "source": "Yahoo Finance",
       "rank": 96,
       "whyItMatters": "Oil can affect inflation, transport costs, consumer spending and margins differently across sectors.",
@@ -628,22 +628,22 @@
       "tag": "GOLD",
       "time": "14 OCT",
       "title": "Gold is lower",
-      "dek": "Gold is about US$4,179.40, -0.27% on the latest session.",
+      "dek": "Gold is about US$4,122.50, -1.31% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,179.40"
+          "US$4,122.50"
         ],
         [
           "Session",
-          "-0.27%"
+          "-1.31%"
         ],
         [
           "AUD/USD",
-          "0.6986"
+          "0.6974"
         ]
       ],
-      "insight": "Gold moved -0.27% while the US 10-year yield moved -0.44% and AUD/USD moved +0.43%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
+      "insight": "Gold moved -1.31% while the US 10-year yield moved -0.52% and AUD/USD moved -0.17%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
       "source": "Yahoo Finance",
       "rank": 94,
       "whyItMatters": "Gold responds to real yields, the US dollar and demand for defensive assets; a daily move alone cannot identify the driver.",
@@ -653,23 +653,23 @@
     {
       "tag": "CURRENCY",
       "time": "14 OCT",
-      "title": "Australian dollar is higher",
-      "dek": "AUD/USD is around 0.6986, +0.43% on the latest session.",
+      "title": "Australian dollar is lower",
+      "dek": "AUD/USD is around 0.6974, -0.17% on the latest session.",
       "data": [
         [
           "AUD/USD",
-          "0.6986"
+          "0.6974"
         ],
         [
           "Session",
-          "+0.43%"
+          "-0.17%"
         ],
         [
           "Theme",
           "Global risk / commodities"
         ]
       ],
-      "insight": "AUD/USD moved +0.43% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
+      "insight": "AUD/USD moved -0.17% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
       "source": "Yahoo Finance",
       "rank": 90,
       "whyItMatters": "AUD/USD changes the Australian-dollar return on unhedged overseas assets and affects exporters, importers and commodity-linked companies.",
@@ -680,11 +680,11 @@
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "14 OCT",
       "title": "BHP · Mining outlook in focus",
-      "dek": "Kalkine Media • A$61.14 • -0.23% today.",
+      "dek": "BHP • A$60.86 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "A$61.14"
+          "A$60.86"
         ],
         [
           "CONSENSUS",
@@ -692,12 +692,12 @@
         ],
         [
           "TARGET · 17 ANALYSTS",
-          "A$59.78"
+          "A$59.59"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -2.2% versus the current price. Catalyst: Westpac vs BHP: Which ASX Giant Has the Stronger Case? - Kalkine Media.",
-      "source": "Kalkine Media",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxORUQwNnFicko2QlpWSUJhMWF3V3FtUURESG5EVkt6Qk5rTXhTZkdkbmxDMWdPOWJyaGxyN19EZ2tabEJSN2IzaTVWTmRwMXBQb0hBdzdmZi1GT1E2ZGZmb2JtcUNBeUVFMGxBaVZxS1JhSFNyWWcwcDNaSG9vbUFhUHBjSEl0YXJsSGJqS2VxaFBHemRfRE9mTnV0Sng?oc=5",
+      "insight": "Market Mind: WATCH. Consensus target implies -2.1% versus the current price. Catalyst: Unlocking value at BHP - BHP.",
+      "source": "BHP",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5uQjZ2UW9OeFM5blNqb3VuQ3dOeDFaX1Z5TkFXYVl1OFdta2VHVFQySVVBdTFiRW9WYTdWR0JIQ2xjSF9FM2RVZ2lhUnpXbl9obVRTc1JTRHdMcG1sTlhaQ1pCcmtmcmxJR3g1M0JFenVRMC1sN1JN?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "BHP.AX",
@@ -844,33 +844,405 @@
           ],
           [
             "2026-09",
-            60.94
+            60.86
           ],
           [
             "2026-10",
-            61.14
+            60.86
           ]
         ],
-        "threeYearReturn": 32.1,
+        "threeYearReturn": 31.4,
         "consensus": "HOLD",
-        "target": 59.78,
-        "upside": -2.2244020334071135,
+        "target": 59.59,
+        "upside": -2.0867574722559956,
         "view": "WATCH",
         "analysts": 17
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 2.2% below the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 2.1% below the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "14 OCT",
-      "title": "CBA · Income story in focus",
-      "dek": "The West Australian • A$152.11 • -1.55% today.",
+      "title": "Rio Tinto · Iron ore and capital returns",
+      "dek": "Discovery Alert • A$160.48 • +0.00% latest session. Consensus: Unavailable.",
       "data": [
         [
           "PRICE",
-          "A$152.11"
+          "A$160.48"
+        ],
+        [
+          "CONSENSUS",
+          "UNAVAILABLE"
+        ],
+        [
+          "TARGET · — ANALYSTS",
+          "Unavailable"
+        ]
+      ],
+      "insight": "Market Mind: WATCH. Live consensus target unavailable; do not infer upside from missing data. Catalyst: Rio Tinto Beats Q3 Iron Ore Forecasts but Holds 2026 Guidance - Discovery Alert.",
+      "source": "Discovery Alert",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQTEwdGNubVl1aHA2UllpR2Izclk0bHBrVVRrdVVqLVVPQzAzVHNsdEF1QzNJRGpTWGljckNJNFdnVjYwOFAzbnVsbW5ORHotNzFXSUlpOGRxcmNjTE02amQyTWk2TXA4R3lwMjd2NXhEeGNLSWt1R0Iwd2RreVMtVWQxSnByMGs?oc=5",
+      "rank": 70,
+      "stock": {
+        "ticker": "RIO.AX",
+        "history": [
+          [
+            "2023-10",
+            125.04
+          ],
+          [
+            "2023-11",
+            135.66
+          ],
+          [
+            "2023-12",
+            132.92
+          ],
+          [
+            "2024-01",
+            123.78
+          ],
+          [
+            "2024-02",
+            121.76
+          ],
+          [
+            "2024-03",
+            130.49
+          ],
+          [
+            "2024-04",
+            128.96
+          ],
+          [
+            "2024-05",
+            119.0
+          ],
+          [
+            "2024-06",
+            117.48
+          ],
+          [
+            "2024-07",
+            111.55
+          ],
+          [
+            "2024-08",
+            129.13
+          ],
+          [
+            "2024-09",
+            119.31
+          ],
+          [
+            "2024-10",
+            118.24
+          ],
+          [
+            "2024-11",
+            117.46
+          ],
+          [
+            "2024-12",
+            117.4
+          ],
+          [
+            "2025-01",
+            113.37
+          ],
+          [
+            "2025-02",
+            115.49
+          ],
+          [
+            "2025-03",
+            117.1
+          ],
+          [
+            "2025-04",
+            112.66
+          ],
+          [
+            "2025-05",
+            107.13
+          ],
+          [
+            "2025-06",
+            111.7
+          ],
+          [
+            "2025-07",
+            115.47
+          ],
+          [
+            "2025-08",
+            122.03
+          ],
+          [
+            "2025-09",
+            132.87
+          ],
+          [
+            "2025-10",
+            132.28
+          ],
+          [
+            "2025-11",
+            146.82
+          ],
+          [
+            "2025-12",
+            151.55
+          ],
+          [
+            "2026-01",
+            167.33
+          ],
+          [
+            "2026-02",
+            161.43
+          ],
+          [
+            "2026-03",
+            167.4
+          ],
+          [
+            "2026-04",
+            185.63
+          ],
+          [
+            "2026-05",
+            172.51
+          ],
+          [
+            "2026-06",
+            170.57
+          ],
+          [
+            "2026-07",
+            174.81
+          ],
+          [
+            "2026-08",
+            166.93
+          ],
+          [
+            "2026-09",
+            160.48
+          ],
+          [
+            "2026-10",
+            160.48
+          ]
+        ],
+        "threeYearReturn": 28.3,
+        "consensus": "UNAVAILABLE",
+        "target": null,
+        "upside": null,
+        "view": "WATCH",
+        "analysts": null
+      },
+      "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
+      "investmentOpportunity": "Research angle: Consensus target comparison is unavailable; test the assumptions behind the UNAVAILABLE consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "opportunityType": "INVESTIGATE"
+    },
+    {
+      "tag": "STOCK INTELLIGENCE / AUSTRALIA",
+      "time": "14 OCT",
+      "title": "Fortescue · Iron ore and energy transition",
+      "dek": "Kalkine Media • A$15.32 • +0.00% latest session. Consensus: Stock Analysis.",
+      "data": [
+        [
+          "PRICE",
+          "A$15.32"
+        ],
+        [
+          "CONSENSUS",
+          "HOLD"
+        ],
+        [
+          "TARGET · 17 ANALYSTS",
+          "A$16.48"
+        ]
+      ],
+      "insight": "Market Mind: WATCH. Consensus target implies +7.6% versus the current price. Catalyst: Why Did ASX 200 Miner Fortescue (ASX:FMG) Slip as Iron Ore Eased? - Kalkine Media.",
+      "source": "Kalkine Media",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPRlY0VWZvYlpWMV9fdDJqek13d2J4Qlpfdmx3VlhiOWRoTnJoaFY3dS1FMEt5LWRtUXFyeXRLaUh3emctaWJxaEFLclc0RkdULXgyQzJycDU5ZXI3MFYyY3hCNDBGc1ktX1hQSUt6Zm43RnU1SERkM0Rydlo3ODJ5MHRocUFseDlpMDFnZmNEbE14aXh0TDR5QllXamgwZ2UwODg4RndPblY?oc=5",
+      "rank": 70,
+      "stock": {
+        "ticker": "FMG.AX",
+        "history": [
+          [
+            "2023-10",
+            24.99
+          ],
+          [
+            "2023-11",
+            29.02
+          ],
+          [
+            "2023-12",
+            29.88
+          ],
+          [
+            "2024-01",
+            25.93
+          ],
+          [
+            "2024-02",
+            25.7
+          ],
+          [
+            "2024-03",
+            26.05
+          ],
+          [
+            "2024-04",
+            24.74
+          ],
+          [
+            "2024-05",
+            21.41
+          ],
+          [
+            "2024-06",
+            18.87
+          ],
+          [
+            "2024-07",
+            18.27
+          ],
+          [
+            "2024-08",
+            20.68
+          ],
+          [
+            "2024-09",
+            19.17
+          ],
+          [
+            "2024-10",
+            18.99
+          ],
+          [
+            "2024-11",
+            18.25
+          ],
+          [
+            "2024-12",
+            19.13
+          ],
+          [
+            "2025-01",
+            16.51
+          ],
+          [
+            "2025-02",
+            15.37
+          ],
+          [
+            "2025-03",
+            16.19
+          ],
+          [
+            "2025-04",
+            15.39
+          ],
+          [
+            "2025-05",
+            15.28
+          ],
+          [
+            "2025-06",
+            17.77
+          ],
+          [
+            "2025-07",
+            19.3
+          ],
+          [
+            "2025-08",
+            18.68
+          ],
+          [
+            "2025-09",
+            21.29
+          ],
+          [
+            "2025-10",
+            21.41
+          ],
+          [
+            "2025-11",
+            22.01
+          ],
+          [
+            "2025-12",
+            21.0
+          ],
+          [
+            "2026-01",
+            21.14
+          ],
+          [
+            "2026-02",
+            20.31
+          ],
+          [
+            "2026-03",
+            19.65
+          ],
+          [
+            "2026-04",
+            22.31
+          ],
+          [
+            "2026-05",
+            19.15
+          ],
+          [
+            "2026-06",
+            18.51
+          ],
+          [
+            "2026-07",
+            17.7
+          ],
+          [
+            "2026-08",
+            16.44
+          ],
+          [
+            "2026-09",
+            15.32
+          ],
+          [
+            "2026-10",
+            15.32
+          ]
+        ],
+        "threeYearReturn": -38.7,
+        "consensus": "HOLD",
+        "target": 16.48,
+        "upside": 7.5718037094196555,
+        "view": "WATCH",
+        "analysts": 17
+      },
+      "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
+      "investmentOpportunity": "Research angle: Consensus target is 7.6% above the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "opportunityType": "INVESTIGATE"
+    },
+    {
+      "tag": "STOCK INTELLIGENCE / AUSTRALIA",
+      "time": "14 OCT",
+      "title": "CBA · Bank earnings and credit quality",
+      "dek": "Market Mind • A$151.17 • +0.00% latest session. Consensus: Stock Analysis.",
+      "data": [
+        [
+          "PRICE",
+          "A$151.17"
         ],
         [
           "CONSENSUS",
@@ -881,9 +1253,9 @@
           "A$125.64"
         ]
       ],
-      "insight": "Market Mind: SELL. Consensus target implies -17.4% versus the current price. Catalyst: $9m pay for CBA boss under fire amid 147,000 hardship deals - The West Australian.",
-      "source": "The West Australian",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOUnF5bmlBbFhkaXJlX25fS0xFUy1rYUI0cHZsSTJEbDJHQlVyYkdpQ1Zmcm9EMTROaE1JQjMyMzZvbUxnTTVDRThMeUVBb3FJdDBVSHk2S3c2b1lVTDN2ZjY5Qjd3WkRXV0hNcVo0ODNURUU0SXp5Q3d4aVYwYk43b3llNGx0akV2Zmt0RlZVRHpsT0FuXzRuY1ltWUExSENWcHpHNFBPU3ZDcmNDZjhEVzR2aTVOWW9iRWpya0ZmWmNSVENTczFraW82ZENTWFI1Z1NHbkJyZC1mNEcyRHJMNmRB?oc=5",
+      "insight": "Market Mind: SELL. Consensus target implies -16.9% versus the current price. Catalyst: No verified fresh company-specific catalyst found today.",
+      "source": "Market Mind",
+      "link": null,
       "rank": 70,
       "stock": {
         "ticker": "CBA.AX",
@@ -1030,33 +1402,1149 @@
           ],
           [
             "2026-09",
-            149.29
+            151.17
           ],
           [
             "2026-10",
-            152.11
+            151.17
           ]
         ],
-        "threeYearReturn": 45.3,
+        "threeYearReturn": 44.4,
         "consensus": "STRONG SELL",
         "target": 125.64,
-        "upside": -17.401880549693583,
+        "upside": -16.888270475741727,
         "view": "SELL",
         "analysts": 14
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 17.4% below the quoted price; test the assumptions behind the STRONG SELL consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 16.9% below the quoted price; test the assumptions behind the STRONG SELL consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "opportunityType": "INVESTIGATE"
+    },
+    {
+      "tag": "STOCK INTELLIGENCE / AUSTRALIA",
+      "time": "14 OCT",
+      "title": "NAB · Lending and credit cycle",
+      "dek": "ad-hoc-news.de • A$38.55 • +0.00% latest session. Consensus: Stock Analysis.",
+      "data": [
+        [
+          "PRICE",
+          "A$38.55"
+        ],
+        [
+          "CONSENSUS",
+          "HOLD"
+        ],
+        [
+          "TARGET · 14 ANALYSTS",
+          "A$38.46"
+        ]
+      ],
+      "insight": "Market Mind: WATCH. Consensus target implies -0.2% versus the current price. Catalyst: Bank slump hits ASX as National Australia Bank stock trades at EUR 24.02 - ad-hoc-new….",
+      "source": "ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNS1dYLXpWYW4tNkpBYVN5M0NDM2pqRENZN2ZkU2pyRENLR1VmemhkbUZybFgxbF91d1pxdkx1WTdPM3djLTZXbkEtRXBCZjhhN1BJOERycDJ0d1ZNaTRoOUlGN2FFdExDZjlybG8zeDlDUXFxendtMGxUMzh6THZ5OUNfYTRQMktnWGhQQ3YzampYbTZYNFp6QURjQVpQX1hwOE9sTURWOThpZTNpb3Fna3hSMDIwU0tBUXhxdndiSUI3Y0ZFdzgxT2FKOE1URWs5?oc=5",
+      "rank": 70,
+      "stock": {
+        "ticker": "NAB.AX",
+        "history": [
+          [
+            "2023-10",
+            28.4
+          ],
+          [
+            "2023-11",
+            30.7
+          ],
+          [
+            "2023-12",
+            32.6
+          ],
+          [
+            "2024-01",
+            33.84
+          ],
+          [
+            "2024-02",
+            34.64
+          ],
+          [
+            "2024-03",
+            33.8
+          ],
+          [
+            "2024-04",
+            33.91
+          ],
+          [
+            "2024-05",
+            36.23
+          ],
+          [
+            "2024-06",
+            38.58
+          ],
+          [
+            "2024-07",
+            38.17
+          ],
+          [
+            "2024-08",
+            37.35
+          ],
+          [
+            "2024-09",
+            38.8
+          ],
+          [
+            "2024-10",
+            39.1
+          ],
+          [
+            "2024-11",
+            37.1
+          ],
+          [
+            "2024-12",
+            40.14
+          ],
+          [
+            "2025-01",
+            35.3
+          ],
+          [
+            "2025-02",
+            34.02
+          ],
+          [
+            "2025-03",
+            36.13
+          ],
+          [
+            "2025-04",
+            38.0
+          ],
+          [
+            "2025-05",
+            39.36
+          ],
+          [
+            "2025-06",
+            38.91
+          ],
+          [
+            "2025-07",
+            42.79
+          ],
+          [
+            "2025-08",
+            44.15
+          ],
+          [
+            "2025-09",
+            43.62
+          ],
+          [
+            "2025-10",
+            40.1
+          ],
+          [
+            "2025-11",
+            42.31
+          ],
+          [
+            "2025-12",
+            43.37
+          ],
+          [
+            "2026-01",
+            49.02
+          ],
+          [
+            "2026-02",
+            41.44
+          ],
+          [
+            "2026-03",
+            39.88
+          ],
+          [
+            "2026-04",
+            37.33
+          ],
+          [
+            "2026-05",
+            37.86
+          ],
+          [
+            "2026-06",
+            41.33
+          ],
+          [
+            "2026-07",
+            38.63
+          ],
+          [
+            "2026-08",
+            39.15
+          ],
+          [
+            "2026-09",
+            38.55
+          ],
+          [
+            "2026-10",
+            38.55
+          ]
+        ],
+        "threeYearReturn": 35.7,
+        "consensus": "HOLD",
+        "target": 38.46,
+        "upside": -0.23346106054918936,
+        "view": "WATCH",
+        "analysts": 14
+      },
+      "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
+      "investmentOpportunity": "Research angle: Consensus target is 0.2% below the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "opportunityType": "INVESTIGATE"
+    },
+    {
+      "tag": "STOCK INTELLIGENCE / AUSTRALIA",
+      "time": "14 OCT",
+      "title": "Wesfarmers · Retail and industrial earnings",
+      "dek": "Market Mind • A$78.26 • +0.00% latest session. Consensus: Stock Analysis.",
+      "data": [
+        [
+          "PRICE",
+          "A$78.26"
+        ],
+        [
+          "CONSENSUS",
+          "HOLD"
+        ],
+        [
+          "TARGET · 14 ANALYSTS",
+          "A$76.17"
+        ]
+      ],
+      "insight": "Market Mind: WATCH. Consensus target implies -2.7% versus the current price. Catalyst: No verified fresh company-specific catalyst found today.",
+      "source": "Market Mind",
+      "link": null,
+      "rank": 70,
+      "stock": {
+        "ticker": "WES.AX",
+        "history": [
+          [
+            "2023-10",
+            52.66
+          ],
+          [
+            "2023-11",
+            57.04
+          ],
+          [
+            "2023-12",
+            58.17
+          ],
+          [
+            "2024-01",
+            66.64
+          ],
+          [
+            "2024-02",
+            68.4
+          ],
+          [
+            "2024-03",
+            66.79
+          ],
+          [
+            "2024-04",
+            64.89
+          ],
+          [
+            "2024-05",
+            65.18
+          ],
+          [
+            "2024-06",
+            73.65
+          ],
+          [
+            "2024-07",
+            72.6
+          ],
+          [
+            "2024-08",
+            70.43
+          ],
+          [
+            "2024-09",
+            67.28
+          ],
+          [
+            "2024-10",
+            71.83
+          ],
+          [
+            "2024-11",
+            71.53
+          ],
+          [
+            "2024-12",
+            76.6
+          ],
+          [
+            "2025-01",
+            74.16
+          ],
+          [
+            "2025-02",
+            72.01
+          ],
+          [
+            "2025-03",
+            78.32
+          ],
+          [
+            "2025-04",
+            83.02
+          ],
+          [
+            "2025-05",
+            84.75
+          ],
+          [
+            "2025-06",
+            85.75
+          ],
+          [
+            "2025-07",
+            91.81
+          ],
+          [
+            "2025-08",
+            92.02
+          ],
+          [
+            "2025-09",
+            84.0
+          ],
+          [
+            "2025-10",
+            81.88
+          ],
+          [
+            "2025-11",
+            81.09
+          ],
+          [
+            "2025-12",
+            83.36
+          ],
+          [
+            "2026-01",
+            79.62
+          ],
+          [
+            "2026-02",
+            72.91
+          ],
+          [
+            "2026-03",
+            72.92
+          ],
+          [
+            "2026-04",
+            79.79
+          ],
+          [
+            "2026-05",
+            90.4
+          ],
+          [
+            "2026-06",
+            89.36
+          ],
+          [
+            "2026-07",
+            79.44
+          ],
+          [
+            "2026-08",
+            76.61
+          ],
+          [
+            "2026-09",
+            78.26
+          ],
+          [
+            "2026-10",
+            78.26
+          ]
+        ],
+        "threeYearReturn": 48.6,
+        "consensus": "HOLD",
+        "target": 76.17,
+        "upside": -2.6705878854849874,
+        "view": "WATCH",
+        "analysts": 14
+      },
+      "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
+      "investmentOpportunity": "Research angle: Consensus target is 2.7% below the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "opportunityType": "INVESTIGATE"
+    },
+    {
+      "tag": "STOCK INTELLIGENCE / AUSTRALIA",
+      "time": "14 OCT",
+      "title": "CSL · Plasma demand and margins",
+      "dek": "Market Mind • A$184.59 • +0.00% latest session. Consensus: Stock Analysis.",
+      "data": [
+        [
+          "PRICE",
+          "A$184.59"
+        ],
+        [
+          "CONSENSUS",
+          "BUY"
+        ],
+        [
+          "TARGET · 17 ANALYSTS",
+          "A$184.96"
+        ]
+      ],
+      "insight": "Market Mind: WATCH. Consensus target implies +0.2% versus the current price. Catalyst: No verified fresh company-specific catalyst found today.",
+      "source": "Market Mind",
+      "link": null,
+      "rank": 70,
+      "stock": {
+        "ticker": "CSL.AX",
+        "history": [
+          [
+            "2023-10",
+            262.23
+          ],
+          [
+            "2023-11",
+            286.65
+          ],
+          [
+            "2023-12",
+            301.7
+          ],
+          [
+            "2024-01",
+            286.24
+          ],
+          [
+            "2024-02",
+            287.92
+          ],
+          [
+            "2024-03",
+            276.76
+          ],
+          [
+            "2024-04",
+            280.1
+          ],
+          [
+            "2024-05",
+            295.21
+          ],
+          [
+            "2024-06",
+            309.72
+          ],
+          [
+            "2024-07",
+            307.16
+          ],
+          [
+            "2024-08",
+            286.28
+          ],
+          [
+            "2024-09",
+            286.95
+          ],
+          [
+            "2024-10",
+            282.22
+          ],
+          [
+            "2024-11",
+            281.58
+          ],
+          [
+            "2024-12",
+            280.43
+          ],
+          [
+            "2025-01",
+            260.57
+          ],
+          [
+            "2025-02",
+            249.28
+          ],
+          [
+            "2025-03",
+            251.13
+          ],
+          [
+            "2025-04",
+            246.99
+          ],
+          [
+            "2025-05",
+            239.48
+          ],
+          [
+            "2025-06",
+            270.9
+          ],
+          [
+            "2025-07",
+            212.89
+          ],
+          [
+            "2025-08",
+            198.2
+          ],
+          [
+            "2025-09",
+            178.5
+          ],
+          [
+            "2025-10",
+            186.3
+          ],
+          [
+            "2025-11",
+            172.65
+          ],
+          [
+            "2025-12",
+            181.42
+          ],
+          [
+            "2026-01",
+            146.76
+          ],
+          [
+            "2026-02",
+            140.78
+          ],
+          [
+            "2026-03",
+            124.37
+          ],
+          [
+            "2026-04",
+            96.61
+          ],
+          [
+            "2026-05",
+            114.74
+          ],
+          [
+            "2026-06",
+            123.06
+          ],
+          [
+            "2026-07",
+            171.57
+          ],
+          [
+            "2026-08",
+            184.22
+          ],
+          [
+            "2026-09",
+            184.59
+          ],
+          [
+            "2026-10",
+            184.59
+          ]
+        ],
+        "threeYearReturn": -29.6,
+        "consensus": "BUY",
+        "target": 184.96,
+        "upside": 0.20044621564003773,
+        "view": "WATCH",
+        "analysts": 17
+      },
+      "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
+      "investmentOpportunity": "Research angle: Consensus target is 0.2% above the quoted price; test the assumptions behind the BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "opportunityType": "INVESTIGATE"
+    },
+    {
+      "tag": "STOCK INTELLIGENCE / AUSTRALIA",
+      "time": "14 OCT",
+      "title": "Goodman Group · Data centres and property",
+      "dek": "Kalkine Media • A$27.44 • +0.00% latest session. Consensus: Stock Analysis.",
+      "data": [
+        [
+          "PRICE",
+          "A$27.44"
+        ],
+        [
+          "CONSENSUS",
+          "BUY"
+        ],
+        [
+          "TARGET · 15 ANALYSTS",
+          "A$34.31"
+        ]
+      ],
+      "insight": "Market Mind: BUY. Consensus target implies +25.0% versus the current price. Catalyst: Is ASX 200 Heavyweight Goodman Group (ASX:GMG) Losing Its Data Centre Shine? - Kalkin….",
+      "source": "Kalkine Media",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOTHZGY3Z4NlJEYV9MeUVDZ2k5LURManRLcHIzeTBVbnh1RWVGUGd6Rk8zbTlGZjdKRFJ5UjQtMFlBWGtNZ3Ztcm5GU0VLUms1QzJiUHJkUF85WjB5ZEF5RmJUVUZoTG05VjZtd2NZTFUzUzRNLWtVVE1vV0lmMzY5TjVSTFI4dnBHTXV6QmhxX2k2MUtPWEUwQUJqVktZMjBDMjc4SFFQWC1YVDBDWUpzc2lXem5nbng1OHd2Mml4dUpubWZFNmhHZXlIR3NLWUJ6XzNpYw?oc=5",
+      "rank": 70,
+      "stock": {
+        "ticker": "GMG.AX",
+        "history": [
+          [
+            "2023-10",
+            22.75
+          ],
+          [
+            "2023-11",
+            25.3
+          ],
+          [
+            "2023-12",
+            25.6
+          ],
+          [
+            "2024-01",
+            29.9
+          ],
+          [
+            "2024-02",
+            33.81
+          ],
+          [
+            "2024-03",
+            31.69
+          ],
+          [
+            "2024-04",
+            33.52
+          ],
+          [
+            "2024-05",
+            34.75
+          ],
+          [
+            "2024-06",
+            35.1
+          ],
+          [
+            "2024-07",
+            33.4
+          ],
+          [
+            "2024-08",
+            36.99
+          ],
+          [
+            "2024-09",
+            36.64
+          ],
+          [
+            "2024-10",
+            37.91
+          ],
+          [
+            "2024-11",
+            35.64
+          ],
+          [
+            "2024-12",
+            36.45
+          ],
+          [
+            "2025-01",
+            31.31
+          ],
+          [
+            "2025-02",
+            28.43
+          ],
+          [
+            "2025-03",
+            29.98
+          ],
+          [
+            "2025-04",
+            32.92
+          ],
+          [
+            "2025-05",
+            34.24
+          ],
+          [
+            "2025-06",
+            35.18
+          ],
+          [
+            "2025-07",
+            34.35
+          ],
+          [
+            "2025-08",
+            32.78
+          ],
+          [
+            "2025-09",
+            33.03
+          ],
+          [
+            "2025-10",
+            29.68
+          ],
+          [
+            "2025-11",
+            30.98
+          ],
+          [
+            "2025-12",
+            30.73
+          ],
+          [
+            "2026-01",
+            28.94
+          ],
+          [
+            "2026-02",
+            25.54
+          ],
+          [
+            "2026-03",
+            29.58
+          ],
+          [
+            "2026-04",
+            31.67
+          ],
+          [
+            "2026-05",
+            31.13
+          ],
+          [
+            "2026-06",
+            29.77
+          ],
+          [
+            "2026-07",
+            27.73
+          ],
+          [
+            "2026-08",
+            27.18
+          ],
+          [
+            "2026-09",
+            27.44
+          ],
+          [
+            "2026-10",
+            27.44
+          ]
+        ],
+        "threeYearReturn": 20.6,
+        "consensus": "BUY",
+        "target": 34.31,
+        "upside": 25.036440715136177,
+        "view": "BUY",
+        "analysts": 15
+      },
+      "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
+      "investmentOpportunity": "Research angle: Consensus target is 25.0% above the quoted price; test the assumptions behind the BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "opportunityType": "INVESTIGATE"
+    },
+    {
+      "tag": "STOCK INTELLIGENCE / AUSTRALIA",
+      "time": "14 OCT",
+      "title": "Macquarie Group · Markets and asset management",
+      "dek": "ad-hoc-news.de • A$249.80 • +0.00% latest session. Consensus: Stock Analysis.",
+      "data": [
+        [
+          "PRICE",
+          "A$249.80"
+        ],
+        [
+          "CONSENSUS",
+          "BUY"
+        ],
+        [
+          "TARGET · 13 ANALYSTS",
+          "A$258.07"
+        ]
+      ],
+      "insight": "Market Mind: WATCH. Consensus target implies +3.3% versus the current price. Catalyst: RBC started Macquarie Group stock coverage at AUD 300 target - ad-hoc-news.de.",
+      "source": "ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQd0NoLThSeVB6QWtIQkttTVhwbjhCeHNyNUtqUl9kbjUxeGZjOWFYbXJlZmRYUDJkOEsyV0dLVy1Jc1FLdmxNSXhxYUFBWUN4LUJHRVR0cnZOWG80LXdJV3JIdU96NFVMZUNxVUxPWnpMTldvaXN1MFlUS2w0YmdpRzNrV0d1NUYzYmZSRnVIOEs3ekZ2NG9JM0xHdDdFM2xVUDEyVmdIWFJtUzMxTUYzWGR4T1Nuek1mNWVyMi1oS3M?oc=5",
+      "rank": 70,
+      "stock": {
+        "ticker": "MQG.AX",
+        "history": [
+          [
+            "2023-10",
+            169.05
+          ],
+          [
+            "2023-11",
+            183.63
+          ],
+          [
+            "2023-12",
+            190.45
+          ],
+          [
+            "2024-01",
+            194.81
+          ],
+          [
+            "2024-02",
+            199.7
+          ],
+          [
+            "2024-03",
+            187.47
+          ],
+          [
+            "2024-04",
+            190.95
+          ],
+          [
+            "2024-05",
+            204.69
+          ],
+          [
+            "2024-06",
+            209.8
+          ],
+          [
+            "2024-07",
+            215.65
+          ],
+          [
+            "2024-08",
+            232.37
+          ],
+          [
+            "2024-09",
+            231.51
+          ],
+          [
+            "2024-10",
+            231.11
+          ],
+          [
+            "2024-11",
+            221.65
+          ],
+          [
+            "2024-12",
+            240.8
+          ],
+          [
+            "2025-01",
+            226.59
+          ],
+          [
+            "2025-02",
+            196.64
+          ],
+          [
+            "2025-03",
+            193.45
+          ],
+          [
+            "2025-04",
+            214.21
+          ],
+          [
+            "2025-05",
+            228.73
+          ],
+          [
+            "2025-06",
+            217.38
+          ],
+          [
+            "2025-07",
+            225.16
+          ],
+          [
+            "2025-08",
+            219.33
+          ],
+          [
+            "2025-09",
+            218.56
+          ],
+          [
+            "2025-10",
+            197.04
+          ],
+          [
+            "2025-11",
+            203.2
+          ],
+          [
+            "2025-12",
+            212.18
+          ],
+          [
+            "2026-01",
+            213.48
+          ],
+          [
+            "2026-02",
+            201.93
+          ],
+          [
+            "2026-03",
+            235.08
+          ],
+          [
+            "2026-04",
+            238.55
+          ],
+          [
+            "2026-05",
+            250.29
+          ],
+          [
+            "2026-06",
+            253.09
+          ],
+          [
+            "2026-07",
+            250.59
+          ],
+          [
+            "2026-08",
+            246.1
+          ],
+          [
+            "2026-09",
+            249.8
+          ],
+          [
+            "2026-10",
+            249.8
+          ]
+        ],
+        "threeYearReturn": 47.8,
+        "consensus": "BUY",
+        "target": 258.07,
+        "upside": 3.310647256689059,
+        "view": "WATCH",
+        "analysts": 13
+      },
+      "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
+      "investmentOpportunity": "Research angle: Consensus target is 3.3% above the quoted price; test the assumptions behind the BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "opportunityType": "INVESTIGATE"
+    },
+    {
+      "tag": "STOCK INTELLIGENCE / AUSTRALIA",
+      "time": "14 OCT",
+      "title": "Telstra · Earnings and capital returns",
+      "dek": "Kalkine • A$4.70 • +0.00% latest session. Consensus: Stock Analysis.",
+      "data": [
+        [
+          "PRICE",
+          "A$4.70"
+        ],
+        [
+          "CONSENSUS",
+          "HOLD"
+        ],
+        [
+          "TARGET · 14 ANALYSTS",
+          "A$5.01"
+        ]
+      ],
+      "insight": "Market Mind: WATCH. Consensus target implies +6.6% versus the current price. Catalyst: How Did Shareholders Vote on Directors, CEO Equity and Remuneration at the Telstra (A….",
+      "source": "Kalkine",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPdjBvbFRRQWhvZVpsUFdfR2htbEU5NTJqajg5WDJGZVNEUkt1SFdMWTJpQV85MkF2Y0tvOWJ4VWpSTkhIb1NIeDAtMEJGMXNtUjd1YjBCZ2RDd3lkbG9Vb3FCdzNIUVJwYjU5RHdRTEpWcFFVMm9rSkNSMmFLaVlHa3FySFFiM2E2aE1iSVRCWXZlTGc2QVlHWVR1NXhYNjVOTXc2YjBWSUxraFgzWVR1eHV6anBKbW1NT3JWZVFzbjNkalExUTc5S1pPdGZyS0tVTm16SjhNOVdGNjBf?oc=5",
+      "rank": 70,
+      "stock": {
+        "ticker": "TLS.AX",
+        "history": [
+          [
+            "2023-10",
+            3.82
+          ],
+          [
+            "2023-11",
+            3.96
+          ],
+          [
+            "2023-12",
+            4.04
+          ],
+          [
+            "2024-01",
+            3.82
+          ],
+          [
+            "2024-02",
+            3.86
+          ],
+          [
+            "2024-03",
+            3.67
+          ],
+          [
+            "2024-04",
+            3.47
+          ],
+          [
+            "2024-05",
+            3.62
+          ],
+          [
+            "2024-06",
+            3.94
+          ],
+          [
+            "2024-07",
+            3.93
+          ],
+          [
+            "2024-08",
+            3.88
+          ],
+          [
+            "2024-09",
+            3.82
+          ],
+          [
+            "2024-10",
+            3.94
+          ],
+          [
+            "2024-11",
+            4.01
+          ],
+          [
+            "2024-12",
+            3.95
+          ],
+          [
+            "2025-01",
+            4.14
+          ],
+          [
+            "2025-02",
+            4.21
+          ],
+          [
+            "2025-03",
+            4.51
+          ],
+          [
+            "2025-04",
+            4.78
+          ],
+          [
+            "2025-05",
+            4.84
+          ],
+          [
+            "2025-06",
+            4.97
+          ],
+          [
+            "2025-07",
+            4.89
+          ],
+          [
+            "2025-08",
+            4.82
+          ],
+          [
+            "2025-09",
+            4.88
+          ],
+          [
+            "2025-10",
+            4.92
+          ],
+          [
+            "2025-11",
+            4.87
+          ],
+          [
+            "2025-12",
+            4.88
+          ],
+          [
+            "2026-01",
+            5.18
+          ],
+          [
+            "2026-02",
+            5.33
+          ],
+          [
+            "2026-03",
+            5.32
+          ],
+          [
+            "2026-04",
+            5.21
+          ],
+          [
+            "2026-05",
+            5.08
+          ],
+          [
+            "2026-06",
+            5.02
+          ],
+          [
+            "2026-07",
+            4.67
+          ],
+          [
+            "2026-08",
+            4.83
+          ],
+          [
+            "2026-09",
+            4.7
+          ],
+          [
+            "2026-10",
+            4.7
+          ]
+        ],
+        "threeYearReturn": 23.0,
+        "consensus": "HOLD",
+        "target": 5.01,
+        "upside": 6.595749006707563,
+        "view": "WATCH",
+        "analysts": 14
+      },
+      "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
+      "investmentOpportunity": "Research angle: Consensus target is 6.6% above the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
       "time": "14 OCT",
       "title": "Nvidia · AI earnings power in focus",
-      "dek": "Pluang • US$226.32 • -1.29% today.",
+      "dek": "BigGo Finance • US$221.30 • -3.16% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "US$226.32"
+          "US$221.30"
         ],
         [
           "CONSENSUS",
@@ -1067,9 +2555,9 @@
           "US$328.72"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +45.2% versus the current price. Catalyst: Nvidia rated Buy with 33% upside, driven by AI growth and upcoming earnings reports.….",
-      "source": "Pluang",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPTXBlS3BEeFNaWjhfYXByN3puSk9fOFJiMW1uVl9Gc3ctS1EySHNmZDJ4NVFXWlNOVVFDNWt0OUNkNlM2Z1VLdnljMlI3NXZmV2xPbzduV3MtWnphY0JiZW94THNIOXdYMWRUQ1ZxSWJ3NC1IWDdYT3FaeVlKeVZVUko2cW9TRlVSSGUtVDNqa1pKZEFaejd6T1Jwc0k4T2xUaEtkRE5ZOA?oc=5",
+      "insight": "Market Mind: BUY. Consensus target implies +48.5% versus the current price. Catalyst: Nvidia Board Adds $80 Billion to Buyback as AI Spending Outlook Hits $4 Trillion - Bi….",
+      "source": "BigGo Finance",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1BLUFzbFk2ekdqY2pqREdZa1pnbU51YTNSWE9Sc1JKaXhQaGFZRTZidUM2eE4wSjhHUGMza2dTc2Y1RXgyOE1TYXM4R2dtRm12YURydHBBZ2NTZnN6Q0NQUm0xSDhZaHZrVGx4YkE3eTgweTkxdmc?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -1216,33 +2704,33 @@
           ],
           [
             "2026-10",
-            229.28
+            228.52
           ],
           [
             "2026-10",
-            228.52
+            221.3
           ]
         ],
-        "threeYearReturn": 388.6,
+        "threeYearReturn": 373.2,
         "consensus": "STRONG BUY",
         "target": 328.72,
-        "upside": 45.24566514752995,
+        "upside": 48.540440789383425,
         "view": "BUY",
         "analysts": 62
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 45.2% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 48.5% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
       "time": "14 OCT",
       "title": "Microsoft · AI valuation in focus",
-      "dek": "Fortune • US$541.15 • +1.14% today.",
+      "dek": "Seeking Alpha • US$533.69 • -1.80% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "US$541.15"
+          "US$533.69"
         ],
         [
           "CONSENSUS",
@@ -1253,9 +2741,9 @@
           "US$589.60"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies +9.0% versus the current price. Catalyst: Microsoft (MSFT) Q3 2026 Earnings Call Transcript - Fortune.",
-      "source": "Fortune",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9ZSEpfUldtc0VqWEdUY2t2bkFIMDduZFE5ejYwZ0treVM3Y2Jaa1F3N3ctU2Jwd085ZW9yX2p4R1NjS0gxN2Y2V1VuT3Z6MlhveUJBYU90TEk3NnY3WFJNaHdlM3VqQQ?oc=5",
+      "insight": "Market Mind: BUY. Consensus target implies +10.5% versus the current price. Catalyst: Microsoft: Bears Are Making Noise About AI Spending, You Should Ignore It - Buy (NASD….",
+      "source": "Seeking Alpha",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQeEJjc2ZFbnVyc29lUXBEaHllOWE0RlJnOVpmb0ZfSWNJanJDQzdiV2dtRllMZlZFcXRYdHEtV0d2U1cwVWlCV2ZNQVhkRklFRlRhXzJJNkZoY0hVVEFOcER1TWF5SW50TTItV0VzMHlFc1BrZklIbTFQNE9FZmlkVmQwMFhEbmZ0djNRNDNDVktuOVNKYjdURHZhM08xS1dTVkE4ZW1WYk84UHd0ME0zNHh2RV9FcGc?oc=5",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",
@@ -1402,104 +2890,23 @@
           ],
           [
             "2026-10",
-            535.07
+            543.45
           ],
           [
             "2026-10",
-            543.45
+            533.69
           ]
         ],
-        "threeYearReturn": 43.4,
+        "threeYearReturn": 40.8,
         "consensus": "STRONG BUY",
         "target": 589.6,
-        "upside": 8.95315040194211,
-        "view": "WATCH",
+        "upside": 10.476118589973415,
+        "view": "BUY",
         "analysts": 56
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 9.0% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 10.5% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
-    },
-    {
-      "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "14 OCT",
-      "title": "ASX shares bounce back as mining and tech drop - CommBank",
-      "dek": "CommBank • Latest market coverage.",
-      "data": [
-        [
-          "SOURCE",
-          "CommBank"
-        ],
-        [
-          "TYPE",
-          "Market news"
-        ],
-        [
-          "STATUS",
-          "Latest"
-        ]
-      ],
-      "insight": "For banks, the important transmission channels are net interest margins, loan growth, funding costs and credit quality. Watch management guidance and arrears data to judge whether the development affects earnings or risk.",
-      "source": "CommBank",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNjgtTE1YaXZQeGF6dU9jVGJlSy1HdUt3OE12bHg4bU5ZTFFEUFYxczlYOXBKeDE2R1c3RGVkVmhZRWtiU3ZPTjZoN21sQW9vcHhaT21vandfVWktNVN5bnI1M3lJbENQbGw4OGZoUmZYVktXNmExZEJHLUk1TG5tZHRXOWV2cUVJSHVEZWJTbUFsRkFJeVNEUHRpN2xDd1hiczVUa3JRaTQ?oc=5",
-      "rank": 88,
-      "whyItMatters": "A headline matters to investors only if it changes expected cash flows, risk, valuation or market pricing.",
-      "investmentOpportunity": "Research angle: verify the primary source, identify the companies and sectors affected, then watch for a measurable follow-through in guidance, prices or earnings estimates. No trade is implied by the headline alone.",
-      "opportunityType": "VERIFY"
-    },
-    {
-      "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "14 OCT",
-      "title": "5 things to watch on the ASX 200 on Wednesday 14 October 2026 - The Motley Fool Australia",
-      "dek": "The Motley Fool Australia • Latest market coverage.",
-      "data": [
-        [
-          "SOURCE",
-          "The Motley Fool Australia"
-        ],
-        [
-          "TYPE",
-          "Market news"
-        ],
-        [
-          "STATUS",
-          "Latest"
-        ]
-      ],
-      "insight": "Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone.",
-      "source": "The Motley Fool Australia",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcjB3dEN0MEJZOVRUMmRsclpKVG9PVmtocTZDRm55aHl0UlVsVEtKbDRlQy1hX3ZwSk5uUnc5U2lyc0I3VjZ5eEhBYVluMENZaXA5eWpPOHVBamxSUV96MTctLUszS2VJRzMwWHFZMGNqSkJNU2NlcndyQTJYNEFxbE9UUWVKUTQ3UEJGUVJHZHMtUkJ4X3hxbDlQTDI3QQ?oc=5",
-      "rank": 88,
-      "whyItMatters": "A headline matters to investors only if it changes expected cash flows, risk, valuation or market pricing.",
-      "investmentOpportunity": "Research angle: verify the primary source, identify the companies and sectors affected, then watch for a measurable follow-through in guidance, prices or earnings estimates. No trade is implied by the headline alone.",
-      "opportunityType": "VERIFY"
-    },
-    {
-      "tag": "NEWS / MARKET INTELLIGENCE",
-      "time": "14 OCT",
-      "title": "ASX set to slide, Wall Street mixed - SMH.com.au",
-      "dek": "SMH.com.au • Latest market coverage.",
-      "data": [
-        [
-          "SOURCE",
-          "SMH.com.au"
-        ],
-        [
-          "TYPE",
-          "Market news"
-        ],
-        [
-          "STATUS",
-          "Latest"
-        ]
-      ],
-      "insight": "Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone.",
-      "source": "SMH.com.au",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVFkxUzVYMXp0M05mRDB3M2RFMDlsYVdaQ2RCZ21qVFM3NEJFdnlja01DV2pHZGpKbTNsQnBSekZGbHpKRFp0VWszQi1ZOHpYMjVmSUwyRVZFVUJPcEl0Z3hKX21ROHVuaDFkSjJFcWN6dEZlclhsbU40eVZibG11ajZaejF0VHRfRXN0NmdQekNlZkt1N054azJCZ01KVXc?oc=5",
-      "rank": 88,
-      "whyItMatters": "A headline matters to investors only if it changes expected cash flows, risk, valuation or market pricing.",
-      "investmentOpportunity": "Research angle: verify the primary source, identify the companies and sectors affected, then watch for a measurable follow-through in guidance, prices or earnings estimates. No trade is implied by the headline alone.",
-      "opportunityType": "VERIFY"
     }
   ]
 }

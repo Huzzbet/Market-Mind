@@ -1,6 +1,7 @@
 {
-  "version": "1.3.3",
-  "updatedAt": "2026-10-14T20:36:50+00:00",
+  "version": "1.4.0",
+  "updatedAt": "2026-10-15T07:46:20+11:00",
+  "timezone": "Australia/Melbourne",
   "tickers": {
     "asx200": {
       "value": "8,727.9",
@@ -18,14 +19,14 @@
       "change": "+10.48%"
     },
     "oil": {
-      "value": "US$95.04",
+      "value": "US$95.09",
       "direction": "up",
-      "change": "+0.96%"
+      "change": "+1.01%"
     },
     "gold": {
-      "value": "US$4,122.50",
+      "value": "US$4,121.30",
       "direction": "down",
-      "change": "-1.31%"
+      "change": "-1.34%"
     },
     "us10": {
       "value": "5.19%",
@@ -41,7 +42,7 @@
   "cards": [
     {
       "tag": "DAILY CROSS-ASSET NARRATIVE",
-      "time": "14 OCT",
+      "time": "15 OCT",
       "title": "Rates, equities and inflation: the signals to connect",
       "dek": "A daily read-through across equity direction, bond yields, volatility and energy prices—not a standalone buy or sell signal.",
       "data": [
@@ -58,9 +59,9 @@
           "-1.88%"
         ]
       ],
-      "insight": "The S&P 500 moved -1.11%, the Nasdaq -1.88%, and the US 10-year yield -0.52%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil moved +0.96%; a single session is not enough to infer a change in the inflation trend. Next release to watch: US CPI: Wed 14 Oct 08:30 ET; Australian Labour Force: Thu 15 Oct 11:30am AEDT; US retail sales: Thu 15 Oct 08:30 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
+      "insight": "The S&P 500 moved -1.11%, the Nasdaq -1.88%, and the US 10-year yield -0.52%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil moved +1.01%; a single session is not enough to infer a change in the inflation trend. Next release to watch: Australian Labour Force: Thu 15 Oct 11:30am AEDT; US retail sales: Thu 15 Oct 08:30 ET; Australian CPI: Wed 28 Oct 11:30am AEDT. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
       "source": "Market Mind • Yahoo Finance • official calendars",
-      "link": "https://www.newyorkfed.org/research/calendars/i-oct26.html",
+      "link": "https://www.abs.gov.au/release-calendar/future-releases",
       "rank": 101,
       "whyItMatters": "Equities, yields and energy prices can tell different stories. The relationship between them is more useful than any one headline move.",
       "investmentOpportunity": "Research angle: compare equity breadth with real yields and earnings revisions. Avoid calling a risk-on or risk-off regime from one session alone.",
@@ -68,7 +69,7 @@
     },
     {
       "tag": "ASX 200",
-      "time": "14 OCT",
+      "time": "15 OCT",
       "title": "ASX 200 is lower",
       "dek": "The ASX 200 is 8,727.9, -0.64% on the latest session.",
       "data": [
@@ -246,7 +247,7 @@
     },
     {
       "tag": "US MARKETS",
-      "time": "14 OCT",
+      "time": "15 OCT",
       "title": "US equities are lower",
       "dek": "The S&P 500 is 7,718.94, -1.11% on the latest session.",
       "data": [
@@ -574,7 +575,7 @@
     },
     {
       "tag": "RATES",
-      "time": "14 OCT",
+      "time": "15 OCT",
       "title": "US 10Y yield is falling",
       "dek": "The US 10-year Treasury yield is about 5.19%, -0.52% on the latest session.",
       "data": [
@@ -600,24 +601,24 @@
     },
     {
       "tag": "COMMODITIES",
-      "time": "14 OCT",
+      "time": "15 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$95.04, +0.96% on the latest session.",
+      "dek": "WTI crude is about US$95.09, +1.01% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$95.04"
+          "US$95.09"
         ],
         [
           "Session",
-          "+0.96%"
+          "+1.01%"
         ],
         [
           "Theme",
           "Inflation / growth"
         ]
       ],
-      "insight": "WTI moved +0.96% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
+      "insight": "WTI moved +1.01% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
       "source": "Yahoo Finance",
       "rank": 96,
       "whyItMatters": "Oil can affect inflation, transport costs, consumer spending and margins differently across sectors.",
@@ -626,24 +627,24 @@
     },
     {
       "tag": "GOLD",
-      "time": "14 OCT",
+      "time": "15 OCT",
       "title": "Gold is lower",
-      "dek": "Gold is about US$4,122.50, -1.31% on the latest session.",
+      "dek": "Gold is about US$4,121.30, -1.34% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,122.50"
+          "US$4,121.30"
         ],
         [
           "Session",
-          "-1.31%"
+          "-1.34%"
         ],
         [
           "AUD/USD",
           "0.6974"
         ]
       ],
-      "insight": "Gold moved -1.31% while the US 10-year yield moved -0.52% and AUD/USD moved -0.17%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
+      "insight": "Gold moved -1.34% while the US 10-year yield moved -0.52% and AUD/USD moved -0.17%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
       "source": "Yahoo Finance",
       "rank": 94,
       "whyItMatters": "Gold responds to real yields, the US dollar and demand for defensive assets; a daily move alone cannot identify the driver.",
@@ -652,7 +653,7 @@
     },
     {
       "tag": "CURRENCY",
-      "time": "14 OCT",
+      "time": "15 OCT",
       "title": "Australian dollar is lower",
       "dek": "AUD/USD is around 0.6974, -0.17% on the latest session.",
       "data": [
@@ -678,8 +679,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "14 OCT",
-      "title": "BHP · Mining outlook in focus",
+      "time": "15 OCT",
+      "title": "BHP · Unlocking value at BHP - BHP",
       "dek": "BHP • A$60.86 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -695,9 +696,10 @@
           "A$59.59"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -2.1% versus the current price. Catalyst: Unlocking value at BHP - BHP.",
+      "insight": "Verified recent headline: Unlocking value at BHP - BHP. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
       "source": "BHP",
       "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5uQjZ2UW9OeFM5blNqb3VuQ3dOeDFaX1Z5TkFXYVl1OFdta2VHVFQySVVBdTFiRW9WYTdWR0JIQ2xjSF9FM2RVZ2lhUnpXbl9obVRTc1JTRHdMcG1sTlhaQ1pCcmtmcmxJR3g1M0JFenVRMC1sN1JN?oc=5",
+      "sourcePublishedAt": "2026-10-14T05:39:54+00:00",
       "rank": 70,
       "stock": {
         "ticker": "BHP.AX",
@@ -864,8 +866,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "14 OCT",
-      "title": "Rio Tinto · Iron ore and capital returns",
+      "time": "15 OCT",
+      "title": "Rio Tinto · Rio Tinto Beats Q3 Iron Ore Forecasts but Holds 2026 Guidance - Discovery Alert",
       "dek": "Discovery Alert • A$160.48 • +0.00% latest session. Consensus: Unavailable.",
       "data": [
         [
@@ -881,9 +883,10 @@
           "Unavailable"
         ]
       ],
-      "insight": "Market Mind: WATCH. Live consensus target unavailable; do not infer upside from missing data. Catalyst: Rio Tinto Beats Q3 Iron Ore Forecasts but Holds 2026 Guidance - Discovery Alert.",
+      "insight": "Verified recent headline: Rio Tinto Beats Q3 Iron Ore Forecasts but Holds 2026 Guidance - Discovery Alert. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
       "source": "Discovery Alert",
       "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPQTEwdGNubVl1aHA2UllpR2Izclk0bHBrVVRrdVVqLVVPQzAzVHNsdEF1QzNJRGpTWGljckNJNFdnVjYwOFAzbnVsbW5ORHotNzFXSUlpOGRxcmNjTE02amQyTWk2TXA4R3lwMjd2NXhEeGNLSWt1R0Iwd2RreVMtVWQxSnByMGs?oc=5",
+      "sourcePublishedAt": "2026-10-14T00:27:27+00:00",
       "rank": 70,
       "stock": {
         "ticker": "RIO.AX",
@@ -1050,8 +1053,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "14 OCT",
-      "title": "Fortescue · Iron ore and energy transition",
+      "time": "15 OCT",
+      "title": "Fortescue · Why Did ASX 200 Miner Fortescue (ASX:FMG) Slip as Iron Ore Eased? - Kalkine Media",
       "dek": "Kalkine Media • A$15.32 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -1067,9 +1070,10 @@
           "A$16.48"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies +7.6% versus the current price. Catalyst: Why Did ASX 200 Miner Fortescue (ASX:FMG) Slip as Iron Ore Eased? - Kalkine Media.",
+      "insight": "Verified recent headline: Why Did ASX 200 Miner Fortescue (ASX:FMG) Slip as Iron Ore Eased? - Kalkine Media. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
       "source": "Kalkine Media",
       "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPRlY0VWZvYlpWMV9fdDJqek13d2J4Qlpfdmx3VlhiOWRoTnJoaFY3dS1FMEt5LWRtUXFyeXRLaUh3emctaWJxaEFLclc0RkdULXgyQzJycDU5ZXI3MFYyY3hCNDBGc1ktX1hQSUt6Zm43RnU1SERkM0Rydlo3ODJ5MHRocUFseDlpMDFnZmNEbE14aXh0TDR5QllXamgwZ2UwODg4RndPblY?oc=5",
+      "sourcePublishedAt": "2026-10-14T04:39:00+00:00",
       "rank": 70,
       "stock": {
         "ticker": "FMG.AX",
@@ -1236,8 +1240,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "14 OCT",
-      "title": "CBA · Bank earnings and credit quality",
+      "time": "15 OCT",
+      "title": "CBA · No verified fresh catalyst",
       "dek": "Market Mind • A$151.17 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -1253,9 +1257,10 @@
           "A$125.64"
         ]
       ],
-      "insight": "Market Mind: SELL. Consensus target implies -16.9% versus the current price. Catalyst: No verified fresh company-specific catalyst found today.",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
       "source": "Market Mind",
       "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "CBA.AX",
@@ -1422,8 +1427,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "14 OCT",
-      "title": "NAB · Lending and credit cycle",
+      "time": "15 OCT",
+      "title": "NAB · Bank slump hits ASX as National Australia Bank stock trades at EUR 24.02 - ad-hoc-new…",
       "dek": "ad-hoc-news.de • A$38.55 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -1439,9 +1444,10 @@
           "A$38.46"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -0.2% versus the current price. Catalyst: Bank slump hits ASX as National Australia Bank stock trades at EUR 24.02 - ad-hoc-new….",
+      "insight": "Verified recent headline: Bank slump hits ASX as National Australia Bank stock trades at EUR 24.02 - ad-hoc-new…. For banks, the important transmission channels are net interest margins, loan growth, funding costs and credit quality. Watch management guidance and arrears data to judge whether the development affects earnings or risk. Consensus and price history are context, not proof of mispricing.",
       "source": "ad-hoc-news.de",
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNS1dYLXpWYW4tNkpBYVN5M0NDM2pqRENZN2ZkU2pyRENLR1VmemhkbUZybFgxbF91d1pxdkx1WTdPM3djLTZXbkEtRXBCZjhhN1BJOERycDJ0d1ZNaTRoOUlGN2FFdExDZjlybG8zeDlDUXFxendtMGxUMzh6THZ5OUNfYTRQMktnWGhQQ3YzampYbTZYNFp6QURjQVpQX1hwOE9sTURWOThpZTNpb3Fna3hSMDIwU0tBUXhxdndiSUI3Y0ZFdzgxT2FKOE1URWs5?oc=5",
+      "sourcePublishedAt": "2026-10-14T09:27:10+00:00",
       "rank": 70,
       "stock": {
         "ticker": "NAB.AX",
@@ -1608,8 +1614,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "14 OCT",
-      "title": "Wesfarmers · Retail and industrial earnings",
+      "time": "15 OCT",
+      "title": "Wesfarmers · No verified fresh catalyst",
       "dek": "Market Mind • A$78.26 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -1625,9 +1631,10 @@
           "A$76.17"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies -2.7% versus the current price. Catalyst: No verified fresh company-specific catalyst found today.",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
       "source": "Market Mind",
       "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "WES.AX",
@@ -1794,8 +1801,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "14 OCT",
-      "title": "CSL · Plasma demand and margins",
+      "time": "15 OCT",
+      "title": "CSL · No verified fresh catalyst",
       "dek": "Market Mind • A$184.59 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -1811,9 +1818,10 @@
           "A$184.96"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies +0.2% versus the current price. Catalyst: No verified fresh company-specific catalyst found today.",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
       "source": "Market Mind",
       "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "CSL.AX",
@@ -1980,8 +1988,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "14 OCT",
-      "title": "Goodman Group · Data centres and property",
+      "time": "15 OCT",
+      "title": "Goodman Group · Is ASX 200 Heavyweight Goodman Group (ASX:GMG) Losing Its Data Centre Shine? - Kalkin…",
       "dek": "Kalkine Media • A$27.44 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -1997,9 +2005,10 @@
           "A$34.31"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +25.0% versus the current price. Catalyst: Is ASX 200 Heavyweight Goodman Group (ASX:GMG) Losing Its Data Centre Shine? - Kalkin….",
+      "insight": "Verified recent headline: Is ASX 200 Heavyweight Goodman Group (ASX:GMG) Losing Its Data Centre Shine? - Kalkin…. For AI-related businesses, distinguish demand headlines from realised revenue and returns on investment. Watch customer spending, order conversion, margins and capital expenditure; strong thematic interest alone does not determine whether a valuation is attractive. Consensus and price history are context, not proof of mispricing.",
       "source": "Kalkine Media",
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOTHZGY3Z4NlJEYV9MeUVDZ2k5LURManRLcHIzeTBVbnh1RWVGUGd6Rk8zbTlGZjdKRFJ5UjQtMFlBWGtNZ3Ztcm5GU0VLUms1QzJiUHJkUF85WjB5ZEF5RmJUVUZoTG05VjZtd2NZTFUzUzRNLWtVVE1vV0lmMzY5TjVSTFI4dnBHTXV6QmhxX2k2MUtPWEUwQUJqVktZMjBDMjc4SFFQWC1YVDBDWUpzc2lXem5nbng1OHd2Mml4dUpubWZFNmhHZXlIR3NLWUJ6XzNpYw?oc=5",
+      "sourcePublishedAt": "2026-10-14T06:06:00+00:00",
       "rank": 70,
       "stock": {
         "ticker": "GMG.AX",
@@ -2166,8 +2175,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "14 OCT",
-      "title": "Macquarie Group · Markets and asset management",
+      "time": "15 OCT",
+      "title": "Macquarie Group · RBC started Macquarie Group stock coverage at AUD 300 target - ad-hoc-news.de",
       "dek": "ad-hoc-news.de • A$249.80 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -2183,9 +2192,10 @@
           "A$258.07"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies +3.3% versus the current price. Catalyst: RBC started Macquarie Group stock coverage at AUD 300 target - ad-hoc-news.de.",
+      "insight": "Verified recent headline: RBC started Macquarie Group stock coverage at AUD 300 target - ad-hoc-news.de. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
       "source": "ad-hoc-news.de",
       "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQd0NoLThSeVB6QWtIQkttTVhwbjhCeHNyNUtqUl9kbjUxeGZjOWFYbXJlZmRYUDJkOEsyV0dLVy1Jc1FLdmxNSXhxYUFBWUN4LUJHRVR0cnZOWG80LXdJV3JIdU96NFVMZUNxVUxPWnpMTldvaXN1MFlUS2w0YmdpRzNrV0d1NUYzYmZSRnVIOEs3ekZ2NG9JM0xHdDdFM2xVUDEyVmdIWFJtUzMxTUYzWGR4T1Nuek1mNWVyMi1oS3M?oc=5",
+      "sourcePublishedAt": "2026-10-14T11:48:59+00:00",
       "rank": 70,
       "stock": {
         "ticker": "MQG.AX",
@@ -2352,8 +2362,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "14 OCT",
-      "title": "Telstra · Earnings and capital returns",
+      "time": "15 OCT",
+      "title": "Telstra · How Did Shareholders Vote on Directors, CEO Equity and Remuneration at the Telstra (A…",
       "dek": "Kalkine • A$4.70 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -2369,9 +2379,10 @@
           "A$5.01"
         ]
       ],
-      "insight": "Market Mind: WATCH. Consensus target implies +6.6% versus the current price. Catalyst: How Did Shareholders Vote on Directors, CEO Equity and Remuneration at the Telstra (A….",
+      "insight": "Verified recent headline: How Did Shareholders Vote on Directors, CEO Equity and Remuneration at the Telstra (A…. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
       "source": "Kalkine",
       "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPdjBvbFRRQWhvZVpsUFdfR2htbEU5NTJqajg5WDJGZVNEUkt1SFdMWTJpQV85MkF2Y0tvOWJ4VWpSTkhIb1NIeDAtMEJGMXNtUjd1YjBCZ2RDd3lkbG9Vb3FCdzNIUVJwYjU5RHdRTEpWcFFVMm9rSkNSMmFLaVlHa3FySFFiM2E2aE1iSVRCWXZlTGc2QVlHWVR1NXhYNjVOTXc2YjBWSUxraFgzWVR1eHV6anBKbW1NT3JWZVFzbjNkalExUTc5S1pPdGZyS0tVTm16SjhNOVdGNjBf?oc=5",
+      "sourcePublishedAt": "2026-10-14T07:34:00+00:00",
       "rank": 70,
       "stock": {
         "ticker": "TLS.AX",
@@ -2538,8 +2549,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
-      "time": "14 OCT",
-      "title": "Nvidia · AI earnings power in focus",
+      "time": "15 OCT",
+      "title": "Nvidia · Nvidia Board Adds $80 Billion to Buyback as AI Spending Outlook Hits $4 Trillion - Bi…",
       "dek": "BigGo Finance • US$221.30 • -3.16% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -2555,9 +2566,10 @@
           "US$328.72"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +48.5% versus the current price. Catalyst: Nvidia Board Adds $80 Billion to Buyback as AI Spending Outlook Hits $4 Trillion - Bi….",
+      "insight": "Verified recent headline: Nvidia Board Adds $80 Billion to Buyback as AI Spending Outlook Hits $4 Trillion - Bi…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
       "source": "BigGo Finance",
       "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1BLUFzbFk2ekdqY2pqREdZa1pnbU51YTNSWE9Sc1JKaXhQaGFZRTZidUM2eE4wSjhHUGMza2dTc2Y1RXgyOE1TYXM4R2dtRm12YURydHBBZ2NTZnN6Q0NQUm0xSDhZaHZrVGx4YkE3eTgweTkxdmc?oc=5",
+      "sourcePublishedAt": "2026-10-14T13:26:00+00:00",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -2724,8 +2736,8 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
-      "time": "14 OCT",
-      "title": "Microsoft · AI valuation in focus",
+      "time": "15 OCT",
+      "title": "Microsoft · Microsoft: Bears Are Making Noise About AI Spending, You Should Ignore It - Buy (NASD…",
       "dek": "Seeking Alpha • US$533.69 • -1.80% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -2741,9 +2753,10 @@
           "US$589.60"
         ]
       ],
-      "insight": "Market Mind: BUY. Consensus target implies +10.5% versus the current price. Catalyst: Microsoft: Bears Are Making Noise About AI Spending, You Should Ignore It - Buy (NASD….",
+      "insight": "Verified recent headline: Microsoft: Bears Are Making Noise About AI Spending, You Should Ignore It - Buy (NASD…. For AI-related businesses, distinguish demand headlines from realised revenue and returns on investment. Watch customer spending, order conversion, margins and capital expenditure; strong thematic interest alone does not determine whether a valuation is attractive. Consensus and price history are context, not proof of mispricing.",
       "source": "Seeking Alpha",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQeEJjc2ZFbnVyc29lUXBEaHllOWE0RlJnOVpmb0ZfSWNJanJDQzdiV2dtRllMZlZFcXRYdHEtV0d2U1cwVWlCV2ZNQVhkRklFRlRhXzJJNkZoY0hVVEFOcER1TWF5SW50TTItV0VzMHlFc1BrZklIbTFQNE9FZmlkVmQwMFhEbmZ0djNRNDNDVktuOVNKYjdURHZhM08xS1dTVkE4ZW1WYk84UHd0ME0zNHh2RV9FcGc?oc=5",
+      "sourcePublishedAt": "2026-10-14T12:01:13+00:00",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",

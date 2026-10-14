@@ -28,8 +28,8 @@ jobs:
       - name: Update daily feed
         run: python scripts/update_feed.py
 
-      - name: Validate feed
-        run: python -c 'import json; d=json.load(open("data/feed.json")); c=d.get("cards",[]); assert isinstance(c,list) and len(c)>=5, "feed has fewer than 5 cards"; assert d.get("updatedAt"), "missing updatedAt"; assert all(all(x.get(k) for k in ("tag","title","dek","data","insight","source")) for x in c), "card missing required field"; print("Validated %d cards" % len(c))'
+      - name: Validate feed freshness and evidence
+        run: python scripts/validate_feed.py
 
       - name: Commit feed
         run: |

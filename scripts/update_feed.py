@@ -44,7 +44,15 @@ def pct(v): return ("+" if v>=0 else "")+format(v,".2f")+"%"
 def stock_title(label,headline):
     titles={
       "BHP":"BHP · Mining outlook in focus",
-      "CBA":"CBA · Income story in focus",
+      "RIO":"Rio Tinto · Iron ore and capital returns",
+      "FMG":"Fortescue · Iron ore and energy transition",
+      "CBA":"CBA · Bank earnings and credit quality",
+      "NAB":"NAB · Lending and credit cycle",
+      "WES":"Wesfarmers · Retail and industrial earnings",
+      "CSL":"CSL · Plasma demand and margins",
+      "GMG":"Goodman Group · Data centres and property",
+      "MQG":"Macquarie Group · Markets and asset management",
+      "TLS":"Telstra · Earnings and capital returns",
       "NVDA":"Nvidia · AI earnings power in focus",
       "MSFT":"Microsoft · AI valuation in focus"
     }
@@ -379,7 +387,7 @@ def main():
         except Exception as e: print("Warning:",s,e)
     # Dynamic candidate pool
     stocks={}
-    for k,sym in {"BHP":"BHP.AX","CBA":"CBA.AX","NVDA":"NVDA","MSFT":"MSFT"}.items():
+    for k,sym in {"BHP":"BHP.AX","RIO":"RIO.AX","FMG":"FMG.AX","CBA":"CBA.AX","NAB":"NAB.AX","WES":"WES.AX","CSL":"CSL.AX","GMG":"GMG.AX","MQG":"MQG.AX","TLS":"TLS.AX","NVDA":"NVDA","MSFT":"MSFT"}.items():
         try:
             p,chg=yahoo(sym); hist=history(sym)
             stocks[k]={"symbol":sym,"price":p,"pct":chg,"history":hist}
@@ -410,13 +418,29 @@ def main():
 
     stock_cfg={
       "BHP":{"symbol":"BHP.AX","slug":"quote/asx/BHP"},
+      "RIO":{"symbol":"RIO.AX","slug":"quote/asx/RIO"},
+      "FMG":{"symbol":"FMG.AX","slug":"quote/asx/FMG"},
       "CBA":{"symbol":"CBA.AX","slug":"quote/asx/CBA"},
+      "NAB":{"symbol":"NAB.AX","slug":"quote/asx/NAB"},
+      "WES":{"symbol":"WES.AX","slug":"quote/asx/WES"},
+      "CSL":{"symbol":"CSL.AX","slug":"quote/asx/CSL"},
+      "GMG":{"symbol":"GMG.AX","slug":"quote/asx/GMG"},
+      "MQG":{"symbol":"MQG.AX","slug":"quote/asx/MQG"},
+      "TLS":{"symbol":"TLS.AX","slug":"quote/asx/TLS"},
       "NVDA":{"symbol":"NVDA","slug":"stocks/nvda"},
       "MSFT":{"symbol":"MSFT","slug":"stocks/msft"}
     }
     stock_queries={
-      "BHP":["BHP broker upgrade downgrade","BHP dividend results guidance","BHP copper iron ore news"],
-      "CBA":["CBA broker upgrade downgrade","CBA results dividend outlook","Commonwealth Bank CBA news"],
+      "BHP":["BHP ASX results guidance production iron ore copper","BHP broker upgrade downgrade price target","BHP dividend capital returns company announcement"],
+      "RIO":["Rio Tinto ASX results guidance iron ore copper","RIO broker upgrade downgrade price target","Rio Tinto dividend production company announcement"],
+      "FMG":["Fortescue ASX results guidance iron ore","FMG broker upgrade downgrade price target","Fortescue production energy company announcement"],
+      "CBA":["Commonwealth Bank CBA ASX results guidance net interest margin","CBA broker upgrade downgrade price target","CBA dividend credit quality company announcement"],
+      "NAB":["National Australia Bank NAB ASX results guidance","NAB broker upgrade downgrade price target","NAB lending credit quality company announcement"],
+      "WES":["Wesfarmers ASX results Bunnings Kmart guidance","WES broker upgrade downgrade price target","Wesfarmers earnings company announcement"],
+      "CSL":["CSL Limited ASX results guidance plasma","CSL broker upgrade downgrade price target","CSL earnings margin company announcement"],
+      "GMG":["Goodman Group ASX results guidance data centre","GMG broker upgrade downgrade price target","Goodman Group property earnings company announcement"],
+      "MQG":["Macquarie Group ASX results guidance earnings","MQG broker upgrade downgrade price target","Macquarie Group asset management company announcement"],
+      "TLS":["Telstra ASX results guidance dividend","TLS broker upgrade downgrade price target","Telstra earnings company announcement"],
       "NVDA":["Nvidia NVDA earnings guidance","Nvidia broker upgrade downgrade","Nvidia AI partnership buyback news"],
       "MSFT":["Microsoft MSFT earnings guidance","Microsoft broker upgrade downgrade","Microsoft AI cloud contract news"]
     }
@@ -453,19 +477,19 @@ def main():
         target_txt=fmt(con["target"],2) if con.get("target") else "—"
         upside_txt=(("+" if upside>=0 else "")+format(upside,".1f")+"%") if upside is not None else "—"
         cards.append({
-          "tag":"STOCK INTELLIGENCE / "+("AUSTRALIA" if label in ("BHP","CBA") else "US"),
+          "tag":"STOCK INTELLIGENCE / "+("AUSTRALIA" if label not in ("NVDA","MSFT") else "US"),
           "time":d,
           "title":stock_title(label,x["title"]),
-          "dek":x["source"]+" • "+("A$" if label in ("BHP","CBA") else "US$")+fmt(st["price"],2)+" • "+pct(st["pct"])+" today.",
-          "data":[["PRICE",("A$" if label in ("BHP","CBA") else "US$")+fmt(st["price"],2)],["CONSENSUS",rating],["TARGET · "+str(con.get("analysts") or "—")+" ANALYSTS",(("A$" if label in ("BHP","CBA") else "US$")+target_txt if target_txt!="—" else "—")]],
-          "insight":"Market Mind: "+view+". Consensus target implies "+upside_txt+" versus the current price. Catalyst: "+catalyst_text(x["title"])+".",
+          "dek":x["source"]+" • "+("A$" if label not in ("NVDA","MSFT") else "US$")+fmt(st["price"],2)+" • "+pct(st["pct"])+" latest session. Consensus: "+con.get("source","Unavailable")+".",
+          "data":[["PRICE",("A$" if label not in ("NVDA","MSFT") else "US$")+fmt(st["price"],2)],["CONSENSUS",rating if con.get("rating") else "UNAVAILABLE"],["TARGET · "+str(con.get("analysts") or "—")+" ANALYSTS",(("A$" if label not in ("NVDA","MSFT") else "US$")+target_txt if target_txt!="—" else "Unavailable")]],
+          "insight":"Market Mind: "+view+". "+("Consensus target implies "+upside_txt+" versus the current price. " if con.get("target") else "Live consensus target unavailable; do not infer upside from missing data. ")+"Catalyst: "+catalyst_text(x["title"])+".",
           "source":x["source"],
           "link":x["link"],
           "rank":70,
           "stock":{"ticker":st["symbol"],"history":hist,"threeYearReturn":round(((hist[-1][1]/hist[0][1])-1)*100,1) if len(hist)>1 and hist[0][1] else None,"consensus":rating,"target":con.get("target"),"upside":upside,"view":view,"analysts":con.get("analysts")}
         })
     seen=set()
-    for q in ("ASX Australian share market","US stocks S&P 500 Nasdaq","markets bonds oil gold"):
+    for q in ("ASX company results announcements broker upgrades downgrades","ASX Australian share market","US stocks S&P 500 Nasdaq","markets bonds oil gold"):
         for x in news(q):
             key=re.sub(r"[^a-z0-9]+","",x["title"].lower())
             if key in seen: continue

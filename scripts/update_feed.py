@@ -487,7 +487,7 @@ def main():
           "title":stock_title(label,x["title"]),
           "dek":x["source"]+" • "+("A$" if label not in ("NVDA","MSFT") else "US$")+fmt(st["price"],2)+" • "+pct(st["pct"])+" latest session. Consensus: "+con.get("source","Unavailable")+".",
           "data":[["PRICE",("A$" if label not in ("NVDA","MSFT") else "US$")+fmt(st["price"],2)],["CONSENSUS",rating if con.get("rating") else "UNAVAILABLE"],["TARGET · "+str(con.get("analysts") or "—")+" ANALYSTS",(("A$" if label not in ("NVDA","MSFT") else "US$")+target_txt if target_txt!="—" else "Unavailable")]],
-          "insight":(("No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move." if not x.get("publishedAt") else "Verified recent headline: "+catalyst_text(x["title"])+". "+news_insight(x)+" Consensus and price history are context, not proof of mispricing."),
+          "insight":(("No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move." if not x.get("publishedAt") else "Verified recent headline: "+catalyst_text(x["title"])+". "+news_insight(x)+" Consensus and price history are context, not proof of mispricing.")),
           "source":x["source"],
           "link":x["link"],
           "sourcePublishedAt":x.get("publishedAt"),

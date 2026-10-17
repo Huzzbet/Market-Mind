@@ -1,6 +1,6 @@
 {
   "version": "1.4.0",
-  "updatedAt": "2026-10-17T13:57:00+11:00",
+  "updatedAt": "2026-10-17T21:07:35+11:00",
   "timezone": "Australia/Melbourne",
   "tickers": {
     "asx200": {
@@ -19,14 +19,14 @@
       "change": "+21.45%"
     },
     "oil": {
-      "value": "US$99.04",
+      "value": "US$101.41",
       "direction": "up",
-      "change": "+1.09%"
+      "change": "+3.51%"
     },
     "gold": {
-      "value": "US$4,186.70",
+      "value": "US$4,181.10",
       "direction": "up",
-      "change": "+0.40%"
+      "change": "+0.26%"
     },
     "us10": {
       "value": "5.10%",
@@ -59,7 +59,7 @@
           "-2.15%"
         ]
       ],
-      "insight": "The S&P 500 moved -1.09%, the Nasdaq -2.15%, and the US 10-year yield +0.18%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil also rose +1.09%; if sustained, higher energy costs can complicate the inflation outlook and keep yields under pressure. Next release to watch: Australian CPI: Wed 28 Oct 11:30am AEDT; US PCE inflation: Thu 29 Oct 08:30 ET; US ISM manufacturing survey: Mon 2 Nov 10:00 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
+      "insight": "The S&P 500 moved -1.09%, the Nasdaq -2.15%, and the US 10-year yield +0.18%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil also rose +3.51%; if sustained, higher energy costs can complicate the inflation outlook and keep yields under pressure. Next release to watch: Australian CPI: Wed 28 Oct 11:30am AEDT; US PCE inflation: Thu 29 Oct 08:30 ET; US ISM manufacturing survey: Mon 2 Nov 10:00 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
       "source": "Market Mind • Yahoo Finance • official calendars",
       "link": "https://www.abs.gov.au/release-calendar/future-releases",
       "rank": 101,
@@ -603,22 +603,22 @@
       "tag": "COMMODITIES",
       "time": "17 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$99.04, +1.09% on the latest session.",
+      "dek": "WTI crude is about US$101.41, +3.51% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$99.04"
+          "US$101.41"
         ],
         [
           "Session",
-          "+1.09%"
+          "+3.51%"
         ],
         [
           "Theme",
           "Inflation / growth"
         ]
       ],
-      "insight": "WTI moved +1.09% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
+      "insight": "WTI moved +3.51% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
       "source": "Yahoo Finance",
       "rank": 96,
       "whyItMatters": "Oil can affect inflation, transport costs, consumer spending and margins differently across sectors.",
@@ -629,22 +629,22 @@
       "tag": "GOLD",
       "time": "17 OCT",
       "title": "Gold is higher",
-      "dek": "Gold is about US$4,186.70, +0.40% on the latest session.",
+      "dek": "Gold is about US$4,181.10, +0.26% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,186.70"
+          "US$4,181.10"
         ],
         [
           "Session",
-          "+0.40%"
+          "+0.26%"
         ],
         [
           "AUD/USD",
           "0.6949"
         ]
       ],
-      "insight": "Gold moved +0.40% while the US 10-year yield moved +0.18% and AUD/USD moved +0.44%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
+      "insight": "Gold moved +0.26% while the US 10-year yield moved +0.18% and AUD/USD moved +0.44%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
       "source": "Yahoo Finance",
       "rank": 94,
       "whyItMatters": "Gold responds to real yields, the US dollar and demand for defensive assets; a daily move alone cannot identify the driver.",
@@ -867,8 +867,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "17 OCT",
-      "title": "Rio Tinto · Rio Tinto Maintains 2026 Guidance As Oyu Tolgoi Copper Output Rises 29% - DirectorsTa…",
-      "dek": "DirectorsTalk Interviews • A$154.93 • +0.00% latest session. Consensus: Unavailable.",
+      "title": "Rio Tinto · Will Battery Materials Progress Change Rio Tinto's (LSE:RIO) Narrative",
+      "dek": "Simply Wall Street • A$154.93 • +0.00% latest session. Consensus: Unavailable.",
       "data": [
         [
           "PRICE",
@@ -883,10 +883,10 @@
           "Unavailable"
         ]
       ],
-      "insight": "Verified recent headline: Rio Tinto Maintains 2026 Guidance As Oyu Tolgoi Copper Output Rises 29% - DirectorsTa…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
-      "source": "DirectorsTalk Interviews",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOenNQd25reXZEcE9Vbl90WEVXOVZQcm5lWVg2WGtCak9uZFVTa2RGY19YSkhkVXNSaWYwRG9Bb0NORktoLTNlN0xOT2UwQU0zWG5aMm9KVGQyU0NuYzNnTzh5cEZ3bFZpbmtQNk1uR0FsVUF4bVpKMFRadm5uV3lJVkduM3BlWm1LZ0tYRDI3UlFCUVpONG1qaFI3TGdfelpSdTRtTC1EWU1ZUlBxRGtJZFpmeUQ2Um12bzM4X25n?oc=5",
-      "sourcePublishedAt": "2026-10-16T06:57:59+00:00",
+      "insight": "Verified recent headline: Will Battery Materials Progress Change Rio Tinto's (LSE:RIO) Narrative. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
+      "source": "Simply Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQVXdjVkIxa1JKLUNSeDFINlUydmpBN2FmZDlleE1DU041NG5NbmZFMUdnSEFKc0duajZvWjVpeVlHcnZLOUNhc1ltalRzU0RsVWxaSFJPSjFEa2pzMVcxU2ZhZy1oLUxMUDd0bDJFcTQ5R204U0VNd2M5eGc0TzFuNWRCb3h3OG5NbVNLUXI4YktUU1NoaGNGdVY2Z3pWNTVzRGFnTEVpLW9MdFRwVkxlSHpmd2dnUHV5S1hkbjZJVFR6d2VXR2xFWmZhSUVmVHAtYzdlMdIB2gFBVV95cUxQVnVoTkthZ0psVjR0ZGh2RzJHRVk4TjRXMTFPNEFuRXppSUxEMWNoM05uclR3Qk1DbmwyVEg2TUQ2MUtMZ0FvTmJIVjcwVnQ5YkNBWnNTMFNXbkxXa2tpUXo2eFlfTWdDQ0JRUGJYQ1MxaWZfSng1THZfN196LV9tZzhJMVFObktwaXU5OUJTMU1aTFFObDlZU3lkUjBqTXcyVzdFem5pZW9nMFd0VmN2czJjRmlBU1NWbENvZ1NrUFR6emJnR2NfVENrVzBIRG8tV1pkQm1BWi1ydw?oc=5",
+      "sourcePublishedAt": "2026-10-17T06:46:25+00:00",
       "rank": 70,
       "stock": {
         "ticker": "RIO.AX",
@@ -1054,8 +1054,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "17 OCT",
-      "title": "Fortescue · What Fortescue (ASX:FMG) Record Shipments and a Higher FY27 Cost Guide Mean for Margi…",
-      "dek": "Kalkine • A$15.19 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "Fortescue · No verified fresh catalyst",
+      "dek": "Market Mind • A$15.19 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -1070,10 +1070,10 @@
           "A$16.48"
         ]
       ],
-      "insight": "Verified recent headline: What Fortescue (ASX:FMG) Record Shipments and a Higher FY27 Cost Guide Mean for Margi…. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
-      "source": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPMUVoRmJ3MVp3djRQNmV0cmU0VllFUTZ3QnJDSXJRTm05SHQ5SkxkcnA3WFNvWTBzYVpSTC12RS16eWhoN1h4aTJaYzI5TDN3Q2F1MTBPdVg0cjJ4Q1NVTHB2aGlPbDJhaFlWbXNfV3ZMWnNqTExvM0NKQUpzamdjdmhTUVJZa0tHT3piMFREekJfREVWMC1yWW9GUWtGMUFOTVhJdkdLdGFsamNjeHBZUlhEdXp3cDhDM0w0?oc=5",
-      "sourcePublishedAt": "2026-10-16T06:11:00+00:00",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
+      "source": "Market Mind",
+      "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "FMG.AX",
@@ -1989,8 +1989,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "17 OCT",
-      "title": "Goodman Group · Goodman Property Trust (NZSE:GNZ) Stock May Trade At A Discount To Earnings",
-      "dek": "Yahoo Finance • A$26.39 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "Goodman Group · Goodman Group (ASX:GMG) Could Be 24% Undervalued On Data Center Growth Plans",
+      "dek": "Simply Wall Street • A$26.39 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -2005,10 +2005,10 @@
           "A$34.10"
         ]
       ],
-      "insight": "Verified recent headline: Goodman Property Trust (NZSE:GNZ) Stock May Trade At A Discount To Earnings. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
-      "source": "Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPM0QwdndGUGJURWd6UEJpNUg2T1Y4QU9kLVdSUmhkUWJRdkhQYXkzNExvaHg3aHcyUzBBUjFUT3dFX2JET2l1YXFISUhhMWlYZVN1MmdkRWU1ejRxU1BNemxIT2thdVVEOFJWb21ubXZ3ZVptMjZ2N2wzdV9HakFzWnB3RzNQeWJ6QkxheElBckRScFd2Q2xkNA?oc=5",
-      "sourcePublishedAt": "2026-10-16T08:11:20+00:00",
+      "insight": "Verified recent headline: Goodman Group (ASX:GMG) Could Be 24% Undervalued On Data Center Growth Plans. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
+      "source": "Simply Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPS2V0RlU2UzI2R3o3VzFPTnJpeVZiMzJNZjE1end4UWZvQV93MTlXTUJmMHE5UUhPTk9tWnFSRDh2NzhVZGNLRWVoczdDc3d1TU45UUFsY0FjQzlibm9RS1Y3MjdabDktU1BBdlNyTzRfMHMwSEg4TEZWaHBvS2xScUlTM21aNDZsMHhPSzAzR1BxVGlicGJsTGp6NUV4VmdNRnNvdF9SdUVKY08tZzR6dUh4N2NDdnp1UVlTaGRSd1FQWGZBOHlCNVFGUUtyeXhJUUJV0gHYAUFVX3lxTE5ycHpIVUMwbjNDSGZwSUp6ejh3TjBnYjBjLTJyaFlBV1p1YkhDQ05xZHNoVzZpRVZKdU1IWHNWRnRPLWVlUDJoSHJqTF9kQ2pDa0VaMV9EWFJVS0lZeHdfWmp3aG5GQmRKTmJ0TWNROGFmUkk5c3pWSVNCTXJxUC1aaFNodW1melBtZ2ZDTGx3aExFQUx1bWo4a2t6ckxxaFZQSEEwQWZBdVBCd0tfbEtGbXBMWmZGbk9aOXJ6amE1SXZjRFdxSmNJdzM4bk1veXh6cVhsc2pYQw?oc=5",
+      "sourcePublishedAt": "2026-10-17T00:53:16+00:00",
       "rank": 70,
       "stock": {
         "ticker": "GMG.AX",
@@ -2550,8 +2550,8 @@
     {
       "tag": "STOCK INTELLIGENCE / US",
       "time": "17 OCT",
-      "title": "Nvidia · Micron's Multi-Year Deals and Nvidia Tie-Up Convince Bulls the Memory Boom Has Stayin…",
-      "dek": "BigGo Finance • US$214.13 • -1.43% latest session. Consensus: Stock Analysis.",
+      "title": "Nvidia · Key facts: NVDA China Risk; 70%+ AI Spend, $100B+ Buybacks; SpaceX Tie - TradingView",
+      "dek": "TradingView • US$214.13 • -1.43% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -2566,10 +2566,10 @@
           "US$328.72"
         ]
       ],
-      "insight": "Verified recent headline: Micron's Multi-Year Deals and Nvidia Tie-Up Convince Bulls the Memory Boom Has Stayin…. For AI-related businesses, distinguish demand headlines from realised revenue and returns on investment. Watch customer spending, order conversion, margins and capital expenditure; strong thematic interest alone does not determine whether a valuation is attractive. Consensus and price history are context, not proof of mispricing.",
-      "source": "BigGo Finance",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5GYURYMGp2WFVYLTBkank4UXV6aTlyTnJHbUxwTWdhTDU0empZMlBaLTZKR2pqTkhoOGlyMnItdmFPT2Q3Ml9sYWV5QjBrdFJkV0I4b1NmeTBMLTZ5Y0JRRzhDd3NuSFdON21seDBUNTJ0OHRwZWc?oc=5",
-      "sourcePublishedAt": "2026-10-16T18:17:00+00:00",
+      "insight": "Verified recent headline: Key facts: NVDA China Risk; 70%+ AI Spend, $100B+ Buybacks; SpaceX Tie - TradingView. For AI-related businesses, distinguish demand headlines from realised revenue and returns on investment. Watch customer spending, order conversion, margins and capital expenditure; strong thematic interest alone does not determine whether a valuation is attractive. Consensus and price history are context, not proof of mispricing.",
+      "source": "TradingView",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbmp2aldYQ2NDbFkwY3I5NHNkLS14MEVHYUprQUJ3bFVsdS1DMW9kSW9sRk5TNEpzbE9Eb3BJamdrTkF3V2IzRE9hRDA4NXk4bVp0WnBIYmZ6S0JFVUJUSlJIRi1TTnNVdVRhbk1pTXBYU0F6dEE4RlBZdG16WVVMTlZwRGZNNm00UGRqVkhhMlVzaFdxdzJtcWEwTTRMMGF0akFBaDU3NjFhVXFIOTl6ZHpadElBUDNRRmw5QjFyaHgzUQ?oc=5",
+      "sourcePublishedAt": "2026-10-17T07:00:00+00:00",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",

@@ -1,6 +1,6 @@
 {
   "version": "1.4.0",
-  "updatedAt": "2026-10-18T13:58:34+11:00",
+  "updatedAt": "2026-10-18T21:22:28+11:00",
   "timezone": "Australia/Melbourne",
   "tickers": {
     "asx200": {
@@ -19,9 +19,9 @@
       "change": "+21.45%"
     },
     "oil": {
-      "value": "US$101.41",
+      "value": "US$99.02",
       "direction": "up",
-      "change": "+3.51%"
+      "change": "+1.07%"
     },
     "gold": {
       "value": "US$4,181.10",
@@ -59,7 +59,7 @@
           "-2.15%"
         ]
       ],
-      "insight": "The S&P 500 moved -1.09%, the Nasdaq -2.15%, and the US 10-year yield +0.18%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil also rose +3.51%; if sustained, higher energy costs can complicate the inflation outlook and keep yields under pressure. Next release to watch: Australian CPI: Wed 28 Oct 11:30am AEDT; US PCE inflation: Thu 29 Oct 08:30 ET; US ISM manufacturing survey: Mon 2 Nov 10:00 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
+      "insight": "The S&P 500 moved -1.09%, the Nasdaq -2.15%, and the US 10-year yield +0.18%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil also rose +1.07%; if sustained, higher energy costs can complicate the inflation outlook and keep yields under pressure. Next release to watch: Australian CPI: Wed 28 Oct 11:30am AEDT; US PCE inflation: Thu 29 Oct 08:30 ET; US ISM manufacturing survey: Mon 2 Nov 10:00 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
       "source": "Market Mind • Yahoo Finance • official calendars",
       "link": "https://www.abs.gov.au/release-calendar/future-releases",
       "rank": 101,
@@ -603,22 +603,22 @@
       "tag": "COMMODITIES",
       "time": "18 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$101.41, +3.51% on the latest session.",
+      "dek": "WTI crude is about US$99.02, +1.07% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$101.41"
+          "US$99.02"
         ],
         [
           "Session",
-          "+3.51%"
+          "+1.07%"
         ],
         [
           "Theme",
           "Inflation / growth"
         ]
       ],
-      "insight": "WTI moved +3.51% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
+      "insight": "WTI moved +1.07% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
       "source": "Yahoo Finance",
       "rank": 96,
       "whyItMatters": "Oil can affect inflation, transport costs, consumer spending and margins differently across sectors.",
@@ -1633,8 +1633,8 @@
       ],
       "insight": "Verified recent headline: Kmart Regulatory Action Could Be A Key Test For Wesfarmers Stock. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
       "source": "Simply Wall Street",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbGoyQURPN0VqOFotWk1fRDNhVWNfa2lERENvUmtiWjBjbXNGc3lLZWJLUVUxMzZCdGJvX0ZVWi1YbS1MNGduM1ZfZ1k3U29lbDRHNjRRSmhuVk9hMnBkcGRBbHUwOHBWcUVoYXVnVldJZ2pCVXgyaVRXN2VTMG1pTTB3cEVQSjR3bW1RM3VYWE1fdXZSUVFxYUFxUldZbnV1SzFmT01TQlItOFhYYWZacC1Dei1mdklYUkVjelpYdzZmSHJHMXo5dGJB0gHPAUFVX3lxTE1VeWkyUjczQno2WlpwWjVwakJqMDJ2NkxhNGRPMTdCd3VfVzBkelJiTW03UEY1ZHRzekI4OEU1MUp5TG5IaGNWWlE4YkZOU2g1NUFpTm9oYlpyRVh6ZVZoczExb0RoeEtOVnl6RHVXUUhJSDJrMDNwQ0swY2RBSjRXeW1XQlplcEtzSDBTaW81cnlNSC13V0RzamlVQzRFcUJ1RmxHMmVpVm9sN3ZFNEtSd1FvS0N1Ni15ZXZUTVN0M0JHcl9iUVFpNGlEcU1sTQ?oc=5",
-      "sourcePublishedAt": "2026-10-18T02:44:31+00:00",
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNVXlpMlI3M0J6NlpacFo1cGpCajAydjZMYTRkTzE3Qnd1X1cwZHpSYk1tN1BGNWR0c3pCODhFNTFKeUxuSGhjVlpROGJGTlNoNTVBaU5vaGJackVYemVWaHMxMW9EaHhLTlZ5ekR1V1FISUgyazAzcENLMGNkQUo0V3ltV0JaZXBLc0gwU2lvNXJ5TUgtd1dEc2ppVUM0RXFCdUZsRzJlaVZvbDd2RTRLUndRb0tDdTYteWV2VE1TdDNCR3JfYlFRaTRpRHFNbE3SAc8BQVVfeXFMTVV5aTJSNzNCejZaWnBaNXBqQmowMnY2TGE0ZE8xN0J3dV9XMGR6UmJNbTdQRjVkdHN6Qjg4RTUxSnlMbkhoY1ZaUThiRk5TaDU1QWlOb2hiWnJFWHplVmhzMTFvRGh4S05WeXpEdVdRSElIMmswM3BDSzBjZEFKNFd5bVdCWmVwS3NIMFNpbzVyeU1ILXdXRHNqaVVDNEVxQnVGbEcyZWlWb2w3dkU0S1J3UW9LQ3U2LXlldlRNU3QzQkdyX2JRUWk0aURxTWxN?oc=5",
+      "sourcePublishedAt": "2026-10-18T02:44:32+00:00",
       "rank": 70,
       "stock": {
         "ticker": "WES.AX",
@@ -2550,8 +2550,8 @@
     {
       "tag": "STOCK INTELLIGENCE / US",
       "time": "18 OCT",
-      "title": "Nvidia · Key facts: NVDA China Risk; 70%+ AI Spend, $100B+ Buybacks; SpaceX Tie - TradingView",
-      "dek": "TradingView • US$214.13 • -1.43% latest session. Consensus: Stock Analysis.",
+      "title": "Nvidia · Weekly Outlook | NVIDIA's GTC and tech giants' earnings reports take center stage! Fo…",
+      "dek": "富途牛牛 • US$214.13 • -1.43% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -2566,10 +2566,10 @@
           "US$328.72"
         ]
       ],
-      "insight": "Verified recent headline: Key facts: NVDA China Risk; 70%+ AI Spend, $100B+ Buybacks; SpaceX Tie - TradingView. For AI-related businesses, distinguish demand headlines from realised revenue and returns on investment. Watch customer spending, order conversion, margins and capital expenditure; strong thematic interest alone does not determine whether a valuation is attractive. Consensus and price history are context, not proof of mispricing.",
-      "source": "TradingView",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbmp2aldYQ2NDbFkwY3I5NHNkLS14MEVHYUprQUJ3bFVsdS1DMW9kSW9sRk5TNEpzbE9Eb3BJamdrTkF3V2IzRE9hRDA4NXk4bVp0WnBIYmZ6S0JFVUJUSlJIRi1TTnNVdVRhbk1pTXBYU0F6dEE4RlBZdG16WVVMTlZwRGZNNm00UGRqVkhhMlVzaFdxdzJtcWEwTTRMMGF0akFBaDU3NjFhVXFIOTl6ZHpadElBUDNRRmw5QjFyaHgzUQ?oc=5",
-      "sourcePublishedAt": "2026-10-17T07:00:00+00:00",
+      "insight": "Verified recent headline: Weekly Outlook | NVIDIA's GTC and tech giants' earnings reports take center stage! Fo…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
+      "source": "富途牛牛",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUlpWWmNUbGJ5OVExLURubHpWX2RjeUVpUVZfc19VS2YyOEttR0xTMlJHVUtLMnllQTVkN1Q1NUlYVnRBUm9EdXZrZmZQeVM5M0tBTC1DSnhuRTQtclJETHgzdU1XTHV2eHEwQ1FxZjZVXzZFUzlXQllzTTRBaEJBbEhSeGh5aHhtdTA2c2RGX1d4UlFBb0pyaU83dTN4YU10R1hKMW53?oc=5",
+      "sourcePublishedAt": "2026-10-18T08:41:55+00:00",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -2737,8 +2737,8 @@
     {
       "tag": "STOCK INTELLIGENCE / US",
       "time": "18 OCT",
-      "title": "Microsoft · Microsoft (MSFT) Is Facing Fresh Regulatory Pressure",
-      "dek": "Yahoo Finance • US$529.05 • -1.93% latest session. Consensus: Stock Analysis.",
+      "title": "Microsoft · Microsoft axes AI deal in setback for UK data centre pioneer - The Telegraph",
+      "dek": "The Telegraph • US$529.05 • -1.93% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -2753,10 +2753,10 @@
           "US$599.24"
         ]
       ],
-      "insight": "Verified recent headline: Microsoft (MSFT) Is Facing Fresh Regulatory Pressure. For AI-related businesses, distinguish demand headlines from realised revenue and returns on investment. Watch customer spending, order conversion, margins and capital expenditure; strong thematic interest alone does not determine whether a valuation is attractive. Consensus and price history are context, not proof of mispricing.",
-      "source": "Yahoo Finance",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNak9LNWhqSzctVl90YWxsZ3lCT0Y0TXNTaW9RWWFtVXdFWWZ0VVJYdUlDWGF6aGJkMElWaDd6YWFhYkFVUzROMFExOWdDS1p5dlpQbWdWMU1xS24tYVd6cTFxT0NEOUZtbHZndHBHM29EM0cwdzFMSzEweGFqbmlZdDB5Q3J4alRNQlVrZ2dseTBSOHF3WFU5Uzc4VUo1QUd1MS0taA?oc=5",
-      "sourcePublishedAt": "2026-10-17T19:11:24+00:00",
+      "insight": "Verified recent headline: Microsoft axes AI deal in setback for UK data centre pioneer - The Telegraph. For AI-related businesses, distinguish demand headlines from realised revenue and returns on investment. Watch customer spending, order conversion, margins and capital expenditure; strong thematic interest alone does not determine whether a valuation is attractive. Consensus and price history are context, not proof of mispricing.",
+      "source": "The Telegraph",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNSFdYVTNWOGFOMl9DYTBBWmhZM3NiRGk1aUtKVWFhVnkyb2VGMU5UTDZBTndmTGpBcHRnb3RjelNlNU9JY182aXFGOE5BcWlJMGFqZnhKYmlXTjdvRGlyUUlUZUtXWFpjcXJ6UWxRYkhiWExoZVBWc3JmY2x3WFR4Mm45ZW5KZ0wtVXBMRmNleXViT0huREtRUU9zNUdnWDEzUDAycA?oc=5",
+      "sourcePublishedAt": "2026-10-18T05:30:00+00:00",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",

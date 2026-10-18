@@ -1,6 +1,6 @@
 {
   "version": "1.4.0",
-  "updatedAt": "2026-10-19T02:21:30+11:00",
+  "updatedAt": "2026-10-19T07:04:40+11:00",
   "timezone": "Australia/Melbourne",
   "tickers": {
     "asx200": {
@@ -34,9 +34,9 @@
       "change": "+0.18%"
     },
     "aud": {
-      "value": "0.6949",
+      "value": "0.6968",
       "direction": "up",
-      "change": "+0.44%"
+      "change": "+0.71%"
     }
   },
   "cards": [
@@ -86,7 +86,7 @@
           "Australian equities"
         ]
       ],
-      "insight": "The ASX 200 rose +0.00% while the Australian dollar moved +0.44%. Compare sector breadth next: a headline index can be driven by a small number of large companies, so check banks, materials and property before calling it a broad rally.",
+      "insight": "The ASX 200 rose +0.00% while the Australian dollar moved +0.71%. Compare sector breadth next: a headline index can be driven by a small number of large companies, so check banks, materials and property before calling it a broad rally.",
       "source": "Yahoo Finance",
       "rank": 100,
       "marketHistory": {
@@ -641,10 +641,10 @@
         ],
         [
           "AUD/USD",
-          "0.6949"
+          "0.6968"
         ]
       ],
-      "insight": "Gold moved +0.26% while the US 10-year yield moved +0.18% and AUD/USD moved +0.44%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
+      "insight": "Gold moved +0.26% while the US 10-year yield moved +0.18% and AUD/USD moved +0.71%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
       "source": "Yahoo Finance",
       "rank": 94,
       "whyItMatters": "Gold responds to real yields, the US dollar and demand for defensive assets; a daily move alone cannot identify the driver.",
@@ -655,22 +655,22 @@
       "tag": "CURRENCY",
       "time": "19 OCT",
       "title": "Australian dollar is higher",
-      "dek": "AUD/USD is around 0.6949, +0.44% on the latest session.",
+      "dek": "AUD/USD is around 0.6968, +0.71% on the latest session.",
       "data": [
         [
           "AUD/USD",
-          "0.6949"
+          "0.6968"
         ],
         [
           "Session",
-          "+0.44%"
+          "+0.71%"
         ],
         [
           "Theme",
           "Global risk / commodities"
         ]
       ],
-      "insight": "AUD/USD moved +0.44% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
+      "insight": "AUD/USD moved +0.71% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
       "source": "Yahoo Finance",
       "rank": 90,
       "whyItMatters": "AUD/USD changes the Australian-dollar return on unhedged overseas assets and affects exporters, importers and commodity-linked companies.",
@@ -886,7 +886,7 @@
       "insight": "Verified recent headline: Rio Tinto Maintains 2026 Guidance As Oyu Tolgoi Copper Output Rises 29% - DirectorsTa…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
       "source": "DirectorsTalk Interviews",
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOenNQd25reXZEcE9Vbl90WEVXOVZQcm5lWVg2WGtCak9uZFVTa2RGY19YSkhkVXNSaWYwRG9Bb0NORktoLTNlN0xOT2UwQU0zWG5aMm9KVGQyU0NuYzNnTzh5cEZ3bFZpbmtQNk1uR0FsVUF4bVpKMFRadm5uV3lJVkduM3BlWm1LZ0tYRDI3UlFCUVpONG1qaFI3TGdfelpSdTRtTC1EWU1ZUlBxRGtJZFpmeUQ2Um12bzM4X25n?oc=5",
-      "sourcePublishedAt": "2026-10-17T17:11:55+00:00",
+      "sourcePublishedAt": "2026-10-18T03:33:08+00:00",
       "rank": 70,
       "stock": {
         "ticker": "RIO.AX",
@@ -2176,8 +2176,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
-      "title": "Macquarie Group · No verified fresh catalyst",
-      "dek": "Market Mind • A$249.35 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "Macquarie Group · Macquarie Capital veteran exits amid further staff cuts",
+      "dek": "AFR • A$249.35 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -2192,10 +2192,10 @@
           "A$258.07"
         ]
       ],
-      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
-      "source": "Market Mind",
-      "link": null,
-      "sourcePublishedAt": null,
+      "insight": "Verified recent headline: Macquarie Capital veteran exits amid further staff cuts. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
+      "source": "AFR",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdHNjYkRkeEY5UmJDakZhbjhWdzA4Uml3NC10S1c2d00yQTJGaG9KUWg4WHkxaFBoVXJMWVNPMXY5ejFGejFjNkZSYnhpSXByX0tfU3JwYjRmZTEyclA5UElKMVVyYzl1bzFMZXpCVUNEaXA4bEJtcUtmQV9vUExjUjRsQlZ6Q1JQbFk2NVNzQzhGS3NqbXhITk1YWHZ1TVMyS0tNVTBJRHNLcTZRbS0wT2pVc1RjNF9ZY2JPcw?oc=5",
+      "sourcePublishedAt": "2026-10-18T03:31:00+00:00",
       "rank": 70,
       "stock": {
         "ticker": "MQG.AX",

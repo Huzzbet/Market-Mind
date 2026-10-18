@@ -1,6 +1,6 @@
 {
   "version": "1.4.0",
-  "updatedAt": "2026-10-18T21:22:28+11:00",
+  "updatedAt": "2026-10-19T02:21:30+11:00",
   "timezone": "Australia/Melbourne",
   "tickers": {
     "asx200": {
@@ -42,7 +42,7 @@
   "cards": [
     {
       "tag": "DAILY CROSS-ASSET NARRATIVE",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Rates, equities and inflation: the signals to connect",
       "dek": "A daily read-through across equity direction, bond yields, volatility and energy prices—not a standalone buy or sell signal.",
       "data": [
@@ -69,7 +69,7 @@
     },
     {
       "tag": "ASX 200",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "ASX 200 is higher",
       "dek": "The ASX 200 is 8,806.7, +0.00% on the latest session.",
       "data": [
@@ -247,7 +247,7 @@
     },
     {
       "tag": "US MARKETS",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "US equities are lower",
       "dek": "The S&P 500 is 7,659.44, -1.09% on the latest session.",
       "data": [
@@ -575,7 +575,7 @@
     },
     {
       "tag": "RATES",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "US 10Y yield is rising",
       "dek": "The US 10-year Treasury yield is about 5.10%, +0.18% on the latest session.",
       "data": [
@@ -601,7 +601,7 @@
     },
     {
       "tag": "COMMODITIES",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Oil is higher",
       "dek": "WTI crude is about US$99.02, +1.07% on the latest session.",
       "data": [
@@ -627,7 +627,7 @@
     },
     {
       "tag": "GOLD",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Gold is higher",
       "dek": "Gold is about US$4,181.10, +0.26% on the latest session.",
       "data": [
@@ -653,7 +653,7 @@
     },
     {
       "tag": "CURRENCY",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Australian dollar is higher",
       "dek": "AUD/USD is around 0.6949, +0.44% on the latest session.",
       "data": [
@@ -679,7 +679,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "BHP · No verified fresh catalyst",
       "dek": "Market Mind • A$60.03 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
@@ -866,7 +866,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Rio Tinto · Rio Tinto Maintains 2026 Guidance As Oyu Tolgoi Copper Output Rises 29% - DirectorsTa…",
       "dek": "DirectorsTalk Interviews • A$154.93 • +0.00% latest session. Consensus: Unavailable.",
       "data": [
@@ -1053,7 +1053,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Fortescue · No verified fresh catalyst",
       "dek": "Market Mind • A$15.19 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
@@ -1240,7 +1240,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "CBA · No verified fresh catalyst",
       "dek": "Market Mind • A$154.38 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
@@ -1427,7 +1427,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "NAB · No verified fresh catalyst",
       "dek": "Market Mind • A$39.32 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
@@ -1614,7 +1614,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Wesfarmers · Kmart Regulatory Action Could Be A Key Test For Wesfarmers Stock",
       "dek": "Simply Wall Street • A$79.31 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
@@ -1801,7 +1801,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "CSL · No verified fresh catalyst",
       "dek": "Market Mind • A$192.20 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
@@ -1988,7 +1988,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Goodman Group · No verified fresh catalyst",
       "dek": "Market Mind • A$26.39 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
@@ -2175,7 +2175,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Macquarie Group · No verified fresh catalyst",
       "dek": "Market Mind • A$249.35 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
@@ -2362,7 +2362,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Telstra · No verified fresh catalyst",
       "dek": "Market Mind • A$4.74 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
@@ -2549,7 +2549,7 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
-      "time": "18 OCT",
+      "time": "19 OCT",
       "title": "Nvidia · Weekly Outlook | NVIDIA's GTC and tech giants' earnings reports take center stage! Fo…",
       "dek": "富途牛牛 • US$214.13 • -1.43% latest session. Consensus: Stock Analysis.",
       "data": [
@@ -2569,7 +2569,7 @@
       "insight": "Verified recent headline: Weekly Outlook | NVIDIA's GTC and tech giants' earnings reports take center stage! Fo…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
       "source": "富途牛牛",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUlpWWmNUbGJ5OVExLURubHpWX2RjeUVpUVZfc19VS2YyOEttR0xTMlJHVUtLMnllQTVkN1Q1NUlYVnRBUm9EdXZrZmZQeVM5M0tBTC1DSnhuRTQtclJETHgzdU1XTHV2eHEwQ1FxZjZVXzZFUzlXQllzTTRBaEJBbEhSeGh5aHhtdTA2c2RGX1d4UlFBb0pyaU83dTN4YU10R1hKMW53?oc=5",
-      "sourcePublishedAt": "2026-10-18T08:41:55+00:00",
+      "sourcePublishedAt": "2026-10-18T08:38:03+00:00",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -2736,9 +2736,9 @@
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
-      "time": "18 OCT",
-      "title": "Microsoft · Microsoft axes AI deal in setback for UK data centre pioneer - The Telegraph",
-      "dek": "The Telegraph • US$529.05 • -1.93% latest session. Consensus: Stock Analysis.",
+      "time": "19 OCT",
+      "title": "Microsoft · Microsoft's Azure Turbo: Beat on Revenue and Earnings, Raised Growth Guidance, Stock…",
+      "dek": "TradingKey • US$529.05 • -1.93% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -2753,10 +2753,10 @@
           "US$599.24"
         ]
       ],
-      "insight": "Verified recent headline: Microsoft axes AI deal in setback for UK data centre pioneer - The Telegraph. For AI-related businesses, distinguish demand headlines from realised revenue and returns on investment. Watch customer spending, order conversion, margins and capital expenditure; strong thematic interest alone does not determine whether a valuation is attractive. Consensus and price history are context, not proof of mispricing.",
-      "source": "The Telegraph",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNSFdYVTNWOGFOMl9DYTBBWmhZM3NiRGk1aUtKVWFhVnkyb2VGMU5UTDZBTndmTGpBcHRnb3RjelNlNU9JY182aXFGOE5BcWlJMGFqZnhKYmlXTjdvRGlyUUlUZUtXWFpjcXJ6UWxRYkhiWExoZVBWc3JmY2x3WFR4Mm45ZW5KZ0wtVXBMRmNleXViT0huREtRUU9zNUdnWDEzUDAycA?oc=5",
-      "sourcePublishedAt": "2026-10-18T05:30:00+00:00",
+      "insight": "Verified recent headline: Microsoft's Azure Turbo: Beat on Revenue and Earnings, Raised Growth Guidance, Stock…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
+      "source": "TradingKey",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNR3ZBWnNicHhiTHRWNWRqdGlvU1dvaTh5WldIZE1DcmN5SHc3TVRDLS0xaE8tOWlRMHJBeHhhbl9IMTRaSW55RWtjYlBuaUJGTENzQlUxdWg4OWVRZ0w2SlRqOEJQbFkxZkZpYWJyWnUwUDhaenBxakxnYWt4U0dsdmF5eVpVeXp4N21oTlBNLVk5QXphOFF0RFRQQk1KUVo2bjVJSXJhSTIwNHdWdnJYVVByVl95cGpiUHA0cUE4b25ZaGFSaVUxUFQ5WnNaSUtE?oc=5",
+      "sourcePublishedAt": "2026-10-18T00:21:11+00:00",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",

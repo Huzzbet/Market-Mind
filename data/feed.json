@@ -1,12 +1,12 @@
 {
   "version": "1.4.0",
-  "updatedAt": "2026-10-19T07:04:40+11:00",
+  "updatedAt": "2026-10-19T14:11:57+11:00",
   "timezone": "Australia/Melbourne",
   "tickers": {
     "asx200": {
-      "value": "8,806.7",
+      "value": "8,825.3",
       "direction": "up",
-      "change": "+0.00%"
+      "change": "+0.21%"
     },
     "sp500": {
       "value": "7,659.44",
@@ -19,14 +19,14 @@
       "change": "+21.45%"
     },
     "oil": {
-      "value": "US$99.02",
-      "direction": "up",
-      "change": "+1.07%"
+      "value": "US$97.56",
+      "direction": "down",
+      "change": "-3.80%"
     },
     "gold": {
-      "value": "US$4,181.10",
+      "value": "US$4,194.50",
       "direction": "up",
-      "change": "+0.26%"
+      "change": "+0.32%"
     },
     "us10": {
       "value": "5.10%",
@@ -34,9 +34,9 @@
       "change": "+0.18%"
     },
     "aud": {
-      "value": "0.6968",
+      "value": "0.6976",
       "direction": "up",
-      "change": "+0.71%"
+      "change": "+0.84%"
     }
   },
   "cards": [
@@ -59,7 +59,7 @@
           "-2.15%"
         ]
       ],
-      "insight": "The S&P 500 moved -1.09%, the Nasdaq -2.15%, and the US 10-year yield +0.18%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil also rose +1.07%; if sustained, higher energy costs can complicate the inflation outlook and keep yields under pressure. Next release to watch: Australian CPI: Wed 28 Oct 11:30am AEDT; US PCE inflation: Thu 29 Oct 08:30 ET; US ISM manufacturing survey: Mon 2 Nov 10:00 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
+      "insight": "The S&P 500 moved -1.09%, the Nasdaq -2.15%, and the US 10-year yield +0.18%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil fell -3.80%, which may ease some near-term inflation pressure if the move persists. Next release to watch: Australian CPI: Wed 28 Oct 11:30am AEDT; US PCE inflation: Thu 29 Oct 08:30 ET; US ISM manufacturing survey: Mon 2 Nov 10:00 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
       "source": "Market Mind • Yahoo Finance • official calendars",
       "link": "https://www.abs.gov.au/release-calendar/future-releases",
       "rank": 101,
@@ -71,22 +71,22 @@
       "tag": "ASX 200",
       "time": "19 OCT",
       "title": "ASX 200 is higher",
-      "dek": "The ASX 200 is 8,806.7, +0.00% on the latest session.",
+      "dek": "The ASX 200 is 8,825.3, +0.21% on the latest session.",
       "data": [
         [
           "ASX 200",
-          "8,806.7"
+          "8,825.3"
         ],
         [
           "Session",
-          "+0.00%"
+          "+0.21%"
         ],
         [
           "Context",
           "Australian equities"
         ]
       ],
-      "insight": "The ASX 200 rose +0.00% while the Australian dollar moved +0.71%. Compare sector breadth next: a headline index can be driven by a small number of large companies, so check banks, materials and property before calling it a broad rally.",
+      "insight": "The ASX 200 rose +0.21% while the Australian dollar moved +0.84%. Compare sector breadth next: a headline index can be driven by a small number of large companies, so check banks, materials and property before calling it a broad rally.",
       "source": "Yahoo Finance",
       "rank": 100,
       "marketHistory": {
@@ -237,7 +237,7 @@
           ],
           [
             "2026-10",
-            8806.7
+            8825.3
           ]
         ]
       },
@@ -602,23 +602,23 @@
     {
       "tag": "COMMODITIES",
       "time": "19 OCT",
-      "title": "Oil is higher",
-      "dek": "WTI crude is about US$99.02, +1.07% on the latest session.",
+      "title": "Oil is lower",
+      "dek": "WTI crude is about US$97.56, -3.80% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$99.02"
+          "US$97.56"
         ],
         [
           "Session",
-          "+1.07%"
+          "-3.80%"
         ],
         [
           "Theme",
           "Inflation / growth"
         ]
       ],
-      "insight": "WTI moved +1.07% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
+      "insight": "WTI moved -3.80% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
       "source": "Yahoo Finance",
       "rank": 96,
       "whyItMatters": "Oil can affect inflation, transport costs, consumer spending and margins differently across sectors.",
@@ -629,22 +629,22 @@
       "tag": "GOLD",
       "time": "19 OCT",
       "title": "Gold is higher",
-      "dek": "Gold is about US$4,181.10, +0.26% on the latest session.",
+      "dek": "Gold is about US$4,194.50, +0.32% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,181.10"
+          "US$4,194.50"
         ],
         [
           "Session",
-          "+0.26%"
+          "+0.32%"
         ],
         [
           "AUD/USD",
-          "0.6968"
+          "0.6976"
         ]
       ],
-      "insight": "Gold moved +0.26% while the US 10-year yield moved +0.18% and AUD/USD moved +0.71%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
+      "insight": "Gold moved +0.32% while the US 10-year yield moved +0.18% and AUD/USD moved +0.84%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
       "source": "Yahoo Finance",
       "rank": 94,
       "whyItMatters": "Gold responds to real yields, the US dollar and demand for defensive assets; a daily move alone cannot identify the driver.",
@@ -655,22 +655,22 @@
       "tag": "CURRENCY",
       "time": "19 OCT",
       "title": "Australian dollar is higher",
-      "dek": "AUD/USD is around 0.6968, +0.71% on the latest session.",
+      "dek": "AUD/USD is around 0.6976, +0.84% on the latest session.",
       "data": [
         [
           "AUD/USD",
-          "0.6968"
+          "0.6976"
         ],
         [
           "Session",
-          "+0.71%"
+          "+0.84%"
         ],
         [
           "Theme",
           "Global risk / commodities"
         ]
       ],
-      "insight": "AUD/USD moved +0.71% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
+      "insight": "AUD/USD moved +0.84% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
       "source": "Yahoo Finance",
       "rank": 90,
       "whyItMatters": "AUD/USD changes the Australian-dollar return on unhedged overseas assets and affects exporters, importers and commodity-linked companies.",
@@ -681,11 +681,11 @@
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
       "title": "BHP · No verified fresh catalyst",
-      "dek": "Market Mind • A$60.03 • +0.00% latest session. Consensus: Stock Analysis.",
+      "dek": "Market Mind • A$60.29 • +0.44% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "A$60.03"
+          "A$60.29"
         ],
         [
           "CONSENSUS",
@@ -850,29 +850,29 @@
           ],
           [
             "2026-10",
-            60.03
+            60.29
           ]
         ],
-        "threeYearReturn": 29.7,
+        "threeYearReturn": 30.2,
         "consensus": "HOLD",
         "target": 60.99,
-        "upside": 1.5992024658081583,
+        "upside": 1.1526691303767933,
         "view": "WATCH",
         "analysts": 17
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 1.6% above the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 1.2% above the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
       "title": "Rio Tinto · Rio Tinto Maintains 2026 Guidance As Oyu Tolgoi Copper Output Rises 29% - DirectorsTa…",
-      "dek": "DirectorsTalk Interviews • A$154.93 • +0.00% latest session. Consensus: Unavailable.",
+      "dek": "DirectorsTalk Interviews • A$155.30 • +0.24% latest session. Consensus: Unavailable.",
       "data": [
         [
           "PRICE",
-          "A$154.93"
+          "A$155.30"
         ],
         [
           "CONSENSUS",
@@ -1037,10 +1037,10 @@
           ],
           [
             "2026-10",
-            154.93
+            155.3
           ]
         ],
-        "threeYearReturn": 23.9,
+        "threeYearReturn": 24.2,
         "consensus": "UNAVAILABLE",
         "target": null,
         "upside": null,
@@ -1055,11 +1055,11 @@
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
       "title": "Fortescue · No verified fresh catalyst",
-      "dek": "Market Mind • A$15.19 • +0.00% latest session. Consensus: Stock Analysis.",
+      "dek": "Market Mind • A$15.32 • +0.86% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "A$15.19"
+          "A$15.32"
         ],
         [
           "CONSENSUS",
@@ -1224,29 +1224,29 @@
           ],
           [
             "2026-10",
-            15.19
+            15.32
           ]
         ],
-        "threeYearReturn": -39.2,
+        "threeYearReturn": -38.7,
         "consensus": "HOLD",
         "target": 16.48,
-        "upside": 8.492432226809509,
+        "upside": 7.5718037094196555,
         "view": "WATCH",
         "analysts": 17
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 8.5% above the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 7.6% above the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
       "title": "CBA · No verified fresh catalyst",
-      "dek": "Market Mind • A$154.38 • +0.00% latest session. Consensus: Stock Analysis.",
+      "dek": "Market Mind • A$155.00 • +0.40% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "A$154.38"
+          "A$155.00"
         ],
         [
           "CONSENSUS",
@@ -1411,29 +1411,29 @@
           ],
           [
             "2026-10",
-            154.38
+            155.0
           ]
         ],
-        "threeYearReturn": 47.5,
+        "threeYearReturn": 48.1,
         "consensus": "STRONG SELL",
         "target": 125.64,
-        "upside": -18.616403662267402,
+        "upside": -18.941935483870964,
         "view": "SELL",
         "analysts": 14
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 18.6% below the quoted price; test the assumptions behind the STRONG SELL consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 18.9% below the quoted price; test the assumptions behind the STRONG SELL consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
       "title": "NAB · No verified fresh catalyst",
-      "dek": "Market Mind • A$39.32 • +0.00% latest session. Consensus: Stock Analysis.",
+      "dek": "Market Mind • A$39.67 • +0.89% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "A$39.32"
+          "A$39.67"
         ],
         [
           "CONSENSUS",
@@ -1598,29 +1598,29 @@
           ],
           [
             "2026-10",
-            39.32
+            39.67
           ]
         ],
-        "threeYearReturn": 38.5,
+        "threeYearReturn": 39.7,
         "consensus": "HOLD",
         "target": 38.46,
-        "upside": -2.1871813364673587,
+        "upside": -3.0501593768474833,
         "view": "WATCH",
         "analysts": 14
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 2.2% below the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 3.1% below the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
-      "title": "Wesfarmers · Kmart Regulatory Action Could Be A Key Test For Wesfarmers Stock",
-      "dek": "Simply Wall Street • A$79.31 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "Wesfarmers · No verified fresh catalyst",
+      "dek": "Market Mind • A$78.73 • -0.73% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "A$79.31"
+          "A$78.73"
         ],
         [
           "CONSENSUS",
@@ -1631,10 +1631,10 @@
           "A$76.17"
         ]
       ],
-      "insight": "Verified recent headline: Kmart Regulatory Action Could Be A Key Test For Wesfarmers Stock. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
-      "source": "Simply Wall Street",
-      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNVXlpMlI3M0J6NlpacFo1cGpCajAydjZMYTRkTzE3Qnd1X1cwZHpSYk1tN1BGNWR0c3pCODhFNTFKeUxuSGhjVlpROGJGTlNoNTVBaU5vaGJackVYemVWaHMxMW9EaHhLTlZ5ekR1V1FISUgyazAzcENLMGNkQUo0V3ltV0JaZXBLc0gwU2lvNXJ5TUgtd1dEc2ppVUM0RXFCdUZsRzJlaVZvbDd2RTRLUndRb0tDdTYteWV2VE1TdDNCR3JfYlFRaTRpRHFNbE3SAc8BQVVfeXFMTVV5aTJSNzNCejZaWnBaNXBqQmowMnY2TGE0ZE8xN0J3dV9XMGR6UmJNbTdQRjVkdHN6Qjg4RTUxSnlMbkhoY1ZaUThiRk5TaDU1QWlOb2hiWnJFWHplVmhzMTFvRGh4S05WeXpEdVdRSElIMmswM3BDSzBjZEFKNFd5bVdCWmVwS3NIMFNpbzVyeU1ILXdXRHNqaVVDNEVxQnVGbEcyZWlWb2w3dkU0S1J3UW9LQ3U2LXlldlRNU3QzQkdyX2JRUWk0aURxTWxN?oc=5",
-      "sourcePublishedAt": "2026-10-18T02:44:32+00:00",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
+      "source": "Market Mind",
+      "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "WES.AX",
@@ -1785,29 +1785,29 @@
           ],
           [
             "2026-10",
-            79.31
+            78.73
           ]
         ],
-        "threeYearReturn": 50.6,
+        "threeYearReturn": 49.5,
         "consensus": "HOLD",
         "target": 76.17,
-        "upside": -3.9591446920344886,
+        "upside": -3.251623584121366,
         "view": "WATCH",
         "analysts": 14
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 4.0% below the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 3.3% below the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
-      "title": "CSL · No verified fresh catalyst",
-      "dek": "Market Mind • A$192.20 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "CSL · Is Carlisle Companies (CSL) Still Undervalued On Future Cash Flow?",
+      "dek": "Simply Wall Street • A$193.72 • +0.79% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "A$192.20"
+          "A$193.72"
         ],
         [
           "CONSENSUS",
@@ -1818,10 +1818,10 @@
           "A$186.49"
         ]
       ],
-      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
-      "source": "Market Mind",
-      "link": null,
-      "sourcePublishedAt": null,
+      "insight": "Verified recent headline: Is Carlisle Companies (CSL) Still Undervalued On Future Cash Flow?. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
+      "source": "Simply Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQZHFlNVZyZmVsd1c5cDV4M19FQ1BTVGRyekZYSzRFX0R4eWp1aTZQdjdrNUpxc3lCRDVGZDJLV2xNUUF5eWhfSlN4dkkzWUxTVUQ3OFE4U2VRMFhhdnRndkZ5MW4yR3pRb0YyQm1iVTVhdGNFdjh3WjhBVm5UTU9qRGJvLW9QQTljWFQxei1xb2x0THhZczhvVFo3WG5EcDVXQ0t5SnhzREhpZTFHX3RJV1U5SS1IRDI1ME51NndyMHZZOEN1SEhVYmI4UUtoUHU2ZlpSbzJR0gHbAUFVX3lxTE9NNjYxV2Q0T0xzNW01YWlhYTBEVDJLd2RhY2ZWUm1BNmtpR0lNTHJNWGtqVjRlbGJsTGRQX05JQ1dybEEycXd3ekJUSThvZTVYTlVPQTBNRnRNV3hUT3V5REgwcDA1M0pZVmNERUlxS1YtQXpmRzh2eFJ4ajJ4ZWVBNUxDWUZUOUwwbkppa1ZEaXVBNGdidkJJOEt1am05d1lpbUM0cDhoY28xME9fN0Y2WU1kQk1tcHF4blFNQkZaZkF6LXhWcklhOFN5QVpMY2lzcFBJcElycVF5WQ?oc=5",
+      "sourcePublishedAt": "2026-10-18T19:41:14+00:00",
       "rank": 70,
       "stock": {
         "ticker": "CSL.AX",
@@ -1972,29 +1972,29 @@
           ],
           [
             "2026-10",
-            192.2
+            193.72
           ]
         ],
-        "threeYearReturn": -26.7,
+        "threeYearReturn": -26.1,
         "consensus": "BUY",
         "target": 186.49,
-        "upside": -2.970862143031061,
+        "upside": -3.732191397452067,
         "view": "WATCH",
         "analysts": 17
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 3.0% below the quoted price; test the assumptions behind the BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 3.7% below the quoted price; test the assumptions behind the BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
       "title": "Goodman Group · No verified fresh catalyst",
-      "dek": "Market Mind • A$26.39 • +0.00% latest session. Consensus: Stock Analysis.",
+      "dek": "Market Mind • A$26.14 • -0.95% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "A$26.39"
+          "A$26.14"
         ],
         [
           "CONSENSUS",
@@ -2159,29 +2159,29 @@
           ],
           [
             "2026-10",
-            26.39
+            26.14
           ]
         ],
-        "threeYearReturn": 16.0,
+        "threeYearReturn": 14.9,
         "consensus": "BUY",
         "target": 34.1,
-        "upside": 29.21561496274925,
+        "upside": 30.451418501194617,
         "view": "BUY",
         "analysts": 15
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 29.2% above the quoted price; test the assumptions behind the BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 30.5% above the quoted price; test the assumptions behind the BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
       "title": "Macquarie Group · Macquarie Capital veteran exits amid further staff cuts",
-      "dek": "AFR • A$249.35 • +0.00% latest session. Consensus: Stock Analysis.",
+      "dek": "AFR • A$246.97 • -0.95% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "A$249.35"
+          "A$246.97"
         ],
         [
           "CONSENSUS",
@@ -2346,29 +2346,29 @@
           ],
           [
             "2026-10",
-            249.35
+            246.97
           ]
         ],
-        "threeYearReturn": 47.5,
+        "threeYearReturn": 46.1,
         "consensus": "BUY",
         "target": 258.07,
-        "upside": 3.497089906973705,
+        "upside": 4.494472496429802,
         "view": "WATCH",
         "analysts": 13
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 3.5% above the quoted price; test the assumptions behind the BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 4.5% above the quoted price; test the assumptions behind the BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "19 OCT",
       "title": "Telstra · No verified fresh catalyst",
-      "dek": "Market Mind • A$4.74 • +0.00% latest session. Consensus: Stock Analysis.",
+      "dek": "Market Mind • A$4.76 • +0.32% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "A$4.74"
+          "A$4.76"
         ],
         [
           "CONSENSUS",
@@ -2533,18 +2533,18 @@
           ],
           [
             "2026-10",
-            4.74
+            4.76
           ]
         ],
-        "threeYearReturn": 24.1,
+        "threeYearReturn": 24.6,
         "consensus": "HOLD",
         "target": 5.01,
-        "upside": 5.696207635430817,
+        "upside": 5.362773489419026,
         "view": "WATCH",
         "analysts": 14
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 5.7% above the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 5.4% above the quoted price; test the assumptions behind the HOLD consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
@@ -2756,7 +2756,7 @@
       "insight": "Verified recent headline: Microsoft's Azure Turbo: Beat on Revenue and Earnings, Raised Growth Guidance, Stock…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
       "source": "TradingKey",
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNR3ZBWnNicHhiTHRWNWRqdGlvU1dvaTh5WldIZE1DcmN5SHc3TVRDLS0xaE8tOWlRMHJBeHhhbl9IMTRaSW55RWtjYlBuaUJGTENzQlUxdWg4OWVRZ0w2SlRqOEJQbFkxZkZpYWJyWnUwUDhaenBxakxnYWt4U0dsdmF5eVpVeXp4N21oTlBNLVk5QXphOFF0RFRQQk1KUVo2bjVJSXJhSTIwNHdWdnJYVVByVl95cGpiUHA0cUE4b25ZaGFSaVUxUFQ5WnNaSUtE?oc=5",
-      "sourcePublishedAt": "2026-10-18T00:21:11+00:00",
+      "sourcePublishedAt": "2026-10-18T15:14:03+00:00",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",

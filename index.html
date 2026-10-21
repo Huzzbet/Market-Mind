@@ -386,11 +386,44 @@ async function loadLiveFeed(manual){
     stock:c.stock||null,
     marketHistory:c.marketHistory||null
   };});
+  // Add live rule-based intelligence cards without replacing the curated daily feed.
+  var intelligenceStatus="unavailable",signalCards=[];
+  try{
+   var mindResponse=await fetch("/api/mind?ts="+Date.now(),{cache:"no-store"});
+   if(!mindResponse.ok)throw new Error("intelligence endpoint "+mindResponse.status);
+   var mindPayload=await mindResponse.json();
+   intelligenceStatus="live";
+   signalCards=(mindPayload.signals||[]).filter(function(s){return s&&s.title&&s.explanation;}).map(function(s){
+    var framework=s.framework||{};
+    return {
+     tag:"LIVE INTELLIGENCE · "+String(s.type||"MARKET").toUpperCase(),
+     time:mindPayload.updatedAt?new Date(mindPayload.updatedAt).toLocaleTimeString("en-AU",{hour:"2-digit",minute:"2-digit",timeZone:"Australia/Melbourne"})+" MELB":"LIVE",
+     title:s.title,
+     dek:s.explanation,
+     data:[["SIGNAL SCORE",String(s.score==null?"—":s.score)+"/100"],["SIGNAL TYPE",s.type||"Market"],["STATUS","Rule-based · verify"]],
+     insight:framework.confirmed||s.explanation,
+     whyItMatters:framework.implication||"A cross-market relationship has been detected. Confirm the underlying drivers before drawing a conclusion.",
+     investmentOpportunity:"Research checklist: "+(framework.expectation||"Confirm the catalyst and data quality.")+" "+(framework.watch||s.watch||"Check source headlines and downside risks."),
+     opportunityType:"RESEARCH",
+     source:"Market Mind live intelligence · "+(mindPayload.marketCount||0)+" market readings",
+     sourcePublishedAt:mindPayload.updatedAt||null,
+     link:null,
+     rank:Number(s.score)||0,
+     chart:true,
+     signal:"UP",
+     stock:null,
+     marketHistory:null,
+     intelligence:true
+    };
+   });
+  }catch(intelligenceError){console.warn("Market Mind intelligence unavailable",intelligenceError);}
+  // Keep the existing daily stories, then surface live signals first when available.
+  cards=signalCards.concat(cards);
   var asx=payload.tickers?.asx200, spx=payload.tickers?.sp500, vix=payload.tickers?.vix;
   var setTicker=function(id,item){var el=document.getElementById(id);if(!el||!item)return;el.textContent=item.value||"—";el.className=item.direction==="down"?"down":item.direction==="up"?"up":"";};
   setTicker("asx",asx);setTicker("spx",spx);setTicker("vix",vix);
   renderCards(cards.length?cards:fallbackCards); updateMarkets(payload.tickers||{}); updateOverview(payload.tickers||{},cards,payload.updatedAt);
-  setHealth("NEWS FEED • "+cards.length+" stories",true,payload.updatedAt);
+  setHealth("LIVE FEED · "+cards.length+" cards · "+(signalCards.length?signalCards.length+" signals":intelligenceStatus==="live"?"no signals":"scanner offline"),true,payload.updatedAt);
   var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="REFRESH";
  }catch(err){console.warn("Market Mind feed unavailable",err);renderCards(fallbackCards);setHealth("Feed unavailable • Demo mode",false);updateMarkets({});updateOverview({},fallbackCards,null);var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="RETRY";}
 }

@@ -1,6 +1,6 @@
 {
   "version": "1.4.0",
-  "updatedAt": "2026-10-23T03:36:41+11:00",
+  "updatedAt": "2026-10-23T08:11:03+11:00",
   "timezone": "Australia/Melbourne",
   "tickers": {
     "asx200": {
@@ -9,34 +9,34 @@
       "change": "-0.43%"
     },
     "sp500": {
-      "value": "7,667.21",
+      "value": "7,663.43",
       "direction": "down",
-      "change": "-1.16%"
+      "change": "-1.21%"
     },
     "vix": {
-      "value": "18.15",
+      "value": "19.03",
       "direction": "up",
-      "change": "+8.81%"
+      "change": "+14.09%"
     },
     "oil": {
-      "value": "US$98.73",
+      "value": "US$99.10",
       "direction": "up",
-      "change": "+1.63%"
+      "change": "+2.01%"
     },
     "gold": {
-      "value": "US$4,064.70",
+      "value": "US$4,039.80",
       "direction": "down",
-      "change": "-2.06%"
+      "change": "-2.66%"
     },
     "us10": {
-      "value": "4.99%",
+      "value": "4.95%",
       "direction": "down",
-      "change": "-2.95%"
+      "change": "-3.75%"
     },
     "aud": {
-      "value": "0.7021",
-      "direction": "up",
-      "change": "+0.21%"
+      "value": "0.7020",
+      "direction": "down",
+      "change": "-0.13%"
     }
   },
   "cards": [
@@ -48,18 +48,18 @@
       "data": [
         [
           "S&P 500",
-          "-1.16%"
+          "-1.21%"
         ],
         [
           "US 10Y YIELD",
-          "4.99%"
+          "4.95%"
         ],
         [
           "NASDAQ",
-          "-2.19%"
+          "-2.60%"
         ]
       ],
-      "insight": "The S&P 500 moved -1.16%, the Nasdaq -2.19%, and the US 10-year yield -2.95%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil moved +1.63%; a single session is not enough to infer a change in the inflation trend. Next release to watch: Australian CPI: Wed 28 Oct 11:30am AEDT; US PCE inflation: Thu 29 Oct 08:30 ET; US ISM manufacturing survey: Mon 2 Nov 10:00 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
+      "insight": "The S&P 500 moved -1.21%, the Nasdaq -2.60%, and the US 10-year yield -3.75%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil moved +2.01%; a single session is not enough to infer a change in the inflation trend. Next release to watch: Australian CPI: Wed 28 Oct 11:30am AEDT; US PCE inflation: Thu 29 Oct 08:30 ET; US ISM manufacturing survey: Mon 2 Nov 10:00 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
       "source": "Market Mind • Yahoo Finance • official calendars",
       "link": "https://www.abs.gov.au/release-calendar/future-releases",
       "rank": 101,
@@ -86,7 +86,7 @@
           "Australian equities"
         ]
       ],
-      "insight": "The ASX 200 fell -0.43% while the Australian dollar moved +0.21%. Check whether banks, materials and property are all weaker or whether the index decline is concentrated. Sector breadth helps distinguish a broad risk-off session from rotation.",
+      "insight": "The ASX 200 fell -0.43% while the Australian dollar moved -0.13%. Check whether banks, materials and property are all weaker or whether the index decline is concentrated. Sector breadth helps distinguish a broad risk-off session from rotation.",
       "source": "Yahoo Finance",
       "rank": 100,
       "marketHistory": {
@@ -249,22 +249,22 @@
       "tag": "US MARKETS",
       "time": "23 OCT",
       "title": "US equities are lower",
-      "dek": "The S&P 500 is 7,667.21, -1.16% on the latest session.",
+      "dek": "The S&P 500 is 7,663.43, -1.21% on the latest session.",
       "data": [
         [
           "S&P 500",
-          "7,667.21"
+          "7,663.43"
         ],
         [
           "Session",
-          "-1.16%"
+          "-1.21%"
         ],
         [
           "VIX",
-          "18.15"
+          "19.03"
         ]
       ],
-      "insight": "The S&P 500 fell -1.16%, while the VIX rose +8.81%. The combination is worth watching: check Treasury yields and whether the Nasdaq confirms the move before inferring a change in market direction.",
+      "insight": "The S&P 500 fell -1.21%, while the VIX rose +14.09%. The combination is worth watching: check Treasury yields and whether the Nasdaq confirms the move before inferring a change in market direction.",
       "source": "Yahoo Finance",
       "rank": 99,
       "marketHistory": {
@@ -415,7 +415,7 @@
           ],
           [
             "2026-10",
-            7667.35
+            7663.43
           ]
         ],
         "nasdaq": [
@@ -565,7 +565,7 @@
           ],
           [
             "2026-10",
-            26117.95
+            26008.86
           ]
         ]
       },
@@ -577,22 +577,22 @@
       "tag": "RATES",
       "time": "23 OCT",
       "title": "US 10Y yield is falling",
-      "dek": "The US 10-year Treasury yield is about 4.99%, -2.95% on the latest session.",
+      "dek": "The US 10-year Treasury yield is about 4.95%, -3.75% on the latest session.",
       "data": [
         [
           "US 10Y",
-          "4.99%"
+          "4.95%"
         ],
         [
           "Session",
-          "-2.95%"
+          "-3.75%"
         ],
         [
           "Risk",
           "Equity valuations"
         ]
       ],
-      "insight": "The US 10-year yield is 4.99%, with the latest move -2.95%. Higher yields can pressure long-duration equity valuations and property financing costs, all else equal. Watch whether the move coincides with stronger growth data, firmer inflation expectations or changing rate-cut pricing.",
+      "insight": "The US 10-year yield is 4.95%, with the latest move -3.75%. Higher yields can pressure long-duration equity valuations and property financing costs, all else equal. Watch whether the move coincides with stronger growth data, firmer inflation expectations or changing rate-cut pricing.",
       "source": "Yahoo Finance",
       "rank": 98,
       "whyItMatters": "Bond yields feed into discount rates, borrowing costs and relative valuations across growth shares, property and bonds.",
@@ -603,22 +603,22 @@
       "tag": "COMMODITIES",
       "time": "23 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$98.73, +1.63% on the latest session.",
+      "dek": "WTI crude is about US$99.10, +2.01% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$98.73"
+          "US$99.10"
         ],
         [
           "Session",
-          "+1.63%"
+          "+2.01%"
         ],
         [
           "Theme",
           "Inflation / growth"
         ]
       ],
-      "insight": "WTI moved +1.63% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
+      "insight": "WTI moved +2.01% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
       "source": "Yahoo Finance",
       "rank": 96,
       "whyItMatters": "Oil can affect inflation, transport costs, consumer spending and margins differently across sectors.",
@@ -629,22 +629,22 @@
       "tag": "GOLD",
       "time": "23 OCT",
       "title": "Gold is lower",
-      "dek": "Gold is about US$4,064.70, -2.06% on the latest session.",
+      "dek": "Gold is about US$4,039.80, -2.66% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,064.70"
+          "US$4,039.80"
         ],
         [
           "Session",
-          "-2.06%"
+          "-2.66%"
         ],
         [
           "AUD/USD",
-          "0.7021"
+          "0.7020"
         ]
       ],
-      "insight": "Gold moved -2.06% while the US 10-year yield moved -2.95% and AUD/USD moved +0.21%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
+      "insight": "Gold moved -2.66% while the US 10-year yield moved -3.75% and AUD/USD moved -0.13%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
       "source": "Yahoo Finance",
       "rank": 94,
       "whyItMatters": "Gold responds to real yields, the US dollar and demand for defensive assets; a daily move alone cannot identify the driver.",
@@ -654,23 +654,23 @@
     {
       "tag": "CURRENCY",
       "time": "23 OCT",
-      "title": "Australian dollar is higher",
-      "dek": "AUD/USD is around 0.7021, +0.21% on the latest session.",
+      "title": "Australian dollar is lower",
+      "dek": "AUD/USD is around 0.7020, -0.13% on the latest session.",
       "data": [
         [
           "AUD/USD",
-          "0.7021"
+          "0.7020"
         ],
         [
           "Session",
-          "+0.21%"
+          "-0.13%"
         ],
         [
           "Theme",
           "Global risk / commodities"
         ]
       ],
-      "insight": "AUD/USD moved +0.21% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
+      "insight": "AUD/USD moved -0.13% in the latest session. For an Australian investor holding unhedged US assets, a stronger Australian dollar reduces the AUD value of each US dollar of overseas holdings, all else equal; a weaker dollar has the opposite translation effect. Compare the currency move with US equity performance.",
       "source": "Yahoo Finance",
       "rank": 90,
       "whyItMatters": "AUD/USD changes the Australian-dollar return on unhedged overseas assets and affects exporters, importers and commodity-linked companies.",
@@ -2550,12 +2550,12 @@
     {
       "tag": "STOCK INTELLIGENCE / US",
       "time": "23 OCT",
-      "title": "Nvidia · Key facts: NVIDIA Corporation forecasts 3M GPUs 2027; Vera Rubin NVL72 - TradingView",
-      "dek": "TradingView • US$213.41 • -3.86% latest session. Consensus: Stock Analysis.",
+      "title": "Nvidia · Nvidia Earnings Are Coming Next Month and the Stock Looks Poised to Dip Regardless of…",
+      "dek": "The Motley Fool • US$212.21 • -4.40% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "US$213.41"
+          "US$212.21"
         ],
         [
           "CONSENSUS",
@@ -2566,10 +2566,10 @@
           "US$328.72"
         ]
       ],
-      "insight": "Verified recent headline: Key facts: NVIDIA Corporation forecasts 3M GPUs 2027; Vera Rubin NVL72 - TradingView. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
-      "source": "TradingView",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOV2dhUnhKY3lQbG1BeG1mcU56TndaVEtmbmxwbUlLOWlRZTQ4WHlUTW8xbGFwRE1wckkzcHJrOG1oN0hmU3VOX0ExdEZVb1AtRzBseHlpXzZ3Q1Y1eVVUTEZoNDNtM2kzcURpMTY1b1VMTEZDRi1xNXF0dm11NTgyVnJMTUhUQi1TckUtNmNIS3Y5NVgyZmxhQVI3WUhDb0kwS01DRlhFMWk0MzlVWUNvMnVKY09nMkJBdkotZGtOWjNLU1gwb1ozb1pn?oc=5",
-      "sourcePublishedAt": "2026-10-22T07:00:00+00:00",
+      "insight": "Verified recent headline: Nvidia Earnings Are Coming Next Month and the Stock Looks Poised to Dip Regardless of…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
+      "source": "The Motley Fool",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbTNVTmJUcmZjdmpCZFMzdVZObFBqY1BIME4wLWtDUC1CMGFZZTRQaUd3aFBfZEFqUXNyLXFabThtQzUzdVFsbVg3VXlxZ2kxT3pQNWp1T2lHNV8tbThXM19YRkVIaWxjV3J5a2xlTUJTc1lUcnlXVDJYM2pvRElXR2tRbXVCbHhBWHAyTmx5TjBTMzNLenBGQQ?oc=5",
+      "sourcePublishedAt": "2026-10-22T18:17:00+00:00",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -2720,29 +2720,29 @@
           ],
           [
             "2026-10",
-            213.4
+            212.21
           ]
         ],
-        "threeYearReturn": 356.3,
+        "threeYearReturn": 353.7,
         "consensus": "STRONG BUY",
         "target": 328.72,
-        "upside": 54.032142054812105,
-        "view": "BUY",
+        "upside": 54.90315706140512,
+        "view": "HOLD",
         "analysts": 62
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 54.0% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 54.9% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     },
     {
       "tag": "STOCK INTELLIGENCE / US",
       "time": "23 OCT",
       "title": "Microsoft · Meta Falls 3% as Higher AI Spending Outlook Overshadows Earnings Beat; Alphabet Dips,…",
-      "dek": "24/7 Wall St. • US$525.56 • -1.39% latest session. Consensus: Stock Analysis.",
+      "dek": "24/7 Wall St. • US$521.08 • -2.23% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
-          "US$525.56"
+          "US$521.08"
         ],
         [
           "CONSENSUS",
@@ -2907,18 +2907,18 @@
           ],
           [
             "2026-10",
-            525.56
+            521.08
           ]
         ],
-        "threeYearReturn": 38.7,
+        "threeYearReturn": 37.5,
         "consensus": "STRONG BUY",
         "target": 599.24,
-        "upside": 14.0193322900668,
+        "upside": 14.999612410137786,
         "view": "BUY",
         "analysts": 56
       },
       "whyItMatters": "Price and analyst consensus are reference points, not fair-value proof. The catalyst, earnings durability, balance sheet and valuation determine whether the market is mispricing the business.",
-      "investmentOpportunity": "Research angle: Consensus target is 14.0% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
+      "investmentOpportunity": "Research angle: Consensus target is 15.0% above the quoted price; test the assumptions behind the STRONG BUY consensus and verify the linked company-specific catalyst. Compare a downside case with expected returns before treating it as an opportunity.",
       "opportunityType": "INVESTIGATE"
     }
   ]

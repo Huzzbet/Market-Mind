@@ -1,6 +1,6 @@
 {
   "version": "1.4.0",
-  "updatedAt": "2026-10-24T14:13:51+11:00",
+  "updatedAt": "2026-10-24T21:16:11+11:00",
   "timezone": "Australia/Melbourne",
   "tickers": {
     "asx200": {
@@ -19,14 +19,14 @@
       "change": "+2.21%"
     },
     "oil": {
-      "value": "US$103.44",
+      "value": "US$103.27",
       "direction": "up",
-      "change": "+3.99%"
+      "change": "+3.82%"
     },
     "gold": {
-      "value": "US$4,010.00",
+      "value": "US$4,007.90",
       "direction": "down",
-      "change": "-1.24%"
+      "change": "-1.29%"
     },
     "us10": {
       "value": "4.99%",
@@ -59,7 +59,7 @@
           "-0.21%"
         ]
       ],
-      "insight": "The S&P 500 moved -0.52%, the Nasdaq -0.21%, and the US 10-year yield +0.71%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil also rose +3.99%; if sustained, higher energy costs can complicate the inflation outlook and keep yields under pressure. Next release to watch: Australian CPI: Wed 28 Oct 11:30am AEDT; US PCE inflation: Thu 29 Oct 08:30 ET; US ISM manufacturing survey: Mon 2 Nov 10:00 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
+      "insight": "The S&P 500 moved -0.52%, the Nasdaq -0.21%, and the US 10-year yield +0.71%. Read them together: yields affect discount rates, while index breadth and earnings expectations help explain whether equity moves are durable. Oil also rose +3.82%; if sustained, higher energy costs can complicate the inflation outlook and keep yields under pressure. Next release to watch: Australian CPI: Wed 28 Oct 11:30am AEDT; US PCE inflation: Thu 29 Oct 08:30 ET; US ISM manufacturing survey: Mon 2 Nov 10:00 ET. Watch inflation and labour-market surprises against bond-yield pricing; dates and times can change, so verify with the official calendars.",
       "source": "Market Mind • Yahoo Finance • official calendars",
       "link": "https://www.abs.gov.au/release-calendar/future-releases",
       "rank": 101,
@@ -603,22 +603,22 @@
       "tag": "COMMODITIES",
       "time": "24 OCT",
       "title": "Oil is higher",
-      "dek": "WTI crude is about US$103.44, +3.99% on the latest session.",
+      "dek": "WTI crude is about US$103.27, +3.82% on the latest session.",
       "data": [
         [
           "WTI",
-          "US$103.44"
+          "US$103.27"
         ],
         [
           "Session",
-          "+3.99%"
+          "+3.82%"
         ],
         [
           "Theme",
           "Inflation / growth"
         ]
       ],
-      "insight": "WTI moved +3.99% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
+      "insight": "WTI moved +3.82% in the latest session. For investors, the important transmission channel is whether energy prices stay elevated long enough to affect fuel costs, company margins and inflation expectations. Compare the move with gold and bond yields rather than extrapolating one session.",
       "source": "Yahoo Finance",
       "rank": 96,
       "whyItMatters": "Oil can affect inflation, transport costs, consumer spending and margins differently across sectors.",
@@ -629,22 +629,22 @@
       "tag": "GOLD",
       "time": "24 OCT",
       "title": "Gold is lower",
-      "dek": "Gold is about US$4,010.00, -1.24% on the latest session.",
+      "dek": "Gold is about US$4,007.90, -1.29% on the latest session.",
       "data": [
         [
           "Gold",
-          "US$4,010.00"
+          "US$4,007.90"
         ],
         [
           "Session",
-          "-1.24%"
+          "-1.29%"
         ],
         [
           "AUD/USD",
           "0.7038"
         ]
       ],
-      "insight": "Gold moved -1.24% while the US 10-year yield moved +0.71% and AUD/USD moved +0.26%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
+      "insight": "Gold moved -1.29% while the US 10-year yield moved +0.71% and AUD/USD moved +0.26%. Those cross-currents matter: gold can respond to real yields, currency moves and demand for defensive assets. One session alone cannot identify the driver.",
       "source": "Yahoo Finance",
       "rank": 94,
       "whyItMatters": "Gold responds to real yields, the US dollar and demand for defensive assets; a daily move alone cannot identify the driver.",
@@ -680,8 +680,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "24 OCT",
-      "title": "BHP · BHP Group (ASX:BHP): Copper Output, Iron Ore Operations and FY27 Priorities - Kalkine",
-      "dek": "Kalkine • A$55.05 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "BHP · BHP reports lower copper output while BHP stock trades at EUR 69.25 - ad-hoc-news.de",
+      "dek": "ad-hoc-news.de • A$55.05 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -696,10 +696,10 @@
           "A$60.99"
         ]
       ],
-      "insight": "Verified recent headline: BHP Group (ASX:BHP): Copper Output, Iron Ore Operations and FY27 Priorities - Kalkine. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
-      "source": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOMDZBVjNjYWY4M3EyQkxveUpsd2UxTTQ3VGpTNWU2U2VDV0ttQkdVN0FIbkxlR2pmWm1qTVlsd3djUGR6VkszYmtyZTlsUnhQa0lSb1JBWTEyckxNQ0tqa0dsQUMzRWdUUHFIUTZyaTY4eVg1NDNPQTVDX05vOHF5N3hDdkJhNFpWa3M0ZHhpUnpLT2FwN01RTDU1SUNMZEZWZWRnXzFYSUI?oc=5",
-      "sourcePublishedAt": "2026-10-23T05:59:00+00:00",
+      "insight": "Verified recent headline: BHP reports lower copper output while BHP stock trades at EUR 69.25 - ad-hoc-news.de. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
+      "source": "ad-hoc-news.de",
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOOW5ydTNjYnZDdW9tR2I0cFF5Q3JiVnBrN2QxcEtNbi1ZT2Q2WmE3VUdKdFhkSExES212QmtSWU5ZNzFzV3RneHMxamxZUnBUWWM1aWJyWDZZa0JNdW85OGgzYU1zcjA5WXFrWGIzcENYUUpqTE91SzZ5cURQT1FSbVlFVjZ6dlhSQm05aGJGc3lOYzNYdHV0U0xQWVhMTDVtNmhNME5CSVZPOWxGbFF0M2JPQlRoVXdkVzhZbGhCMmNsSVQ2Q3VYSGV3?oc=5",
+      "sourcePublishedAt": "2026-10-24T08:13:03+00:00",
       "rank": 70,
       "stock": {
         "ticker": "BHP.AX",
@@ -867,8 +867,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "24 OCT",
-      "title": "Rio Tinto · Rio Tinto Limited (ASX:RIO): Kangwinan Investment, Production and FY26 Performance -…",
-      "dek": "Kalkine • A$146.27 • +0.00% latest session. Consensus: Unavailable.",
+      "title": "Rio Tinto · No verified fresh catalyst",
+      "dek": "Market Mind • A$146.27 • +0.00% latest session. Consensus: Unavailable.",
       "data": [
         [
           "PRICE",
@@ -883,10 +883,10 @@
           "Unavailable"
         ]
       ],
-      "insight": "Verified recent headline: Rio Tinto Limited (ASX:RIO): Kangwinan Investment, Production and FY26 Performance -…. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
-      "source": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeFhYVFNkRUZwTk4zb2NpcVA3Qml0b09YLWViZ2t0eUVfb1RXZ3NZVEhheGg4TlFyd0xWZ2xrTDVmLTZHUTJULU0wLW10VmdrRDFlMUFaNEJ1V1NLWmdFSWNoaExmVG9iSzBDRXdvVVFJVE5oc19TbVR4Vm9pZkxvYkJmSEhHZDlxajFKQjhNN1FMaFFvckVtcTNHa0l5QXQ2XzlSRGwyR0JULUhIQS1Dd3h3?oc=5",
-      "sourcePublishedAt": "2026-10-23T05:59:00+00:00",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
+      "source": "Market Mind",
+      "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "RIO.AX",
@@ -1054,8 +1054,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "24 OCT",
-      "title": "Fortescue · Fortescue Ltd (ASX:FMG): September Quarter Production, Costs and FY27 Outlook - Kalkine",
-      "dek": "Kalkine • A$14.27 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "Fortescue · No verified fresh catalyst",
+      "dek": "Market Mind • A$14.27 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -1070,10 +1070,10 @@
           "A$16.48"
         ]
       ],
-      "insight": "Verified recent headline: Fortescue Ltd (ASX:FMG): September Quarter Production, Costs and FY27 Outlook - Kalkine. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
-      "source": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUkJlcFYxLU5Ma0t3Y0M4SG1DakFsLVFRTlI2LTlsdDZ2VkpaV1FpTUVCSl92NUZmSExzQnVya2FJTnNCTEcxMzVVR05WdXY4MkVXRjZST1VSdm1nQmlJSEpMNXZJbUxJeHZjeDVJQ29uckNvZHFKUVRtNE8wemo0bUJha0tERUljaXNLenU2TGttVk8ybDR3X1lWeUt0TGdwbWkzdko2Q0ZsLUE?oc=5",
-      "sourcePublishedAt": "2026-10-23T05:59:00+00:00",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
+      "source": "Market Mind",
+      "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "FMG.AX",
@@ -1428,8 +1428,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "24 OCT",
-      "title": "NAB · NAB plans 2,500 job cuts: November 5 results test NAB stock - ad-hoc-news.de",
-      "dek": "ad-hoc-news.de • A$41.31 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "NAB · National Australia Bank (ASX:NAB) Restructure Puts Valuation Focus On Its Tech Driven…",
+      "dek": "Simply Wall Street • A$41.31 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -1444,10 +1444,10 @@
           "A$38.46"
         ]
       ],
-      "insight": "Verified recent headline: NAB plans 2,500 job cuts: November 5 results test NAB stock - ad-hoc-news.de. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
-      "source": "ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPd3cxRWVmTjh3S0x2ODFNZ09WY1BTYnpJUUFpZVhpYTNHOVlXOGNWVkdYNkFZMnFBMFpaT28wVmp6VXhHWDhFWnN3blRoR3RvTVNqU1RmWVJOUllfUUdpZWFLdUlCNnFTLTNfY053RlVEUHU3VTBCUjRHQm5uMEdGcjhrSDhHRklIdVZnS3JTWG9mZEppci00VlRkS21Wc1VlYjJ6MHFkejNxa3ZqMmdIbVBjLTBLYlFQcEdndWtn?oc=5",
-      "sourcePublishedAt": "2026-10-23T07:08:14+00:00",
+      "insight": "Verified recent headline: National Australia Bank (ASX:NAB) Restructure Puts Valuation Focus On Its Tech Driven…. For banks, the important transmission channels are net interest margins, loan growth, funding costs and credit quality. Watch management guidance and arrears data to judge whether the development affects earnings or risk. Consensus and price history are context, not proof of mispricing.",
+      "source": "Simply Wall Street",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxObEg4cWNLVDRHR21fLWpBbjBGZXh6SnBESjE4c2FnLVI5SzdjNUQ0R2xaUnBkQXJHZkpOX2FkcDBkU2tTVVBDMUszQUVPUmwwbHdOdTM3cXYtNzBWZDdsYnIzSFNEUGk4QnhHUWV5alBTc196b0hSWFBhaDFyWWIzTm9NVXFpdHh4UVNUMjVkSlJDLVg1LWt6c1dEcFJTQy1OUGdGTkpZRVBla0RSOGw2NFpHcTFKeGwydy1YWHhjTFo0TjhqSEtQN1U4WmhWeHhxeWtHcW1iQkRUQdIB3wFBVV95cUxNb0JzVFBBeklUMy1vdGxXUUlGaXEzWHd6UGsxNElmbTlCcnlLXzdwLWgwcnYtQjc1VEt5TlpZQVd6UDh0TnE5NmIwOE4wLTVFcU1MbUdfN09aT29hazJUelhVSFZrcURBT1hNLXRsN3diNlpLVkpoVS1hMVB6eE9Xb1o4R3BTLWlSTEJVQU02WV94RFpLaUZaUkhvMnBLVmZnNzhNT3FtUE1NWnpkMmZNZ1R4MmNhVnhRU1ROSzQ1ZjlHbXh5Z3ZOZjNzclNnd3hVb3NMc0NnWnVoNjhVUG5r?oc=5",
+      "sourcePublishedAt": "2026-10-23T20:54:12+00:00",
       "rank": 70,
       "stock": {
         "ticker": "NAB.AX",
@@ -1615,8 +1615,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "24 OCT",
-      "title": "Wesfarmers · Ord Minnett upgrades Wesfarmers stock to Buy from Hold - AD HOC NEWS",
-      "dek": "AD HOC NEWS • A$80.29 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "Wesfarmers · No verified fresh catalyst",
+      "dek": "Market Mind • A$80.29 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -1631,10 +1631,10 @@
           "A$76.17"
         ]
       ],
-      "insight": "Verified recent headline: Ord Minnett upgrades Wesfarmers stock to Buy from Hold - AD HOC NEWS. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
-      "source": "AD HOC NEWS",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSXlQTFh4UDZGMGlIR29tT2ZTRHlLeXpIMGJJY1dRVHF6dXBCREw3V1VYdWxVRHVia2RTb0VTOG56dG5FdE5RaW9FeDNVOUlGVkJnNWVULS1wZHVYUW5lS3BEYjNVS3R2OElMT2dvN2hYMjdyNF8zdjJ5TUhGOFhqYmMwdUV6VUVwai1FX2o4T3A3dTU1SzBIRzVwY1VPYUNWMXR5ejMxOFJtUm4tczJFQjN0S25TUlVf?oc=5",
-      "sourcePublishedAt": "2026-10-23T08:03:05+00:00",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
+      "source": "Market Mind",
+      "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "WES.AX",
@@ -1802,8 +1802,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "24 OCT",
-      "title": "CSL · No verified fresh catalyst",
-      "dek": "Market Mind • A$196.70 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "CSL · Carlisle Companies Incorporated (CSL) Stock Price, News, Quote & History - Yahoo! Fin…",
+      "dek": "Yahoo! Finance Canada • A$196.70 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -1818,10 +1818,10 @@
           "A$186.49"
         ]
       ],
-      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
-      "source": "Market Mind",
-      "link": null,
-      "sourcePublishedAt": null,
+      "insight": "Verified recent headline: Carlisle Companies Incorporated (CSL) Stock Price, News, Quote & History - Yahoo! Fin…. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
+      "source": "Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9FZFc3Y1ZXVlVxRlNQYkkzbVdsT3F3cU04NUxPWTd6SU1LS2U2WUgyNWhockQ3WHQ4YVgycGZIcE9FMVI0OTJSbjZrQnBSS1pR?oc=5",
+      "sourcePublishedAt": "2026-10-23T23:55:39+00:00",
       "rank": 70,
       "stock": {
         "ticker": "CSL.AX",
@@ -1989,8 +1989,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "24 OCT",
-      "title": "Goodman Group · Goodman Group (ASX:GMG): FY26 Earnings, Data Centre Developments and Portfolio Priori…",
-      "dek": "Kalkine • A$25.27 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "Goodman Group · No verified fresh catalyst",
+      "dek": "Market Mind • A$25.27 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -2005,10 +2005,10 @@
           "A$34.10"
         ]
       ],
-      "insight": "Verified recent headline: Goodman Group (ASX:GMG): FY26 Earnings, Data Centre Developments and Portfolio Priori…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
-      "source": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPc2JLT3BHT3ZwX3RHam5VbnllN3JDMVI0ZjdYLUdhZkxWWkp5dUc3U2NUYVBselNjQTRPdFBfWmhSOUZFSTMtSzMwTEE4Y2hmUnpMdVJJYmZJOENSS0h0Y2Z5M0xPamI0ZUctM2FLNC02dUY3QmhUSzg4YjBGZ3ZyZHBMWmVMWnA4d0dNRzljWWVnazFSNnV6cEJVbHJoaHZSUGRScEpNLXNsSWdDamVoX3R0TW5XMTFtRTM0Wi02cl95QQ?oc=5",
-      "sourcePublishedAt": "2026-10-23T08:49:00+00:00",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
+      "source": "Market Mind",
+      "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "GMG.AX",
@@ -2176,8 +2176,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "24 OCT",
-      "title": "Macquarie Group · Macquarie Group Limited Ceases to be Substantial Holder in Regis Resources on 20 Octo…",
-      "dek": "Kalkine • A$247.04 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "Macquarie Group · No verified fresh catalyst",
+      "dek": "Market Mind • A$247.04 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -2192,10 +2192,10 @@
           "A$258.07"
         ]
       ],
-      "insight": "Verified recent headline: Macquarie Group Limited Ceases to be Substantial Holder in Regis Resources on 20 Octo…. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
-      "source": "Kalkine",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNS1Ftai10MmxaaEFqcDNnS0RZa05SeDNjYVRtVUJkNXVGTmpGMFg0a0YyRnViYWVkUDBuNW55WWhCT3R6QWRZakJiVHIxZDlZbVBfNWtDandNVUY4amsyV01YeFdTQk9wd3NJRzk0Y0RGSFZtTDV0YmlSdnJLODVYQUlpZ3k1UTltOW81QzhOVHdhZVp6N2lial92Z0o3RktQb3FEOXp5WFpiWEh2bm1pbkJKXzhCY3pYanlEY29KRC1Kalh6TUJfOHlPeW1IQ0tU?oc=5",
-      "sourcePublishedAt": "2026-10-23T06:25:53+00:00",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
+      "source": "Market Mind",
+      "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "MQG.AX",
@@ -2755,7 +2755,7 @@
       ],
       "insight": "Verified recent headline: Microsoft Stocks Face a Cloud-Margin Test in Wednesday's AI Earnings - TradingView. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
       "source": "TradingView",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9TNUZQSHVsLWd3UUFXRk5vYkl0bWNGYXJUWFRQQmVGUGpVT3RXXzh5eTJTZVR5SFRfcmd3eWYyX3hVc0ZsVjFtV2xCZDNScGplam9LT19WaTR0cVkzRVpYaHZqUG5FUWt5R1E?oc=5",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONWtXN052LUNaVUEtczFwNmhkWUYyVl9WUEpQZzgxMGI5S19hdDFMRjFKYm1famd4dFYxOUNlRF9hY00yQ3praUtwVnUyRHhnVGNBc3l1MU9WMlhIdlRkUE5tdW5DdXBDUndId0xqRjJ6cURuUG81c0FMb2xla2xaTmtQREJJLXBYTVdIODdiWUw3bDdFdS1Eb3NPNmR5WXVBLTBFb3BXdnRGU1lUcTZSZzN4ZlNqWS0wMWYtczZILUdJa1o3SVpv?oc=5",
       "sourcePublishedAt": "2026-10-23T18:23:38+00:00",
       "rank": 70,
       "stock": {

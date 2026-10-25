@@ -1,6 +1,6 @@
 {
   "version": "1.4.0",
-  "updatedAt": "2026-10-25T14:08:48+11:00",
+  "updatedAt": "2026-10-25T20:52:27+11:00",
   "timezone": "Australia/Melbourne",
   "tickers": {
     "asx200": {
@@ -680,8 +680,8 @@
     {
       "tag": "STOCK INTELLIGENCE / AUSTRALIA",
       "time": "25 OCT",
-      "title": "BHP · BHP reports lower copper output while BHP stock trades at EUR 69.25 - ad-hoc-news.de",
-      "dek": "ad-hoc-news.de • A$55.05 • +0.00% latest session. Consensus: Stock Analysis.",
+      "title": "BHP · No verified fresh catalyst",
+      "dek": "Market Mind • A$55.05 • +0.00% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -696,10 +696,10 @@
           "A$59.41"
         ]
       ],
-      "insight": "Verified recent headline: BHP reports lower copper output while BHP stock trades at EUR 69.25 - ad-hoc-news.de. Start with the primary source and identify what has actually changed: earnings, expected cash flows, rates, regulation or sentiment. The next useful signal is a measurable follow-up—company guidance, market pricing or a new data release—rather than the headline alone. Consensus and price history are context, not proof of mispricing.",
-      "source": "ad-hoc-news.de",
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOOW5ydTNjYnZDdW9tR2I0cFF5Q3JiVnBrN2QxcEtNbi1ZT2Q2WmE3VUdKdFhkSExES212QmtSWU5ZNzFzV3RneHMxamxZUnBUWWM1aWJyWDZZa0JNdW85OGgzYU1zcjA5WXFrWGIzcENYUUpqTE91SzZ5cURQT1FSbVlFVjZ6dlhSQm05aGJGc3lOYzNYdHV0U0xQWVhMTDVtNmhNME5CSVZPOWxGbFF0M2JPQlRoVXdkVzhZbGhCMmNsSVQ2Q3VYSGV3?oc=5",
-      "sourcePublishedAt": "2026-10-24T08:13:03+00:00",
+      "insight": "No fresh verified company-specific catalyst was found in the last 36 hours. The quote and long-term chart are market data, not a news catalyst. Check the company ASX announcement page before attributing a move.",
+      "source": "Market Mind",
+      "link": null,
+      "sourcePublishedAt": null,
       "rank": 70,
       "stock": {
         "ticker": "BHP.AX",
@@ -2550,8 +2550,8 @@
     {
       "tag": "STOCK INTELLIGENCE / US",
       "time": "25 OCT",
-      "title": "Nvidia · NVIDIA (NVDA): Q1 FY2027 $81.6B Revenue, 85% Growth, Breakout to $224, $229.49 Resist…",
-      "dek": "TradingKey • US$210.96 • -0.59% latest session. Consensus: Stock Analysis.",
+      "title": "Nvidia · Nvidia CEO Calls AI Data Centers 'Investable Assets' After Partnership With Wall Stre…",
+      "dek": "Stocktwits • US$210.96 • -0.59% latest session. Consensus: Stock Analysis.",
       "data": [
         [
           "PRICE",
@@ -2566,10 +2566,10 @@
           "US$328.95"
         ]
       ],
-      "insight": "Verified recent headline: NVIDIA (NVDA): Q1 FY2027 $81.6B Revenue, 85% Growth, Breakout to $224, $229.49 Resist…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
-      "source": "TradingKey",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNbmNsN1FZaGZqNHVuQ3FMOUZCYkNhb2hrQ3JCM0xJbVd1Mk45MG1pYlN1c1ZibWYxX3ZOVXpqS0NGR2hxdDNTQmx0S0NwbzBmSG5Hd2hhWUdmaGpxR3hJcjdnbnVuVWUwMDQ4VlRPSU1WRWotbk1EaFFfZHJkZ2I4NGVOVnM4Ulg3NTFJa1ZWQUhxb04wTDdXYjRONWJkRk12clhCc1hiRFlmTmhuNnNVemRtdWhwS0ZJNUpVS1c0b2tTT0xzN0Rjek5WNi1BeHUtejFKNVZ4U3VuZFpzY2FXUmNB?oc=5",
-      "sourcePublishedAt": "2026-10-24T12:13:24+00:00",
+      "insight": "Verified recent headline: Nvidia CEO Calls AI Data Centers 'Investable Assets' After Partnership With Wall Stre…. For AI-related businesses, distinguish demand headlines from realised revenue and returns on investment. Watch customer spending, order conversion, margins and capital expenditure; strong thematic interest alone does not determine whether a valuation is attractive. Consensus and price history are context, not proof of mispricing.",
+      "source": "Stocktwits",
+      "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOZFZtNGh4QnJlWUFRSFNIdHVEWTBWYzdDaGVlZWM1SmRRb21tdjRkSU1jRGtNWXFneEUySC00bG90c2dIc0dHcGxxSXRiNTNmNHB2X1FxcS15SmZzWVZELThkbEl0a2ZqaXNNU1owZWQwbkg3Z0RObUlFbi1pbWtQbXZJempWb0lSM01vMzBEUEk3NzRhYW03bkZ1MkVKd0p2c0d1dl94YmdNXzl3a2hwQ3VVTzkwZDVzd0trYjNDYnNQN21NNlNiR0Q0TkU4Y1B3NUJBMXE5U0NIcHEtOHZ6S0dsUi03R3ZwZGlDZ21hdGRvS1FkYVY5dy1tU1g5bmJkblhReWxJNnlLS2oyNkFDMQ?oc=5",
+      "sourcePublishedAt": "2026-10-24T21:22:42+00:00",
       "rank": 70,
       "stock": {
         "ticker": "NVDA",
@@ -2737,7 +2737,7 @@
     {
       "tag": "STOCK INTELLIGENCE / US",
       "time": "25 OCT",
-      "title": "Microsoft · Microsoft's Azure Turbo: Beat on Revenue and Earnings, Raised Growth Guidance, Stock…",
+      "title": "Microsoft · Microsoft (MSFT) Q4 FY2026 Earnings Preview: $87.7B Revenue, Azure 40%, FY2027 Capex…",
       "dek": "TradingKey • US$524.51 • +0.66% latest session. Consensus: Stock Analysis.",
       "data": [
         [
@@ -2753,10 +2753,10 @@
           "US$601.73"
         ]
       ],
-      "insight": "Verified recent headline: Microsoft's Azure Turbo: Beat on Revenue and Earnings, Raised Growth Guidance, Stock…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
+      "insight": "Verified recent headline: Microsoft (MSFT) Q4 FY2026 Earnings Preview: $87.7B Revenue, Azure 40%, FY2027 Capex…. For this development, separate reported performance from expectations. Revenue and profit matter, but guidance, margins and cash conversion help show whether the change is likely to persist. Check the company's release before drawing a conclusion. Consensus and price history are context, not proof of mispricing.",
       "source": "TradingKey",
-      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNR3ZBWnNicHhiTHRWNWRqdGlvU1dvaTh5WldIZE1DcmN5SHc3TVRDLS0xaE8tOWlRMHJBeHhhbl9IMTRaSW55RWtjYlBuaUJGTENzQlUxdWg4OWVRZ0w2SlRqOEJQbFkxZkZpYWJyWnUwUDhaenBxakxnYWt4U0dsdmF5eVpVeXp4N21oTlBNLVk5QXphOFF0RFRQQk1KUVo2bjVJSXJhSTIwNHdWdnJYVVByVl95cGpiUHA0cUE4b25ZaGFSaVUxUFQ5WnNaSUtE?oc=5",
-      "sourcePublishedAt": "2026-10-24T13:06:41+00:00",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPT2M0bHI1V2FiTVJMUTNtUHpkNFQ2a2RKUUtHSTZ3NnphY1lqLWU1MEJacTZKNW1XNXZMZlUyU24ydzZ1dUlJdUxzV3ZhNUdYamhib1pqTFJycnh3TDZSRUFHdVc2WXpPS2d4Q0xHYXYzMDVnZW1hWXRpUWc2aFpfYm44MkVCUHU2UjNXVVpZbGZ6SE0wUUJZdFVTNzZtX284OXRsd1FLY2FDYzRVbnNfU1I2ZHVHc3FOTmxxdU9hQTVTYzhJREdwM0ZMRlZGS0VP?oc=5",
+      "sourcePublishedAt": "2026-10-24T20:30:48+00:00",
       "rank": 70,
       "stock": {
         "ticker": "MSFT",

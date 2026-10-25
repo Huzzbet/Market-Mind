@@ -6,8 +6,9 @@ on:
       - "scripts/update_feed.py"
       - ".github/workflows/daily-feed.yml"
   schedule:
-    # Refresh the company/news feed every 6 hours (UTC).
-    - cron: "0 */6 * * *"
+    # Weekday morning refresh in Melbourne time: 7am during daylight saving.
+    # GitHub cron uses UTC; Melbourne shifts seasonally, so this is 7am AEDT / 6am AEST.
+    - cron: "0 20 * * 0-4"
   workflow_dispatch:
 
 permissions:

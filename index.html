@@ -64,6 +64,8 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
 #overviewScreen .terminal-top{margin-top:0}#overviewScreen .terminal-title{font-size:25px}#overviewScreen .terminal-section-head{margin-top:19px}nav{justify-content:space-around}.navitem{flex:1;font-size:8px}.navitem b{font-size:15px}
 @media(min-width:800px){.pulse-hero{padding:25px}.pulse-heading-row{padding:32px 0 25px}.pulse-orbit{width:110px;height:110px;flex-basis:110px}.pulse-dek{font-size:14px;max-width:440px}.pulse-title{font-size:54px}.pulse-driver{padding:14px}.pulse-driver strong{font-size:19px}}
 @media(max-width:390px){.pulse-orbit{width:58px;height:58px;flex-basis:58px}.pulse-title{font-size:29px}.pulse-driver{padding:8px 6px}.pulse-driver strong{font-size:13px}.pulse-driver small{font-size:6px}}
+</style><style id="intelligence-radar-style">
+.radar-chip{display:inline-block;border:1px solid #354353;padding:3px 5px;font-size:8px!important;letter-spacing:.3px;color:#c5ced8!important;margin:3px 3px 0 0}.radar-score{color:var(--accent)!important;font-weight:800}.radar-muted{color:#8492a2!important;font-size:8px!important}
 </style><style id="terminal-overview-style">
 #overviewScreen{display:block;flex:1;min-height:0;overflow:auto;padding:20px 20px 28px;background:radial-gradient(ellipse at 50% 0%,rgba(25,37,51,.48),transparent 48%)}
 #overviewScreen[hidden]{display:none!important}
@@ -193,6 +195,10 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
  <div class="terminal-signal" id="terminalSignal"><div class="terminal-signal-tag">The Mind</div><h2>Connecting the market signals</h2><p>Market Mind is loading the latest market context.</p><div class="terminal-signal-foot"><span>Market intelligence · Not a trade instruction</span><button type="button" id="openBriefing">Open briefing ↗</button></div></div>
  <div class="terminal-section-head"><b>Cross-asset monitor</b><span>Latest readings</span></div>
  <div class="terminal-watch" id="terminalWatch"></div>
+ <div class="terminal-section-head"><b>Sector rotation</b><span>Five-session relative strength</span></div>
+ <div class="terminal-watch" id="terminalRotation"><div class="terminal-watch-row"><div><b>Scanning sectors</b><small>Waiting for sufficient constituent coverage</small></div><strong>—</strong></div></div>
+ <div class="terminal-section-head"><b>Technical radar</b><span>Momentum · trend · volume</span></div>
+ <div class="terminal-watch" id="terminalSetups"><div class="terminal-watch-row"><div><b>Scanning ASX leaders</b><small>Daily moving averages and volume confirmation</small></div><strong>—</strong></div></div>
  <button class="terminal-more" id="openFullFeed" type="button">Explore full intelligence feed&nbsp; ↗</button>
  <div class="terminal-footer-note">Market data can be delayed. Derived signals are prompts for investigation, not standalone buy or sell recommendations.</div>
 </section>
@@ -404,10 +410,14 @@ async function loadLiveFeed(manual){
    if(!mindResponse.ok)throw new Error("intelligence endpoint "+mindResponse.status);
    var mindPayload=await mindResponse.json();
    intelligenceStatus="live";
+   window.__marketMindSnapshot=mindPayload.snapshot||null;
    signalCards=(mindPayload.signals||[]).filter(function(s){return s&&s.title&&s.explanation;}).map(function(s){
     var framework=s.framework||{};
     return {
      tag:"LIVE INTELLIGENCE · "+String(s.type||"MARKET").toUpperCase(),
+     type:s.type||"market",score:Number(s.score)||0,symbol:s.symbol||null,return20d:s.return20d,
+     return5d:s.return5d,volumeRatio:s.volumeRatio,breakout20d:s.breakout20d,reasons:s.reasons||[],
+     leaders:s.leaders||[],laggards:s.laggards||[],spread:s.spread,
      time:mindPayload.updatedAt?new Date(mindPayload.updatedAt).toLocaleTimeString("en-AU",{hour:"2-digit",minute:"2-digit",timeZone:"Australia/Melbourne"})+" MELB":"LIVE",
      title:s.title,
      dek:s.explanation,
@@ -433,7 +443,13 @@ async function loadLiveFeed(manual){
   var asx=payload.tickers?.asx200, spx=payload.tickers?.sp500, vix=payload.tickers?.vix;
   var setTicker=function(id,item){var el=document.getElementById(id);if(!el||!item)return;el.textContent=item.value||"—";el.className=item.direction==="down"?"down":item.direction==="up"?"up":"";};
   setTicker("asx",asx);setTicker("spx",spx);setTicker("vix",vix);
-  renderCards(cards.length?cards:fallbackCards); updateMarkets(payload.tickers||{}); updateOverview(payload.tickers||{},cards,payload.updatedAt);
+  var liveTickers=Object.assign({},payload.tickers||{});
+  var snapshot=window.__marketMindSnapshot||null;
+  if(snapshot){
+   var map={asx200:"asx200",sp500:"sp500",vix:"vix",us10:"us10",oil:"oil",aud:"aud"};
+   Object.keys(map).forEach(function(k){var v=snapshot[k];if(!v||!Number.isFinite(v.price))return;var p=v.dayPct;liveTickers[map[k]]={value:new Intl.NumberFormat("en-AU",{maximumFractionDigits:2}).format(v.price),pct:p,direction:typeof p==="number"?(p<0?"down":p>0?"up":"flat"):"",change:typeof p==="number"?(p>0?"+":"")+p.toFixed(2)+"%":"Latest close"};});
+  }
+  renderCards(cards.length?cards:fallbackCards); updateMarkets(liveTickers); updateOverview(liveTickers,cards,payload.updatedAt);
   setHealth("LIVE FEED · "+cards.length+" cards · "+(signalCards.length?signalCards.length+" signals":intelligenceStatus==="live"?"no signals":"scanner offline"),true,payload.updatedAt);
   var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="REFRESH";
  }catch(err){console.warn("Market Mind feed unavailable",err);renderCards(fallbackCards);setHealth("Feed unavailable • Demo mode",false);updateMarkets({});updateOverview({},fallbackCards,null);var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="RETRY";}
@@ -458,8 +474,10 @@ renderCards(fallbackCards);
 setHealth("Starting market feed…",false);
 function updatePulse(t,cards,updatedAt){
  var sp=t.sp500||{},vix=t.vix||{},rates=t.us10||{},oil=t.oil||{};
- var down=function(x){return x.direction==="down"||(typeof x.pct==="number"&&x.pct<0);};
- var up=function(x){return x.direction==="up"||(typeof x.pct==="number"&&x.pct>0);};
+ var pct=function(x){return typeof x.pct==="number"?x.pct:null;};
+ var direction=function(x){var p=pct(x);return x.direction||(p===null?"":p<0?"down":p>0?"up":"flat");};
+ var down=function(x){return direction(x)==="down";};
+ var up=function(x){return direction(x)==="up";};
  var risk=down(sp)&&up(vix)?"Risk-off pressure":up(sp)&&down(vix)?"Risk appetite improving":"Mixed / awaiting confirmation";
  var note=down(sp)&&up(vix)?"Equities weaker while volatility rises":up(sp)&&down(vix)?"Equities firmer as volatility eases":"Price action is not sending a single clear message";
  var el=function(id,value){var n=document.getElementById(id);if(n)n.textContent=value;};
@@ -477,6 +495,13 @@ function updateOverview(t,cards,updatedAt){
  function escTerm(v){return esc(v==null?"—":v);}
  if(grid)grid.innerHTML=defs.slice(0,4).map(function(d){var x=t[d[0]]||{};return '<div class="terminal-tile"><small>'+escTerm(d[1])+'</small><strong>'+escTerm(x.value)+'</strong><span class="'+(x.direction==="down"?"down":x.direction==="up"?"up":"")+'">'+escTerm(x.change||"Latest reading")+'</span></div>';}).join("");
  if(watch)watch.innerHTML=defs.slice(4).map(function(d){var x=t[d[0]]||{};return '<div class="terminal-watch-row"><div><b>'+escTerm(d[1])+'</b><small>'+escTerm(({vix:"US equity volatility",gold:"Precious metals",aud:"Australian dollar"})[d[0]])+'</small></div><div><strong>'+escTerm(x.value)+'</strong><span class="'+(x.direction==="down"?"down":x.direction==="up"?"up":"")+'">'+escTerm(x.change||"—")+'</span></div></div>';}).join("");
+ var rotation=document.getElementById("terminalRotation"),setups=document.getElementById("terminalSetups");
+ var rotationCard=(cards||[]).find(function(x){return x&&x.type==="sector-rotation";});
+ if(rotation)rotation.innerHTML=rotationCard?
+  '<div class="terminal-watch-row"><div><b>'+escTerm(rotationCard.title)+'</b><small>Leading: '+escTerm((rotationCard.leaders||[]).map(function(x){return x.symbol;}).join(", ")||"—")+'</small></div><div><strong class="radar-score">+'+escTerm(Number(rotationCard.spread).toFixed(2))+'%</strong><span>leader / laggard spread</span></div></div><div class="terminal-footer-note">'+escTerm(rotationCard.dek)+'</div>':
+  '<div class="terminal-watch-row"><div><b>No confirmed rotation spread</b><small>Requires sufficient five-day constituent coverage</small></div><strong>—</strong></div>';
+ var tech=(cards||[]).filter(function(x){return x&&x.type==="technical";}).slice(0,5);
+ if(setups)setups.innerHTML=tech.length?tech.map(function(x){return '<div class="terminal-watch-row"><div><b>'+escTerm(x.symbol||x.title)+'</b><small>'+escTerm((x.reasons||[]).slice(0,2).join(" · "))+'</small></div><div><strong class="radar-score">'+escTerm(x.score)+'/100</strong><span>'+escTerm(x.return20d==null?"—":Number(x.return20d).toFixed(1)+"% · 20D")+'</span></div></div>';}).join(""):'<div class="terminal-watch-row"><div><b>No high-conviction technical setups</b><small>Threshold not met or data unavailable</small></div><strong>—</strong></div>';
  var lead=(cards||[]).find(function(c){return c&&c.tag&&String(c.tag).toUpperCase().indexOf("NARRATIVE")>=0;})||(cards||[])[0];
  var signal=document.getElementById("terminalSignal");
  if(signal&&lead){signal.innerHTML='<div class="terminal-signal-tag">'+escTerm(lead.tag||"The Mind")+'</div><h2>'+escTerm(lead.title||"Today's market read-through")+'</h2><p>'+escTerm(lead.insight||lead.dek||"Open the feed for more market context.")+'</p><div class="terminal-signal-foot"><span>'+escTerm(lead.source||"Market Mind")+'</span><button type="button" id="openBriefing">Open briefing ↗</button></div>';}

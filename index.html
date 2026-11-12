@@ -471,6 +471,7 @@ function updatePulse(t,cards,updatedAt){
  el("pulseUpdated",updatedAt?"UPDATED "+new Date(updatedAt).toLocaleTimeString("en-AU",{hour:"2-digit",minute:"2-digit",timeZone:"Australia/Melbourne"})+" MELB":"DATA STATUS UNCONFIRMED");
 }
 function updateOverview(t,cards,updatedAt){
+ updatePulse(t,cards,updatedAt);
  var defs=[["asx200","ASX 200","^AXJO"],["sp500","S&P 500","^GSPC"],["us10","US 10Y Yield","^TNX"],["oil","WTI Crude","CL=F"],["vix","VIX","^VIX"],["gold","Gold","GC=F"],["aud","AUD/USD","AUDUSD=X"]];
  var grid=document.getElementById("terminalGrid"),watch=document.getElementById("terminalWatch"),status=document.getElementById("overviewStatus"),date=document.getElementById("terminalDate");
  function escTerm(v){return esc(v==null?"—":v);}

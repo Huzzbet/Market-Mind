@@ -5,11 +5,21 @@
   "required":["tag","title","confirmed","expectation","implication","watch"],
   "properties":{
     "tag":{"type":"string"},
+    "type":{"type":"string","enum":["cross-asset","sector-rotation","technical","sector-dispersion","market"]},
     "title":{"type":"string"},
     "confirmed":{"type":"string"},
     "expectation":{"type":"string"},
     "implication":{"type":"string"},
     "watch":{"type":"string"},
-    "score":{"type":"number","minimum":0,"maximum":100}
+    "score":{"type":"number","minimum":0,"maximum":100},
+    "symbol":{"type":"string"},
+    "return5d":{"type":["number","null"]},
+    "return20d":{"type":["number","null"]},
+    "volumeRatio":{"type":["number","null"],"minimum":0},
+    "breakout20d":{"type":["boolean","null"]},
+    "reasons":{"type":"array","items":{"type":"string"}},
+    "leaders":{"type":"array","items":{"type":"object"}},
+    "laggards":{"type":"array","items":{"type":"object"}},
+    "spread":{"type":"number"}
   }
 }

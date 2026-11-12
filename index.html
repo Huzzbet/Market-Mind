@@ -405,12 +405,14 @@ async function loadLiveFeed(manual){
   };});
   // Add live rule-based intelligence cards without replacing the curated daily feed.
   var intelligenceStatus="unavailable",signalCards=[];
+  window.__marketMindSnapshot=null;window.__marketMindUpdatedAt=null;
   try{
    var mindResponse=await fetch("/api/mind?ts="+Date.now(),{cache:"no-store"});
    if(!mindResponse.ok)throw new Error("intelligence endpoint "+mindResponse.status);
    var mindPayload=await mindResponse.json();
    intelligenceStatus="live";
    window.__marketMindSnapshot=mindPayload.snapshot||null;
+   window.__marketMindUpdatedAt=mindPayload.updatedAt||null;
    signalCards=(mindPayload.signals||[]).filter(function(s){return s&&s.title&&s.explanation;}).map(function(s){
     var framework=s.framework||{};
     return {
@@ -449,7 +451,8 @@ async function loadLiveFeed(manual){
    var map={asx200:"asx200",sp500:"sp500",vix:"vix",us10:"us10",oil:"oil",aud:"aud"};
    Object.keys(map).forEach(function(k){var v=snapshot[k];if(!v||!Number.isFinite(v.price))return;var p=v.dayPct;liveTickers[map[k]]={value:new Intl.NumberFormat("en-AU",{maximumFractionDigits:2}).format(v.price),pct:p,direction:typeof p==="number"?(p<0?"down":p>0?"up":"flat"):"",change:typeof p==="number"?(p>0?"+":"")+p.toFixed(2)+"%":"Latest close"};});
   }
-  renderCards(cards.length?cards:fallbackCards); updateMarkets(liveTickers); updateOverview(liveTickers,cards,payload.updatedAt);
+  var marketUpdatedAt=window.__marketMindUpdatedAt||payload.updatedAt;
+  renderCards(cards.length?cards:fallbackCards); updateMarkets(liveTickers); updateOverview(liveTickers,cards,marketUpdatedAt);
   setHealth("LIVE FEED · "+cards.length+" cards · "+(signalCards.length?signalCards.length+" signals":intelligenceStatus==="live"?"no signals":"scanner offline"),true,payload.updatedAt);
   var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="REFRESH";
  }catch(err){console.warn("Market Mind feed unavailable",err);renderCards(fallbackCards);setHealth("Feed unavailable • Demo mode",false);updateMarkets({});updateOverview({},fallbackCards,null);var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="RETRY";}

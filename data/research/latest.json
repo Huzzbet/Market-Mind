@@ -1,6 +1,280 @@
 {
   "schemaVersion": "1.0",
-  "updatedAt": null,
-  "editorialNote": "No editorial research has been published yet. Scanner signals are displayed separately.",
-  "cards": []
+  "edition": "2026-11-14-flagship",
+  "updatedAt": "2026-11-14T06:00:00+11:00",
+  "editorialNote": "First flagship research edition. Market data as at Friday 13 November 2026 close where available. Research candidates are not buy recommendations; no unverified valuation multiples or price targets are shown.",
+  "cards": [
+    {
+      "tag": "THE PULSE",
+      "time": "14 NOV 2026 · WEEKEND EDITION",
+      "title": "Higher-for-longer rates meet an AI leadership shock",
+      "dek": "Inflation is proving sticky, yields are elevated and NVIDIA's CEO departure has unsettled the AI trade. The opportunity is shifting toward businesses that can prove cash returns on capital.",
+      "data": [
+        [
+          "RBA CASH RATE",
+          "4.85%"
+        ],
+        [
+          "ASX 200",
+          "9,082.2 · -0.71%"
+        ],
+        [
+          "NASDAQ",
+          "25,009.58 · -1.40%"
+        ],
+        [
+          "US 2Y YIELD",
+          "4.855%"
+        ]
+      ],
+      "insight": "Our base case is selective risk-off, not the end of the AI investment cycle. The market is demanding stronger evidence that capital expenditure converts into recurring earnings and free cash flow.",
+      "whyItMatters": "Higher discount rates pressure long-duration equities, property and leveraged balance sheets. AI capex needs to be judged against incremental revenue, margins and cash generation.",
+      "investmentOpportunity": "Watch quality compounders with measurable cash conversion, copper exposure with mid-cycle discipline, and infrastructure businesses with contracted demand. Avoid treating one-session sector moves as durable rotation.",
+      "opportunityType": "MACRO FRAMEWORK",
+      "source": "RBA · Reuters · Market Index",
+      "sourcePublishedAt": null,
+      "link": "https://www.reuters.com/world/china/global-markets-global-markets-2026-11-13/",
+      "rank": 100,
+      "chart": false,
+      "signal": "DOWN"
+    },
+    {
+      "tag": "THE OPPORTUNITY · ASX",
+      "time": "FY27 RESEARCH CANDIDATE",
+      "title": "BHP: copper scale, but don't capitalise peak prices",
+      "dek": "Copper contributed more than half of BHP's FY26 underlying EBITDA for the first time. The long-term demand case is compelling, but September-quarter production fell 19% year on year.",
+      "data": [
+        [
+          "FY26 EBITDA",
+          "~US$33bn"
+        ],
+        [
+          "Q1 FY27 COPPER",
+          "401kt · -19%"
+        ],
+        [
+          "REALised COPPER",
+          "US$7.01/lb · +53%"
+        ],
+        [
+          "FY27 COPPER GUIDE",
+          "1.65–1.80Mt"
+        ]
+      ],
+      "insight": "BHP offers diversified exposure to copper's structural demand story with a large, cash-generative iron ore business. The key distinction is that higher realised copper prices have supported recent earnings while production faced grade and maintenance headwinds.",
+      "whyItMatters": "A sustained copper supply deficit could support earnings and project returns. But extrapolating spot prices into terminal earnings risks overpaying at the top of the cycle.",
+      "investmentOpportunity": "Research at mid-cycle copper and iron ore prices; stress-test lower prices, production delays, capex and costs. Watch the copper production recovery and Jansen delivery. Thesis breaks if operational reliability deteriorates or capital returns fall below the cost of capital.",
+      "opportunityType": "STRUCTURAL COMMODITY",
+      "source": "BHP FY26 results · Q1 FY27 operational review",
+      "sourcePublishedAt": null,
+      "link": "https://www.bhp.com/news/media-centre/releases/2026/10/bhp-operational-review-for-the-quarter-ended-30-september-2026",
+      "rank": 90,
+      "chart": false,
+      "signal": "UP"
+    },
+    {
+      "tag": "THE OPPORTUNITY · ASX",
+      "time": "FY27 RESEARCH CANDIDATE",
+      "title": "Goodman: scarce power and land meet AI infrastructure",
+      "dek": "FY26 operating earnings per security rose 10.1%, with data centres accounting for 78% of the A$19.7bn development work-in-progress pipeline.",
+      "data": [
+        [
+          "FY26 OEPS",
+          "129.9c · +10.1%"
+        ],
+        [
+          "FY27 OEPS GUIDE",
+          "+9%"
+        ],
+        [
+          "DEVELOPMENT WIP",
+          "A$19.7bn"
+        ],
+        [
+          "PORTFOLIO OCCUPANCY",
+          "95.6%"
+        ]
+      ],
+      "insight": "Goodman's advantage is not simply exposure to data-centre demand. Secured power, scarce urban land, customer relationships and development capability may support attractive project economics.",
+      "whyItMatters": "The same higher bond yields that pressure property valuations can reduce the equity value of long-duration development earnings. Strong operating growth alone does not settle the valuation question.",
+      "investmentOpportunity": "Compare price with operating earnings, NTA and development yields. Stress-test discount rates, construction costs, power delivery and leasing. Thesis breaks if yields compress, projects slip or occupancy weakens.",
+      "opportunityType": "INFRASTRUCTURE GROWTH",
+      "source": "Goodman FY26 results",
+      "sourcePublishedAt": null,
+      "link": "https://links.sgx.com/FileOpen/GMG%20SGX%20%20Full%20Year%20Results%20%2020.08.2026%20part%202.ashx?App=Announcement&FileID=901788",
+      "rank": 88,
+      "chart": false,
+      "signal": "UP"
+    },
+    {
+      "tag": "THE OPPORTUNITY · ASX",
+      "time": "TURNAROUND RESEARCH CANDIDATE",
+      "title": "CSL: the recovery case now has an earnings hurdle",
+      "dek": "After a difficult FY26 reset, CSL expects FY27 revenue broadly in line with the prior year and underlying NPAT growth of approximately 5%.",
+      "data": [
+        [
+          "FY26 REVENUE",
+          "US$15.8bn · -1%"
+        ],
+        [
+          "UNDERLYING NPATA",
+          "US$3.1bn · -2%"
+        ],
+        [
+          "FY27 NPAT GUIDE",
+          "+~5%"
+        ],
+        [
+          "TRANSFORMATION SAVINGS",
+          "A$176m"
+        ]
+      ],
+      "insight": "CSL retains valuable plasma and specialty medicines franchises, but the investment case has shifted from quality at any price to proof of execution. The FY27 growth target is the first measurable checkpoint.",
+      "whyItMatters": "A turnaround can create upside if margins normalise and newer therapies scale, but a low headline valuation may simply reflect a lower sustainable earnings base.",
+      "investmentOpportunity": "Value on normalised underlying earnings and free cash flow; exclude one-off charges but scrutinise recurring costs. Watch plasma economics, Seqirus demand, Vifor declines and transformation delivery. Thesis breaks if guidance is missed or core plasma economics deteriorate.",
+      "opportunityType": "TURNAROUND",
+      "source": "CSL FY26 results",
+      "sourcePublishedAt": null,
+      "link": "https://investors.csl.com/PDF/80148cbc-d117-4b5c-9213-628b0d1de681/CSLFY2026Results",
+      "rank": 84,
+      "chart": false,
+      "signal": "NEUTRAL"
+    },
+    {
+      "tag": "THE OPPORTUNITY · US",
+      "time": "Q3 2026 RESEARCH CANDIDATE",
+      "title": "Alphabet: AI is accelerating Cloud, but capex is the test",
+      "dek": "Q3 revenue rose 25% and Google Cloud grew 103%. The market must now judge whether enormous infrastructure spending earns attractive incremental returns.",
+      "data": [
+        [
+          "Q3 REVENUE",
+          "+25% · US$127.6bn"
+        ],
+        [
+          "GOOGLE CLOUD",
+          "+103% · US$30.7bn"
+        ],
+        [
+          "OPERATING MARGIN",
+          "31.8%"
+        ],
+        [
+          "Q3 CAPEX",
+          "US$51.4bn"
+        ]
+      ],
+      "insight": "Alphabet has multiple routes to monetise AI across Search, Cloud and subscriptions. Search query growth and Cloud acceleration show demand, but capex and depreciation will increasingly determine the quality of that growth.",
+      "whyItMatters": "Revenue growth can coexist with weaker free cash flow if infrastructure investment grows faster than monetisation. The key metric is return on incremental capital, not AI user counts alone.",
+      "investmentOpportunity": "Assess Search durability, Cloud margin progression and owner earnings after capex. Use a sum-of-the-parts framework with downside cases for AI search disruption and infrastructure returns. Thesis breaks if Search monetisation weakens or Cloud growth fails to translate into cash.",
+      "opportunityType": "AI MONETISATION",
+      "source": "Alphabet Q3 2026 results",
+      "sourcePublishedAt": null,
+      "link": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+      "rank": 96,
+      "chart": false,
+      "signal": "UP"
+    },
+    {
+      "tag": "THE OPPORTUNITY · US",
+      "time": "FY26 RESEARCH CANDIDATE",
+      "title": "Microsoft: enterprise distribution is the moat",
+      "dek": "FY26 revenue rose 18% to US$331.8bn and operating income rose 21%. The next question is how much incremental profit AI can deliver after infrastructure costs.",
+      "data": [
+        [
+          "FY26 REVENUE",
+          "+18% · US$331.8bn"
+        ],
+        [
+          "OPERATING INCOME",
+          "+21% · US$155.2bn"
+        ],
+        [
+          "DILUTED EPS",
+          "US$17.95"
+        ],
+        [
+          "AI TEST",
+          "Paid adoption + ROI"
+        ]
+      ],
+      "insight": "Microsoft's enterprise relationships and cloud ecosystem give it several paths to monetise AI. The reported EPS growth includes discrete benefits, including investment gains, so recurring operating earnings deserve the focus.",
+      "whyItMatters": "A premium business can still be a poor investment if its valuation assumes AI economics that are not yet visible in free cash flow per share.",
+      "investmentOpportunity": "Track Azure growth, paid Copilot adoption, operating margins and capex relative to operating cash flow. Normalise one-off investment gains. Thesis breaks if cloud growth slows, AI attach rates disappoint or capital intensity compresses returns.",
+      "opportunityType": "QUALITY COMPOUNDER",
+      "source": "Microsoft FY26 annual report",
+      "sourcePublishedAt": null,
+      "link": "https://www.microsoft.com/investor/reports/ar26/index.html",
+      "rank": 89,
+      "chart": false,
+      "signal": "UP"
+    },
+    {
+      "tag": "THE OPPORTUNITY · US",
+      "time": "Q3 2026 RESEARCH CANDIDATE",
+      "title": "Amazon: AWS acceleration versus a cash-flow bill",
+      "dek": "AWS sales grew 39% and operating income reached US$17.8bn, but 2026 capex is expected to be about US$220bn and free cash flow has come under severe pressure.",
+      "data": [
+        [
+          "Q3 NET SALES",
+          "+12% · US$201.9bn"
+        ],
+        [
+          "AWS SALES",
+          "+39% · US$46.0bn"
+        ],
+        [
+          "OPERATING MARGIN",
+          "13.9%"
+        ],
+        [
+          "2026 CAPEX GUIDE",
+          "~US$220bn"
+        ]
+      ],
+      "insight": "AWS is a powerful growth engine and retail operating leverage is improving. But the scale of investment means the equity story increasingly depends on future cash returns rather than near-term revenue acceleration.",
+      "whyItMatters": "If data-centre assets generate strong returns, today's capex can build a durable earnings base. If utilisation, pricing or useful lives disappoint, depreciation and financing costs can absorb much of the growth.",
+      "investmentOpportunity": "Model AWS separately and stress-test incremental return on infrastructure capital, depreciation and free cash flow recovery. Thesis breaks if AWS growth decelerates while capex remains elevated and cash conversion fails to recover.",
+      "opportunityType": "GROWTH / CASH FLOW",
+      "source": "Amazon Q3 2026 results · Reuters",
+      "sourcePublishedAt": null,
+      "link": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report",
+      "rank": 82,
+      "chart": false,
+      "signal": "NEUTRAL"
+    },
+    {
+      "tag": "THE SIGNAL · GOVERNANCE",
+      "time": "12–13 NOV 2026",
+      "title": "NVIDIA: founder succession adds a new risk premium",
+      "dek": "Jensen Huang's resignation as CEO is confirmed. CFO Colette Kress is interim CEO while the board searches for a permanent successor.",
+      "data": [
+        [
+          "CEO TRANSITION",
+          "Confirmed"
+        ],
+        [
+          "INTERIM CEO",
+          "Colette Kress"
+        ],
+        [
+          "BOARD ACTION",
+          "Successor search"
+        ],
+        [
+          "RISK",
+          "Governance + policy"
+        ]
+      ],
+      "insight": "This is a company-specific leadership and governance shock with potential implications for customer relationships and US-China chip policy. It is not proof that AI demand has ended.",
+      "whyItMatters": "NVIDIA's founder has been central to product strategy and the AI ecosystem. The market must reassess succession, board oversight and strategic continuity.",
+      "investmentOpportunity": "Keep NVIDIA on a watchlist, not the initial Conviction List. Monitor official board updates, succession clarity, customer commitments and export-policy implications. Do not treat unverified espionage allegations as established fact.",
+      "opportunityType": "EVENT RISK",
+      "source": "NVIDIA newsroom · SEC Form 8-K · Reuters",
+      "sourcePublishedAt": null,
+      "link": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition/",
+      "rank": 100,
+      "chart": false,
+      "signal": "DOWN"
+    }
+  ]
 }

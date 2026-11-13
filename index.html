@@ -407,8 +407,16 @@ async function loadLiveFeed(manual){
   // Research cards are published as static JSON in GitHub; the scanner never writes or interprets them.
   var researchCards=[];
   try{
-   var researchResponse=await fetch("/data/research/latest.json?ts="+Date.now(),{cache:"no-store"});
-   if(researchResponse.ok){
+   var researchUrls=[
+    "/data/research/latest.json?ts="+Date.now(),
+    "/Market-Mind/data/research/latest.json?ts="+Date.now(),
+    "https://raw.githubusercontent.com/Huzzbet/Market-Mind/main/data/research/latest.json?ts="+Date.now()
+   ];
+   var researchResponse=null;
+   for(var researchUrl of researchUrls){
+    try{var rr=await fetch(researchUrl,{cache:"no-store"});if(rr.ok){researchResponse=rr;break;}}catch(researchFetchError){}
+   }
+   if(researchResponse){
     var researchPayload=await researchResponse.json();
     researchCards=(researchPayload.cards||[]).filter(function(c){return c&&c.title&&c.dek&&c.insight;}).map(function(c){
      var safeLink=typeof c.link==="string"&&/^https?:\/\//i.test(c.link)?c.link:null;

@@ -154,7 +154,7 @@ export async function onRequestPost({ request, env }) {
     newsItems.forEach((item, index) => {
       const published = item.pubDate && Number.isFinite(Date.parse(item.pubDate))
         ? new Date(item.pubDate).toISOString()
-        : collectedAt;
+        : "unknown";
       const id = "news-" + (index + 1) + "-" + item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 24);
       sources.push({
         id,
@@ -184,6 +184,7 @@ export async function onRequestPost({ request, env }) {
   }
 
   const sources = [];
+  const seenSourceIds = new Set();
   for (let i = 0; i < payload.sources.length; i++) {
     const source = payload.sources[i];
     if (!source || typeof source.id !== "string" || !/^[a-zA-Z0-9_-]{1,48}$/.test(source.id) ||
@@ -192,6 +193,11 @@ export async function onRequestPost({ request, env }) {
         typeof source.publishedAt !== "string" || !source.publishedAt.trim() ||
         typeof source.excerpt !== "string" || !source.excerpt.trim()) {
       return json({ error: "Source " + (i + 1) + " must include id, title, HTTP(S) url, publishedAt and excerpt" }, 400);
+    }
+    if (seenSourceIds.has(source.id)) return json({ error: "Source IDs must be unique" }, 400);
+    seenSourceIds.add(source.id);
+    if (source.publishedAt !== "unknown" && !Number.isFinite(Date.parse(source.publishedAt))) {
+      return json({ error: "Source " + (i + 1) + " publishedAt must be a valid date or unknown" }, 400);
     }
     sources.push({
       id: source.id,
@@ -249,6 +255,11 @@ export async function onRequestPost({ request, env }) {
     return json({ error: "Could not reach the research model" }, 502);
   }
 
+  if (apiResponse.status === "incomplete") {
+    return json({ error: "The research response was incomplete", reason: apiResponse.incomplete_details?.reason || "unknown" }, 502);
+  }
+  const refusal = (apiResponse.output || []).flatMap(item => item.content || []).find(part => part.type === "refusal");
+  if (refusal) return json({ error: "The research model declined the request" }, 422);
   const outputText = extractOutputText(apiResponse);
   if (!outputText) return json({ error: "The model returned no complete research output" }, 502);
 

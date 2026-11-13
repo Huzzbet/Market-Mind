@@ -277,9 +277,35 @@ export async function onRequestPost({ request, env }) {
     return json({ error: "Research failed source-reference validation", unknownSourceIds: unknownIds }, 502);
   }
 
+  const generatedAt = new Date().toISOString();
+  const draftId = crypto.randomUUID();
+  const draft = {
+    id: draftId,
+    status: "pending",
+    generatedAt,
+    model: env.OPENAI_MODEL,
+    focus,
+    marketContext,
+    research,
+    sources
+  };
+
+  // Persist privately when the Cloudflare D1 binding is configured.
+  if (env.DB) {
+    try {
+      await env.DB.prepare(
+        "INSERT INTO research_drafts (id, status, generated_at, model, focus, market_context, research_json, sources_json) VALUES (?, 'pending', ?, ?, ?, ?, ?, ?)"
+      ).bind(draftId, generatedAt, env.OPENAI_MODEL, focus, marketContext, JSON.stringify(research), JSON.stringify(sources)).run();
+    } catch {
+      return json({ error: "Research was generated but could not be saved to the private review queue" }, 503);
+    }
+  }
+
   return json({
     status: "draft_for_review",
-    generatedAt: new Date().toISOString(),
+    draftId,
+    persistence: env.DB ? "saved_to_private_review_queue" : "not_configured",
+    generatedAt,
     model: env.OPENAI_MODEL,
     publication: "not_published",
     research,

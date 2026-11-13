@@ -403,6 +403,33 @@ async function loadLiveFeed(manual){
     stock:c.stock||null,
     marketHistory:c.marketHistory||null
   };});
+  // Load assistant-authored, source-backed editorial research separately from the rule-based scanner.
+  // Research cards are published as static JSON in GitHub; the scanner never writes or interprets them.
+  var researchCards=[];
+  try{
+   var researchResponse=await fetch("/data/research/latest.json?ts="+Date.now(),{cache:"no-store"});
+   if(researchResponse.ok){
+    var researchPayload=await researchResponse.json();
+    researchCards=(researchPayload.cards||[]).filter(function(c){return c&&c.title&&c.dek&&c.insight;}).map(function(c){
+     var safeLink=typeof c.link==="string"&&/^https?:\\/\\//i.test(c.link)?c.link:null;
+     return {
+      tag:c.tag||"MARKET MIND RESEARCH",
+      time:c.time||"LATEST",
+      title:c.title,dek:c.dek,
+      data:Array.isArray(c.data)?c.data.slice(0,4):[["ASSET",c.asset||"MARKET"],["HORIZON",c.horizon||"RESEARCH"]],
+      insight:c.insight,
+      whyItMatters:c.whyItMatters||"Assess whether this changes expected cash flows, valuation or risk.",
+      investmentOpportunity:c.investmentOpportunity||"Research angle: verify assumptions, valuation and downside before acting.",
+      opportunityType:c.opportunityType||"RESEARCH",
+      source:c.source||"Market Mind Research",
+      sourcePublishedAt:c.sourcePublishedAt||null,
+      link:safeLink,rank:Number(c.rank)||0,chart:!!c.chart,
+      signal:c.signal||"UP",stock:c.stock||null,marketHistory:c.marketHistory||null,
+      research:true
+     };
+    });
+   }
+  }catch(researchError){console.warn("Market Mind editorial research unavailable",researchError);}
   // Add live rule-based intelligence cards without replacing the curated daily feed.
   var intelligenceStatus="unavailable",signalCards=[];
   window.__marketMindSnapshot=null;window.__marketMindUpdatedAt=null;
@@ -441,7 +468,7 @@ async function loadLiveFeed(manual){
    });
   }catch(intelligenceError){console.warn("Market Mind intelligence unavailable",intelligenceError);}
   // Keep the existing daily stories, then surface live signals first when available.
-  cards=signalCards.concat(cards);
+  cards=researchCards.concat(signalCards,cards);
   var asx=payload.tickers?.asx200, spx=payload.tickers?.sp500, vix=payload.tickers?.vix;
   var setTicker=function(id,item){var el=document.getElementById(id);if(!el||!item)return;el.textContent=item.value||"—";el.className=item.direction==="down"?"down":item.direction==="up"?"up":"";};
   setTicker("asx",asx);setTicker("spx",spx);setTicker("vix",vix);

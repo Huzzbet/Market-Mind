@@ -1,0 +1,12 @@
+{
+  "name": "market_mind_research_drafts",
+  "version": 1,
+  "description": "Private human-review queue for AI-generated Market Mind research.",
+  "tables": {
+    "research_drafts": {
+      "primary_key": "id",
+      "statuses": ["pending", "approved", "rejected"],
+      "columns": ["id", "status", "generated_at", "model", "focus", "market_context", "research_json", "sources_json", "reviewed_at", "reviewer_note", "published_at"]
+    }
+  }
+}

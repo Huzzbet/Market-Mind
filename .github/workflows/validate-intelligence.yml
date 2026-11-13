@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - "functions/api/intelligence.js"
+      - "functions/api/research-drafts.js"
+      - "migrations/**"
       - "docs/intelligence-request.schema.json"
       - ".github/workflows/validate-intelligence.yml"
   push:
@@ -11,6 +13,8 @@ on:
       - "feature/ai-research-engine"
     paths:
       - "functions/api/intelligence.js"
+      - "functions/api/research-drafts.js"
+      - "migrations/**"
       - "docs/intelligence-request.schema.json"
       - ".github/workflows/validate-intelligence.yml"
 
@@ -26,7 +30,11 @@ jobs:
           node-version: "22"
       - name: Check intelligence function syntax
         run: node --input-type=module --check < functions/api/intelligence.js
+      - name: Check Research Desk function syntax
+        run: node --input-type=module --check < functions/api/research-drafts.js
       - name: Validate request schema JSON
         run: node -e "JSON.parse(require('fs').readFileSync('docs/intelligence-request.schema.json', 'utf8'))"
+      - name: Validate Research Desk storage schema JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('data/research/drafts-storage.schema.json', 'utf8'))"
       - name: Check whitespace errors
         run: git diff --check

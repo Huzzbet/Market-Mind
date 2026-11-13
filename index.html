@@ -411,7 +411,7 @@ async function loadLiveFeed(manual){
    if(researchResponse.ok){
     var researchPayload=await researchResponse.json();
     researchCards=(researchPayload.cards||[]).filter(function(c){return c&&c.title&&c.dek&&c.insight;}).map(function(c){
-     var safeLink=typeof c.link==="string"&&/^https?:\\/\\//i.test(c.link)?c.link:null;
+     var safeLink=typeof c.link==="string"&&/^https?:\/\//i.test(c.link)?c.link:null;
      return {
       tag:c.tag||"MARKET MIND RESEARCH",
       time:c.time||"LATEST",

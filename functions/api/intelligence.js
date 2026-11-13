@@ -89,6 +89,96 @@ export async function onRequestPost({ request, env }) {
     return json({ error: "Request body must be valid JSON" }, 400);
   }
 
+  if (payload && payload.mode === "live_snapshot") {
+    const origin = new URL(request.url).origin;
+    let market = { data: [] }, mind = { signals: [], sectorRotation: [], snapshot: {} }, news = { items: [] };
+    try {
+      const responses = await Promise.all([
+        fetch(new URL("/api/market", origin)),
+        fetch(new URL("/api/mind", origin)),
+        fetch(new URL("/api/news?q=ASX%20Australia%20markets%20OR%20US%20stocks%20OR%20RBA%20OR%20commodities", origin))
+      ]);
+      if (responses[0].ok) market = await responses[0].json();
+      if (responses[1].ok) mind = await responses[1].json();
+      if (responses[2].ok) news = await responses[2].json();
+    } catch {
+      return json({ error: "Could not collect the current Market Mind data pack" }, 502);
+    }
+
+    const collectedAt = new Date().toISOString();
+    const sources = [];
+    const validMarkets = (market.data || []).filter(row => row && row.ok && Number.isFinite(row.price));
+    const marketLines = validMarkets.slice(0, 20).map(row => {
+      const stamp = row.lastTimestamp ? new Date(row.lastTimestamp * 1000).toISOString() : "timestamp unavailable";
+      return row.symbol + ": price " + row.price + " " + (row.currency || "") +
+        "; daily change " + (Number.isFinite(row.pct) ? row.pct.toFixed(2) + "%" : "unavailable") +
+        "; 5-session return " + (Number.isFinite(row.return5d) ? row.return5d.toFixed(2) + "%" : "unavailable") +
+        "; 20-session return " + (Number.isFinite(row.return20d) ? row.return20d.toFixed(2) + "%" : "unavailable") +
+        "; latest observation " + stamp;
+    });
+    if (marketLines.length) {
+      sources.push({
+        id: "market-snapshot",
+        title: "Market Mind market snapshot — Yahoo Finance prototype feed",
+        url: "https://finance.yahoo.com/",
+        publishedAt: market.updatedAt || collectedAt,
+        publisher: "Yahoo Finance chart endpoint via Market Mind; prototype data",
+        excerpt: "Retrieved at " + collectedAt + ". " + marketLines.join(" | ")
+      });
+    }
+
+    const signalLines = (mind.signals || []).slice(0, 8).map(signal =>
+      signal.type + ": " + signal.title + ". " + signal.explanation + " Watch: " + (signal.watch || "Not supplied")
+    );
+    const rotationLines = (mind.sectorRotation || []).slice(0, 8).map(row =>
+      row.name + ": five-session average return " +
+      (Number.isFinite(row.return5d) ? row.return5d.toFixed(2) + "%" : "unavailable") +
+      "; constituent coverage " + row.count + "/" + row.total
+    );
+    if (signalLines.length || rotationLines.length) {
+      sources.push({
+        id: "rule-based-scanner",
+        title: "Market Mind deterministic scanner observations",
+        url: origin + "/api/mind",
+        publishedAt: mind.updatedAt || collectedAt,
+        publisher: "Market Mind rule-based scanner; derived from prototype market data",
+        excerpt: "These are rule-based observations, not verified explanations or recommendations. Signals: " +
+          (signalLines.join(" | ") || "none") + ". Sector proxies: " + (rotationLines.join(" | ") || "not available")
+      });
+    }
+
+    const newsItems = (news.items || []).filter(item =>
+      item && typeof item.title === "string" && item.title.trim() &&
+      typeof item.link === "string" && validHttpUrl(item.link)
+    ).slice(0, 8);
+    newsItems.forEach((item, index) => {
+      const published = item.pubDate && Number.isFinite(Date.parse(item.pubDate))
+        ? new Date(item.pubDate).toISOString()
+        : collectedAt;
+      const id = "news-" + (index + 1) + "-" + item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 24);
+      sources.push({
+        id,
+        title: item.title.slice(0, 300),
+        url: item.link,
+        publishedAt: published,
+        publisher: item.source || "Google News RSS aggregation",
+        excerpt: "Headline supplied by the Market Mind Google News RSS feed. Headline only; article body has not been retrieved or independently verified."
+      });
+    });
+
+    if (!sources.length) return json({ error: "No usable market, scanner or news sources were returned" }, 502);
+    payload.sources = sources;
+    payload.marketContext = [
+      "Automatically collected Market Mind snapshot at " + collectedAt + ".",
+      "Market data provider: " + (market.provider || "not specified") + ".",
+      "Market endpoint timestamp: " + (market.updatedAt || "not supplied") + ".",
+      "Scanner methodology: " + (mind.methodology || "not supplied") + ".",
+      "News feed timestamp: " + (news.updatedAt || "not supplied") + ".",
+      "Important: market data is prototype Yahoo Finance data; news records contain headlines only, not article text. Do not infer details beyond the supplied evidence."
+    ].join(" ");
+    payload.focus = typeof payload.focus === "string" ? payload.focus : "Australian and US market pulse, cross-asset conditions, sector rotation and emerging company research candidates.";
+  }
+
   if (!payload || !Array.isArray(payload.sources) || payload.sources.length < 1 || payload.sources.length > MAX_SOURCES) {
     return json({ error: "Provide between 1 and 12 verified source records" }, 400);
   }

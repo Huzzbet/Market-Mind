@@ -51,3 +51,9 @@ The market endpoint currently uses Yahoo Finance chart data as a prototype sourc
 4. Licensed fund-flow and institutional ownership data.
 5. Fundamental valuation and estimate revision history.
 6. Source-attributed news classification and event alerts.
+
+## Editorial research publishing
+
+Assistant-authored, source-backed research is kept separate from deterministic scanner signals. The frontend loads editorial cards from `data/research/latest.json` and displays them before scanner signals and the existing daily feed. Use `data/research/card.schema.json` for the card contract and [the publishing guide](docs/research-publishing.md) for the evidence, attribution and quality standards.
+
+The research file is intentionally empty until a properly sourced report is published. The scheduled Market Mind morning brief is a separate ChatGPT workflow; it does not automatically publish to this repository yet.

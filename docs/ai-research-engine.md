@@ -26,7 +26,7 @@ API usage is billed separately from a ChatGPT subscription.
 
 ## Request
 
-The endpoint accepts JSON with 1–12 source records. Each record must have an ID, title, HTTP(S) URL, publication timestamp and excerpt.
+The endpoint accepts either a supplied research pack or a live Market Mind snapshot request. The live mode collects the existing `/api/market`, `/api/mind` and `/api/news` responses server-side, then passes a bounded source pack to the research model. It does not scrape article bodies. Market prices and scanner observations remain prototype Yahoo Finance-derived data.
 
     {
       "focus": "Australian and US markets; capital rotation and quality compounders",
@@ -68,3 +68,17 @@ The function validates that model-generated source IDs refer to records in the s
 3. Add a review queue and approval action.
 4. Publish approved cards into data/research/latest.json.
 5. Add scheduled orchestration only after provider access, cost limits, monitoring and failure handling are configured.
+
+
+## Live snapshot mode
+
+A trusted server-side caller can request the current Market Mind data pack without assembling sources itself:
+
+    {
+      "mode": "live_snapshot",
+      "focus": "Assess cross-asset risk, sector rotation and the strongest research candidates."
+    }
+
+The function collects up to 20 successful market observations, current deterministic scanner/sector observations and up to eight RSS headlines. It includes timestamps, provider notes and explicit caveats that headlines are not article text and the market feed is a prototype. The resulting model output remains a draft requiring review.
+
+This is the first connected ingestion path, not yet a complete production data pipeline. The Google News RSS feed is an aggregator and Yahoo Finance is not a licensed production feed.

@@ -1,0 +1,32 @@
+name: Validate Market Mind intelligence
+
+on:
+  pull_request:
+    paths:
+      - "functions/api/intelligence.js"
+      - "docs/intelligence-request.schema.json"
+      - ".github/workflows/validate-intelligence.yml"
+  push:
+    branches:
+      - "feature/ai-research-engine"
+    paths:
+      - "functions/api/intelligence.js"
+      - "docs/intelligence-request.schema.json"
+      - ".github/workflows/validate-intelligence.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check intelligence function syntax
+        run: node --input-type=module --check < functions/api/intelligence.js
+      - name: Validate request schema JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('docs/intelligence-request.schema.json', 'utf8'))"
+      - name: Check whitespace errors
+        run: git diff --check

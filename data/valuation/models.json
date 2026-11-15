@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0",
+  "status": "analyst-input-prototype",
+  "updatedAt": "2026-11-14",
+  "methodology": "No live quotes, broker consensus or analyst forecasts are populated. Model inputs must be sourced and timestamped before valuation outputs are used.",
+  "companies": [
+    {"id":"GOOGL","name":"Alphabet","exchange":"NASDAQ","currency":"USD","method":"DCF plus sum-of-the-parts","financialPeriod":"Q3 2026","reportedRevenue":127.6,"reportedRevenueUnit":"USD bn","reportedOperatingMarginPct":31.8,"source":"https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm"},
+    {"id":"BHP","name":"BHP Group","exchange":"ASX","currency":"AUD","method":"Through-cycle DCF plus NAV","financialPeriod":"FY26 / Q1 FY27","reportedUnderlyingEbitda":33,"reportedEbitdaUnit":"USD bn","source":"https://www.bhp.com/news/media-centre/releases/2026/08/bhp-results-for-the-full-year-ended-30-june-2026"},
+    {"id":"GMG","name":"Goodman Group","exchange":"ASX","currency":"AUD","method":"Operating earnings / FFO, NAV and cap-rate cross-check","financialPeriod":"FY26","reportedOperatingProfit":2.675,"reportedProfitUnit":"AUD bn","reportedOperatingEarningsPerSecurity":129.9,"reportedEarningsUnit":"AUD cents","source":"https://links.sgx.com/FileOpen/GMG%20SGX%20%20Full%20Year%20Results%20%2020.08.2026%20part%202.ashx?App=Announcement&FileID=901788"},
+    {"id":"MSFT","name":"Microsoft","exchange":"NASDAQ","currency":"USD","method":"DCF plus normalised forward P/E","financialPeriod":"FY26","reportedRevenue":331.8,"reportedRevenueUnit":"USD bn","reportedOperatingIncome":155.2,"reportedOperatingIncomeUnit":"USD bn","source":"https://www.microsoft.com/investor/reports/ar26/index.html"},
+    {"id":"CSL","name":"CSL","exchange":"ASX","currency":"AUD","method":"Normalised earnings / DCF plus sum-of-the-parts","financialPeriod":"FY26","reportedRevenue":15.8,"reportedRevenueUnit":"USD bn","reportedUnderlyingNpata":3.1,"reportedNpataUnit":"USD bn","source":"https://investors.csl.com/PDF/80148cbc-d117-4b5c-9213-628b0d1de681/CSLFY2026Results"},
+    {"id":"AMZN","name":"Amazon","exchange":"NASDAQ","currency":"USD","method":"Sum-of-the-parts with explicit capex and FCF bridge","financialPeriod":"Q3 2026","reportedRevenue":201.9,"reportedRevenueUnit":"USD bn","reportedOperatingIncome":28.1,"reportedOperatingIncomeUnit":"USD bn","source":"https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report"}
+  ]
+}

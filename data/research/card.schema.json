@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Market Mind editorial research card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "dek",
+    "insight",
+    "source",
+    "sourcePublishedAt",
+    "link"
+  ],
+  "properties": {
+    "tag": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 8
+    },
+    "dek": {
+      "type": "string",
+      "minLength": 20
+    },
+    "data": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "insight": {
+      "type": "string",
+      "minLength": 30
+    },
+    "whyItMatters": {
+      "type": "string"
+    },
+    "investmentOpportunity": {
+      "type": "string"
+    },
+    "opportunityType": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 2
+    },
+    "sourcePublishedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "link": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "rank": {
+      "type": "number"
+    },
+    "chart": {
+      "type": "boolean"
+    },
+    "signal": {
+      "enum": [
+        "UP",
+        "DOWN",
+        "NEUTRAL"
+      ]
+    },
+    "asset": {
+      "type": "string"
+    },
+    "horizon": {
+      "type": "string"
+    }
+  }
+}

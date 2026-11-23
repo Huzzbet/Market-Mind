@@ -56,7 +56,8 @@ export async function onRequestGet({ request }) {
 
   // Trend and volume scans on individual ASX names.
   const stockSymbols=["BHP.AX","RIO.AX","FMG.AX","CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX",
-    "CSL.AX","COH.AX","GMG.AX","TCL.AX","WES.AX","WOW.AX","COL.AX","REA.AX","XRO.AX","CAR.AX","TLS.AX","STO.AX","WDS.AX","ORG.AX"];
+    "CSL.AX","COH.AX","GMG.AX","TCL.AX","WES.AX","WOW.AX","COL.AX","REA.AX","XRO.AX","CAR.AX","TLS.AX","STO.AX","WDS.AX","ORG.AX",
+    "AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","BRK-B","JPM","V","MA","AVGO","ORCL","COST","NFLX","AMD","XOM","WMT"];
   const candidates=stockSymbols.map(get).filter(x=>x && Number.isFinite(x.return20d));
   const rankedStocks=candidates.map(x=>{
     let score=0, reasons=[];
@@ -93,7 +94,11 @@ export async function onRequestGet({ request }) {
     expectation:"The cause still requires confirmation from current news and macro releases.",
     implication:s.explanation,watch:s.watch
   }}));
+  const usStockSymbols=["AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","BRK-B","JPM","V","MA","AVGO","ORCL","COST","NFLX","AMD","XOM","WMT"];
+  const equities=data.filter(x=>x.symbol.endsWith(".AX")||usStockSymbols.includes(x.symbol));
   const snapshot = {
+    nasdaq:get("^IXIC")?{price:get("^IXIC").price,dayPct:get("^IXIC").pct,return5d:get("^IXIC").return5d,return20d:get("^IXIC").return20d}:null,
+    dow:get("^DJI")?{price:get("^DJI").price,dayPct:get("^DJI").pct,return5d:get("^DJI").return5d,return20d:get("^DJI").return20d}:null,
     asx200:asx?{price:asx.price,dayPct:asx.pct,return5d:asx.return5d,return20d:asx.return20d}:null,
     sp500:spx?{price:spx.price,dayPct:spx.pct,return5d:spx.return5d,return20d:spx.return20d}:null,
     vix:vix?{price:vix.price,dayPct:vix.pct}:null,
@@ -104,7 +109,7 @@ export async function onRequestGet({ request }) {
   return Response.json({
     updatedAt:new Date().toISOString(),version:"0.4.0",source:"Market Mind intelligence layer",
     methodology:"Rule-based cross-asset, sector rotation, moving-average, momentum, breakout and volume screens. No broker-revision or institutional-flow feed is connected.",
-    marketCount:data.length,signalCount:cards.length,signals:cards,sectorRotation:rankedSectors,
+    marketCount:data.length,signalCount:cards.length,signals:cards,sectorRotation:rankedSectors,equities,
     technicalLeaders:rankedStocks.slice(0,8).map(x=>({symbol:x.symbol,score:x.score,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons})),
     snapshot,headlines:(news.items||[]).slice(0,6)
   },{headers:{"Cache-Control":"public, max-age=60"}});

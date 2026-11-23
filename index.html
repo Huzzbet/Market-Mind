@@ -161,6 +161,12 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
 .mind-section .analysis-details{display:none}
 .terminal-brief-card .mind-section{border-color:#5b4a24}
 </style>
+
+<style id="equity-pages-style">
+nav{overflow-x:auto;justify-content:flex-start;scrollbar-width:none}nav::-webkit-scrollbar{display:none}.navitem{flex:1 0 62px;min-width:62px;white-space:nowrap}
+.equity-screen{padding-top:18px}.equity-toolbar{display:flex;gap:8px;align-items:center;margin:14px 0 12px}.equity-search{width:100%;min-width:0;background:#0a0f16;border:1px solid var(--line);color:var(--text);padding:12px;font:inherit;font-size:12px;outline:none}.equity-search:focus{border-color:var(--accent)}.equity-meta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:9px;margin:8px 0 12px}.equity-table{width:100%;border-collapse:collapse;font-size:11px}.equity-table th{text-align:right;color:var(--muted);font-size:8px;letter-spacing:.7px;text-transform:uppercase;font-weight:700;padding:9px 5px;border-bottom:1px solid var(--line)}.equity-table th:first-child,.equity-table td:first-child{text-align:left}.equity-table td{text-align:right;padding:12px 5px;border-bottom:1px solid var(--line);white-space:nowrap}.equity-table td:first-child{white-space:normal}.equity-symbol{display:block;font-weight:800;font-size:12px;color:var(--text)}.equity-name{display:block;color:var(--muted);font-size:9px;margin-top:3px}.equity-empty{padding:18px;border:1px solid var(--line);color:var(--muted);font-size:11px;line-height:1.5}.equity-positive{color:var(--up)}.equity-negative{color:var(--down)}.equity-pill{display:inline-block;padding:3px 5px;border:1px solid var(--line);font-size:8px;color:#b9c4d0}.equity-foot{font-size:9px;color:var(--muted);line-height:1.5;margin-top:14px}
+@media(max-width:420px){.equity-table{font-size:10px}.equity-table th{font-size:7px;padding:8px 3px}.equity-table td{padding:11px 3px}.equity-name{font-size:8px}}
+</style>
 </head>
 <body>
 
@@ -202,9 +208,10 @@ nav{height:62px;flex:0 0 62px;border-top:1px solid var(--line);display:flex;just
  <button class="terminal-more" id="openFullFeed" type="button">Explore full intelligence feed&nbsp; ↗</button>
  <div class="terminal-footer-note">Market data can be delayed. Derived signals are prompts for investigation, not standalone buy or sell recommendations.</div>
 </section>
-<main class="feed" id="feed" style="display:none"></main><section class="screen" id="marketsScreen"><div class="screen-title">Markets</div><div class="screen-sub">Key markets at a glance.</div><div class="section-label">Global markets</div><div class="market-grid" id="marketGrid"></div><div class="section-label">What matters</div><div class="list-row"><b>Rates</b><span>Watch yields & policy</span></div><div class="list-row"><b>Risk</b><span>Equities & volatility</span></div><div class="list-row"><b>Commodities</b><span>Oil & gold</span></div></section><section class="screen" id="watchScreen"><div class="screen-title">Watchlist</div><div class="screen-sub">Markets you want to keep close.</div><div id="watchlistRows"></div><div class="section-label">Add markets</div><div class="market-grid" id="watchAddGrid"></div></section><section class="screen" id="moreScreen"><a class="list-row" href="./valuation.html" style="text-decoration:none;color:inherit"><div><b>Valuation Lab</b><span style="display:block">DCF · scenarios · sensitivity · six research candidates</span></div><span>OPEN ↗</span></a><div class="screen-title">More</div><div class="screen-sub">Market Mind intelligence, kept simple.</div><div class="list-row" id="refreshRow"><div><b>Refresh feed</b><span style="display:block">Pull the latest market intelligence</span></div><span id="refreshAction">REFRESH</span></div><div class="list-row"><div><b>Data sources</b><span style="display:block">Market Mind feed &amp; market data</span></div><span>LIVE</span></div><div class="list-row"><div><b>Watchlist</b><span style="display:block">Saved locally on this device</span></div><span>PRIVATE</span></div><div class="section-label">About</div><div class="list-row"><div><b>Market Mind</b><span style="display:block">Independent market intelligence</span></div><span>v1</span></div></section>
+<main class="feed" id="feed" style="display:none"></main><section class="screen equity-screen" id="asxScreen"><div class="screen-title">ASX Stocks</div><div class="screen-sub">Australian equities · daily prices, momentum and trend context.</div><div class="equity-toolbar"><input class="equity-search" id="asxSearch" type="search" placeholder="Search ASX companies or tickers" autocomplete="off"></div><div class="equity-meta"><span id="asxEquityCount">Loading ASX coverage…</span><span id="asxEquityUpdated">Awaiting data</span></div><div id="asxEquityRows" class="equity-empty">Connecting to the Australian equity feed…</div><div class="equity-foot">Prices are sourced from the prototype market-data endpoint and may be delayed or incomplete. Returns are price-only, not total returns. Not investment advice.</div></section>
+<section class="screen equity-screen" id="usScreen"><div class="screen-title">US Stocks</div><div class="screen-sub">Major US companies · daily prices, momentum and trend context.</div><div class="equity-toolbar"><input class="equity-search" id="usSearch" type="search" placeholder="Search US companies or tickers" autocomplete="off"></div><div class="equity-meta"><span id="usEquityCount">Loading US coverage…</span><span id="usEquityUpdated">Awaiting data</span></div><div id="usEquityRows" class="equity-empty">Connecting to the US equity feed…</div><div class="equity-foot">Prices are sourced from the prototype market-data endpoint and may be delayed or incomplete. Returns are price-only, not total returns. Not investment advice.</div></section><section class="screen" id="marketsScreen"><div class="screen-title">Markets</div><div class="screen-sub">Key markets at a glance.</div><div class="section-label">Global markets</div><div class="market-grid" id="marketGrid"></div><div class="section-label">What matters</div><div class="list-row"><b>Rates</b><span>Watch yields & policy</span></div><div class="list-row"><b>Risk</b><span>Equities & volatility</span></div><div class="list-row"><b>Commodities</b><span>Oil & gold</span></div></section><section class="screen" id="watchScreen"><div class="screen-title">Watchlist</div><div class="screen-sub">Markets you want to keep close.</div><div id="watchlistRows"></div><div class="section-label">Add markets</div><div class="market-grid" id="watchAddGrid"></div></section><section class="screen" id="moreScreen"><a class="list-row" href="./valuation.html" style="text-decoration:none;color:inherit"><div><b>Valuation Lab</b><span style="display:block">DCF · scenarios · sensitivity · six research candidates</span></div><span>OPEN ↗</span></a><div class="screen-title">More</div><div class="screen-sub">Market Mind intelligence, kept simple.</div><div class="list-row" id="refreshRow"><div><b>Refresh feed</b><span style="display:block">Pull the latest market intelligence</span></div><span id="refreshAction">REFRESH</span></div><div class="list-row"><div><b>Data sources</b><span style="display:block">Market Mind feed &amp; market data</span></div><span>LIVE</span></div><div class="list-row"><div><b>Watchlist</b><span style="display:block">Saved locally on this device</span></div><span>PRIVATE</span></div><div class="section-label">About</div><div class="list-row"><div><b>Market Mind</b><span style="display:block">Independent market intelligence</span></div><span>v1</span></div></section>
 <div class="progress"><i id="progress"></i></div>
-<nav><div class="navitem active" data-screen="overview"><b>◉</b>Pulse</div><div class="navitem" data-screen="feed"><b>▤</b>Feed</div><div class="navitem" data-screen="markets"><b>⌁</b>Markets</div><div class="navitem" data-screen="watch"><b>☆</b>Watchlist</div><div class="navitem" data-screen="more"><b>≡</b>More</div></nav>
+<nav><div class="navitem active" data-screen="overview"><b>◉</b>Pulse</div><div class="navitem" data-screen="feed"><b>▤</b>Feed</div><div class="navitem" data-screen="asx"><b>A</b>ASX Stocks</div><div class="navitem" data-screen="us"><b>US</b>US Stocks</div><div class="navitem" data-screen="markets"><b>⌁</b>Markets</div><div class="navitem" data-screen="watch"><b>☆</b>Watchlist</div><div class="navitem" data-screen="more"><b>≡</b>More</div></nav>
 </div>
 <script>
 const feed=document.getElementById("feed");
@@ -440,7 +447,7 @@ async function loadLiveFeed(manual){
   }catch(researchError){console.warn("Market Mind editorial research unavailable",researchError);}
   // Add live rule-based intelligence cards without replacing the curated daily feed.
   var intelligenceStatus="unavailable",signalCards=[];
-  window.__marketMindSnapshot=null;window.__marketMindUpdatedAt=null;
+  window.__marketMindSnapshot=null;window.__marketMindUpdatedAt=null;window.__marketMindEquities=[];
   try{
    var mindResponse=await fetch("/api/mind?ts="+Date.now(),{cache:"no-store"});
    if(!mindResponse.ok)throw new Error("intelligence endpoint "+mindResponse.status);
@@ -448,6 +455,7 @@ async function loadLiveFeed(manual){
    intelligenceStatus="live";
    window.__marketMindSnapshot=mindPayload.snapshot||null;
    window.__marketMindUpdatedAt=mindPayload.updatedAt||null;
+   window.__marketMindEquities=mindPayload.equities||[];
    signalCards=(mindPayload.signals||[]).filter(function(s){return s&&s.title&&s.explanation;}).map(function(s){
     var framework=s.framework||{};
     return {
@@ -487,6 +495,7 @@ async function loadLiveFeed(manual){
    Object.keys(map).forEach(function(k){var v=snapshot[k];if(!v||!Number.isFinite(v.price))return;var p=v.dayPct;liveTickers[map[k]]={value:new Intl.NumberFormat("en-AU",{maximumFractionDigits:2}).format(v.price),pct:p,direction:typeof p==="number"?(p<0?"down":p>0?"up":"flat"):"",change:typeof p==="number"?(p>0?"+":"")+p.toFixed(2)+"%":"Latest close"};});
   }
   var marketUpdatedAt=window.__marketMindUpdatedAt||payload.updatedAt;
+  equityRows=window.__marketMindEquities||[];window.__marketMindEquityUpdatedAt=window.__marketMindUpdatedAt||payload.updatedAt;renderAllEquityPages();
   renderCards(cards.length?cards:fallbackCards); updateMarkets(liveTickers); updateOverview(liveTickers,cards,marketUpdatedAt);
   setHealth("LIVE FEED · "+cards.length+" cards · "+(signalCards.length?signalCards.length+" signals":intelligenceStatus==="live"?"no signals":"scanner offline"),true,payload.updatedAt);
   var refreshAction=document.getElementById("refreshAction");if(manual&&refreshAction)refreshAction.textContent="REFRESH";
@@ -546,6 +555,33 @@ function updateOverview(t,cards,updatedAt){
  if(status)status.textContent=updatedAt?"Data refreshed "+new Date(updatedAt).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"}):"Demo data · Feed unavailable";
  if(date)date.innerHTML=new Date().toLocaleDateString("en-AU",{day:"2-digit",month:"short"}).toUpperCase()+"<br>GLOBAL MARKETS";
 }
+
+const equityNames={"BHP.AX":"BHP Group","RIO.AX":"Rio Tinto","FMG.AX":"Fortescue","CBA.AX":"Commonwealth Bank","NAB.AX":"National Australia Bank","WBC.AX":"Westpac","ANZ.AX":"ANZ Group","MQG.AX":"Macquarie Group","CSL.AX":"CSL Limited","COH.AX":"Cochlear","GMG.AX":"Goodman Group","TCL.AX":"Transurban","WES.AX":"Wesfarmers","WOW.AX":"Woolworths","COL.AX":"Coles Group","REA.AX":"REA Group","XRO.AX":"Xero","CAR.AX":"CAR Group","TLS.AX":"Telstra","STO.AX":"Santos","WDS.AX":"Woodside Energy","ORG.AX":"Origin Energy","AAPL":"Apple","MSFT":"Microsoft","NVDA":"NVIDIA","AMZN":"Amazon","GOOGL":"Alphabet","META":"Meta Platforms","TSLA":"Tesla","BRK-B":"Berkshire Hathaway","JPM":"JPMorgan Chase","V":"Visa","MA":"Mastercard","AVGO":"Broadcom","ORCL":"Oracle","COST":"Costco","NFLX":"Netflix","AMD":"Advanced Micro Devices","XOM":"Exxon Mobil","WMT":"Walmart"};
+var equityRows=[];
+function renderEquityPage(market,query){
+ var isAsx=market==="ASX",target=document.getElementById(isAsx?"asxEquityRows":"usEquityRows");
+ var count=document.getElementById(isAsx?"asxEquityCount":"usEquityCount"),updated=document.getElementById(isAsx?"asxEquityUpdated":"usEquityUpdated");
+ if(!target)return;
+ var rows=equityRows.filter(function(x){return isAsx?String(x.symbol).endsWith(".AX"):!String(x.symbol).endsWith(".AX")&&!["^AXJO","^GSPC","^IXIC","^DJI","^VIX","^TNX","CL=F","GC=F","AUDUSD=X"].includes(x.symbol);});
+ var q=String(query||"").trim().toLowerCase();
+ if(q)rows=rows.filter(function(x){return (x.symbol+" "+(equityNames[x.symbol]||"")).toLowerCase().includes(q);});
+ rows.sort(function(a,b){return (Number(b.pct)||0)-(Number(a.pct)||0);});
+ if(count)count.textContent=rows.length+" stocks shown · sorted by daily move";
+ if(updated)updated.textContent=window.__marketMindEquityUpdatedAt?"Updated "+new Date(window.__marketMindEquityUpdatedAt).toLocaleTimeString("en-AU",{hour:"2-digit",minute:"2-digit",timeZone:"Australia/Melbourne"}):"No confirmed timestamp";
+ if(!rows.length){target.className="equity-empty";target.textContent=equityRows.length?"No stocks match that search.":"No stock quotes available. Check the market-data connection and try refreshing.";return;}
+ target.className="";
+ target.innerHTML='<table class="equity-table"><thead><tr><th>Company</th><th>Last</th><th>Day</th><th>5D</th><th>20D</th><th>Trend</th></tr></thead><tbody>'+rows.map(function(x){
+  var fmt=function(v){return Number.isFinite(v)?(v>0?"+":"")+v.toFixed(2)+"%":"—";};
+  var p=Number.isFinite(x.pct)?x.pct:null,cls=p===null?"":p>0?"equity-positive":p<0?"equity-negative":"";
+  var currency=x.currency==="USD"?"US$":"A$";
+  var trend=x.aboveMa20===true&&x.aboveMa50===true?"Above 20/50":x.aboveMa20===true?"Above 20D":x.aboveMa20===false?"Below 20D":"—";
+  return '<tr><td><span class="equity-symbol">'+esc(x.symbol)+'</span><span class="equity-name">'+esc(equityNames[x.symbol]||x.symbol)+'</span></td><td>'+currency+(Number.isFinite(x.price)?Number(x.price).toFixed(2):"—")+'</td><td class="'+cls+'">'+fmt(x.pct)+'</td><td class="'+(x.return5d>0?"equity-positive":x.return5d<0?"equity-negative":"")+'">'+fmt(x.return5d)+'</td><td class="'+(x.return20d>0?"equity-positive":x.return20d<0?"equity-negative":"")+'">'+fmt(x.return20d)+'</td><td><span class="equity-pill">'+trend+'</span></td></tr>';
+ }).join("")+'</tbody></table>';
+}
+function renderAllEquityPages(){renderEquityPage("ASX",document.getElementById("asxSearch")?.value||"");renderEquityPage("US",document.getElementById("usSearch")?.value||"");}
+document.getElementById("asxSearch")?.addEventListener("input",function(){renderEquityPage("ASX",this.value)});
+document.getElementById("usSearch")?.addEventListener("input",function(){renderEquityPage("US",this.value)});
+
 function showScreen(name){document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active")});feed.style.display=name==="feed"?"block":"none";var target=document.getElementById(name==="overview"?"overviewScreen":name+"Screen");if(target){target.hidden=false;target.classList.add("active")}document.querySelectorAll(".navitem").forEach(function(n){n.classList.toggle("active",n.dataset.screen===name)});document.getElementById("progress").style.height="25%";}
 function getWatchlist(){try{var saved=JSON.parse(localStorage.getItem("marketMindWatchlist")||"[]"),allowed=["^AXJO","^GSPC","^VIX","CL=F","GC=F","^TNX","AUDUSD=X"];return Array.isArray(saved)?saved.filter(function(sym,i){return allowed.indexOf(sym)>=0&&saved.indexOf(sym)===i}):[]}catch(e){return []}}
 function setWatchlist(a){try{localStorage.setItem("marketMindWatchlist",JSON.stringify(a))}catch(e){console.warn("Market Mind could not save watchlist",e)}}

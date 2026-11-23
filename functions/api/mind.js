@@ -57,7 +57,7 @@ export async function onRequestGet({ request }) {
   // Trend and volume scans on individual ASX names.
   const stockSymbols=["BHP.AX","RIO.AX","FMG.AX","CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX",
     "CSL.AX","COH.AX","GMG.AX","TCL.AX","WES.AX","WOW.AX","COL.AX","REA.AX","XRO.AX","CAR.AX","TLS.AX","STO.AX","WDS.AX","ORG.AX",
-    "AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","BRK-B","JPM","V","MA","AVGO","ORCL","COST","NFLX","AMD","XOM","WMT"];
+    "AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","JPM","V","AVGO","ORCL","COST","NFLX","AMD","WMT"];
   const candidates=stockSymbols.map(get).filter(x=>x && Number.isFinite(x.return20d));
   const rankedStocks=candidates.map(x=>{
     let score=0, reasons=[];

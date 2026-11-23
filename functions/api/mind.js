@@ -107,7 +107,7 @@ export async function onRequestGet({ request }) {
     aud:aud?{price:aud.price,dayPct:aud.pct}:null
   };
   return Response.json({
-    updatedAt:new Date().toISOString(),version:"0.4.0",source:"Market Mind intelligence layer",
+    updatedAt:new Date().toISOString(),version:"0.5.0",source:"Market Mind intelligence layer",
     methodology:"Rule-based cross-asset, sector rotation, moving-average, momentum, breakout and volume screens. No broker-revision or institutional-flow feed is connected.",
     marketCount:data.length,signalCount:cards.length,signals:cards,sectorRotation:rankedSectors,equities,
     technicalLeaders:rankedStocks.slice(0,8).map(x=>({symbol:x.symbol,score:x.score,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons})),

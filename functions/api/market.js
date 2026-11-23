@@ -1,13 +1,14 @@
 export async function onRequestGet({ request }) {
   const url = new URL(request.url);
   const defaults = [
-    "^AXJO","^GSPC","^IXIC","^VIX","^TNX","CL=F","GC=F","AUDUSD=X",
+    "^AXJO","^GSPC","^IXIC","^DJI","^VIX","^TNX","CL=F","GC=F","AUDUSD=X",
     "BHP.AX","RIO.AX","FMG.AX","CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX",
     "CSL.AX","COH.AX","GMG.AX","TCL.AX","WES.AX","WOW.AX","COL.AX","REA.AX",
-    "XRO.AX","CAR.AX","TLS.AX","STO.AX","WDS.AX","ORG.AX"
+    "XRO.AX","CAR.AX","TLS.AX","STO.AX","WDS.AX","ORG.AX",
+    "AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","BRK-B","JPM","V","MA","AVGO","ORCL","COST","NFLX","AMD","XOM","WMT"
   ];
   const symbols = (url.searchParams.get("symbols") || defaults.join(","))
-    .split(",").map(s => s.trim()).filter(Boolean).slice(0, 40);
+    .split(",").map(s => s.trim()).filter(Boolean).slice(0, 55);
 
   const average = values => values.length ? values.reduce((a,b)=>a+b,0)/values.length : null;
   const pctReturn = (latest, base) => Number.isFinite(latest) && Number.isFinite(base) && base !== 0 ? ((latest/base)-1)*100 : null;
@@ -15,7 +16,7 @@ export async function onRequestGet({ request }) {
   const results = await Promise.all(symbols.map(async symbol => {
     try {
       const endpoint = "https://query1.finance.yahoo.com/v8/finance/chart/" +
-        encodeURIComponent(symbol) + "?range=3mo&interval=1d";
+        encodeURIComponent(symbol) + "?range=6mo&interval=1d";
       const response = await fetch(endpoint, { headers: { "User-Agent": "MarketMind/1.0" } });
       if (!response.ok) throw new Error("upstream " + response.status);
       const json = await response.json();

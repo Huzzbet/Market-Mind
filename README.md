@@ -5,6 +5,8 @@ Market Mind is a mobile-first market intelligence terminal with a swipeable rese
 ## Current capabilities
 
 - Pulse dashboard as the opening screen
+- Dedicated ASX Stocks and US Stocks pages with searchable equity coverage
+- Global Markets page covering the ASX 200, S&P 500, NASDAQ, Dow Jones, VIX, rates, commodities and AUD/USD
 - ASX and US index, volatility, rates, commodity and currency snapshots
 - Daily market history with 5/20/60-session returns
 - 20- and 50-session moving averages
@@ -12,7 +14,7 @@ Market Mind is a mobile-first market intelligence terminal with a swipeable rese
 - Relative volume comparison against the prior 20 sessions
 - Rule-based cross-asset condition detection
 - Partial-coverage sector rotation and breadth analysis
-- ASX technical momentum and trend radar
+- ASX and US technical momentum and trend radar
 - Swipeable daily research feed, watchlist and market views
 
 ## Intelligence methodology
@@ -32,7 +34,7 @@ The frontend is static and the live endpoints use Cloudflare Pages Functions:
 - `/api/mind` — cross-asset, sector and technical signal engine
 - `/api/health` — deployment diagnostics
 
-The market endpoint currently uses Yahoo Finance chart data as a prototype source. It is not a licensed production feed; quotes may be delayed, incomplete or rate-limited. Validate the data and licensing before relying on it commercially or for client-facing advice.
+The market endpoint currently uses Yahoo Finance chart data as a prototype source. It covers major ASX companies and a selected large-cap US equity universe. It is not a licensed production feed; quotes may be delayed, incomplete or rate-limited. Validate the data and licensing before relying on it commercially or for client-facing advice.
 
 ## Deployment
 

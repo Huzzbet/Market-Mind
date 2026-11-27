@@ -76,6 +76,37 @@ export async function onRequestGet({ request }) {
       {symbol:x.symbol,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons});
   }
 
+  // Setup taxonomy: labels describe observable conditions, not forecasts.
+  const classifySetups = x => {
+    const setups=[];
+    const positiveVolume=Number.isFinite(x.volumeRatio)&&x.volumeRatio>=1.3;
+    if(x.breakout20d===true&&positiveVolume)
+      setups.push({type:"breakout",label:"Breakout",strength:78,conditions:["Price above prior 20-session high","Volume expansion >=1.3x"],risk:"Breakouts can fail; monitor close back below breakout level and liquidity."});
+    if(x.aboveMa20===true&&x.aboveMa50===true&&x.maBullish===true&&x.return20d>0)
+      setups.push({type:"momentum",label:"Momentum continuation",strength:72,conditions:["Price above 20- and 50-day averages","20-day average above 50-day average","Positive 20-session return"],risk:"Trend conditions can deteriorate rapidly after extended moves."});
+    if(x.aboveMa50===true&&x.aboveMa20===false&&x.maBullish===true&&x.return20d>0)
+      setups.push({type:"pullback",label:"Trend pullback",strength:65,conditions:["Price below 20-day but above 50-day average","20-day return remains positive","50-day average above or equal to 20-day trend threshold"],risk:"May be a trend break rather than a pullback; confirm price stabilisation."});
+    if(x.aboveMa20===true&&x.return5d<0&&x.return20d>0&&x.aboveMa50===true)
+      setups.push({type:"recovery",label:"Short-term recovery",strength:62,conditions:["Negative five-session return","Positive 20-session return","Price above key averages"],risk:"Not a confirmed reversal; price action alone cannot confirm a turn."});
+    if(x.return20d>0&&Number.isFinite(x.return20d)&&x.return20d>=8&&x.return5d>0&&x.aboveMa50===true)
+      setups.push({type:"relative-strength",label:"Relative-strength leader",strength:68,conditions:["Strong positive 20-session return","Positive five-session return","Price above 50-day average"],risk:"Strength may reflect concentration or an already crowded move."});
+    return setups;
+  };
+  for(const x of rankedStocks){
+    x.setups=classifySetups(x);
+  }
+  const setupCards=[];
+  for(const x of rankedStocks){
+    for(const setup of x.setups){
+      setupCards.push({type:"setup",score:setup.strength,title:x.symbol+" — "+setup.label,
+        explanation:setup.conditions.join("; "),watch:setup.risk,
+        symbol:x.symbol,price:x.price,return5d:x.return5d,return20d:x.return20d,
+        volumeRatio:x.volumeRatio,setupType:setup.type,conditions:setup.conditions});
+    }
+  }
+  setupCards.sort((a,b)=>b.score-a.score);
+  for(const s of setupCards.slice(0,5)) signals.push(s);
+
   // Existing basic sector divergence monitor retained for continuity.
   for (const [group,symbols] of Object.entries({Materials:["BHP.AX","RIO.AX","FMG.AX"],Financials:["CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX"]})) {
     const rows=symbols.map(get).filter(Boolean);
@@ -110,7 +141,7 @@ export async function onRequestGet({ request }) {
     updatedAt:new Date().toISOString(),version:"0.5.0",source:"Market Mind intelligence layer",
     methodology:"Rule-based cross-asset, sector rotation, moving-average, momentum, breakout and volume screens. No broker-revision or institutional-flow feed is connected.",
     marketCount:data.length,signalCount:cards.length,signals:cards,sectorRotation:rankedSectors,equities,
-    technicalLeaders:rankedStocks.slice(0,8).map(x=>({symbol:x.symbol,score:x.score,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons})),
+    technicalLeaders:rankedStocks.slice(0,8).map(x=>({symbol:x.symbol,score:x.score,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons,setups:x.setups||[]})),
     snapshot,headlines:(news.items||[]).slice(0,6)
   },{headers:{"Cache-Control":"public, max-age=60"}});
 }

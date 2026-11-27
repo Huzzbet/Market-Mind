@@ -76,6 +76,30 @@ export async function onRequestGet({ request }) {
       {symbol:x.symbol,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons});
   }
 
+  // Catalyst context: headline matching is heuristic and must not be interpreted as a verified driver.
+  const catalystItems=(news.items||[]).filter(item=>Array.isArray(item.matchedSymbols)&&item.matchedSymbols.length);
+  const catalystBySymbol={};
+  for(const item of catalystItems){
+    for(const symbol of item.matchedSymbols){
+      if(!catalystBySymbol[symbol]) catalystBySymbol[symbol]=[];
+      catalystBySymbol[symbol].push(item);
+    }
+  }
+  for(const x of rankedStocks){
+    const matched=(catalystBySymbol[x.symbol]||[]).slice(0,3);
+    if(matched.length) x.catalysts=matched.map(item=>({title:item.title,link:item.link,pubDate:item.pubDate,categories:item.categories||[],relevance:item.relevance||null}));
+  }
+  // Headline catalyst cards are surfaced separately, rather than inflating the technical score.
+  for(const [symbol,items] of Object.entries(catalystBySymbol)){
+    const stock=candidates.find(x=>x.symbol===symbol);
+    const recent=items.slice(0,2);
+    if(!recent.length) continue;
+    add("catalyst",Math.min(84,65+recent.length*4),symbol+" headline catalyst watch",
+      recent.map(x=>x.title).join(" | "),
+      "Headline-to-symbol matching is heuristic. Verify the original announcement and its date; headlines alone do not confirm impact.",
+      {symbol,headlines:recent.map(x=>({title:x.title,link:x.link,pubDate:x.pubDate,categories:x.categories||[],relevance:x.relevance||null})),price:stock?.price||null});
+  }
+
   // Existing basic sector divergence monitor retained for continuity.
   for (const [group,symbols] of Object.entries({Materials:["BHP.AX","RIO.AX","FMG.AX"],Financials:["CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX"]})) {
     const rows=symbols.map(get).filter(Boolean);
@@ -110,7 +134,7 @@ export async function onRequestGet({ request }) {
     updatedAt:new Date().toISOString(),version:"0.5.0",source:"Market Mind intelligence layer",
     methodology:"Rule-based cross-asset, sector rotation, moving-average, momentum, breakout and volume screens. No broker-revision or institutional-flow feed is connected.",
     marketCount:data.length,signalCount:cards.length,signals:cards,sectorRotation:rankedSectors,equities,
-    technicalLeaders:rankedStocks.slice(0,8).map(x=>({symbol:x.symbol,score:x.score,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons})),
+    technicalLeaders:rankedStocks.slice(0,8).map(x=>({symbol:x.symbol,score:x.score,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons,catalysts:x.catalysts||[]})),
     snapshot,headlines:(news.items||[]).slice(0,6)
   },{headers:{"Cache-Control":"public, max-age=60"}});
 }

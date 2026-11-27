@@ -59,23 +59,38 @@ export async function onRequestGet({ request }) {
     "CSL.AX","COH.AX","GMG.AX","TCL.AX","WES.AX","WOW.AX","COL.AX","REA.AX","XRO.AX","CAR.AX","TLS.AX","STO.AX","WDS.AX","ORG.AX",
     "AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","JPM","V","AVGO","ORCL","COST","NFLX","AMD","WMT"];
   const candidates=stockSymbols.map(get).filter(x=>x && Number.isFinite(x.return20d));
+  const benchmarkASX=get("^AXJO"), benchmarkUS=get("^GSPC");
   const rankedStocks=candidates.map(x=>{
-    let score=0, reasons=[];
-    if(x.aboveMa20===true){score+=15;reasons.push("price above 20-day average");}
-    if(x.aboveMa50===true){score+=15;reasons.push("price above 50-day average");}
-    if(x.maBullish===true){score+=15;reasons.push("20-day average above 50-day average");}
-    if(x.return20d>3){score+=15;reasons.push("positive 20-day momentum");}
-    if(x.breakout20d===true){score+=20;reasons.push("above prior 20-session high");}
-    if(x.volumeRatio>=1.5){score+=20;reasons.push("volume at least 1.5x its 20-session average");}
-    return {...x,score,reasons};
+    const isASX=x.symbol.endsWith(".AX");
+    const benchmark=isASX?benchmarkASX:benchmarkUS;
+    let score=0, reasons=[], scoreBreakdown={};
+    const award=(key,points,reason)=>{score+=points;scoreBreakdown[key]=points;if(points>0)reasons.push(reason);};
+    // Transparent research-priority score, capped at 100; not a probability.
+    award("trend20",x.aboveMa20===true?12:0,"price above 20-day average");
+    award("trend50",x.aboveMa50===true?12:0,"price above 50-day average");
+    award("movingAverageAlignment",x.maBullish===true?12:0,"20-day average above 50-day average");
+    award("momentum",x.return20d>5?15:x.return20d>3?10:x.return20d>0?5:0,"positive 20-day momentum");
+    award("breakout",x.breakout20d===true?18:0,"above prior 20-session high");
+    award("relativeVolume",Number.isFinite(x.volumeRatio)&&x.volumeRatio>=2?15:Number.isFinite(x.volumeRatio)&&x.volumeRatio>=1.5?10:Number.isFinite(x.volumeRatio)&&x.volumeRatio>=1.2?5:0,"relative volume elevated");
+    const rel5=Number.isFinite(x.return5d)&&benchmark&&Number.isFinite(benchmark.return5d)?x.return5d-benchmark.return5d:null;
+    const rel20=Number.isFinite(x.return20d)&&benchmark&&Number.isFinite(benchmark.return20d)?x.return20d-benchmark.return20d:null;
+    award("relativeStrength",rel20>=5?16:rel20>=2?10:rel20>0?5:0,"outperforming benchmark over 20 sessions");
+    if(Number.isFinite(rel5)&&rel5>0) reasons.push("outperforming benchmark over five sessions");
+    const capped=Math.min(100,score);
+    const flags=[];
+    if(x.pct< -3)flags.push("large daily decline");
+    if(x.return20d<0)flags.push("negative 20-session momentum");
+    if(x.aboveMa20===false)flags.push("below 20-day average");
+    if(x.aboveMa50===false)flags.push("below 50-day average");
+    if(!Number.isFinite(x.volumeRatio))flags.push("volume data unavailable");
+    return {...x,score:capped,scoreBreakdown,reasons,relativeStrength5d:rel5,relativeStrength20d:rel20,riskFlags:flags,benchmark:isASX?"^AXJO":"^GSPC"};
   }).sort((a,b)=>b.score-a.score);
-  for(const x of rankedStocks.filter(x=>x.score>=45).slice(0,5)){
-    add("technical",x.score,x.symbol+" showing a technical setup",
-      x.reasons.join("; ")+". 20-session return: "+x.return20d.toFixed(2)+"%.",
-      "Check liquidity, announcements, valuation, trend durability and downside levels. A technical screen is not a buy recommendation.",
-      {symbol:x.symbol,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons});
+  for(const x of rankedStocks.filter(x=>x.score>=50).slice(0,5)){
+    add("technical",x.score,x.symbol+" — technical research priority",
+      x.reasons.join("; ")+". 20-session return: "+x.return20d.toFixed(2)+"%. Score breakdown: "+Object.entries(x.scoreBreakdown).filter(([,v])=>v>0).map(([k,v])=>k+" +"+v).join(", ")+".",
+      "Review catalyst, liquidity, valuation, position sizing and downside levels. This research-priority score is not a probability or buy recommendation.",
+      {symbol:x.symbol,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons,scoreBreakdown:x.scoreBreakdown,relativeStrength5d:x.relativeStrength5d,relativeStrength20d:x.relativeStrength20d,riskFlags:x.riskFlags,benchmark:x.benchmark});
   }
-
   // Existing basic sector divergence monitor retained for continuity.
   for (const [group,symbols] of Object.entries({Materials:["BHP.AX","RIO.AX","FMG.AX"],Financials:["CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX"]})) {
     const rows=symbols.map(get).filter(Boolean);
@@ -110,7 +125,7 @@ export async function onRequestGet({ request }) {
     updatedAt:new Date().toISOString(),version:"0.5.0",source:"Market Mind intelligence layer",
     methodology:"Rule-based cross-asset, sector rotation, moving-average, momentum, breakout and volume screens. No broker-revision or institutional-flow feed is connected.",
     marketCount:data.length,signalCount:cards.length,signals:cards,sectorRotation:rankedSectors,equities,
-    technicalLeaders:rankedStocks.slice(0,8).map(x=>({symbol:x.symbol,score:x.score,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons})),
+    technicalLeaders:rankedStocks.slice(0,8).map(x=>({symbol:x.symbol,score:x.score,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons,scoreBreakdown:x.scoreBreakdown,relativeStrength5d:x.relativeStrength5d,relativeStrength20d:x.relativeStrength20d,riskFlags:x.riskFlags,benchmark:x.benchmark})),
     snapshot,headlines:(news.items||[]).slice(0,6)
   },{headers:{"Cache-Control":"public, max-age=60"}});
 }

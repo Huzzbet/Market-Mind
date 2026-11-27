@@ -485,8 +485,67 @@ async function loadLiveFeed(manual){
     };
    });
   }catch(intelligenceError){console.warn("Market Mind intelligence unavailable",intelligenceError);}
+  // Load the structured Daily Edition and put its editorial cards first in the swipe feed.
+  var dailyEditionCards=[];
+  try{
+   var dailyUrls=["/data/daily/edition.json?ts="+Date.now(),"/Market-Mind/data/daily/edition.json?ts="+Date.now(),"https://raw.githubusercontent.com/Huzzbet/Market-Mind/main/data/daily/edition.json?ts="+Date.now()];
+   var dailyResponse=null;
+   for(var dailyUrl of dailyUrls){try{var dr=await fetch(dailyUrl,{cache:"no-store"});if(dr.ok){dailyResponse=dr;break;}}catch(dailyFetchError){}}
+   if(dailyResponse){
+    var dailyPayload=await dailyResponse.json();
+    var editionDate=typeof dailyPayload.editionDate==="string"?dailyPayload.editionDate:"";
+    var dateValid=/^\\d{4}-\\d{2}-\\d{2}$/.test(editionDate)&&Number.isFinite(new Date(editionDate+"T00:00:00Z").getTime());
+    var editionAge=dateValid?(Date.now()-new Date(editionDate+"T23:59:59Z").getTime()):Infinity;
+    var editionFresh=dateValid&&editionAge<=7*24*60*60*1000&&editionAge>=-24*60*60*1000;
+    if(editionFresh&&Array.isArray(dailyPayload.sections)){
+     var sectionOrder=["pulse","asx","us","rotation","macro","risk","watchlist"];
+     var orderedSections=sectionOrder.map(function(id){return dailyPayload.sections.find(function(s){return s&&s.id===id;});}).filter(Boolean);
+     orderedSections.forEach(function(section){
+      (Array.isArray(section.cards)?section.cards:[]).filter(function(c){return c&&c.title&&c.summary;}).forEach(function(c){
+       var evidence=Array.isArray(c.evidence)?c.evidence.slice(0,4):[];
+       var score=Number.isFinite(Number(c.score))?Number(c.score):null;
+       var sourceLink=typeof c.sourceUrl==="string"&&/^https?:\\/\\//i.test(c.sourceUrl)?c.sourceUrl:null;
+       dailyEditionCards.push({
+        tag:"DAILY EDITION · "+String(section.title||section.id).toUpperCase(),
+        time:"EDITION "+editionDate,
+        title:c.title,dek:c.summary,
+        data:[["SECTION",section.title||section.id],["PRIORITY",score===null?"—":score+"/100"],["TYPE",c.type||"Research"]],
+        insight:c.summary,
+        whyItMatters:evidence.length?evidence.join(" · "):"Review the supporting evidence and data quality before acting.",
+        investmentOpportunity:"Catalyst: "+(c.catalyst||"Not specified")+" | Risk: "+(c.risk||"Not specified")+" | Invalidation: "+(c.invalidation||"Not specified"),
+        opportunityType:"RESEARCH · NOT A RECOMMENDATION",
+        source:c.source||"Market Mind Daily Edition",sourcePublishedAt:c.publishedAt||dailyPayload.generatedAt||null,
+        link:sourceLink,rank:score||0,chart:false,signal:"UP",stock:null,marketHistory:null,dailyEdition:true
+       });
+      });
+     });
+     if(dailyEditionCards.length){
+      dailyEditionCards.unshift({
+       tag:"MARKET MIND · DAILY EDITION",time:"DATA "+(dailyPayload.dataAsAt||"UNCONFIRMED"),
+       title:"Daily Edition · "+editionDate,dek:dailyPayload.qualityNote||"Dated editorial market research. Verify sources and data before making decisions.",
+       data:[["EDITION DATE",editionDate],["DATA AS AT",dailyPayload.dataAsAt||"Unconfirmed"]],
+       insight:"This edition is dated "+editionDate+". Scores are research-priority rankings, not probabilities or recommendations.",
+       whyItMatters:"Separate sourced facts, scanner observations and editorial interpretation. Data may be delayed or incomplete.",
+       investmentOpportunity:"Use the cards below as a research shortlist. Confirm prices, catalysts, risks and invalidation conditions independently.",
+       opportunityType:"DAILY RESEARCH",source:"Market Mind Daily Edition",sourcePublishedAt:dailyPayload.generatedAt||null,link:null,rank:100,chart:false,signal:"UP",stock:null,marketHistory:null,dailyEdition:true
+      });
+     }
+    }
+   }
+  }catch(dailyEditionError){console.warn("Daily Edition unavailable",dailyEditionError);}
+  if(!dailyEditionCards.length){
+   dailyEditionCards=[{
+    tag:"DAILY EDITION · STATUS",time:"NO CURRENT EDITION",
+    title:"Daily Edition not yet published",dek:"The structured Daily Edition is missing, empty or outside the freshness window. No current editorial opportunities are being shown.",
+    data:[["STATUS","Not published / stale"],["FRESHNESS","7-day limit"]],
+    insight:"Market Mind will not present an empty template or stale report as current research.",
+    whyItMatters:"Use the existing scanner and market pages for context while waiting for the next dated edition.",
+    investmentOpportunity:"Refresh later or check the data timestamps on the other market pages.",
+    opportunityType:"DATA STATUS",source:"Market Mind",sourcePublishedAt:null,link:null,rank:0,chart:false,signal:"UP",stock:null,marketHistory:null,dailyEdition:true
+   }];
+  }
   // Keep the existing daily stories, then surface live signals first when available.
-  cards=signalCards.concat(researchCards,cards);
+  cards=dailyEditionCards.concat(signalCards,researchCards,cards);
   var asx=payload.tickers?.asx200, spx=payload.tickers?.sp500, vix=payload.tickers?.vix;
   var setTicker=function(id,item){var el=document.getElementById(id);if(!el||!item)return;el.textContent=item.value||"—";el.className=item.direction==="down"?"down":item.direction==="up"?"up":"";};
   setTicker("asx",asx);setTicker("spx",spx);setTicker("vix",vix);

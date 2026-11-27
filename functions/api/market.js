@@ -8,7 +8,7 @@ export async function onRequestGet({ request }) {
     "AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","JPM","V","AVGO","ORCL","COST","NFLX","AMD","WMT","LLY","BRK-B","XOM","PLTR","QQQ","SPY"
   ];
   const symbols = (url.searchParams.get("symbols") || defaults.join(","))
-    .split(",").map(s => s.trim()).filter(Boolean).slice(0, 55);
+    .split(",").map(s => s.trim()).filter(Boolean).slice(0, 75);
 
   const average = values => values.length ? values.reduce((a,b)=>a+b,0)/values.length : null;
   const pctReturn = (latest, base) => Number.isFinite(latest) && Number.isFinite(base) && base !== 0 ? ((latest/base)-1)*100 : null;

@@ -2,10 +2,10 @@ export async function onRequestGet({ request }) {
   const url = new URL(request.url);
   const defaults = [
     "^AXJO","^GSPC","^IXIC","^DJI","^VIX","^TNX","CL=F","GC=F","AUDUSD=X",
-    "BHP.AX","RIO.AX","FMG.AX","CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX",
-    "CSL.AX","COH.AX","GMG.AX","TCL.AX","WES.AX","WOW.AX","COL.AX","REA.AX",
-    "XRO.AX","CAR.AX","TLS.AX","STO.AX","WDS.AX","ORG.AX",
-    "AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","JPM","V","AVGO","ORCL","COST","NFLX","AMD","WMT"
+    "BHP.AX","RIO.AX","FMG.AX","MIN.AX","PLS.AX","LYC.AX","CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX",
+    "CSL.AX","COH.AX","RMD.AX","GMG.AX","GPT.AX","TCL.AX","WES.AX","WOW.AX","COL.AX","JBH.AX","HVN.AX","REA.AX",
+    "XRO.AX","CAR.AX","CPU.AX","TLS.AX","STO.AX","WDS.AX","ORG.AX","QAN.AX","ALD.AX","ALL.AX","SUN.AX","IAG.AX",
+    "AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","JPM","V","AVGO","ORCL","COST","NFLX","AMD","WMT","LLY","BRK-B","XOM","PLTR","QQQ","SPY"
   ];
   const symbols = (url.searchParams.get("symbols") || defaults.join(","))
     .split(",").map(s => s.trim()).filter(Boolean).slice(0, 55);
@@ -23,8 +23,14 @@ export async function onRequestGet({ request }) {
       const r = json.chart?.result?.[0];
       const meta = r?.meta || {};
       const quote = r?.indicators?.quote?.[0] || {};
-      const closes = (quote.close || []).filter(Number.isFinite);
-      const volumes = (quote.volume || []).filter(v => Number.isFinite(v) && v > 0);
+      const rawCloses = quote.close || [];
+      const rawVolumes = quote.volume || [];
+      const timestamps = r?.timestamp || [];
+      // Preserve aligned close, volume and timestamp observations rather than independently filtering arrays.
+      const bars = rawCloses.map((close, i) => ({ close, volume: rawVolumes[i], timestamp: timestamps[i] }))
+        .filter(bar => Number.isFinite(bar.close));
+      const closes = bars.map(bar => bar.close);
+      const volumes = bars.map(bar => bar.volume);
       const price = Number.isFinite(meta.regularMarketPrice) ? meta.regularMarketPrice : closes.at(-1);
       const previous = Number.isFinite(meta.previousClose) ? meta.previousClose : closes.at(-2);
       const change = Number.isFinite(price) && Number.isFinite(previous) ? price - previous : null;
@@ -34,10 +40,10 @@ export async function onRequestGet({ request }) {
       const latestClose = closes.at(-1);
       const prior20 = closes.slice(-21,-1);
       const priorHigh20 = prior20.length ? Math.max(...prior20) : null;
-      const latestVolume = volumes.at(-1);
-      const averageVolume20 = average(volumes.slice(-21,-1));
+      const latestVolume = Number.isFinite(volumes.at(-1)) && volumes.at(-1) > 0 ? volumes.at(-1) : null;
+      const priorVolumes = volumes.slice(-21,-1).filter(v => Number.isFinite(v) && v > 0);
+      const averageVolume20 = priorVolumes.length >= 10 ? average(priorVolumes) : null;
       const volumeRatio = latestVolume && averageVolume20 ? latestVolume / averageVolume20 : null;
-      const timestamps = r?.timestamp || [];
       const high = Number.isFinite(meta.regularMarketDayHigh) ? meta.regularMarketDayHigh : null;
       const low = Number.isFinite(meta.regularMarketDayLow) ? meta.regularMarketDayLow : null;
       return {
@@ -52,8 +58,8 @@ export async function onRequestGet({ request }) {
         priorHigh20,
         breakout20d: Number.isFinite(price) && Number.isFinite(priorHigh20) ? price > priorHigh20 : null,
         latestVolume, averageVolume20, volumeRatio,
-        high, low, observations: closes.length,
-        lastTimestamp: timestamps.at(-1) || null,
+        high, low, observations: closes.length, volumeObservations20: priorVolumes.length,
+        lastTimestamp: bars.at(-1)?.timestamp || null,
         currency: meta.currency || null, exchange: meta.exchangeName || null, ok: true
       };
     } catch (error) {

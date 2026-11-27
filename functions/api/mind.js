@@ -67,13 +67,20 @@ export async function onRequestGet({ request }) {
     if(x.return20d>3){score+=15;reasons.push("positive 20-day momentum");}
     if(x.breakout20d===true){score+=20;reasons.push("above prior 20-session high");}
     if(x.volumeRatio>=1.5){score+=20;reasons.push("volume at least 1.5x its 20-session average");}
-    return {...x,score,reasons};
+    const invalidation = Number.isFinite(x.ma20) ? x.ma20 : (Number.isFinite(x.ma50) ? x.ma50 : null);
+    const riskFlags=[];
+    if(x.aboveMa20===false) riskFlags.push("price below 20-day average");
+    if(x.aboveMa50===false) riskFlags.push("price below 50-day average");
+    if(x.return20d<0) riskFlags.push("negative 20-session momentum");
+    if(Number.isFinite(x.pct)&&x.pct<=-3) riskFlags.push("large daily decline");
+    if(!Number.isFinite(x.volumeRatio)) riskFlags.push("volume comparison unavailable");
+    return {...x,score,reasons,invalidationReference:invalidation,invalidationType:invalidation===x.ma20?"20-day moving average reference":"50-day moving average reference",riskFlags,riskLabel:riskFlags.length>=3?"Elevated screen risk":riskFlags.length?"Risk flags present":"No screen risk flags"};
   }).sort((a,b)=>b.score-a.score);
   for(const x of rankedStocks.filter(x=>x.score>=45).slice(0,5)){
     add("technical",x.score,x.symbol+" showing a technical setup",
       x.reasons.join("; ")+". 20-session return: "+x.return20d.toFixed(2)+"%.",
       "Check liquidity, announcements, valuation, trend durability and downside levels. A technical screen is not a buy recommendation.",
-      {symbol:x.symbol,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons});
+      {symbol:x.symbol,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons,riskFlags:x.riskFlags,riskLabel:x.riskLabel,invalidationReference:x.invalidationReference,invalidationType:x.invalidationType});
   }
 
   // Existing basic sector divergence monitor retained for continuity.

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Market Mind Daily Edition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "editionDate", "generatedAt", "dataAsAt", "sections"],
+  "properties": {
+    "schemaVersion": {"type":"string"},
+    "editionDate": {"type":"string", "format":"date"},
+    "generatedAt": {"type":"string", "format":"date-time"},
+    "dataAsAt": {"type":"string"},
+    "qualityNote": {"type":"string"},
+    "sections": {
+      "type":"array",
+      "items": {
+        "type":"object",
+        "additionalProperties":false,
+        "required":["id","title","cards"],
+        "properties":{
+          "id":{"enum":["pulse","asx","us","rotation","macro","risk","watchlist"]},
+          "title":{"type":"string"},
+          "cards":{"type":"array","items":{
+            "type":"object",
+            "additionalProperties":false,
+            "required":["title","summary","type","score","evidence","catalyst","risk","invalidation","source","sourceUrl"],
+            "properties":{
+              "title":{"type":"string"},
+              "summary":{"type":"string"},
+              "type":{"type":"string"},
+              "score":{"type":"number","minimum":0,"maximum":100},
+              "ticker":{"type":"string"},
+              "evidence":{"type":"array","items":{"type":"string"}},
+              "catalyst":{"type":"string"},
+              "risk":{"type":"string"},
+              "invalidation":{"type":"string"},
+              "source":{"type":"string"},
+              "sourceUrl":{"type":"string"},
+              "publishedAt":{"type":"string"}
+            }
+          }}
+        }
+      }
+    }
+  }
+}

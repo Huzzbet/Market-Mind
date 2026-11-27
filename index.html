@@ -391,7 +391,8 @@ async function loadLiveFeed(manual){
   }
   if(!response) throw (lastError||new Error("feed unavailable"));
   var payload=await response.json();
-  var cards=(payload.cards||[]).map(function(c){return {
+  var staticFeedFresh=payload.updatedAt&&((Date.now()-new Date(payload.updatedAt).getTime())<=7*24*60*60*1000);
+  var cards=(staticFeedFresh?(payload.cards||[]):[]).map(function(c){return {
     tag:c.tag||"MARKET NEWS",
     time:c.time||"LATEST",
     title:c.title||"",
@@ -425,7 +426,8 @@ async function loadLiveFeed(manual){
    }
    if(researchResponse){
     var researchPayload=await researchResponse.json();
-    researchCards=(researchPayload.cards||[]).filter(function(c){return c&&c.title&&c.dek&&c.insight;}).map(function(c){
+    var researchFresh=researchPayload.updatedAt&&((Date.now()-new Date(researchPayload.updatedAt).getTime())<=7*24*60*60*1000);
+    researchCards=(researchFresh?(researchPayload.cards||[]):[]).filter(function(c){return c&&c.title&&c.dek&&c.insight;}).map(function(c){
      var safeLink=typeof c.link==="string"&&/^https?:\/\//i.test(c.link)?c.link:null;
      return {
       tag:c.tag||"MARKET MIND RESEARCH",

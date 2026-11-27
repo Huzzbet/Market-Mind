@@ -69,6 +69,21 @@ export async function onRequestGet({ request }) {
     if(x.volumeRatio>=1.5){score+=20;reasons.push("volume at least 1.5x its 20-session average");}
     return {...x,score,reasons};
   }).sort((a,b)=>b.score-a.score);
+  // Integrated opportunity score: technical baseline with transparent, capped context adjustments.
+  const sectorMembership={Materials:["BHP.AX","RIO.AX","FMG.AX"],Financials:["CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX"],Healthcare:["CSL.AX","COH.AX"],Property:["GMG.AX"],Industrials:["TCL.AX"],Consumer:["WES.AX","WOW.AX","COL.AX"],Technology:["XRO.AX","CAR.AX"],Energy:["STO.AX","WDS.AX","ORG.AX"]};
+  const integratedCandidates=rankedStocks.map(x=>{
+    const headlines=(news.items||[]).filter(h=>(h.matchedSymbols||[]).includes(x.symbol)).slice(0,3);
+    const group=Object.entries(sectorMembership).find(([n,s])=>s.includes(x.symbol));
+    const sectorRows=group?group[1].map(get).filter(y=>y&&Number.isFinite(y.return5d)):[];
+    const sectorPositive=sectorRows.length>=2&&sectorRows.filter(y=>y.return5d>0).length/sectorRows.length>=0.6;
+    const catalystBonus=headlines.length?Math.min(12,headlines.length*4):0;
+    const sectorBonus=sectorPositive?8:0;
+    const riskPenalty=(x.aboveMa20===false?5:0)+(x.aboveMa50===false?5:0)+(x.return20d<0?5:0);
+    const integratedScore=Math.max(0,Math.min(100,x.score+catalystBonus+sectorBonus-riskPenalty));
+    const context=[]; if(headlines.length)context.push("matched news headlines available (heuristic match)"); if(sectorPositive)context.push("sector proxy breadth positive"); if(riskPenalty)context.push("technical risk penalty applied");
+    return {...x,integratedScore,catalystBonus,sectorBonus,riskPenalty,headlineContext:headlines,context};
+  }).sort((a,b)=>b.integratedScore-a.integratedScore);
+
   for(const x of rankedStocks.filter(x=>x.score>=45).slice(0,5)){
     add("technical",x.score,x.symbol+" showing a technical setup",
       x.reasons.join("; ")+". 20-session return: "+x.return20d.toFixed(2)+"%.",
@@ -110,7 +125,7 @@ export async function onRequestGet({ request }) {
     updatedAt:new Date().toISOString(),version:"0.5.0",source:"Market Mind intelligence layer",
     methodology:"Rule-based cross-asset, sector rotation, moving-average, momentum, breakout and volume screens. No broker-revision or institutional-flow feed is connected.",
     marketCount:data.length,signalCount:cards.length,signals:cards,sectorRotation:rankedSectors,equities,
-    technicalLeaders:rankedStocks.slice(0,8).map(x=>({symbol:x.symbol,score:x.score,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons})),
+    technicalLeaders:integratedCandidates.slice(0,8).map(x=>({symbol:x.symbol,score:x.score,integratedScore:x.integratedScore,catalystBonus:x.catalystBonus,sectorBonus:x.sectorBonus,riskPenalty:x.riskPenalty,headlineContext:x.headlineContext,context:x.context,price:x.price,return5d:x.return5d,return20d:x.return20d,ma20:x.ma20,ma50:x.ma50,volumeRatio:x.volumeRatio,breakout20d:x.breakout20d,reasons:x.reasons})),
     snapshot,headlines:(news.items||[]).slice(0,6)
   },{headers:{"Cache-Control":"public, max-age=60"}});
 }

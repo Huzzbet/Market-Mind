@@ -23,8 +23,13 @@ export async function onRequestGet({ request }) {
       const r = json.chart?.result?.[0];
       const meta = r?.meta || {};
       const quote = r?.indicators?.quote?.[0] || {};
-      const closes = (quote.close || []).filter(Number.isFinite);
-      const volumes = (quote.volume || []).filter(v => Number.isFinite(v) && v > 0);
+      const rawCloses = quote.close || [];
+      const rawVolumes = quote.volume || [];
+      // Keep volume aligned with each close; independently filtering arrays can shift observations.
+      const bars = rawCloses.map((close, i) => ({ close, volume: rawVolumes[i] }))
+        .filter(bar => Number.isFinite(bar.close));
+      const closes = bars.map(bar => bar.close);
+      const volumes = bars.map(bar => bar.volume);
       const price = Number.isFinite(meta.regularMarketPrice) ? meta.regularMarketPrice : closes.at(-1);
       const previous = Number.isFinite(meta.previousClose) ? meta.previousClose : closes.at(-2);
       const change = Number.isFinite(price) && Number.isFinite(previous) ? price - previous : null;
@@ -34,8 +39,9 @@ export async function onRequestGet({ request }) {
       const latestClose = closes.at(-1);
       const prior20 = closes.slice(-21,-1);
       const priorHigh20 = prior20.length ? Math.max(...prior20) : null;
-      const latestVolume = volumes.at(-1);
-      const averageVolume20 = average(volumes.slice(-21,-1));
+      const latestVolume = Number.isFinite(volumes.at(-1)) && volumes.at(-1) > 0 ? volumes.at(-1) : null;
+      const priorVolumes = volumes.slice(-21, -1).filter(v => Number.isFinite(v) && v > 0);
+      const averageVolume20 = average(priorVolumes);
       const volumeRatio = latestVolume && averageVolume20 ? latestVolume / averageVolume20 : null;
       const timestamps = r?.timestamp || [];
       const high = Number.isFinite(meta.regularMarketDayHigh) ? meta.regularMarketDayHigh : null;

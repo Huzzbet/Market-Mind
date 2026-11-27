@@ -25,7 +25,8 @@ export async function onRequestGet({ request }) {
   if (gold && tnx && gold.pct > 0.8 && tnx.pct > 0.8)
     add("cross-asset",72,"Gold and yields are rising together","Gold and Treasury yields are both moving higher.","Compare the move with the US dollar and inflation expectations.");
 
-  // Sector rotation using equal-weighted constituent returns; minimum coverage is required.
+  // Sector rotation v2: equal-weighted proxy baskets with coverage and breadth transparency.
+  // This is not an official sector index; incomplete universes are explicitly marked.
   const sectors = {
     Materials:["BHP.AX","RIO.AX","FMG.AX"],
     Financials:["CBA.AX","NAB.AX","WBC.AX","ANZ.AX","MQG.AX"],
@@ -34,24 +35,33 @@ export async function onRequestGet({ request }) {
     Industrials:["TCL.AX"],
     Consumer:["WES.AX","WOW.AX","COL.AX"],
     Technology:["XRO.AX","CAR.AX"],
-    Energy:["STO.AX","WDS.AX","ORG.AX"]
+    Energy:["STO.AX","WDS.AX","ORG.AX"],
+    Communication:["TLS.AX"],
+    Diversified:["REA.AX"]
   };
   const sectorRows = Object.entries(sectors).map(([name,symbols]) => {
     const rows=symbols.map(get).filter(x=>x && Number.isFinite(x.return5d));
-    return {name,count:rows.length,total:symbols.length,return5d:rows.length?rows.reduce((s,x)=>s+x.return5d,0)/rows.length:null,
-      breadth:rows.length?rows.filter(x=>x.return5d>0).length/rows.length:null,
-      leaders:rows.slice().sort((a,b)=>b.return5d-a.return5d).slice(0,2).map(x=>({symbol:x.symbol,return5d:x.return5d}))};
-  }).filter(x=>x.count>=Math.min(2,x.total)&&x.return5d!==null);
+    const avg=key=>rows.filter(x=>Number.isFinite(x[key])).length
+      ? rows.filter(x=>Number.isFinite(x[key])).reduce((s,x)=>s+x[key],0)/rows.filter(x=>Number.isFinite(x[key])).length : null;
+    const breadth=key=>rows.filter(x=>x[key]===true).length;
+    return {name,count:rows.length,total:symbols.length,coverage:rows.length/symbols.length,
+      return5d:avg("return5d"),return20d:avg("return20d"),
+      positive5d:rows.filter(x=>x.return5d>0).length,
+      positive20d:rows.filter(x=>x.return20d>0).length,
+      aboveMa20:breadth("aboveMa20"),aboveMa50:breadth("aboveMa50"),
+      leaders:rows.slice().sort((a,b)=>(b.return20d??b.return5d)-(a.return20d??a.return5d)).slice(0,2).map(x=>({symbol:x.symbol,return5d:x.return5d,return20d:x.return20d})),
+      laggards:rows.slice().sort((a,b)=>(a.return20d??a.return5d)-(b.return20d??b.return5d)).slice(0,2).map(x=>({symbol:x.symbol,return5d:x.return5d,return20d:x.return20d}))};
+  }).filter(x=>x.count>0&&x.return5d!==null);
   const rankedSectors=sectorRows.slice().sort((a,b)=>b.return5d-a.return5d);
-  const covered=rankedSectors.filter(x=>x.count>=2);
-  if(covered.length>=2){
-    const leader=covered[0],laggard=covered[covered.length-1];
-    if(leader.return5d-laggard.return5d>=2.5)
+  const fullyCovered=rankedSectors.filter(x=>x.count>=2&&x.coverage>=0.5);
+  if(fullyCovered.length>=2){
+    const leader=fullyCovered[0],laggard=fullyCovered[fullyCovered.length-1];
+    if(leader.return5d-laggard.return5d>=2.0)
       add("sector-rotation",Math.min(90,Math.round(60+(leader.return5d-laggard.return5d)*5)),
-        leader.name+" leading the five-day sector tape",
-        leader.name+" constituents average "+leader.return5d.toFixed(2)+"% over five sessions, versus "+laggard.name+" at "+laggard.return5d.toFixed(2)+"%.",
-        "Check constituent breadth, earnings news and whether the move persists; sector coverage is a partial proxy, not a complete index.",
-        {leaders:leader.leaders,laggards:laggard.leaders,spread:leader.return5d-laggard.return5d});
+        leader.name+" leading the five-day sector proxy",
+        leader.name+" proxy basket averages "+leader.return5d.toFixed(2)+"% over five sessions ("+leader.positive5d+"/"+leader.count+" positive), versus "+laggard.name+" at "+laggard.return5d.toFixed(2)+"%.",
+        "Check breadth, constituent announcements and persistence. These baskets are partial proxies, not official sector indices.",
+        {leaders:leader.leaders,laggards:laggard.laggards,spread:leader.return5d-laggard.return5d,coverage:{leader:leader.count+"/"+leader.total,laggard:laggard.count+"/"+laggard.total}});
   }
 
   // Trend and volume scans on individual ASX names.
